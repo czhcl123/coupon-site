@@ -15,6 +15,7 @@ const t = {
     minPurchase: '满 ¥{n} 可用',
     copied: '已复制 ✓',
     copyCode: '复制代码',
+    goUse: '去使用',
     noCodeHint: '无折扣码·点击跳转领取',
     neverExpire: '长期有效',
     expired: '已过期',
@@ -40,6 +41,7 @@ const t = {
     minPurchase: 'Min. spend ¥{n}',
     copied: 'Copied ✓',
     copyCode: 'Copy Code',
+    goUse: 'Go to Use',
     noCodeHint: 'No code needed · Click to claim',
     neverExpire: 'No expiry',
     expired: 'Expired',
@@ -251,12 +253,36 @@ export default async function MerchantPage({
                 )}
 
                 {coupon.code ? (
-                  <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
-                    <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
-                    <span className="text-xs text-gray-400">{u('copyCode', lang)}</span>
-                  </div>
+                  <>
+                    <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
+                      <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
+                      <span className="text-xs text-gray-400">{u('copyCode', lang)}</span>
+                    </div>
+                    {merchant.affiliateUrl && (
+                      <a
+                        href={merchant.affiliateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors"
+                      >
+                        {u('goUse', lang)}
+                      </a>
+                    )}
+                  </>
                 ) : (
-                  <div className="text-xs text-gray-400 mb-2">{u('noCodeHint', lang)}</div>
+                  <>
+                    <div className="text-xs text-gray-400 mb-2">{u('noCodeHint', lang)}</div>
+                    {merchant.affiliateUrl && (
+                      <a
+                        href={merchant.affiliateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors"
+                      >
+                        {u('goUse', lang)}
+                      </a>
+                    )}
+                  </>
                 )}
 
                 <div className="flex items-center justify-between text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
