@@ -3,16 +3,55 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { articles, getArticleBySlug } from '@/data/articles'
 
-interface Props {
+type Lang = 'zh' | 'en'
+
+const t = {
+  zh: {
+    siteTitle: '🏷️ 优惠总动员',
+    backList: '← 攻略列表',
+    backHome: '← 返回首页',
+    relatedTitle: '相关攻略',
+    ctaText: '想第一时间获取 {merchant} 折扣码？',
+    ctaBtn: '查看最新优惠券 →',
+    footer1: '本站所有链接均为联盟链接，购物可能获得佣金支持本站发展',
+    footer2: '© 2025 优惠总动员 · 仅供信息分享',
+    lang: 'EN',
+    switchLang: 'EN',
+  },
+  en: {
+    siteTitle: '🏷️ Coupon Hub',
+    backList: '← All Guides',
+    backHome: '← Back to Home',
+    relatedTitle: 'Related Guides',
+    ctaText: 'Want {merchant} discount codes first?',
+    ctaBtn: 'View Latest Coupons →',
+    footer1: 'Affiliate links — shopping may earn us a commission.',
+    footer2: '© 2025 Coupon Hub · For information only',
+    lang: '中文',
+    switchLang: '中文',
+  },
+}
+
+function u(key: keyof typeof t.en, lang: Lang) {
+  return t[lang][key] as string
+}
+
+function uVars(key: keyof typeof t.en, vars: Record<string, string>, lang: Lang) {
+  let s = t[lang][key] as string
+  Object.entries(vars).forEach(([k, v]) => { s = s.replace(`{${k}}`, v) })
+  return s
+}
+
+export async function generateMetadata({
+  params,
+  searchParams,
+}: {
   params: Promise<{ slug: string }>
-}
-
-export async function generateStaticParams() {
-  return articles.map((a) => ({ slug: a.slug }))
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  searchParams: Promise<{ lang?: string }>
+}): Promise<Metadata> {
   const { slug } = await params
+  const sp = await searchParams
+  const lang = (sp.lang === 'en' ? 'en' : 'zh') as Lang
   const article = getArticleBySlug(slug)
   if (!article) return {}
   return {
@@ -24,14 +63,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'article',
       publishedTime: article.publishedAt,
     },
-    alternates: {
-      canonical: `/blog/${slug}`,
-    },
+    alternates: { canonical: `/blog/${slug}` },
   }
 }
 
-export default async function ArticlePage({ params }: Props) {
+export async function generateStaticParams() {
+  return articles.map((a) => ({ slug: a.slug }))
+}
+
+export default async function ArticlePage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ slug: string }>
+  searchParams: Promise<{ lang?: string }>
+}) {
   const { slug } = await params
+  const sp = await searchParams
+  const lang = (sp.lang === 'en' ? 'en' : 'zh') as Lang
+  const nextLang: Lang = lang === 'zh' ? 'en' : 'zh'
   const article = getArticleBySlug(slug)
   if (!article) notFound()
 
@@ -44,12 +94,20 @@ export default async function ArticlePage({ params }: Props) {
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-orange-500 hover:text-orange-600">
-              🏷️ 优惠总动员
+            <Link href={`/?lang=${lang}`} className="text-2xl font-bold text-orange-500 hover:text-orange-600">
+              {u('siteTitle', lang)}
             </Link>
-            <Link href="/blog" className="text-sm text-gray-500 hover:text-orange-500">
-              ← 攻略列表
-            </Link>
+            <div className="flex items-center gap-3">
+              <Link href={`/blog?lang=${lang}`} className="text-sm text-gray-500 hover:text-orange-500">
+                {u('backList', lang)}
+              </Link>
+              <Link
+                href={`/blog/${slug}?lang=${nextLang}`}
+                className="text-sm px-3 py-1 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors"
+              >
+                {u('switchLang', lang)}
+              </Link>
+            </div>
           </div>
         </div>
       </header>
@@ -58,7 +116,7 @@ export default async function ArticlePage({ params }: Props) {
         <article className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
           <div className="flex items-center gap-2 mb-4">
             <Link
-              href={`/`}
+              href={`/?lang=${lang}`}
               className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full hover:bg-orange-200"
             >
               {article.merchant}
@@ -110,12 +168,12 @@ export default async function ArticlePage({ params }: Props) {
 
         {related.length > 0 && (
           <div className="mt-8">
-            <h3 className="text-lg font-bold text-gray-700 mb-4">相关攻略</h3>
+            <h3 className="text-lg font-bold text-gray-700 mb-4">{u('relatedTitle', lang)}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {related.map((r) => (
                 <Link
                   key={r.slug}
-                  href={`/blog/${r.slug}`}
+                  href={`/blog/${r.slug}?lang=${lang}`}
                   className="bg-white rounded-lg p-4 border border-gray-100 hover:shadow-sm transition-shadow block"
                 >
                   <h4 className="font-semibold text-gray-800 text-sm leading-snug">{r.title}</h4>
@@ -127,19 +185,21 @@ export default async function ArticlePage({ params }: Props) {
         )}
 
         <div className="mt-8 bg-orange-50 rounded-lg p-5 text-center">
-          <p className="text-orange-700 font-medium mb-2">想第一时间获取 {article.merchant} 折扣码？</p>
+          <p className="text-orange-700 font-medium mb-2">
+            {uVars('ctaText', { merchant: article.merchant }, lang)}
+          </p>
           <Link
-            href="/"
+            href={`/?lang=${lang}`}
             className="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-orange-600 transition-colors"
           >
-            查看最新优惠券 →
+            {u('ctaBtn', lang)}
           </Link>
         </div>
       </main>
 
       <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
-        <p>本站所有链接均为联盟链接，购物可能获得佣金支持本站发展</p>
-        <p className="mt-1">© 2025 优惠总动员 · 仅供信息分享</p>
+        <p>{u('footer1', lang)}</p>
+        <p className="mt-1">{u('footer2', lang)}</p>
       </footer>
     </div>
   )

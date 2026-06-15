@@ -225,7 +225,7 @@ export default function HomePage() {
           <div className="flex items-center justify-between mb-4">
             <h1 className="text-2xl font-bold text-orange-500">{u('title')}</h1>
             <div className="flex items-center gap-4">
-              <a href="/blog" className="text-sm text-gray-400 hover:text-gray-600">{u('blog')}</a>
+              <a href={`/blog?lang=${lang}`} className="text-sm text-gray-400 hover:text-gray-600">{u('blog')}</a>
               <button
                 onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
                 className="text-sm px-3 py-1 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors"

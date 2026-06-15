@@ -37,7 +37,8 @@ export async function GET(req: NextRequest) {
       params.push(categorySlug)
     }
 
-    sql += ` ORDER BY c.isExclusive DESC, c.isVerified DESC, c.clickCount DESC LIMIT ${limit} OFFSET ${offset}`
+    sql += ` ORDER BY c.isExclusive DESC, c.isVerified DESC, c.clickCount DESC LIMIT ? OFFSET ?`
+    params.push(limit, offset)
 
     const coupons = await query(sql, params)
 
