@@ -31,6 +31,71 @@ interface Merchant {
   couponCount: number
 }
 
+type Lang = 'zh' | 'en'
+
+const t = {
+  zh: {
+    title: '🏷️ 优惠总动员',
+    admin: '管理后台',
+    searchPlaceholder: '搜索商家或优惠券...',
+    allMerchants: '所有商家',
+    allCategories: '全部分类',
+    fashion: '时尚服饰',
+    electronics: '电子产品',
+    travel: '旅行酒店',
+    beauty: '美妆护肤',
+    food: '食品生鲜',
+    loadError: '加载失败，请刷新重试',
+    noResult: '没有找到相关优惠券，换个关键词试试',
+    verified: '已验证',
+    exclusive: '独家',
+    minPurchase: '满 ¥{n} 可用',
+    copied: '已复制 ✓',
+    copyCode: '复制代码',
+    noCodeHint: '无折扣码·点击跳转领取',
+    useNow: '去使用 →',
+    neverExpire: '长期有效',
+    expired: '已过期',
+    expireToday: '今日过期',
+    expireTomorrow: '明日过期',
+    expireInDays: '{n}天后过期',
+    peopleUsed: '{n} 人使用',
+    footer1: '本站所有链接均为联盟链接，购物可能获得佣金支持本站发展',
+    footer2: '© 2025 优惠总动员 · 仅供信息分享',
+    lang: 'EN',
+  },
+  en: {
+    title: '🏷️ Coupon Hub',
+    admin: 'Admin',
+    searchPlaceholder: 'Search brands or coupons...',
+    allMerchants: 'All Brands',
+    allCategories: 'All Categories',
+    fashion: 'Fashion',
+    electronics: 'Electronics',
+    travel: 'Travel & Hotel',
+    beauty: 'Beauty',
+    food: 'Food & Fresh',
+    loadError: 'Failed to load. Please refresh.',
+    noResult: 'No coupons found. Try a different keyword.',
+    verified: 'Verified',
+    exclusive: 'Exclusive',
+    minPurchase: 'Min. spend ¥{n}',
+    copied: 'Copied ✓',
+    copyCode: 'Copy Code',
+    noCodeHint: 'No code needed · Click to claim',
+    useNow: 'Use Now →',
+    neverExpire: 'No expiry',
+    expired: 'Expired',
+    expireToday: 'Expires today',
+    expireTomorrow: 'Expires tomorrow',
+    expireInDays: 'Expires in {n} days',
+    peopleUsed: '{n} used',
+    footer1: 'Affiliate links — shopping may earn us a commission.',
+    footer2: '© 2025 Coupon Hub · For information only',
+    lang: '中文',
+  },
+}
+
 export default function HomePage() {
   const [coupons, setCoupons] = useState<Coupon[]>([])
   const [merchants, setMerchants] = useState<Merchant[]>([])
@@ -41,10 +106,33 @@ export default function HomePage() {
   const [copied, setCopied] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [lang, setLang] = useState<'zh' | 'en'>('zh')
-  const [calcPrice, setCalcPrice] = useState('')
-  const [calcDiscount, setCalcDiscount] = useState('')
-  const [calcResult, setCalcResult] = useState<number | null>(null)
-  const [showCalc, setShowCalc] = useState(false)
+
+  const u = (key: keyof typeof t.en, vars?: Record<string, string | number>) => {
+    let s = t[lang][key] as string
+    if (vars) Object.entries(vars).forEach(([k, v]) => { s = s.replace(`{${k}}`, String(v)) })
+    return s
+  }
+
+  function translateTitle(title: string) {
+    if (lang === 'zh') return title
+    const map: Record<string, string> = {
+      '会员专享20%OFF': 'Exclusive 20% OFF',
+      '满599免运费': 'Free Shipping on ¥599+',
+      '新用户首单10%OFF': '10% OFF First Order',
+      '季末大促低至5折': 'End of Season Sale — Up to 50% OFF',
+      '学生享15%OFF': '15% OFF for Students',
+      '满1000减100': 'Spend ¥1000, Save ¥100',
+      '指定商品立减50': '¥50 OFF Selected Items',
+      '电脑专场最高享8折': 'Electronics Sale — Up to 80% OFF',
+      '酒店预订15%OFF': '15% OFF on Hotel Booking',
+      '首次预订立减200元': '¥200 OFF First Booking',
+      '全站20%OFF': '20% OFF Sitewide',
+      '满50免运费': 'Free Shipping on ¥50+',
+      'VIP会员25%OFF': 'VIP Members 25% OFF',
+      '满99减30': 'Spend ¥99, Get ¥30 OFF',
+    }
+    return map[title] || title
+  }
 
   // 加载数据
   useEffect(() => {
@@ -70,7 +158,7 @@ export default function HomePage() {
       setCoupons(couponsData.coupons || [])
       setMerchants(merchantsData.merchants || [])
     } catch (e) {
-      setError('加载失败，请刷新重试')
+      setError(u('loadError'))
     } finally {
       setLoading(false)
     }
@@ -106,30 +194,25 @@ export default function HomePage() {
   // 格式化折扣标签
   function formatDiscount(coupon: Coupon) {
     switch (coupon.discountType) {
-      case 'PERCENT':
-        return `-${coupon.discountValue}%`
-      case 'FIXED':
-        return `立减${coupon.discountValue}元`
-      case 'FREE_SHIP':
-        return '免运费'
-      case 'PERCENT_OFF':
-        return `低至${coupon.discountValue}折`
-      default:
-        return coupon.discountValue
+      case 'PERCENT': return `-${coupon.discountValue}%`
+      case 'FIXED': return lang === 'zh' ? `立减${coupon.discountValue}元` : `¥${coupon.discountValue} OFF`
+      case 'FREE_SHIP': return lang === 'zh' ? '免运费' : 'Free Shipping'
+      case 'PERCENT_OFF': return lang === 'zh' ? `低至${coupon.discountValue}折` : `Up to ${Math.round((100 - parseInt(coupon.discountValue)) / 10) * 10}% off`
+      default: return coupon.discountValue
     }
   }
 
   // 格式化过期时间
   function formatExpiry(dateStr: string | null) {
-    if (!dateStr) return '长期有效'
+    if (!dateStr) return u('neverExpire')
     const date = new Date(dateStr)
     const now = new Date()
     const diff = date.getTime() - now.getTime()
     const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-    if (days < 0) return '已过期'
-    if (days === 0) return '今日过期'
-    if (days === 1) return '明日过期'
-    return `${days}天后过期`
+    if (days < 0) return u('expired')
+    if (days === 0) return u('expireToday')
+    if (days === 1) return u('expireTomorrow')
+    return u('expireInDays', { n: days })
   }
 
   return (
@@ -138,62 +221,20 @@ export default function HomePage() {
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl font-bold text-orange-500">🏷️ 优惠总动员</h1>
-            <div className="flex items-center gap-3">
-              <a
-                href="/blog"
-                className="text-sm text-gray-400 hover:text-gray-600"
-              >
-                博客攻略
-              </a>
-              <span className="text-gray-200">|</span>
-              {/* 中英文切换 */}
-              <select
-                value={lang}
-                onChange={(e) => setLang(e.target.value as 'zh' | 'en')}
-                className="text-sm text-gray-400 border border-gray-200 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-orange-400"
-              >
-                <option value="zh">中文</option>
-                <option value="en">EN</option>
-              </select>
-              <span className="text-gray-200">|</span>
-              {/* 折扣计算 */}
+            <h1 className="text-2xl font-bold text-orange-500">{u('title')}</h1>
+            <div className="flex items-center gap-4">
+              <a href="/blog" className="text-sm text-gray-400 hover:text-gray-600">博客攻略</a>
               <button
-                onClick={() => setShowCalc(!showCalc)}
-                className="text-sm text-gray-400 hover:text-gray-600"
+                onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
+                className="text-sm px-3 py-1 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors"
               >
-                折扣计算
+                {u('lang')}
               </button>
-              {showCalc && (
-                <div className="absolute right-4 top-20 bg-white border border-gray-200 rounded-lg shadow-lg p-4 z-20 w-64">
-                  <div className="text-sm font-semibold text-gray-600 mb-2">折扣计算器</div>
-                  <input
-                    type="number"
-                    placeholder="原价"
-                    value={calcPrice}
-                    onChange={(e) => { setCalcPrice(e.target.value); doCalcDiscount() }}
-                    className="w-full px-3 py-1.5 border border-gray-200 rounded mb-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
-                  />
-                  <input
-                    type="number"
-                    placeholder="折扣率%"
-                    value={calcDiscount}
-                    onChange={(e) => { setCalcDiscount(e.target.value); doCalcDiscount() }}
-                    className="w-full px-3 py-1.5 border border-gray-200 rounded mb-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
-                  />
-                  {calcResult !== null && (
-                    <div className="text-sm text-orange-500 font-bold">
-                      ¥{calcResult.toFixed(2)}
-                    </div>
-                  )}
-                </div>
-              )}
-              <span className="text-gray-200">|</span>
-              <a
-                href="/admin"
-                className="text-sm text-gray-400 hover:text-gray-600"
-              >
-                管理后台
+              <a href="/discount-calculator" className="text-sm px-3 py-1 bg-orange-100 text-orange-500 rounded-full hover:bg-orange-200 transition-colors font-medium">
+                折扣计算器
+              </a>
+              <a href="/admin" className="text-sm text-gray-400 hover:text-gray-600">
+                {u('admin')}
               </a>
             </div>
           </div>
@@ -202,7 +243,7 @@ export default function HomePage() {
           <div className="flex gap-3 flex-wrap">
             <input
               type="text"
-              placeholder="搜索商家或优惠券..."
+              placeholder={u('searchPlaceholder')}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="flex-1 min-w-[200px] px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
@@ -212,7 +253,7 @@ export default function HomePage() {
               onChange={(e) => setSelectedMerchant(e.target.value)}
               className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             >
-              <option value="">全所有商家</option>
+              <option value="">{u('allMerchants')}</option>
               {merchants.map((m) => (
                 <option key={m.id} value={m.slug}>{m.name} ({m.couponCount})</option>
               ))}
@@ -222,12 +263,12 @@ export default function HomePage() {
               onChange={(e) => setSelectedCategory(e.target.value)}
               className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             >
-              <option value="">全部分类</option>
-              <option value="fashion">时尚服饰</option>
-              <option value="electronics">电子产品</option>
-              <option value="travel">旅行酒店</option>
-              <option value="beauty">美妆护肤</option>
-              <option value="food">食品生鲜</option>
+              <option value="">{u('allCategories')}</option>
+              <option value="fashion">{u('fashion')}</option>
+              <option value="electronics">{u('electronics')}</option>
+              <option value="travel">{u('travel')}</option>
+              <option value="beauty">{u('beauty')}</option>
+              <option value="food">{u('food')}</option>
             </select>
           </div>
         </div>
@@ -253,7 +294,7 @@ export default function HomePage() {
         ) : coupons.length === 0 ? (
           <div className="text-center py-16 text-gray-400">
             <div className="text-4xl mb-2">🔍</div>
-            <p>没有找到相关优惠券，换个关键词试试</p>
+            <p>{u('noResult')}</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -274,10 +315,10 @@ export default function HomePage() {
                   )}
                   <span className="text-sm text-gray-500">{coupon.merchant.name}</span>
                   {coupon.isVerified && (
-                    <span className="text-xs bg-green-100 text-green-600 px-1.5 py-0.5 rounded-full">已验证</span>
+                    <span className="text-xs bg-green-100 text-green-600 px-1.5 py-0.5 rounded-full">{u('verified')}</span>
                   )}
                   {coupon.isExclusive && (
-                    <span className="text-xs bg-orange-100 text-orange-500 px-1.5 py-0.5 rounded-full">独家</span>
+                    <span className="text-xs bg-orange-100 text-orange-500 px-1.5 py-0.5 rounded-full">{u('exclusive')}</span>
                   )}
                 </div>
 
@@ -287,9 +328,9 @@ export default function HomePage() {
                     {formatDiscount(coupon)}
                   </span>
                   <div className="flex-1">
-                    <div className="font-semibold text-gray-800 leading-tight">{coupon.title}</div>
+                    <div className="font-semibold text-gray-800 leading-tight">{translateTitle(coupon.title)}</div>
                     {coupon.description && (
-                      <div className="text-sm text-gray-400 mt-0.5">{coupon.description}</div>
+                      <div className="text-sm text-gray-400 mt-0.5">{translateTitle(coupon.description)}</div>
                     )}
                   </div>
                 </div>
@@ -297,7 +338,7 @@ export default function HomePage() {
                 {/* 最低消费 */}
                 {coupon.minPurchase && (
                   <div className="text-xs text-gray-400 mb-2">
-                    满 ¥{coupon.minPurchase} 可用
+                    {u('minPurchase', { n: coupon.minPurchase })}
                   </div>
                 )}
 
@@ -313,17 +354,17 @@ export default function HomePage() {
                           : 'bg-orange-500 text-white hover:bg-orange-600'
                       }`}
                     >
-                      {copied === coupon.id ? '已复制 ✓' : '复制代码'}
+                      {copied === coupon.id ? u('copied') : u('copyCode')}
                     </button>
                   </div>
                 ) : (
-                  <div className="text-xs text-gray-400 mb-2">无折扣码·点击跳转领取</div>
+                  <div className="text-xs text-gray-400 mb-2">{u('noCodeHint')}</div>
                 )}
 
                 {/* 底部信息 */}
                 <div className="flex items-center justify-between text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
                   <span>{formatExpiry(coupon.expiresAt)}</span>
-                  <span>{coupon.clickCount} 人使用</span>
+                  <span>{u('peopleUsed', { n: coupon.clickCount })}</span>
                 </div>
               </div>
             ))}
@@ -333,8 +374,8 @@ export default function HomePage() {
 
       {/* 页脚 */}
       <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
-        <p>本站所有链接均为联盟链接，购物可能获得佣金支持本站发展</p>
-        <p className="mt-1">© 2025 优惠总动员 · 仅供信息分享</p>
+        <p>{u('footer1')}</p>
+        <p className="mt-1">{u('footer2')}</p>
       </footer>
     </div>
   )
