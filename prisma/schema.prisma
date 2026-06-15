@@ -1,0 +1,75 @@
+// 数据库 Schema — 定义优惠券、商家、分类
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Merchant {
+  id          String    @id @default(cuid())
+  name        String    // 商家名称，如"Nike"
+  slug        String    @unique // URL 别名，如"nike"
+  logo        String?   // 商家 Logo URL
+  affiliateUrl String?  // 联盟跳转链接
+  website     String?   // 官网
+  description String?
+  categories  Category[] // 多对多
+  coupons     Coupon[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Category {
+  id       String     @id @default(cuid())
+  name     String     // 如"时尚服饰"
+  slug     String     @unique // URL 别名
+  coupons  Coupon[]
+  merchants Merchant[]
+}
+
+model Coupon {
+  id            String    @id @default(cuid())
+  code          String?   // 折扣码，可为空（满减直降）
+  title         String    // 标题，如"新人首单8折"
+  description   String?
+  discountType  DiscountType
+  discountValue String    // 折扣值，如"20"代表8折/20%off/20元
+  minPurchase  Decimal?   // 最低消费
+  maxDiscount  Decimal?   // 最高优惠
+  startsAt     DateTime?
+  expiresAt     DateTime? // 过期时间
+  isExclusive  Boolean   @default(false) // 独家专属
+  isVerified   Boolean   @default(false) // 人工审核过
+  clickCount   Int       @default(0)    // 点击次数
+  successCount Int       @default(0)    // 成功使用次数
+  status       CouponStatus @default(ACTIVE)
+
+  merchantId    String
+  merchant      Merchant   @relation(fields: [merchantId], references: [id])
+  categoryId    String?
+  category      Category?   @relation(fields: [categoryId], references: [id])
+
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  @@index([merchantId])
+  @@index([status, expiresAt])
+}
+
+enum DiscountType {
+  PERCENT      // 百分比折扣，如20%off
+  FIXED        // 固定金额，如减20元
+  FREE_SHIP    // 包邮
+  BUY_X_GET_Y  // 买X送Y
+  PERCENT_OFF  // 百分比满减，如满300减20%
+}
+
+enum CouponStatus {
+  ACTIVE
+  EXPIRED
+  INVALID
+}
