@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 
@@ -47,7 +47,7 @@ function u(key: keyof typeof t.en, lang: Lang) {
   return t[lang][key] as string
 }
 
-export default function DiscountCalculatorPage() {
+function DiscountCalculatorContent() {
   const searchParams = useSearchParams()
   const lang = (searchParams.get('lang') === 'en' ? 'en' : 'zh') as Lang
   const nextLang: Lang = lang === 'zh' ? 'en' : 'zh'
@@ -172,5 +172,13 @@ export default function DiscountCalculatorPage() {
         </div>
       </main>
     </div>
+  )
+}
+
+export default function DiscountCalculatorPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gray-50" />}>
+      <DiscountCalculatorContent />
+    </Suspense>
   )
 }

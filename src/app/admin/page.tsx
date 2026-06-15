@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 
@@ -102,7 +102,7 @@ interface FormData {
   isExclusive: boolean
 }
 
-export default function AdminPage() {
+function AdminContent() {
   const searchParams = useSearchParams()
   const lang = (searchParams.get('lang') === 'en' ? 'en' : 'zh') as Lang
   const nextLang: Lang = lang === 'zh' ? 'en' : 'zh'
@@ -335,5 +335,13 @@ export default function AdminPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function AdminPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gray-50" />}>
+      <AdminContent />
+    </Suspense>
   )
 }
