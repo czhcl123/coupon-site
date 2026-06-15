@@ -232,10 +232,10 @@ export default function HomePage() {
               >
                 {u('lang')}
               </button>
-              <a href="/discount-calculator" className="text-sm px-3 py-1 bg-orange-100 text-orange-500 rounded-full hover:bg-orange-200 transition-colors font-medium">
+              <a href={`/discount-calculator?lang=${lang}`} className="text-sm px-3 py-1 bg-orange-100 text-orange-500 rounded-full hover:bg-orange-200 transition-colors font-medium">
                 {u('discountCalculator')}
               </a>
-              <a href="/admin" className="text-sm text-gray-400 hover:text-gray-600">
+              <a href={`/admin?lang=${lang}`} className="text-sm text-gray-400 hover:text-gray-600">
                 {u('admin')}
               </a>
             </div>
