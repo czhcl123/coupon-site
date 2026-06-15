@@ -5,8 +5,8 @@ const pool = mysql.createPool({
   host: 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com',
   port: 4000,
   user: '4PDGQRfsgPUn2oy.root',
-  password: 'tOq5TT7xQQHWZMXG',
-  database: 'coupon_site',
+  password: process.env.TIDB_PASSWORD,
+  database: process.env.TIDB_DATABASE || 'coupon_site',
   ssl: { rejectUnauthorized: true },
 })
 
