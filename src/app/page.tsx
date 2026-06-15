@@ -40,6 +40,11 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true)
   const [copied, setCopied] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [lang, setLang] = useState<'zh' | 'en'>('zh')
+  const [calcPrice, setCalcPrice] = useState('')
+  const [calcDiscount, setCalcDiscount] = useState('')
+  const [calcResult, setCalcResult] = useState<number | null>(null)
+  const [showCalc, setShowCalc] = useState(false)
 
   // 加载数据
   useEffect(() => {
@@ -87,6 +92,17 @@ export default function HomePage() {
     fetch(`/api/coupons/click?id=${couponId}`, { method: 'POST' })
   }
 
+  // 计算折扣
+  function doCalcDiscount() {
+    const price = parseFloat(calcPrice)
+    const discount = parseFloat(calcDiscount)
+    if (price > 0 && discount > 0 && discount <= 100) {
+      setCalcResult(price * (1 - discount / 100))
+    } else {
+      setCalcResult(null)
+    }
+  }
+
   // 格式化折扣标签
   function formatDiscount(coupon: Coupon) {
     switch (coupon.discountType) {
@@ -123,19 +139,63 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between mb-4">
             <h1 className="text-2xl font-bold text-orange-500">🏷️ 优惠总动员</h1>
-            <a
-              href="/blog"
-              className="text-sm text-gray-400 hover:text-gray-600"
-            >
-              博客攻略
-            </a>
-            <span className="text-gray-200">|</span>
-            <a
-              href="/admin"
-              className="text-sm text-gray-400 hover:text-gray-600"
-            >
-              管理后台
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href="/blog"
+                className="text-sm text-gray-400 hover:text-gray-600"
+              >
+                博客攻略
+              </a>
+              <span className="text-gray-200">|</span>
+              {/* 中英文切换 */}
+              <select
+                value={lang}
+                onChange={(e) => setLang(e.target.value as 'zh' | 'en')}
+                className="text-sm text-gray-400 border border-gray-200 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-orange-400"
+              >
+                <option value="zh">中文</option>
+                <option value="en">EN</option>
+              </select>
+              <span className="text-gray-200">|</span>
+              {/* 折扣计算 */}
+              <button
+                onClick={() => setShowCalc(!showCalc)}
+                className="text-sm text-gray-400 hover:text-gray-600"
+              >
+                折扣计算
+              </button>
+              {showCalc && (
+                <div className="absolute right-4 top-20 bg-white border border-gray-200 rounded-lg shadow-lg p-4 z-20 w-64">
+                  <div className="text-sm font-semibold text-gray-600 mb-2">折扣计算器</div>
+                  <input
+                    type="number"
+                    placeholder="原价"
+                    value={calcPrice}
+                    onChange={(e) => { setCalcPrice(e.target.value); doCalcDiscount() }}
+                    className="w-full px-3 py-1.5 border border-gray-200 rounded mb-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  />
+                  <input
+                    type="number"
+                    placeholder="折扣率%"
+                    value={calcDiscount}
+                    onChange={(e) => { setCalcDiscount(e.target.value); doCalcDiscount() }}
+                    className="w-full px-3 py-1.5 border border-gray-200 rounded mb-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  />
+                  {calcResult !== null && (
+                    <div className="text-sm text-orange-500 font-bold">
+                      ¥{calcResult.toFixed(2)}
+                    </div>
+                  )}
+                </div>
+              )}
+              <span className="text-gray-200">|</span>
+              <a
+                href="/admin"
+                className="text-sm text-gray-400 hover:text-gray-600"
+              >
+                管理后台
+              </a>
+            </div>
           </div>
 
           {/* 搜索栏 */}
