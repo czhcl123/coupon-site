@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 interface Coupon {
@@ -40,6 +41,7 @@ const t = {
     searchPlaceholder: '搜索商家或优惠券...',
     allMerchants: '所有商家',
     allCategories: '全部分类',
+    coupons: '张',
     fashion: '时尚服饰',
     electronics: '电子产品',
     travel: '旅行酒店',
@@ -60,9 +62,14 @@ const t = {
     expireTomorrow: '明日过期',
     expireInDays: '{n}天后过期',
     peopleUsed: '{n} 人使用',
+    fixedOff: '立减 {n} 元',
+    freeShipping: '免运费',
+    upToOff: '低至 {n} 折',
     footer1: '本站所有链接均为联盟链接，购物可能获得佣金支持本站发展',
     footer2: '© 2025 优惠总动员 · 仅供信息分享',
     lang: 'EN',
+    blog: '博客攻略',
+    discountCalculator: '折扣计算器',
   },
   en: {
     title: '🏷️ Coupon Hub',
@@ -70,6 +77,7 @@ const t = {
     searchPlaceholder: 'Search brands or coupons...',
     allMerchants: 'All Brands',
     allCategories: 'All Categories',
+    coupons: 'deals',
     fashion: 'Fashion',
     electronics: 'Electronics',
     travel: 'Travel & Hotel',
@@ -90,9 +98,14 @@ const t = {
     expireTomorrow: 'Expires tomorrow',
     expireInDays: 'Expires in {n} days',
     peopleUsed: '{n} used',
+    fixedOff: '¥{n} OFF',
+    freeShipping: 'Free Shipping',
+    upToOff: 'Up to {n} off',
     footer1: 'Affiliate links — shopping may earn us a commission.',
     footer2: '© 2025 Coupon Hub · For information only',
     lang: '中文',
+    blog: 'Blog',
+    discountCalculator: 'Calculator',
   },
 }
 
@@ -180,24 +193,13 @@ export default function HomePage() {
     fetch(`/api/coupons/click?id=${couponId}`, { method: 'POST' })
   }
 
-  // 计算折扣
-  function doCalcDiscount() {
-    const price = parseFloat(calcPrice)
-    const discount = parseFloat(calcDiscount)
-    if (price > 0 && discount > 0 && discount <= 100) {
-      setCalcResult(price * (1 - discount / 100))
-    } else {
-      setCalcResult(null)
-    }
-  }
-
   // 格式化折扣标签
   function formatDiscount(coupon: Coupon) {
     switch (coupon.discountType) {
       case 'PERCENT': return `-${coupon.discountValue}%`
-      case 'FIXED': return lang === 'zh' ? `立减${coupon.discountValue}元` : `¥${coupon.discountValue} OFF`
-      case 'FREE_SHIP': return lang === 'zh' ? '免运费' : 'Free Shipping'
-      case 'PERCENT_OFF': return lang === 'zh' ? `低至${coupon.discountValue}折` : `Up to ${Math.round((100 - parseInt(coupon.discountValue)) / 10) * 10}% off`
+      case 'FIXED': return u('fixedOff', { n: coupon.discountValue })
+      case 'FREE_SHIP': return u('freeShipping')
+      case 'PERCENT_OFF': return u('upToOff', { n: coupon.discountValue })
       default: return coupon.discountValue
     }
   }
@@ -223,7 +225,7 @@ export default function HomePage() {
           <div className="flex items-center justify-between mb-4">
             <h1 className="text-2xl font-bold text-orange-500">{u('title')}</h1>
             <div className="flex items-center gap-4">
-              <a href="/blog" className="text-sm text-gray-400 hover:text-gray-600">博客攻略</a>
+              <a href="/blog" className="text-sm text-gray-400 hover:text-gray-600">{u('blog')}</a>
               <button
                 onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
                 className="text-sm px-3 py-1 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors"
@@ -231,7 +233,7 @@ export default function HomePage() {
                 {u('lang')}
               </button>
               <a href="/discount-calculator" className="text-sm px-3 py-1 bg-orange-100 text-orange-500 rounded-full hover:bg-orange-200 transition-colors font-medium">
-                折扣计算器
+                {u('discountCalculator')}
               </a>
               <a href="/admin" className="text-sm text-gray-400 hover:text-gray-600">
                 {u('admin')}
@@ -255,7 +257,7 @@ export default function HomePage() {
             >
               <option value="">{u('allMerchants')}</option>
               {merchants.map((m) => (
-                <option key={m.id} value={m.slug}>{m.name} ({m.couponCount})</option>
+                <option key={m.id} value={m.slug}>{m.name} ({m.couponCount} {u('coupons')})</option>
               ))}
             </select>
             <select
@@ -313,7 +315,9 @@ export default function HomePage() {
                       onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
                     />
                   )}
-                  <span className="text-sm text-gray-500">{coupon.merchant.name}</span>
+                  <Link href={`/merchant/${coupon.merchant.slug}?lang=${lang}`} className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
+                    {coupon.merchant.name}
+                  </Link>
                   {coupon.isVerified && (
                     <span className="text-xs bg-green-100 text-green-600 px-1.5 py-0.5 rounded-full">{u('verified')}</span>
                   )}
