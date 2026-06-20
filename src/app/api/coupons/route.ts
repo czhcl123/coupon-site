@@ -17,7 +17,8 @@ export async function GET(req: NextRequest) {
       FROM Coupon c
       JOIN Merchant m ON c.merchantId = m.id
       LEFT JOIN Category cat ON c.categoryId = cat.id
-      WHERE (c.expiresAt IS NULL OR c.expiresAt >= NOW())
+      WHERE c.status = 'ACTIVE'
+        AND (c.expiresAt IS NULL OR c.expiresAt >= NOW())
     `
     const params: unknown[] = []
 

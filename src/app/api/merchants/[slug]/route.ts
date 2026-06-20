@@ -23,7 +23,7 @@ export async function GET(
       `SELECT c.*, cat.name as category_name, cat.slug as category_slug
        FROM Coupon c
        LEFT JOIN Category cat ON c.categoryId = cat.id
-       WHERE c.merchantId = ?
+       WHERE c.merchantId = ? AND c.status = 'ACTIVE'
        ORDER BY c.isExclusive DESC, c.isVerified DESC, c.clickCount DESC`,
       [merchant.id]
     )

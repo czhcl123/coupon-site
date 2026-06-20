@@ -89,7 +89,28 @@ export default async function ArticlePage({
     .filter((a) => a.merchantSlug === article.merchantSlug && a.slug !== slug)
     .slice(0, 3)
 
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    datePublished: article.publishedAt,
+    author: { '@type': 'Organization', name: '优惠总动员' },
+    publisher: {
+      '@type': 'Organization',
+      name: '优惠总动员',
+      url: 'https://coupon-site-olive.vercel.app',
+    },
+    url: `https://coupon-site-olive.vercel.app/blog/${slug}`,
+    keywords: article.tags.join(', '),
+  }
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
@@ -202,5 +223,6 @@ export default async function ArticlePage({
         <p className="mt-1">{u('footer2', lang)}</p>
       </footer>
     </div>
+    </>
   )
 }

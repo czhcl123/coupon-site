@@ -6,7 +6,7 @@ export async function GET() {
     const merchants = await query(`
       SELECT m.id, m.name, m.slug, m.logo, COUNT(c.id) as couponCount
       FROM Merchant m
-      LEFT JOIN Coupon c ON c.merchantId = m.id
+      LEFT JOIN Coupon c ON c.merchantId = m.id AND c.status = 'ACTIVE'
       GROUP BY m.id, m.name, m.slug, m.logo
       ORDER BY m.name ASC
     `)

@@ -153,8 +153,12 @@ export async function generateMetadata({
 
   const merchant = merchants[0]
   return {
-    title: `${merchant.name} 优惠券折扣码 | 优惠总动员`,
-    description: `获取 ${merchant.name} 最新优惠券和折扣码，帮你省钱购物。`,
+    title: lang === 'zh'
+      ? `${merchant.name} 优惠券折扣码 | 优惠总动员`
+      : `${merchant.name} Coupon Codes & Deals | Coupon Hub`,
+    description: lang === 'zh'
+      ? `获取 ${merchant.name} 最新优惠券和折扣码，帮你省钱购物。`
+      : `Get the latest ${merchant.name} coupons and discount codes to save on your purchase.`,
     alternates: { canonical: `/merchant/${slug}` },
   }
 }
@@ -179,7 +183,7 @@ export default async function MerchantPage({
     `SELECT c.*, cat.name as category_name, cat.slug as category_slug
      FROM Coupon c
      LEFT JOIN Category cat ON c.categoryId = cat.id
-     WHERE c.merchantId = ?
+     WHERE c.merchantId = ? AND c.status = 'ACTIVE'
      ORDER BY c.isExclusive DESC, c.isVerified DESC, c.clickCount DESC`,
     [merchant.id]
   )
