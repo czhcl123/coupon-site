@@ -193,7 +193,7 @@ function AdminContent() {
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* 商家 */}
             <div>
-              <label className="block text-sm font-medium text-gray-600 mb-1">{u('selectMerchant')} *</label>
+              <label className="block text-sm font-medium text-gray-600 mb-1">{u('selectMerchant', lang)} *</label>
               <select
                 value={form.merchantId}
                 onChange={(e) => setForm({ ...form, merchantId: e.target.value })}
