@@ -201,7 +201,7 @@ function AdminContent() {
                 className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
                 required
               >
-                <option value="">{u('selectMerchant')}</option>
+                <option value="">{u('selectMerchant', lang)}</option>
                 {merchants.map((m) => (
                   <option key={m.id} value={m.id}>{m.name}</option>
                 ))}
@@ -210,7 +210,7 @@ function AdminContent() {
 
             {/* 标题 */}
             <div>
-              <label className="block text-sm font-medium text-gray-600 mb-1">{u('titleLabel')}</label>
+              <label className="block text-sm font-medium text-gray-600 mb-1">{u('titleLabel', lang)}</label>
               <input
                 type="text"
                 value={form.title}
@@ -223,7 +223,7 @@ function AdminContent() {
 
             {/* 折扣码 */}
             <div>
-              <label className="block text-sm font-medium text-gray-600 mb-1">{u('codeLabel')}</label>
+              <label className="block text-sm font-medium text-gray-600 mb-1">{u('codeLabel', lang)}</label>
               <input
                 type="text"
                 value={form.code}
@@ -236,7 +236,7 @@ function AdminContent() {
             <div className="grid grid-cols-2 gap-4">
               {/* 折扣类型 */}
               <div>
-                <label className="block text-sm font-medium text-gray-600 mb-1">{u('typeLabel')}</label>
+                <label className="block text-sm font-medium text-gray-600 mb-1">{u('typeLabel', lang)}</label>
                 <select
                   value={form.discountType}
                   onChange={(e) => setForm({ ...form, discountType: e.target.value })}
@@ -252,7 +252,7 @@ function AdminContent() {
               {/* 折扣值 */}
               <div>
                 <label className="block text-sm font-medium text-gray-600 mb-1">
-                  {form.discountType === 'FREE_SHIP' ? '—' : u('valueLabel')}
+                  {form.discountType === 'FREE_SHIP' ? '—' : u('valueLabel', lang)}
                 </label>
                 <input
                   type="number"
