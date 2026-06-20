@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense, useState } from 'react'
+import { Suspense, useState, useEffect } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 
@@ -104,7 +104,8 @@ interface FormData {
 
 function AdminContent() {
   const searchParams = useSearchParams()
-  const lang = (searchParams.get('lang') === 'en' ? 'en' : 'zh') as Lang
+  const langParam = searchParams.get('lang')
+  const lang: Lang = (langParam === 'en' ? 'en' : 'zh')
   const nextLang: Lang = lang === 'zh' ? 'en' : 'zh'
 
   const [merchants, setMerchants] = useState<Merchant[]>([])
@@ -128,6 +129,10 @@ function AdminContent() {
     const data = await res.json()
     setMerchants(data.merchants || [])
   }
+
+  useEffect(() => {
+    loadMerchants()
+  }, [])
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
