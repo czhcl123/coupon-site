@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { pool } from '@/lib/db'
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
 
 // POST /api/coupons/[id]/click — 增加点击计数
 export async function POST(
@@ -8,12 +10,12 @@ export async function POST(
 ) {
   try {
     const { id } = await params
-    await pool.execute(
-      'UPDATE Coupon SET clickCount = clickCount + 1 WHERE id = ?',
-      [id]
-    )
+    await prisma.coupon.update({
+      where: { id },
+      data: { clickCount: { increment: 1 } },
+    })
     return NextResponse.json({ ok: true })
-  } catch {
+  } catch (error) {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
