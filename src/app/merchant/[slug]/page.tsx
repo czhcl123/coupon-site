@@ -188,8 +188,47 @@ export default async function MerchantPage({
     [merchant.id]
   )
 
+  // 构建 Offer Schema（每张优惠券一个）
+  const offerList = coupons.map((coupon) => ({
+    '@type': 'Offer',
+    name: translateTitle(coupon.title, lang),
+    description: coupon.description ? translateTitle(coupon.description, lang) : translateTitle(coupon.title, lang),
+    url: merchant.affiliateUrl || `https://coupon-site-olive.vercel.app/merchant/${slug}`,
+    availability: 'https://schema.org/InStock',
+    ...(coupon.discountType === 'PERCENT' && {
+      discountCurrency: 'CNY',
+      discountPercentage: parseFloat(coupon.discountValue),
+    }),
+    ...(coupon.discountType === 'FIXED' && {
+      discountCurrency: 'CNY',
+      discountAmount: parseFloat(coupon.discountValue),
+    }),
+    ...(coupon.discountType === 'FREE_SHIP' && {
+      shippingDetails: { '@type': 'Offer', name: u('freeShipping', lang) },
+    }),
+    ...(coupon.expiresAt && {
+      validThrough: new Date(coupon.expiresAt).toISOString(),
+    }),
+    ...(coupon.code && { serialNumber: coupon.code }),
+    ...(coupon.minPurchase && {
+      minimumPurchaseQuantity: parseFloat(coupon.minPurchase),
+    }),
+  }))
+
+  const merchantSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: merchant.name,
+    url: merchant.affiliateUrl || `https://coupon-site-olive.vercel.app/merchant/${slug}`,
+    ...(merchant.logo && { logo: merchant.logo }),
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([merchantSchema, ...offerList]) }}
+      />
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
