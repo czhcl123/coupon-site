@@ -1,7 +1,6 @@
 'use client'
 
-import { Suspense, useState, useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 type Lang = 'zh' | 'en'
@@ -103,9 +102,7 @@ interface FormData {
 }
 
 function AdminContent() {
-  const searchParams = useSearchParams()
-  const langParam = searchParams.get('lang')
-  const lang: Lang = (langParam === 'en' ? 'en' : 'zh')
+  const lang: Lang = 'zh'
   const nextLang: Lang = lang === 'zh' ? 'en' : 'zh'
 
   const [merchants, setMerchants] = useState<Merchant[]>([])
@@ -175,14 +172,8 @@ function AdminContent() {
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-2xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href={`/?lang=${lang}`} className="text-2xl font-bold text-orange-500 hover:text-orange-600">
-              {u('siteTitle', lang)}
-            </Link>
-            <Link
-              href={`/admin?lang=${nextLang}`}
-              className="text-sm px-3 py-1 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors"
-            >
-              {u('switchLang', lang)}
+            <Link href="/" className="text-2xl font-bold text-orange-500 hover:text-orange-600">
+              {t.zh.siteTitle}
             </Link>
           </div>
         </div>
@@ -344,9 +335,5 @@ function AdminContent() {
 }
 
 export default function AdminPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen bg-gray-50" />}>
-      <AdminContent />
-    </Suspense>
-  )
+  return <AdminContent />
 }
