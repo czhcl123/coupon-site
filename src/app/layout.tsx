@@ -25,12 +25,39 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: '优惠总动员',
+    url: 'https://coupon-site-olive.vercel.app',
+    description: '汇集 Nike、Adidas、ASOS、Sephora、Steam 等品牌优惠券折扣码，每日更新，帮您网购省钱。',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://coupon-site-olive.vercel.app/?search={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: '优惠总动员',
+      url: 'https://coupon-site-olive.vercel.app',
+    },
+  }
+
   return (
     <html
       lang="zh-CN"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        {children}
+      </body>
     </html>
-  );
+  )
 }
