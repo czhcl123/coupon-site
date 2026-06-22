@@ -7,7 +7,7 @@ const pool = mysql.createPool({
   user: '4PDGQRfsgPUn2oy.root',
   password: process.env.TIDB_PASSWORD,
   database: process.env.TIDB_DATABASE || 'coupon_site',
-  ssl: { rejectUnauthorized: true },
+  ssl: true,
 })
 
 export async function query<T = Record<string, unknown>>(sql: string, values?: unknown[]): Promise<T[]> {
