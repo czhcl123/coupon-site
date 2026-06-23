@@ -1,15 +1,26 @@
 import mysql from 'mysql2/promise'
 
+function parseDatabaseUrl(url: string) {
+  const u = new URL(url)
+  return {
+    host: u.hostname,
+    port: parseInt(u.port || '3306'),
+    user: u.username,
+    password: u.password,
+    database: u.pathname.slice(1),
+  }
+}
+
+const url = process.env.DATABASE_URL!
+const cfg = parseDatabaseUrl(url)
+
 const pool = mysql.createPool({
-  host: 'gateway01.ap-southeast-1.prod.alicloud.tidbcloud.com',
-  port: 4000,
-  user: '4PDGQRfsgPUn2oy.root',
-  password: process.env.TIDB_PASSWORD,
-  database: process.env.TIDB_DATABASE || 'coupon_site',
-  ssl: {
-    minVersion: 'TLSv1.2',
-    rejectUnauthorized: false,
-  },
+  host: cfg.host,
+  port: cfg.port,
+  user: cfg.user,
+  password: cfg.password,
+  database: cfg.database,
+  ssl: { minVersion: 'TLSv1.2', rejectUnauthorized: false },
   connectTimeout: 10000,
 })
 
