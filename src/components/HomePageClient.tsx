@@ -48,7 +48,6 @@ const t = {
     food: '食品生鲜',
     loadError: '加载失败，请刷新重试',
     noResult: '没有找到相关优惠券，换个关键词试试',
-    hotSearch: '热门：',
     verified: '已验证',
     exclusive: '独家',
     minPurchase: '满 ¥{n} 可用',
@@ -65,8 +64,8 @@ const t = {
     fixedOff: '立减 {n} 元',
     freeShipping: '免运费',
     upToOff: '低至 {n} 折',
-    footer1: '通过本站链接前往购物，我们可能会获得少许合作佣金，这不会增加您的任何购买成本，感谢支持！',
-    footer2: '© {y} 优惠总动员 · 仅供信息分享',
+    footer1: '本站所有链接均为联盟链接，购物可能获得佣金支持本站发展',
+    footer2: '© 2026 优惠总动员 · 仅供信息分享',
     lang: 'EN',
     blog: '博客攻略',
     discountCalculator: '折扣计算器',
@@ -85,7 +84,6 @@ const t = {
     food: 'Food & Fresh',
     loadError: 'Failed to load. Please refresh.',
     noResult: 'No coupons found. Try a different keyword.',
-    hotSearch: 'Hot:',
     verified: 'Verified',
     exclusive: 'Exclusive',
     minPurchase: 'Min. spend ¥{n}',
@@ -102,8 +100,8 @@ const t = {
     fixedOff: '¥{n} OFF',
     freeShipping: 'Free Shipping',
     upToOff: 'Up to {n} off',
-    footer1: 'We may earn a small affiliate commission when you shop through our links — at no extra cost to you. Thanks for your support!',
-    footer2: '© {y} Coupon Hub · For information only',
+    footer1: 'Affiliate links — shopping may earn us a commission.',
+    footer2: '© 2026 Coupon Hub · For information only',
     lang: '中文',
     blog: 'Blog',
     discountCalculator: 'Calculator',
@@ -165,11 +163,10 @@ function formatExpiry(dateStr: string | null) {
   const now = new Date()
   const diff = date.getTime() - now.getTime()
   const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-  const shortDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
   if (days < 0) return u('expired')
-  if (days === 0) return u('expireToday') + ` (${shortDate})`
-  if (days <= 7) return u('expireInDays', { n: days }) + ` (${shortDate})`
-  return `有效期至 ${shortDate}`
+  if (days === 0) return u('expireToday')
+  if (days === 1) return u('expireTomorrow')
+  return u('expireInDays', { n: days })
 }
 
 export default function HomePageClient() {
@@ -215,14 +212,11 @@ export default function HomePageClient() {
     fetchData()
   }, [search, selectedMerchant, selectedCategory])
 
-  function copyCode(code: string, couponId: string, affiliateUrl?: string | null) {
+  function copyCode(code: string, couponId: string) {
     navigator.clipboard.writeText(code)
     setCopied(couponId)
+    setTimeout(() => setCopied(null), 2000)
     fetch(`/api/coupons/click?id=${couponId}`, { method: 'POST' })
-    if (affiliateUrl) {
-      setTimeout(() => { window.open(affiliateUrl, '_blank', 'noopener,noreferrer') }, 300)
-    }
-    setTimeout(() => setCopied(null), 3000)
   }
 
   const handleLangSwitch = () => {
@@ -238,7 +232,7 @@ export default function HomePageClient() {
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl font-bold text-orange-500">{t[lang].title}</h1>
+            <a href={`/?lang=${lang}`} aria-label="优惠总动员 Logo - 2026最新折扣码网站" className="text-2xl font-bold text-orange-500 hover:text-orange-600 transition-colors">{t[lang].title}</a>
             <div className="flex items-center gap-4">
               <a href={`/blog?lang=${lang}`} className="text-sm text-gray-400 hover:text-gray-600">{t[lang].blog}</a>
               <button
@@ -256,23 +250,60 @@ export default function HomePageClient() {
             </div>
           </div>
 
+          {/* 热门关键词区块 — 帮助爬虫理解网站核心主题 */}
+          <section aria-label="热门商家">
+            <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-2">
+              {lang === 'zh' ? '热门商家' : 'Top Brands'}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {merchants.slice(0, 8).map((m) => (
+                <a
+                  key={m.id}
+                  href={`/brand/${m.slug}?lang=${lang}`}
+                  className="text-xs px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-gray-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 transition-colors"
+                >
+                  {m.name}
+                </a>
+              ))}
+            </div>
+          </section>
+
+          {/* 分类关键词区块 */}
+          <section aria-label="热门分类" className="mt-3">
+            <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-2">
+              {lang === 'zh' ? '热门分类' : 'Top Categories'}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { slug: 'fashion', zh: '时尚服饰', en: 'Fashion' },
+                { slug: 'electronics', zh: '电子产品', en: 'Electronics' },
+                { slug: 'travel', zh: '旅行酒店', en: 'Travel' },
+                { slug: 'beauty', zh: '美妆护肤', en: 'Beauty' },
+                { slug: 'food', zh: '食品生鲜', en: 'Food' },
+              ].map((cat) => (
+                <span
+                  key={cat.slug}
+                  className="text-xs px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-gray-500"
+                >
+                  {lang === 'zh' ? cat.zh : cat.en}
+                </span>
+              ))}
+            </div>
+          </section>
+
           {/* 搜索栏 */}
           <div className="flex gap-3 flex-wrap">
-            <div className="relative flex-1 min-w-[200px]">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">🔍</span>
-              <input
-                type="text"
-                placeholder={t[lang].searchPlaceholder}
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
-              />
-            </div>
+            <input
+              type="text"
+              placeholder={t[lang].searchPlaceholder}
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="flex-1 min-w-[200px] px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+            />
             <select
               value={selectedMerchant}
               onChange={(e) => setSelectedMerchant(e.target.value)}
-              className="w-full sm:w-auto px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 bg-white"
-              style={{ appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 10px center', paddingRight: '32px' }}
+              className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             >
               <option value="">{t[lang].allMerchants}</option>
               {merchants.map((m) => (
@@ -282,8 +313,7 @@ export default function HomePageClient() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full sm:w-auto px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 bg-white"
-              style={{ appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 10px center', paddingRight: '32px' }}
+              className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             >
               <option value="">{t[lang].allCategories}</option>
               <option value="fashion">{t[lang].fashion}</option>
@@ -292,19 +322,6 @@ export default function HomePageClient() {
               <option value="beauty">{t[lang].beauty}</option>
               <option value="food">{t[lang].food}</option>
             </select>
-          </div>
-          {/* 热门搜索 */}
-          <div className="flex items-center gap-2 mt-3 flex-wrap">
-            <span className="text-xs text-gray-400">{t[lang].hotSearch}</span>
-            {['Nike', 'Adidas', 'ASOS', 'Sephora', 'Shein', 'Udemy'].map((tag) => (
-              <button
-                key={tag}
-                onClick={() => setSearch(tag)}
-                className="text-xs px-2.5 py-1 bg-gray-100 text-gray-600 rounded-full hover:bg-orange-100 hover:text-orange-600 transition-colors"
-              >
-                {tag}
-              </button>
-            ))}
           </div>
         </div>
       </header>
@@ -332,11 +349,29 @@ export default function HomePageClient() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {coupons.map((coupon) => (
+            {coupons.map((coupon) => {
+              const discountAmount = coupon.discountType === 'FIXED' ? parseFloat(coupon.discountValue) : undefined
+              const discountPercentage = coupon.discountType === 'PERCENT' ? parseFloat(coupon.discountValue) : undefined
+              const couponSchema = {
+                '@context': 'https://schema.org',
+                '@type': 'Coupon',
+                name: coupon.title,
+                ...(coupon.description && { description: coupon.description }),
+                ...(coupon.code && { discountCode: coupon.code }),
+                ...(discountPercentage && { discountPercentage }),
+                ...(discountAmount && { discountAmount }),
+                ...(coupon.expiresAt && { endDate: new Date(coupon.expiresAt).toISOString() }),
+                url: coupon.merchant.affiliateUrl || `https://coupon-site-olive.vercel.app/merchant/${coupon.merchant.slug}`,
+              }
+              return (
               <div
                 key={coupon.id}
-                className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100"
               >
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: JSON.stringify(couponSchema) }}
+                />
                 {/* 商家行 */}
                 <div className="flex items-center gap-2 mb-3">
                   {coupon.merchant.logo && (
@@ -380,54 +415,63 @@ export default function HomePageClient() {
 
                 {/* 折扣码 */}
                 {coupon.code ? (
-                  <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mt-4">
-                    <code className="flex-1 font-mono text-sm font-semibold text-gray-700 truncate">{coupon.code}</code>
-                    <button
-                      onClick={() => copyCode(coupon.code!, coupon.id, coupon.merchant.affiliateUrl)}
-                      className={`flex items-center gap-1 text-xs px-3 py-1.5 rounded-full font-medium transition-all duration-200 min-w-[80px] justify-center ${
-                        copied === coupon.id
-                          ? 'bg-green-500 text-white shadow-sm'
-                          : 'bg-orange-500 text-white hover:bg-orange-600 active:scale-95'
-                      }`}
-                    >
-                      {copied === coupon.id ? (
-                        <><span>✓</span> {t[lang].copied}</>
-                      ) : (
-                        <><span>📋</span> {t[lang].copyCode}</>
-                      )}
-                    </button>
-                  </div>
+                  <>
+                    <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
+                      <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
+                      <button
+                        onClick={() => copyCode(coupon.code!, coupon.id)}
+                        className={`text-xs px-3 py-1 rounded-full font-medium transition-colors ${
+                          copied === coupon.id
+                            ? 'bg-green-500 text-white'
+                            : 'bg-orange-500 text-white hover:bg-orange-600'
+                        }`}
+                      >
+                        {copied === coupon.id ? t[lang].copied : t[lang].copyCode}
+                      </button>
+                    </div>
+                    {coupon.merchant.affiliateUrl && (
+                      <a
+                        href={coupon.merchant.affiliateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                      >
+                        {t[lang].useNow}
+                      </a>
+                    )}
+                  </>
                 ) : (
-                  <div className="mt-4" />
+                  <>
+                    <div className="text-xs text-gray-400 mb-2">{t[lang].noCodeHint}</div>
+                    {coupon.merchant.affiliateUrl && (
+                      <a
+                        href={coupon.merchant.affiliateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                      >
+                        {t[lang].useNow}
+                      </a>
+                    )}
+                  </>
                 )}
 
-                {/* 去使用按钮（描边次要样式） */}
-                {coupon.merchant.affiliateUrl && (
-                  <a
-                    href={coupon.merchant.affiliateUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full text-center text-sm border-2 border-orange-400 text-orange-500 rounded-lg py-2 px-4 transition-all duration-200 hover:bg-orange-50 hover:scale-[1.02] hover:shadow-sm font-medium my-3"
-                  >
-                    {t[lang].useNow}
-                  </a>
-                )}
-
-                {/* 底部信息（收进卡片内部，右下角） */}
-                <div className="flex items-center justify-end gap-3 text-xs text-gray-400 mt-auto pt-4" style={{ color: '#9a9a9a' }}>
+                {/* 底部信息 */}
+                <div className="flex items-center justify-between text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
                   <span>{formatExpiry(coupon.expiresAt)}</span>
                   <span>{u('peopleUsed', { n: coupon.clickCount })}</span>
                 </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         )}
       </main>
 
       {/* 页脚 */}
-      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-xs text-gray-400">
-        <p className="max-w-md mx-auto leading-relaxed">{u('footer1')}</p>
-        <p className="mt-2">{u('footer2', { y: new Date().getFullYear() })}</p>
+      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
+        <p>{t[lang].footer1}</p>
+        <p className="mt-1">{t[lang].footer2}</p>
       </footer>
     </div>
   )

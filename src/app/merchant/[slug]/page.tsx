@@ -24,8 +24,8 @@ const t = {
     expireInDays: '{n}天后过期',
     peopleUsed: '{n} 人使用',
     noCoupons: '暂无优惠券',
-    footer1: '通过本站链接前往购物，我们可能会获得少许合作佣金，这不会增加您的任何购买成本，感谢支持！',
-    footer2: '© {y} 优惠总动员 · 仅供信息分享',
+    footer1: '本站所有链接均为联盟链接，购物可能获得佣金支持本站发展',
+    footer2: '© 2026 优惠总动员 · 仅供信息分享',
     lang: 'EN',
     switchLang: 'EN',
     fixedOff: '立减 {n} 元',
@@ -50,8 +50,8 @@ const t = {
     expireInDays: 'Expires in {n} days',
     peopleUsed: '{n} used',
     noCoupons: 'No coupons available',
-    footer1: 'We may earn a small affiliate commission when you shop through our links — at no extra cost to you. Thanks for your support!',
-    footer2: '© {y} Coupon Hub · For information only',
+    footer1: 'Affiliate links — shopping may earn us a commission.',
+    footer2: '© 2026 Coupon Hub · For information only',
     lang: '中文',
     switchLang: '中文',
     fixedOff: '¥{n} OFF',
@@ -86,11 +86,10 @@ function formatExpiry(dateStr: string | null, lang: Lang) {
   const now = new Date()
   const diff = date.getTime() - now.getTime()
   const days = Math.floor(diff / (1000 * 60 * 60 * 24))
-  const shortDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
   if (days < 0) return u('expired', lang)
-  if (days === 0) return u('expireToday', lang) + ` (${shortDate})`
-  if (days <= 7) return uVars('expireInDays', { n: String(days) }, lang) + ` (${shortDate})`
-  return `有效期至 ${shortDate}`
+  if (days === 0) return u('expireToday', lang)
+  if (days === 1) return u('expireTomorrow', lang)
+  return uVars('expireInDays', { n: String(days) }, lang)
 }
 
 function translateTitle(title: string, lang: Lang) {
@@ -224,7 +223,6 @@ export default async function MerchantPage({
     ...(merchant.logo && { logo: merchant.logo }),
   }
 
-  const year = new Date().getFullYear()
   return (
     <div className="min-h-screen bg-gray-50">
       <script
@@ -274,11 +272,29 @@ export default async function MerchantPage({
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {coupons.map((coupon) => (
+            {coupons.map((coupon) => {
+              const discountAmount = coupon.discountType === 'FIXED' ? parseFloat(coupon.discountValue) : undefined
+              const discountPercentage = coupon.discountType === 'PERCENT' ? parseFloat(coupon.discountValue) : undefined
+              const couponSchema = {
+                '@context': 'https://schema.org',
+                '@type': 'Coupon',
+                name: translateTitle(coupon.title, lang),
+                ...(coupon.description && { description: translateTitle(coupon.description, lang) }),
+                ...(coupon.code && { discountCode: coupon.code }),
+                ...(discountPercentage && { discountPercentage }),
+                ...(discountAmount && { discountAmount }),
+                ...(coupon.expiresAt && { endDate: new Date(coupon.expiresAt).toISOString() }),
+                url: merchant.affiliateUrl || `https://coupon-site-olive.vercel.app/merchant/${slug}`,
+              }
+              return (
               <div
                 key={coupon.id}
-                className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100"
               >
+                <script
+                  type="application/ld+json"
+                  dangerouslySetInnerHTML={{ __html: JSON.stringify(couponSchema) }}
+                />
                 <div className="flex items-start gap-3 mb-3">
                   <span className="text-3xl font-bold text-orange-500">
                     {formatDiscount(coupon.discountType, coupon.discountValue, lang)}
@@ -298,46 +314,52 @@ export default async function MerchantPage({
                 )}
 
                 {coupon.code ? (
-                  <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-3">
-                    <code className="flex-1 font-mono text-sm font-semibold text-gray-700 truncate">{coupon.code}</code>
-                    <button
-                      onClick={() => {
-                        navigator.clipboard.writeText(coupon.code!)
-                        fetch(`/api/coupons/click?id=${coupon.id}`, { method: 'POST' })
-                      }}
-                      className="flex items-center gap-1 text-xs px-3 py-1.5 bg-orange-500 text-white rounded-full hover:bg-orange-600 active:scale-95 transition-all min-w-[80px] justify-center font-medium"
-                    >
-                      <span>📋</span> {u('copyCode', lang)}
-                    </button>
-                  </div>
+                  <>
+                    <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
+                      <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
+                      <span className="text-xs text-gray-400">{u('copyCode', lang)}</span>
+                    </div>
+                    {merchant.affiliateUrl && (
+                      <a
+                        href={merchant.affiliateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                      >
+                        {u('goUse', lang)}
+                      </a>
+                    )}
+                  </>
                 ) : (
-                  <div className="mb-3" />
+                  <>
+                    <div className="text-xs text-gray-400 mb-2">{u('noCodeHint', lang)}</div>
+                    {merchant.affiliateUrl && (
+                      <a
+                        href={merchant.affiliateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                      >
+                        {u('goUse', lang)}
+                      </a>
+                    )}
+                  </>
                 )}
 
-                {merchant.affiliateUrl && (
-                  <a
-                    href={merchant.affiliateUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full text-center text-sm border-2 border-orange-400 text-orange-500 rounded-lg py-2 px-4 transition-colors hover:bg-orange-50 font-medium my-3"
-                  >
-                    {u('goUse', lang)}
-                  </a>
-                )}
-
-                <div className="flex items-center justify-end gap-3 text-xs mt-auto" style={{ color: '#9a9a9a' }}>
+                <div className="flex items-center justify-between text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
                   <span>{formatExpiry(coupon.expiresAt, lang)}</span>
                   <span>{uVars('peopleUsed', { n: String(coupon.clickCount) }, lang)}</span>
                 </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         )}
       </main>
 
-      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-xs text-gray-400">
-        <p className="max-w-md mx-auto leading-relaxed">{u('footer1', lang)}</p>
-        <p className="mt-2">{u('footer2', lang).replace('{y}', String(year))}</p>
+      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
+        <p>{u('footer1', lang)}</p>
+        <p className="mt-1">{u('footer2', lang)}</p>
       </footer>
     </div>
   )

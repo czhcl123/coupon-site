@@ -14,7 +14,7 @@ const t = {
     ctaText: '想第一时间获取 {merchant} 折扣码？',
     ctaBtn: '查看最新优惠券 →',
     footer1: '本站所有链接均为联盟链接，购物可能获得佣金支持本站发展',
-    footer2: '© 2025 优惠总动员 · 仅供信息分享',
+    footer2: '© 2026 优惠总动员 · 仅供信息分享',
     lang: 'EN',
     switchLang: 'EN',
   },
@@ -26,7 +26,7 @@ const t = {
     ctaText: 'Want {merchant} discount codes first?',
     ctaBtn: 'View Latest Coupons →',
     footer1: 'Affiliate links — shopping may earn us a commission.',
-    footer2: '© 2025 Coupon Hub · For information only',
+    footer2: '© 2026 Coupon Hub · For information only',
     lang: '中文',
     switchLang: '中文',
   },
@@ -172,6 +172,9 @@ export default async function ArticlePage({
                     return `<li class="ml-4 list-decimal text-gray-600 leading-relaxed">${t.replace(/^\d+\.\s/, '')}</li>`
                   if (t.startsWith('| '))
                     return `<div class="overflow-x-auto my-4"><table class="min-w-full text-sm">${t.split('\n').map((row) => `<tr>${row.split('|').filter(c => c.trim()).map(c => `<td class="border px-3 py-1">${c.trim()}</td>`).join('')}</tr>`).join('')}</table></div>`
+                  // 含 HTML 标签的段落（内链 CTA 等）原样输出，不转义
+                  if (/<[^>]+>/.test(t))
+                    return t
                   return `<p class="text-gray-600 leading-relaxed mb-3">${t}</p>`
                 })
                 .join(''),
