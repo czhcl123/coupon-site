@@ -25,7 +25,7 @@ const t = {
     peopleUsed: '{n} 人使用',
     noCoupons: '暂无优惠券',
     footer1: '本站所有链接均为联盟链接，购物可能获得佣金支持本站发展',
-    footer2: '© 2025 优惠总动员 · 仅供信息分享',
+    footer2: '© {y} 优惠总动员 · 仅供信息分享',
     lang: 'EN',
     switchLang: 'EN',
     fixedOff: '立减 {n} 元',
@@ -51,7 +51,7 @@ const t = {
     peopleUsed: '{n} used',
     noCoupons: 'No coupons available',
     footer1: 'Affiliate links — shopping may earn us a commission.',
-    footer2: '© 2025 Coupon Hub · For information only',
+    footer2: '© {y} Coupon Hub · For information only',
     lang: '中文',
     switchLang: '中文',
     fixedOff: '¥{n} OFF',
@@ -86,10 +86,11 @@ function formatExpiry(dateStr: string | null, lang: Lang) {
   const now = new Date()
   const diff = date.getTime() - now.getTime()
   const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+  const shortDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
   if (days < 0) return u('expired', lang)
-  if (days === 0) return u('expireToday', lang)
-  if (days === 1) return u('expireTomorrow', lang)
-  return uVars('expireInDays', { n: String(days) }, lang)
+  if (days === 0) return u('expireToday', lang) + ` (${shortDate})`
+  if (days <= 7) return uVars('expireInDays', { n: String(days) }, lang) + ` (${shortDate})`
+  return `有效期至 ${shortDate}`
 }
 
 function translateTitle(title: string, lang: Lang) {
@@ -223,6 +224,7 @@ export default async function MerchantPage({
     ...(merchant.logo && { logo: merchant.logo }),
   }
 
+  const year = new Date().getFullYear()
   return (
     <div className="min-h-screen bg-gray-50">
       <script
@@ -340,7 +342,7 @@ export default async function MerchantPage({
 
       <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
         <p>{u('footer1', lang)}</p>
-        <p className="mt-1">{u('footer2', lang)}</p>
+        <p className="mt-1">{u('footer2', lang).replace('{y}', String(year))}</p>
       </footer>
     </div>
   )

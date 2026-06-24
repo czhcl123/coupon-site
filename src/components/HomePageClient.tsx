@@ -48,6 +48,7 @@ const t = {
     food: '食品生鲜',
     loadError: '加载失败，请刷新重试',
     noResult: '没有找到相关优惠券，换个关键词试试',
+    hotSearch: '热门：',
     verified: '已验证',
     exclusive: '独家',
     minPurchase: '满 ¥{n} 可用',
@@ -65,7 +66,7 @@ const t = {
     freeShipping: '免运费',
     upToOff: '低至 {n} 折',
     footer1: '本站所有链接均为联盟链接，购物可能获得佣金支持本站发展',
-    footer2: '© 2025 优惠总动员 · 仅供信息分享',
+    footer2: '© {y} 优惠总动员 · 仅供信息分享',
     lang: 'EN',
     blog: '博客攻略',
     discountCalculator: '折扣计算器',
@@ -84,6 +85,7 @@ const t = {
     food: 'Food & Fresh',
     loadError: 'Failed to load. Please refresh.',
     noResult: 'No coupons found. Try a different keyword.',
+    hotSearch: 'Hot:',
     verified: 'Verified',
     exclusive: 'Exclusive',
     minPurchase: 'Min. spend ¥{n}',
@@ -101,7 +103,7 @@ const t = {
     freeShipping: 'Free Shipping',
     upToOff: 'Up to {n} off',
     footer1: 'Affiliate links — shopping may earn us a commission.',
-    footer2: '© 2025 Coupon Hub · For information only',
+    footer2: '© {y} Coupon Hub · For information only',
     lang: '中文',
     blog: 'Blog',
     discountCalculator: 'Calculator',
@@ -163,10 +165,11 @@ function formatExpiry(dateStr: string | null) {
   const now = new Date()
   const diff = date.getTime() - now.getTime()
   const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+  const shortDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
   if (days < 0) return u('expired')
-  if (days === 0) return u('expireToday')
-  if (days === 1) return u('expireTomorrow')
-  return u('expireInDays', { n: days })
+  if (days === 0) return u('expireToday') + ` (${shortDate})`
+  if (days <= 7) return u('expireInDays', { n: days }) + ` (${shortDate})`
+  return `有效期至 ${shortDate}`
 }
 
 export default function HomePageClient() {
@@ -212,11 +215,14 @@ export default function HomePageClient() {
     fetchData()
   }, [search, selectedMerchant, selectedCategory])
 
-  function copyCode(code: string, couponId: string) {
+  function copyCode(code: string, couponId: string, affiliateUrl?: string | null) {
     navigator.clipboard.writeText(code)
     setCopied(couponId)
-    setTimeout(() => setCopied(null), 2000)
     fetch(`/api/coupons/click?id=${couponId}`, { method: 'POST' })
+    if (affiliateUrl) {
+      setTimeout(() => { window.open(affiliateUrl, '_blank', 'noopener,noreferrer') }, 300)
+    }
+    setTimeout(() => setCopied(null), 3000)
   }
 
   const handleLangSwitch = () => {
@@ -281,6 +287,19 @@ export default function HomePageClient() {
               <option value="beauty">{t[lang].beauty}</option>
               <option value="food">{t[lang].food}</option>
             </select>
+          </div>
+          {/* 热门搜索 */}
+          <div className="flex items-center gap-2 mt-3 flex-wrap">
+            <span className="text-xs text-gray-400">{t[lang].hotSearch}</span>
+            {['Nike', 'Adidas', 'ASOS', 'Sephora', 'Nike', 'Steam'].map((tag) => (
+              <button
+                key={tag}
+                onClick={() => setSearch(tag)}
+                className="text-xs px-2.5 py-1 bg-gray-100 text-gray-600 rounded-full hover:bg-orange-100 hover:text-orange-600 transition-colors"
+              >
+                {tag}
+              </button>
+            ))}
           </div>
         </div>
       </header>
@@ -360,14 +379,14 @@ export default function HomePageClient() {
                     <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
                       <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
                       <button
-                        onClick={() => copyCode(coupon.code!, coupon.id)}
-                        className={`text-xs px-3 py-1 rounded-full font-medium transition-colors ${
+                        onClick={() => copyCode(coupon.code!, coupon.id, coupon.merchant.affiliateUrl)}
+                        className={`text-xs px-3 py-1.5 rounded-full font-medium transition-all duration-200 min-w-[70px] text-center ${
                           copied === coupon.id
-                            ? 'bg-green-500 text-white'
-                            : 'bg-orange-500 text-white hover:bg-orange-600'
+                            ? 'bg-green-500 text-white shadow-sm'
+                            : 'bg-orange-500 text-white hover:bg-orange-600 active:scale-95'
                         }`}
                       >
-                        {copied === coupon.id ? t[lang].copied : t[lang].copyCode}
+                        {copied === coupon.id ? '✓ ' + t[lang].copied : t[lang].copyCode}
                       </button>
                     </div>
                     {coupon.merchant.affiliateUrl && (
@@ -410,8 +429,8 @@ export default function HomePageClient() {
 
       {/* 页脚 */}
       <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
-        <p>{t[lang].footer1}</p>
-        <p className="mt-1">{t[lang].footer2}</p>
+        <p>{u('footer1')}</p>
+        <p className="mt-1">{u('footer2', { y: new Date().getFullYear() })}</p>
       </footer>
     </div>
   )
