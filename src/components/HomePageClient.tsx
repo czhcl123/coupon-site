@@ -65,7 +65,7 @@ const t = {
     fixedOff: '立减 {n} 元',
     freeShipping: '免运费',
     upToOff: '低至 {n} 折',
-    footer1: '本站所有链接均为联盟链接，购物可能获得佣金支持本站发展',
+    footer1: '通过本站链接前往购物，我们可能会获得少许合作佣金，这不会增加您的任何购买成本，感谢支持！',
     footer2: '© {y} 优惠总动员 · 仅供信息分享',
     lang: 'EN',
     blog: '博客攻略',
@@ -102,7 +102,7 @@ const t = {
     fixedOff: '¥{n} OFF',
     freeShipping: 'Free Shipping',
     upToOff: 'Up to {n} off',
-    footer1: 'Affiliate links — shopping may earn us a commission.',
+    footer1: 'We may earn a small affiliate commission when you shop through our links — at no extra cost to you. Thanks for your support!',
     footer2: '© {y} Coupon Hub · For information only',
     lang: '中文',
     blog: 'Blog',
@@ -291,7 +291,7 @@ export default function HomePageClient() {
           {/* 热门搜索 */}
           <div className="flex items-center gap-2 mt-3 flex-wrap">
             <span className="text-xs text-gray-400">{t[lang].hotSearch}</span>
-            {['Nike', 'Adidas', 'ASOS', 'Sephora', 'Nike', 'Steam'].map((tag) => (
+            {['Nike', 'Adidas', 'ASOS', 'Sephora', 'Shein', 'Udemy'].map((tag) => (
               <button
                 key={tag}
                 onClick={() => setSearch(tag)}
@@ -375,49 +375,41 @@ export default function HomePageClient() {
 
                 {/* 折扣码 */}
                 {coupon.code ? (
-                  <>
-                    <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
-                      <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
-                      <button
-                        onClick={() => copyCode(coupon.code!, coupon.id, coupon.merchant.affiliateUrl)}
-                        className={`text-xs px-3 py-1.5 rounded-full font-medium transition-all duration-200 min-w-[70px] text-center ${
-                          copied === coupon.id
-                            ? 'bg-green-500 text-white shadow-sm'
-                            : 'bg-orange-500 text-white hover:bg-orange-600 active:scale-95'
-                        }`}
-                      >
-                        {copied === coupon.id ? '✓ ' + t[lang].copied : t[lang].copyCode}
-                      </button>
-                    </div>
-                    {coupon.merchant.affiliateUrl && (
-                      <a
-                        href={coupon.merchant.affiliateUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors"
-                      >
-                        {t[lang].useNow}
-                      </a>
-                    )}
-                  </>
+                  <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-3">
+                    <code className="flex-1 font-mono text-sm font-semibold text-gray-700 truncate">{coupon.code}</code>
+                    <button
+                      onClick={() => copyCode(coupon.code!, coupon.id, coupon.merchant.affiliateUrl)}
+                      className={`flex items-center gap-1 text-xs px-3 py-1.5 rounded-full font-medium transition-all duration-200 min-w-[80px] justify-center ${
+                        copied === coupon.id
+                          ? 'bg-green-500 text-white shadow-sm'
+                          : 'bg-orange-500 text-white hover:bg-orange-600 active:scale-95'
+                      }`}
+                    >
+                      {copied === coupon.id ? (
+                        <><span>✓</span> {t[lang].copied}</>
+                      ) : (
+                        <><span>📋</span> {t[lang].copyCode}</>
+                      )}
+                    </button>
+                  </div>
                 ) : (
-                  <>
-                    <div className="text-xs text-gray-400 mb-2">{t[lang].noCodeHint}</div>
-                    {coupon.merchant.affiliateUrl && (
-                      <a
-                        href={coupon.merchant.affiliateUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors"
-                      >
-                        {t[lang].useNow}
-                      </a>
-                    )}
-                  </>
+                  <div className="mb-3" />
                 )}
 
-                {/* 底部信息 */}
-                <div className="flex items-center justify-between text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
+                {/* 去使用按钮（描边次要样式） */}
+                {coupon.merchant.affiliateUrl && (
+                  <a
+                    href={coupon.merchant.affiliateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-center text-sm border-2 border-orange-400 text-orange-500 rounded-lg py-2 px-4 transition-colors hover:bg-orange-50 font-medium mb-2"
+                  >
+                    {t[lang].useNow}
+                  </a>
+                )}
+
+                {/* 底部信息（收进卡片内部，右下角） */}
+                <div className="flex items-center justify-end gap-3 text-xs text-gray-400 mt-1">
                   <span>{formatExpiry(coupon.expiresAt)}</span>
                   <span>{u('peopleUsed', { n: coupon.clickCount })}</span>
                 </div>
@@ -428,9 +420,9 @@ export default function HomePageClient() {
       </main>
 
       {/* 页脚 */}
-      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
-        <p>{u('footer1')}</p>
-        <p className="mt-1">{u('footer2', { y: new Date().getFullYear() })}</p>
+      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-xs text-gray-400">
+        <p className="max-w-md mx-auto leading-relaxed">{u('footer1')}</p>
+        <p className="mt-2">{u('footer2', { y: new Date().getFullYear() })}</p>
       </footer>
     </div>
   )
