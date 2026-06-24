@@ -11,22 +11,30 @@ function parseDatabaseUrl(url: string) {
   }
 }
 
-const url = process.env.DATABASE_URL!
-const cfg = parseDatabaseUrl(url)
+let _pool: mysql.Pool | null = null
 
-const pool = mysql.createPool({
-  host: cfg.host,
-  port: cfg.port,
-  user: cfg.user,
-  password: cfg.password,
-  database: cfg.database,
-  ssl: { minVersion: 'TLSv1.2', rejectUnauthorized: false },
-  connectTimeout: 10000,
-})
+function getPool() {
+  if (!_pool) {
+    const url = process.env.DATABASE_URL
+    if (!url) throw new Error('DATABASE_URL environment variable is not set')
+    const cfg = parseDatabaseUrl(url)
+    _pool = mysql.createPool({
+      host: cfg.host,
+      port: cfg.port,
+      user: cfg.user,
+      password: cfg.password,
+      database: cfg.database,
+      ssl: { minVersion: 'TLSv1.2', rejectUnauthorized: false },
+      connectTimeout: 10000,
+    })
+  }
+  return _pool
+}
 
 export async function query<T = Record<string, unknown>>(sql: string, values?: unknown[]): Promise<T[]> {
+  const pool = getPool()
   const [rows] = await pool.query(sql, values)
   return rows as T[]
 }
 
-export { pool }
+export { getPool as pool }
