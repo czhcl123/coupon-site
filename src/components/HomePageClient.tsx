@@ -298,12 +298,12 @@ export default function HomePageClient() {
               placeholder={t[lang].searchPlaceholder}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="flex-1 min-w-[200px] px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="flex-1 min-w-[200px] pl-10 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             />
             <select
               value={selectedMerchant}
               onChange={(e) => setSelectedMerchant(e.target.value)}
-              className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="w-52 max-w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 bg-white"
             >
               <option value="">{t[lang].allMerchants}</option>
               {merchants.map((m) => (
@@ -313,7 +313,7 @@ export default function HomePageClient() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="w-40 max-w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 bg-white"
             >
               <option value="">{t[lang].allCategories}</option>
               <option value="fashion">{t[lang].fashion}</option>
