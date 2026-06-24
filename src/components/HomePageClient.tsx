@@ -385,10 +385,10 @@ export default function HomePageClient() {
                   <Link href={`/merchant/${coupon.merchant.slug}?lang=${lang}`} className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
                     {coupon.merchant.name}
                   </Link>
-                  {coupon.isVerified && (
+                  {!!coupon.isVerified && (
                     <span className="text-xs bg-green-100 text-green-600 px-1.5 py-0.5 rounded-full">{t[lang].verified}</span>
                   )}
-                  {coupon.isExclusive && (
+                  {!!coupon.isExclusive && (
                     <span className="text-xs bg-orange-100 text-orange-500 px-1.5 py-0.5 rounded-full">{t[lang].exclusive}</span>
                   )}
                 </div>
