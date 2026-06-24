@@ -366,95 +366,97 @@ export default function HomePageClient() {
               return (
               <div
                 key={coupon.id}
-                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100"
+                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col"
               >
                 <script
                   type="application/ld+json"
                   dangerouslySetInnerHTML={{ __html: JSON.stringify(couponSchema) }}
                 />
-                {/* 商家行 */}
-                <div className="flex items-center gap-2 mb-3">
-                  {coupon.merchant.logo && (
-                    <img
-                      src={coupon.merchant.logo}
-                      alt={coupon.merchant.name}
-                      className="w-5 h-5 rounded"
-                      onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
-                    />
-                  )}
-                  <Link href={`/merchant/${coupon.merchant.slug}?lang=${lang}`} className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
-                    {coupon.merchant.name}
-                  </Link>
-                  {!!coupon.isVerified && (
-                    <span className="text-xs bg-green-100 text-green-600 px-1.5 py-0.5 rounded-full">{t[lang].verified}</span>
-                  )}
-                  {!!coupon.isExclusive && (
-                    <span className="text-xs bg-orange-100 text-orange-500 px-1.5 py-0.5 rounded-full">{t[lang].exclusive}</span>
-                  )}
-                </div>
-
-                {/* 折扣标签 */}
-                <div className="flex items-start gap-3 mb-3">
-                  <span className="text-3xl font-bold text-orange-500">
-                    {formatDiscount(coupon)}
-                  </span>
-                  <div className="flex-1">
-                    <div className="font-semibold text-gray-800 leading-tight">{translateTitle(coupon.title)}</div>
-                    {coupon.description && (
-                      <div className="text-sm text-gray-400 mt-0.5">{translateTitle(coupon.description)}</div>
+                <div className="flex-1">
+                  {/* 商家行 */}
+                  <div className="flex items-center gap-2 mb-3">
+                    {coupon.merchant.logo && (
+                      <img
+                        src={coupon.merchant.logo}
+                        alt={coupon.merchant.name}
+                        className="w-5 h-5 rounded"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+                      />
+                    )}
+                    <Link href={`/merchant/${coupon.merchant.slug}?lang=${lang}`} className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
+                      {coupon.merchant.name}
+                    </Link>
+                    {!!coupon.isVerified && (
+                      <span className="text-xs bg-green-100 text-green-600 px-1.5 py-0.5 rounded-full">{t[lang].verified}</span>
+                    )}
+                    {!!coupon.isExclusive && (
+                      <span className="text-xs bg-orange-100 text-orange-500 px-1.5 py-0.5 rounded-full">{t[lang].exclusive}</span>
                     )}
                   </div>
-                </div>
 
-                {/* 最低消费 */}
-                {coupon.minPurchase && (
-                  <div className="text-xs text-gray-400 mb-2">
-                    {u('minPurchase', { n: coupon.minPurchase })}
-                  </div>
-                )}
-
-                {/* 折扣码 */}
-                {coupon.code ? (
-                  <>
-                    <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
-                      <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
-                      <button
-                        onClick={() => copyCode(coupon.code!, coupon.id)}
-                        className={`text-xs px-3 py-1 rounded-full font-medium transition-colors ${
-                          copied === coupon.id
-                            ? 'bg-green-500 text-white'
-                            : 'bg-orange-500 text-white hover:bg-orange-600'
-                        }`}
-                      >
-                        {copied === coupon.id ? t[lang].copied : t[lang].copyCode}
-                      </button>
+                  {/* 折扣标签 */}
+                  <div className="flex items-start gap-3 mb-3">
+                    <span className="text-3xl font-bold text-orange-500">
+                      {formatDiscount(coupon)}
+                    </span>
+                    <div className="flex-1">
+                      <div className="font-semibold text-gray-800 leading-tight">{translateTitle(coupon.title)}</div>
+                      {coupon.description && (
+                        <div className="text-sm text-gray-400 mt-0.5">{translateTitle(coupon.description)}</div>
+                      )}
                     </div>
-                    {coupon.merchant.affiliateUrl && (
-                      <a
-                        href={coupon.merchant.affiliateUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
-                      >
-                        {t[lang].useNow}
-                      </a>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    <div className="text-xs text-gray-400 mb-2">{t[lang].noCodeHint}</div>
-                    {coupon.merchant.affiliateUrl && (
-                      <a
-                        href={coupon.merchant.affiliateUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
-                      >
-                        {t[lang].useNow}
-                      </a>
-                    )}
-                  </>
-                )}
+                  </div>
+
+                  {/* 最低消费 */}
+                  {coupon.minPurchase && (
+                    <div className="text-xs text-gray-400 mb-2">
+                      {u('minPurchase', { n: coupon.minPurchase })}
+                    </div>
+                  )}
+
+                  {/* 折扣码 */}
+                  {coupon.code ? (
+                    <>
+                      <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
+                        <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
+                        <button
+                          onClick={() => copyCode(coupon.code!, coupon.id)}
+                          className={`text-xs px-3 py-1 rounded-full font-medium transition-colors ${
+                            copied === coupon.id
+                              ? 'bg-green-500 text-white'
+                              : 'bg-orange-500 text-white hover:bg-orange-600'
+                          }`}
+                        >
+                          {copied === coupon.id ? t[lang].copied : t[lang].copyCode}
+                        </button>
+                      </div>
+                      {coupon.merchant.affiliateUrl && (
+                        <a
+                          href={coupon.merchant.affiliateUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                        >
+                          {t[lang].useNow}
+                        </a>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      <div className="text-xs text-gray-400 mb-2">{t[lang].noCodeHint}</div>
+                      {coupon.merchant.affiliateUrl && (
+                        <a
+                          href={coupon.merchant.affiliateUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                        >
+                          {t[lang].useNow}
+                        </a>
+                      )}
+                    </>
+                  )}
+                </div>
 
                 {/* 底部信息 */}
                 <div className="flex items-center justify-between text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
