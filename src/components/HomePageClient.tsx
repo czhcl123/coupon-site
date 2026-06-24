@@ -259,19 +259,20 @@ export default function HomePageClient() {
           {/* 搜索栏 */}
           <div className="flex gap-3 flex-wrap">
             <div className="relative flex-1 min-w-[200px]">
-              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none">🔍</span>
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">🔍</span>
               <input
                 type="text"
                 placeholder={t[lang].searchPlaceholder}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-8 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
             </div>
             <select
               value={selectedMerchant}
               onChange={(e) => setSelectedMerchant(e.target.value)}
-              className="w-full sm:w-auto px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="w-full sm:w-auto px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 bg-white"
+              style={{ appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 10px center', paddingRight: '32px' }}
             >
               <option value="">{t[lang].allMerchants}</option>
               {merchants.map((m) => (
@@ -281,7 +282,8 @@ export default function HomePageClient() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-full sm:w-auto px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="w-full sm:w-auto px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 bg-white"
+              style={{ appearance: 'none', backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23999' d='M6 8L1 3h10z'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 10px center', paddingRight: '32px' }}
             >
               <option value="">{t[lang].allCategories}</option>
               <option value="fashion">{t[lang].fashion}</option>
@@ -412,7 +414,7 @@ export default function HomePageClient() {
                 )}
 
                 {/* 底部信息（收进卡片内部，右下角） */}
-                <div className="flex items-center justify-end gap-3 text-xs text-gray-400 mt-auto" style={{ color: '#9a9a9a' }}>
+                <div className="flex items-center justify-end gap-3 text-xs text-gray-400 mt-auto pt-4" style={{ color: '#9a9a9a' }}>
                   <span>{formatExpiry(coupon.expiresAt)}</span>
                   <span>{u('peopleUsed', { n: coupon.clickCount })}</span>
                 </div>
