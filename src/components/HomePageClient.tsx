@@ -263,12 +263,12 @@ export default function HomePageClient() {
               placeholder={t[lang].searchPlaceholder}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="flex-1 min-w-[200px] px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="flex-1 w-full sm:w-auto px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             />
             <select
               value={selectedMerchant}
               onChange={(e) => setSelectedMerchant(e.target.value)}
-              className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="w-full sm:w-auto px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             >
               <option value="">{t[lang].allMerchants}</option>
               {merchants.map((m) => (
@@ -278,7 +278,7 @@ export default function HomePageClient() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="w-full sm:w-auto px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             >
               <option value="">{t[lang].allCategories}</option>
               <option value="fashion">{t[lang].fashion}</option>
@@ -402,14 +402,14 @@ export default function HomePageClient() {
                     href={coupon.merchant.affiliateUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full text-center text-sm border-2 border-orange-400 text-orange-500 rounded-lg py-2 px-4 transition-colors hover:bg-orange-50 font-medium mb-2"
+                    className="block w-full text-center text-sm border-2 border-orange-400 text-orange-500 rounded-lg py-2 px-4 transition-colors hover:bg-orange-50 font-medium my-3"
                   >
                     {t[lang].useNow}
                   </a>
                 )}
 
                 {/* 底部信息（收进卡片内部，右下角） */}
-                <div className="flex items-center justify-end gap-3 text-xs text-gray-400 mt-1">
+                <div className="flex items-center justify-end gap-3 text-xs text-gray-400 mt-auto" style={{ color: '#9a9a9a' }}>
                   <span>{formatExpiry(coupon.expiresAt)}</span>
                   <span>{u('peopleUsed', { n: coupon.clickCount })}</span>
                 </div>

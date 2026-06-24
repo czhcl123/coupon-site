@@ -314,18 +314,18 @@ export default async function MerchantPage({
                   <div className="mb-3" />
                 )}
 
-                {coupon.merchant.affiliateUrl && (
+                {merchant.affiliateUrl && (
                   <a
-                    href={coupon.merchant.affiliateUrl}
+                    href={merchant.affiliateUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full text-center text-sm border-2 border-orange-400 text-orange-500 rounded-lg py-2 px-4 transition-colors hover:bg-orange-50 font-medium mb-2"
+                    className="block w-full text-center text-sm border-2 border-orange-400 text-orange-500 rounded-lg py-2 px-4 transition-colors hover:bg-orange-50 font-medium my-3"
                   >
                     {u('goUse', lang)}
                   </a>
                 )}
 
-                <div className="flex items-center justify-end gap-3 text-xs text-gray-400 mt-1">
+                <div className="flex items-center justify-end gap-3 text-xs mt-auto" style={{ color: '#9a9a9a' }}>
                   <span>{formatExpiry(coupon.expiresAt, lang)}</span>
                   <span>{uVars('peopleUsed', { n: String(coupon.clickCount) }, lang)}</span>
                 </div>
