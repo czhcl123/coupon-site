@@ -258,13 +258,16 @@ export default function HomePageClient() {
 
           {/* 搜索栏 */}
           <div className="flex gap-3 flex-wrap">
-            <input
-              type="text"
-              placeholder={t[lang].searchPlaceholder}
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="flex-1 w-full sm:w-auto px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
-            />
+            <div className="relative flex-1 min-w-[200px]">
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none">🔍</span>
+              <input
+                type="text"
+                placeholder={t[lang].searchPlaceholder}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full pl-8 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              />
+            </div>
             <select
               value={selectedMerchant}
               onChange={(e) => setSelectedMerchant(e.target.value)}
@@ -375,7 +378,7 @@ export default function HomePageClient() {
 
                 {/* 折扣码 */}
                 {coupon.code ? (
-                  <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-3">
+                  <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mt-4">
                     <code className="flex-1 font-mono text-sm font-semibold text-gray-700 truncate">{coupon.code}</code>
                     <button
                       onClick={() => copyCode(coupon.code!, coupon.id, coupon.merchant.affiliateUrl)}
@@ -393,7 +396,7 @@ export default function HomePageClient() {
                     </button>
                   </div>
                 ) : (
-                  <div className="mb-3" />
+                  <div className="mt-4" />
                 )}
 
                 {/* 去使用按钮（描边次要样式） */}
@@ -402,7 +405,7 @@ export default function HomePageClient() {
                     href={coupon.merchant.affiliateUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full text-center text-sm border-2 border-orange-400 text-orange-500 rounded-lg py-2 px-4 transition-colors hover:bg-orange-50 font-medium my-3"
+                    className="block w-full text-center text-sm border-2 border-orange-400 text-orange-500 rounded-lg py-2 px-4 transition-all duration-200 hover:bg-orange-50 hover:scale-[1.02] hover:shadow-sm font-medium my-3"
                   >
                     {t[lang].useNow}
                   </a>
