@@ -1,0 +1,62 @@
+{
+  "service": {
+    "name": "优惠总动员 (Coupon Hub)",
+    "alternateName": "Coupon Hub",
+    "url": "https://coupon-site-production.up.railway.app",
+    "description": "Real-time coupon code aggregator covering 23 brands across 5 categories (fashion, electronics, travel, beauty, pet supplies). Bilingual zh/en. Data sourced from official brand promotions and first-party affiliate partners.",
+    "serviceType": "CouponAggregator",
+    "category": "ShoppingAggregator",
+    "provider": {
+      "name": "优惠总动员 (Coupon Hub)",
+      "url": "https://coupon-site-production.up.railway.app"
+    },
+    "areaServed": [
+      { "@type": "Country", "name": "China" },
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "European Union" }
+    ],
+    "availableLanguage": ["zh-CN", "en-US"],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "All coupons free to view and use"
+    },
+    "hoursAvailable": "24/7",
+    "supportedOperations": [
+      {
+        "name": "browse_coupons",
+        "description": "Browse coupons by category, merchant, or search keyword"
+      },
+      {
+        "name": "copy_coupon_code",
+        "description": "One-click copy of coupon code to clipboard"
+      },
+      {
+        "name": "track_click",
+        "description": "Report click-through for affiliate conversion tracking"
+      },
+      {
+        "name": "language_switch",
+        "description": "Toggle between Chinese and English interface"
+      }
+    ],
+    "endpoints": {
+      "homepage": "https://coupon-site-production.up.railway.app/",
+      "merchant_listing": "https://coupon-site-production.up.railway.app/api/merchants",
+      "coupons_api": "https://coupon-site-production.up.railway.app/api/coupons?merchant=<slug>&category=<slug>",
+      "llms_txt": "https://coupon-site-production.up.railway.app/llms.txt",
+      "rss_feed": "https://coupon-site-production.up.railway.app/rss.xml",
+      "about": "https://coupon-site-production.up.railway.app/about"
+    },
+    "dataFreshness": {
+      "updateFrequency": "daily",
+      "lastUpdated": "2026-06-29",
+      "expiryPolicy": "Expired coupons removed within 24 hours"
+    },
+    "monetization": {
+      "model": "AffiliateCommission",
+      "disclosure": "All outbound links are affiliate links; user price unchanged"
+    }
+  }
+}

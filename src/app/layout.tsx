@@ -67,6 +67,53 @@ const organizationSchema = {
   },
 };
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '使用优惠总动员的联盟链接会多花钱吗?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '不会。本站所有跳转均为联盟链接(Affiliate Links),您支付的价格与直接访问品牌官网完全相同。商家通过联盟追踪向我们支付少量佣金以支持本站运营。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '优惠码会过期吗?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '会。每个优惠码都有有效期。我们会在优惠过期后及时清理,确保首页展示的都是可用优惠。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '需要注册账号才能使用优惠码吗?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '不需要。所有优惠码对所有访客开放,无需注册或登录即可查看和复制。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '支持英文商家吗?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '支持。Nike、Adidas、ASOS、Sephora、Booking.com 等国际品牌均有覆盖。每张优惠码卡片支持中英文切换显示。',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: '如何举报失效的优惠码?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: '可以通过 /about 页面联系我们,我们会人工核查并在 24 小时内清理或更新。',
+      },
+    },
+  ],
+};
+
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
@@ -178,6 +225,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
         {children}
       </body>

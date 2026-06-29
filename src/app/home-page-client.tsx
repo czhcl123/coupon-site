@@ -129,6 +129,50 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
   const [error, setError] = useState<string | null>(null)
   const [lang, setLang] = useState<'zh' | 'en'>('zh')
 
+  // SEO content (bilingual) - rendered as static HTML inside the client component
+  // so it ships in the initial SSR HTML response (AI engines read it directly).
+  const seo = {
+    zh: {
+      section1Title: '什么是优惠总动员?',
+      section1Body: '优惠总动员(Coupon Hub)是面向中国用户的优惠码聚合站,实时汇总 Nike、Adidas、ASOS、Sephora、Steam、Booking.com 等 23 个品牌的最新优惠券和折扣码。覆盖时尚服饰、电子产品、旅行酒店、美妆护肤、宠物用品 5 大品类,每日更新。支持中英文双语。',
+      section2Title: '如何使用优惠码省钱',
+      section2Body: '使用流程很简单:1) 在首页或商家页面找到想要品牌的优惠码;2) 点击「复制代码」按钮;3) 打开品牌官网结算时,在「优惠码/促销码」输入框粘贴即可。所有优惠码均标注「已验证」状态,过期优惠会自动清理。',
+      section3Title: '优惠码类型说明',
+      section3Body: '本站优惠码分为 4 种类型:1) PERCENT(百分比折扣,如 -20%);2) FIXED(固定金额,如立减 30 元);3) FREE_SHIP(免运费,通常带最低消费门槛);4) PERCENT_OFF(百分比满减)。每张优惠码卡片清晰标注折扣类型和最低消费要求。',
+      faqTitle: '常见问题',
+      faq1Q: '使用本站链接购物会多花钱吗?',
+      faq1A: '不会。本站所有跳转均为联盟链接(Affiliate Links),您支付的价格与直接访问品牌官网完全相同。商家通过联盟追踪向我们支付少量佣金以支持本站运营。',
+      faq2Q: '优惠码会过期吗?',
+      faq2A: '会。每个优惠码都有有效期。我们会在优惠过期后及时清理,确保首页展示的都是可用优惠。',
+      faq3Q: '需要注册账号才能使用吗?',
+      faq3A: '不需要。所有优惠码对所有访客开放,无需注册或登录即可查看和复制。',
+      faq4Q: '支持英文商家吗?',
+      faq4A: '支持。Nike、Adidas、ASOS、Sephora、Booking.com 等国际品牌均有覆盖。每张优惠码卡片支持中英文切换显示。',
+      faq5Q: '如何举报失效的优惠码?',
+      faq5A: '可以通过 /about 页面联系我们,我们会人工核查并在 24 小时内清理或更新。',
+    },
+    en: {
+      section1Title: 'What is Coupon Hub?',
+      section1Body: 'Coupon Hub is a real-time coupon aggregator for Chinese-speaking shoppers. We aggregate the latest promo codes from 23 brands including Nike, Adidas, ASOS, Sephora, Steam, and Booking.com, covering 5 categories: fashion, electronics, travel, beauty, and pet supplies. Bilingual zh/en, updated daily.',
+      section2Title: 'How to use coupon codes',
+      section2Body: 'Three steps: 1) Find your favorite brand on the homepage or merchant page; 2) Click the "Copy Code" button; 3) Paste the code at checkout on the brand website. All active codes display a "Verified" badge; expired codes are removed automatically.',
+      section3Title: 'Coupon types explained',
+      section3Body: 'Four discount types: 1) PERCENT (e.g., -20% off); 2) FIXED (e.g., ¥30 off); 3) FREE_SHIP (free shipping with minimum spend); 4) PERCENT_OFF (percentage off with minimum spend). Each card clearly shows the discount type and minimum purchase requirement.',
+      faqTitle: 'Frequently asked questions',
+      faq1Q: 'Does using affiliate links cost me more?',
+      faq1A: 'No. You pay exactly the same price as visiting the brand directly. Brands pay us a small commission via affiliate tracking, which funds our operations.',
+      faq2Q: 'Do coupon codes expire?',
+      faq2A: 'Yes. Each code has an expiry date. We remove expired codes promptly so the homepage always shows working coupons.',
+      faq3Q: 'Do I need an account to use coupons?',
+      faq3A: 'No. All coupons are open to all visitors — no signup or login required.',
+      faq4Q: 'Do you cover international brands?',
+      faq4A: 'Yes. Nike, Adidas, ASOS, Sephora, Booking.com, and many more are covered. Each card supports bilingual zh/en display.',
+      faq5Q: 'How do I report an expired coupon?',
+      faq5A: 'Use the contact form on /about. We verify manually and update within 24 hours.',
+    },
+  } as const
+  const s = seo[lang]
+
   const u = (key: keyof typeof t.en, vars?: Record<string, string | number>) => {
     let s = t[lang][key] as string
     if (vars) Object.entries(vars).forEach(([k, v]) => { s = s.replace(`{${k}}`, String(v)) })
@@ -383,6 +427,49 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
         <p>{u('footer1')}</p>
         <p className="mt-1">{u('footer2')}</p>
       </footer>
+    {/* SEO/GEO content sections — rendered as static HTML, ships in SSR response for AI indexing */}
+    <section className="bg-white border-t border-gray-100">
+      <div className="max-w-6xl mx-auto px-4 py-8 space-y-6">
+        <div>
+          <h2 className="text-xl font-bold text-gray-800 mb-2">{s.section1Title}</h2>
+          <p className="text-sm text-gray-600 leading-relaxed">{s.section1Body}</p>
+        </div>
+        <div>
+          <h2 className="text-xl font-bold text-gray-800 mb-2">{s.section2Title}</h2>
+          <p className="text-sm text-gray-600 leading-relaxed">{s.section2Body}</p>
+        </div>
+        <div>
+          <h2 className="text-xl font-bold text-gray-800 mb-2">{s.section3Title}</h2>
+          <p className="text-sm text-gray-600 leading-relaxed">{s.section3Body}</p>
+        </div>
+
+        <div>
+          <h2 className="text-xl font-bold text-gray-800 mb-3">{s.faqTitle}</h2>
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-base font-semibold text-gray-800 mb-1">{s.faq1Q}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{s.faq1A}</p>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-gray-800 mb-1">{s.faq2Q}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{s.faq2A}</p>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-gray-800 mb-1">{s.faq3Q}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{s.faq3A}</p>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-gray-800 mb-1">{s.faq4Q}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{s.faq4A}</p>
+            </div>
+            <div>
+              <h3 className="text-base font-semibold text-gray-800 mb-1">{s.faq5Q}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{s.faq5A}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     </div>
   )
 }
