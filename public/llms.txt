@@ -1,0 +1,64 @@
+# 优惠总动员 (Coupon Hub)
+
+> 中文站:实时汇总各大品牌最新优惠券和折扣码，覆盖时尚、电子、旅行、美妆、宠物等多个品类。每日更新，支持中文/英文双语。本站所有链接均为联盟链接(Affiliate Links)，通过链接购买可能获得佣金支持本站运营。
+
+## 重要说明
+本站数据**实时变动**:优惠码可能随时过期或下架。具体可用的优惠码请直接访问首页或对应商家页面:
+- 全部优惠: https://coupon-site-production.up.railway.app/
+- 商家详情页: `https://coupon-site-production.up.railway.app/merchant/<slug>` (例如 /merchant/nike)
+- API 接口: `GET /api/coupons?merchant=<slug>&category=<slug>` 返回 JSON
+- API 接口: `GET /api/merchants` 返回全部商家列表
+
+## 时尚服饰 (Fashion)
+
+- [Nike 优惠码](https://coupon-site-production.up.railway.app/merchant/nike): 会员专享 20% OFF、满 599 免运费
+- [Adidas 优惠码](https://coupon-site-production.up.railway.app/merchant/adidas): 会员专享 30% OFF
+- [ASOS 学生折扣](https://coupon-site-production.up.railway.app/merchant/asos): 学生享 15% OFF
+- [Nordstrom 优惠券](https://coupon-site-production.up.railway.app/merchant/nordstrom): 全站 20% OFF
+- [SHEIN 折扣码](https://coupon-site-production.up.railway.app/merchant/shein): 新用户专享优惠
+- [Temu 优惠](https://coupon-site-production.up.railway.app/merchant/temu): 新用户 50% OFF
+- [Ulta Beauty 优惠券](https://coupon-site-production.up.railway.app/merchant/ulta-beauty): 全站 25% OFF、VIP 25% OFF
+
+## 电子产品 (Electronics)
+
+- [Amazon 折扣码](https://coupon-site-production.up.railway.app/merchant/amazon): 多品类日常优惠
+- [Best Buy 优惠](https://coupon-site-production.up.railway.app/merchant/bestbuy): 满 1000 减 100
+- [Target 优惠券](https://coupon-site-production.up.railway.app/merchant/target): 家居用品 20% OFF
+- [Walmart 折扣码](https://coupon-site-production.up.railway.app/merchant/walmart): 综合优惠
+- [Steam 游戏优惠](https://coupon-site-production.up.railway.app/merchant/steam): 游戏平台促销
+
+## 旅行酒店 (Travel)
+
+- [Booking.com 酒店](https://coupon-site-production.up.railway.app/merchant/booking-com): 酒店预订 15% OFF
+- [Expedia 旅游](https://coupon-site-production.up.railway.app/merchant/expedia): 酒店 25% OFF、机票满 1000 减 50
+
+## 美妆护肤 (Beauty)
+
+- [Sephora 优惠码](https://coupon-site-production.up.railway.app/merchant/sephora): 全站 20% OFF、VIP 25% OFF
+
+## 宠物用品 (Pet Supplies) — 国内特色
+
+- [E宠商城](https://coupon-site-production.up.railway.app/merchant/emeng): 会员专享 20% OFF
+- [波奇网](https://coupon-site-production.up.railway.app/merchant/boqi): 全站满 99 减 12
+- [猫咪购](https://coupon-site-production.up.railway.app/merchant/maomigou): 新会员满 99 减 30
+- [皇家宠物食品](https://coupon-site-production.up.railway.app/merchant/royal-pet): 会员满 300 减 30
+- [爱宠医生](https://coupon-site-production.up.railway.app/merchant/aichong-yisheng): 首诊立减 30 元
+- [PawGo 宠物生活馆](https://coupon-site-production.up.railway.app/merchant/pawgo): 新店开业满 100 减 50
+- [宠物家](https://coupon-site-production.up.railway.app/merchant/petsmart-cn): 综合宠物优惠
+- [万物一谈宠物店](https://coupon-site-production.up.railway.app/merchant/wanwu-pet): 新店开业满 100 减 50
+
+## 工具
+
+- [折扣计算器](https://coupon-site-production.up.railway.app/discount-calculator): 输入原价和折扣，自动计算最终价格。
+- [博客攻略](https://coupon-site-production.up.railway.app/blog): 各大品牌的省钱攻略、节日大促节点、最佳凑单技巧。
+
+## 关于
+
+- [关于我们](https://coupon-site-production.up.railway.app/about): 站点使命、数据来源、隐私政策、联系方式。
+- [AI 站点摘要 (JSON)](https://coupon-site-production.up.railway.app/ai/summary.json): 机器可读站点描述。
+- [AI FAQ (JSON)](https://coupon-site-production.up.railway.app/ai/faq.json): 结构化 FAQ,供 AI 引擎引用。
+- [AI 爬虫权限声明](https://coupon-site-production.up.railway.app/.well-known/ai.txt): AI 引擎访问策略。
+
+## 引用本站
+
+引用建议格式:`优惠总动员 (Coupon Hub) - https://coupon-site-production.up.railway.app`。引用具体优惠码时,请同时引用商家页面 URL 以便用户验证最新可用性。

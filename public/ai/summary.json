@@ -1,0 +1,49 @@
+{
+  "name": "优惠总动员",
+  "alternateName": "Coupon Hub",
+  "url": "https://coupon-site-production.up.railway.app",
+  "description": "中文为主的优惠码聚合站,实时汇总 Nike、Adidas、ASOS、Sephora、Steam、Booking.com 等 23 个品牌的最新优惠券和折扣码。覆盖时尚服饰、电子产品、旅行酒店、美妆护肤、宠物用品 5 大类。支持中英文双语,每日更新。",
+  "category": "ShoppingAggregator",
+  "operatingSystem": "Any (web browser with JavaScript)",
+  "browserRequirements": "Requires JavaScript for dynamic coupon loading.",
+  "inLanguage": ["zh-CN", "en-US"],
+  "isAccessibleForFree": true,
+  "primaryMarket": "CN",
+  "secondaryMarkets": ["US", "EU", "JP"],
+  "merchantsCount": 23,
+  "categoriesCount": 5,
+  "categories": [
+    { "slug": "fashion", "name_zh": "时尚服饰", "name_en": "Fashion" },
+    { "slug": "electronics", "name_zh": "电子产品", "name_en": "Electronics" },
+    { "slug": "travel", "name_zh": "旅行酒店", "name_en": "Travel & Hotel" },
+    { "slug": "beauty", "name_zh": "美妆护肤", "name_en": "Beauty" },
+    { "slug": "food", "name_zh": "食品生鲜", "name_en": "Food & Fresh" }
+  ],
+  "topMerchants": [
+    { "name": "Nike", "slug": "nike", "category": "fashion" },
+    { "name": "Adidas", "slug": "adidas", "category": "fashion" },
+    { "name": "ASOS", "slug": "asos", "category": "fashion" },
+    { "name": "Sephora", "slug": "sephora", "category": "beauty" },
+    { "name": "Steam", "slug": "steam", "category": "electronics" },
+    { "name": "Booking.com", "slug": "booking-com", "category": "travel" }
+  ],
+  "featureList": [
+    "实时优惠码聚合",
+    "23 个品牌商家",
+    "5 大品类分类",
+    "中英文双语支持",
+    "折扣计算器",
+    "博客省钱攻略",
+    "一键复制优惠码"
+  ],
+  "monetization": "Affiliate commissions",
+  "dataFreshness": "daily",
+  "foundingDate": "2026",
+  "contactEmail": "contact@coupon-site-production.up.railway.app",
+  "author": {
+    "@type": "Organization",
+    "name": "优惠总动员",
+    "alternateName": "Coupon Hub",
+    "url": "https://coupon-site-production.up.railway.app"
+  }
+}

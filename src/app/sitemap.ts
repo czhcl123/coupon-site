@@ -2,10 +2,15 @@ import { MetadataRoute } from 'next'
 import { query } from '@/lib/db'
 import { articles } from '@/data/articles'
 
+<<<<<<< HEAD
 interface MerchantRow {
   slug: string
   updatedAt: string | null
 }
+=======
+export default function sitemap(): MetadataRoute.Sitemap {
+  const base = 'https://coupon-site-production.up.railway.app'
+>>>>>>> 38dda13 (feat(geo): llms.txt, ai.txt, summary/faq.json, Organization+WebApplication schema, /about, RSS, fix URL)
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = 'https://coupon-site-production.up.railway.app'
@@ -64,12 +69,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1.0,
     },
     {
+      url: `${base}/about`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
       url: `${base}/blog`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+<<<<<<< HEAD
     ...merchantUrls,
+=======
+    {
+      url: `${base}/discount-calculator`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+>>>>>>> 38dda13 (feat(geo): llms.txt, ai.txt, summary/faq.json, Organization+WebApplication schema, /about, RSS, fix URL)
     ...blogUrls,
   ]
 }

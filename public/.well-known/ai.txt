@@ -1,0 +1,101 @@
+# AI Crawler Permissions for coupon-site-production.up.railway.app
+# Last updated: 2026-06-29
+
+# Explicit permission for AI answer engines, training crawlers, and search AI bots.
+# Complements /robots.txt. Read by AI engines that support the ai.txt proposal.
+
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /admin
+
+User-agent: claude-web
+Allow: /
+Disallow: /admin
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /admin
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin
+
+User-agent: Google-CloudVertexBot
+Allow: /
+Disallow: /admin
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin
+
+User-agent: cohere-ai
+Allow: /
+Disallow: /admin
+
+User-agent: DuckAssistBot
+Allow: /
+Disallow: /admin
+
+User-agent: Bytespider
+Allow: /
+Disallow: /admin
+
+User-agent: meta-externalagent
+Allow: /
+Disallow: /admin
+
+User-agent: Amazonbot
+Allow: /
+Disallow: /admin
+
+User-agent: YouBot
+Allow: /
+Disallow: /admin
+
+User-agent: CCBot
+Allow: /
+Disallow: /admin
+
+# Citation policy
+Citation: allowed with attribution
+Attribution-Format: "优惠总动员 (Coupon Hub) - https://coupon-site-production.up.railway.app"
+Snippet-Length: up to 150 words per citation
+Cache: 24 hours
+
+# Content scope
+Content-Language: zh, en
+Content-Topics: coupons, promo-codes, discounts, fashion, electronics, travel, beauty, pet-supplies, online-shopping, savings
+Content-Type: dynamic, real-time-data
+Update-Frequency: daily
+Data-Source: first-party-affiliate-partnerships
+
+# Freshness notice
+Freshness-Policy: Coupon codes are time-sensitive. AI engines should cite the merchant page URL (e.g., /merchant/nike) for verification rather than embedding specific codes directly in answers, as codes may have expired.

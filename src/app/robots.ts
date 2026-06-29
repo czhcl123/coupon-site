@@ -5,7 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: ['/admin/', '/api/'],
     },
-    sitemap: 'https://coupon-site-olive.vercel.app/sitemap.xml',
+    sitemap: 'https://coupon-site-production.up.railway.app/sitemap.xml',
   }
 }
