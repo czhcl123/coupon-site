@@ -127,7 +127,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
   const [loading, setLoading] = useState(false)
   const [copied, setCopied] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const [lang, setLang] = useState<'zh' | 'en'>('zh')
+  const [lang, setLang] = useState<'zh' | 'en'>('en')
 
   // SEO content (bilingual) - rendered as static HTML inside the client component
   // so it ships in the initial SSR HTML response (AI engines read it directly).

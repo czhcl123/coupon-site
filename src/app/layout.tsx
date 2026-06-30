@@ -15,22 +15,24 @@ const geistMono = Geist_Mono({
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: '优惠总动员',
+  name: 'CouponSite',
   alternateName: 'Coupon Hub',
   url: 'https://coupon-site-production.up.railway.app',
-  description: '中文优惠码聚合站:实时汇总 Nike、Adidas、ASOS、Sephora、Steam、Booking.com 等 23 个品牌的最新优惠券和折扣码,覆盖时尚服饰、电子产品、旅行酒店、美妆护肤、宠物用品 5 大类。支持中英文双语,每日更新。',
-  inLanguage: ['zh-CN', 'en-US'],
+  description:
+    'Real-time promo codes and discounts from Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and 20+ more top brands across fashion, electronics, travel, and beauty. Updated daily, free to use.',
+  inLanguage: ['en-US', 'zh-CN'],
   potentialAction: {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://coupon-site-production.up.railway.app/?search={search_term_string}',
+      urlTemplate:
+        'https://coupon-site-production.up.railway.app/?search={search_term_string}',
     },
     'query-input': 'required name=search_term_string',
   },
   publisher: {
     '@type': 'Organization',
-    name: '优惠总动员',
+    name: 'CouponSite',
     alternateName: 'Coupon Hub',
     url: 'https://coupon-site-production.up.railway.app',
   },
@@ -39,22 +41,23 @@ const websiteSchema = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: '优惠总动员',
+  name: 'CouponSite',
   alternateName: 'Coupon Hub',
   url: 'https://coupon-site-production.up.railway.app',
-  description: '中文为主的优惠码聚合站,实时汇总各大品牌最新优惠券和折扣码,支持中英文双语。',
+  description:
+    'CouponSite is a real-time promo code and discount aggregator covering 20+ major brands across fashion, electronics, travel, beauty and pet supplies. Free to use, bilingual zh/en, updated daily.',
   foundingDate: '2026',
   knowsAbout: [
-    '优惠券聚合',
-    '折扣码',
-    '省钱攻略',
+    'Coupon codes',
+    'Promo codes',
+    'Discount codes',
     'Affiliate marketing',
-    '在线购物',
-    '品牌促销',
-    '时尚服饰优惠',
-    '电子产品折扣',
-    '旅行酒店预订',
-    '美妆护肤优惠',
+    'Online shopping deals',
+    'Brand promotions',
+    'Fashion discounts',
+    'Electronics deals',
+    'Travel and hotel booking',
+    'Beauty and skincare discounts',
   ],
   sameAs: [
     'https://coupon-site-production.up.railway.app',
@@ -63,7 +66,7 @@ const organizationSchema = {
     '@type': 'ContactPoint',
     contactType: 'customer support',
     url: 'https://coupon-site-production.up.railway.app/about',
-    availableLanguage: ['Chinese', 'English'],
+    availableLanguage: ['English', 'Chinese'],
   },
 };
 
@@ -73,42 +76,42 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: '使用优惠总动员的联盟链接会多花钱吗?',
+      name: 'Do affiliate links cost me more when shopping through CouponSite?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '不会。本站所有跳转均为联盟链接(Affiliate Links),您支付的价格与直接访问品牌官网完全相同。商家通过联盟追踪向我们支付少量佣金以支持本站运营。',
+        text: 'No. All outbound links on CouponSite are affiliate links. You pay exactly the same price as visiting the brand website directly. Brands pay us a small commission via affiliate tracking to support the site.',
       },
     },
     {
       '@type': 'Question',
-      name: '优惠码会过期吗?',
+      name: 'Do coupon codes expire?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '会。每个优惠码都有有效期。我们会在优惠过期后及时清理,确保首页展示的都是可用优惠。',
+        text: 'Yes. Each coupon code has an expiry date. We remove expired codes promptly so the homepage only shows working deals.',
       },
     },
     {
       '@type': 'Question',
-      name: '需要注册账号才能使用优惠码吗?',
+      name: 'Do I need an account to use coupon codes?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '不需要。所有优惠码对所有访客开放,无需注册或登录即可查看和复制。',
+        text: 'No. All coupon codes are open to all visitors — no signup or login required to view or copy them.',
       },
     },
     {
       '@type': 'Question',
-      name: '支持英文商家吗?',
+      name: 'Does CouponSite cover international brands?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '支持。Nike、Adidas、ASOS、Sephora、Booking.com 等国际品牌均有覆盖。每张优惠码卡片支持中英文切换显示。',
+        text: 'Yes. Nike, Adidas, ASOS, Sephora, Steam, Booking.com and many more international brands are covered. Each coupon card supports bilingual English/Chinese display.',
       },
     },
     {
       '@type': 'Question',
-      name: '如何举报失效的优惠码?',
+      name: 'How do I report an expired coupon code?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: '可以通过 /about 页面联系我们,我们会人工核查并在 24 小时内清理或更新。',
+        text: 'Use the contact form on /about. We verify manually and update or remove the code within 24 hours.',
       },
     },
   ],
@@ -117,15 +120,16 @@ const faqSchema = {
 const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: '优惠总动员',
+  name: 'CouponSite',
   alternateName: 'Coupon Hub',
   url: 'https://coupon-site-production.up.railway.app',
-  description: '实时汇总 23 个品牌(Nike、Adidas、ASOS、Sephora、Steam、Booking.com 等)的最新优惠券和折扣码,覆盖时尚服饰、电子产品、旅行酒店、美妆护肤、宠物用品 5 大类。',
+  description:
+    'Real-time aggregator of promo codes and discounts from 20+ major brands (Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com, and more) across fashion, electronics, travel, and beauty.',
   applicationCategory: 'ShoppingApplication',
   applicationSubCategory: 'CouponAggregator',
   operatingSystem: 'Any (web browser with JavaScript)',
   browserRequirements: 'Requires JavaScript. Requires HTML5.',
-  inLanguage: ['zh-CN', 'en-US'],
+  inLanguage: ['en-US', 'zh-CN'],
   isAccessibleForFree: true,
   offers: {
     '@type': 'Offer',
@@ -133,19 +137,19 @@ const webAppSchema = {
     priceCurrency: 'USD',
   },
   featureList: [
-    '23 个品牌商家实时优惠码',
-    '5 大品类分类筛选',
-    '中英文双语支持',
-    '一键复制优惠码',
-    '折扣计算器',
-    '博客省钱攻略',
-    '商家详情页',
+    '20+ brand promo codes updated daily',
+    '5 category filters',
+    'Bilingual English and Chinese support',
+    'One-click copy coupon codes',
+    'Discount calculator',
+    'Money-saving blog guides',
+    'Per-merchant detail pages',
   ],
-  dateModified: '2026-06-29',
+  dateModified: '2026-06-30',
   datePublished: '2026-06-01',
   creator: {
     '@type': 'Organization',
-    name: '优惠总动员',
+    name: 'CouponSite',
     alternateName: 'Coupon Hub',
     url: 'https://coupon-site-production.up.railway.app',
   },
@@ -154,37 +158,50 @@ const webAppSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://coupon-site-production.up.railway.app'),
   title: {
-    default: '优惠总动员 - 精选商家优惠券/折扣码大全',
-    template: '%s | 优惠总动员',
+    default: 'CouponSite - Verified Promo Codes & Discounts for Top Brands',
+    template: '%s | CouponSite',
   },
-  description: '汇聚 Amazon、Temu、Shein、Nike、Adidas 等知名品牌最新优惠券折扣码，无码优惠实时更新，新用户专享优惠全覆盖。',
-  keywords: ['优惠券', '折扣码', '优惠', '省钱', 'Nike 折扣码', 'Adidas 优惠', 'ASOS 折扣'],
+  description:
+    'Real-time promo codes and discounts from Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and 20+ more top brands. Updated daily, free to use, bilingual zh/en.',
+  keywords: [
+    'coupon codes',
+    'promo codes',
+    'discount codes',
+    'deals',
+    'savings',
+    'Nike promo code',
+    'Adidas discount',
+    'ASOS coupon',
+    'Amazon deals',
+    'Sephora promo',
+    'Steam sale',
+    'Booking.com discount',
+  ],
   verification: {
     google: 'oAPWO8qwzk1v-FL2aL7ooRVLu9_SYNsOaX-LcHQ0GP4',
-    other: {
-      'baidu-site-verification': 'codeva-9jQsD8xFZl',
-    },
   },
   openGraph: {
     type: 'website',
-    locale: 'zh_CN',
-    alternateLocale: 'en_US',
+    locale: 'en_US',
+    alternateLocale: 'zh_CN',
     url: 'https://coupon-site-production.up.railway.app',
-    siteName: '优惠总动员',
-    title: '优惠总动员 - 精选商家优惠券/折扣码大全',
-    description: '汇聚各大品牌最新优惠券，无码优惠实时更新',
+    siteName: 'CouponSite',
+    title: 'CouponSite - Verified Promo Codes & Discounts for Top Brands',
+    description:
+      'Real-time promo codes and discounts from Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and 20+ more top brands. Updated daily.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '优惠总动员 - 精选商家优惠券折扣码大全',
-    description: '汇聚各大品牌最新优惠券，无码优惠实时更新',
+    title: 'CouponSite - Verified Promo Codes & Discounts for Top Brands',
+    description:
+      'Real-time promo codes from 20+ top brands. Updated daily, free to use.',
   },
   alternates: {
     canonical: 'https://coupon-site-production.up.railway.app',
     languages: {
-      'zh-CN': 'https://coupon-site-production.up.railway.app/?lang=zh',
       'en-US': 'https://coupon-site-production.up.railway.app/?lang=en',
-      'x-default': 'https://coupon-site-production.up.railway.app',
+      'zh-CN': 'https://coupon-site-production.up.railway.app/?lang=zh',
+      'x-default': 'https://coupon-site-production.up.railway.app/?lang=en',
     },
   },
   robots: {
@@ -206,12 +223,12 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="zh-CN"
+      lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-friendly site index" />
-        <link rel="alternate" type="application/rss+xml" title="优惠总动员 RSS Feed" href="/rss.xml" />
+        <link rel="alternate" type="application/rss+xml" title="CouponSite RSS Feed" href="/rss.xml" />
       </head>
       <body className="min-h-full flex flex-col">
         <script

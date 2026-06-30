@@ -1,64 +1,53 @@
-# 优惠总动员 (Coupon Hub)
+# CouponSite (formerly 优惠总动员 / Coupon Hub)
 
-> 中文站:实时汇总各大品牌最新优惠券和折扣码，覆盖时尚、电子、旅行、美妆、宠物等多个品类。每日更新，支持中文/英文双语。本站所有链接均为联盟链接(Affiliate Links)，通过链接购买可能获得佣金支持本站运营。
+> English-first promo code aggregator: real-time verified discount codes from Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and 20+ more top brands across fashion, electronics, travel, beauty, and pet supplies. Updated daily, free to use. Bilingual English/Chinese. All outbound links are affiliate links; merchants pay us a small commission at no extra cost to you.
 
-## 重要说明
-本站数据**实时变动**:优惠码可能随时过期或下架。具体可用的优惠码请直接访问首页或对应商家页面:
-- 全部优惠: https://coupon-site-production.up.railway.app/
-- 商家详情页: `https://coupon-site-production.up.railway.app/merchant/<slug>` (例如 /merchant/nike)
-- API 接口: `GET /api/coupons?merchant=<slug>&category=<slug>` 返回 JSON
-- API 接口: `GET /api/merchants` 返回全部商家列表
+## Important: data is real-time
+Coupon codes may expire or be removed at any time. For the latest working codes, always visit the homepage or the specific merchant page:
+- All coupons: https://coupon-site-production.up.railway.app/
+- Merchant pages: `https://coupon-site-production.up.railway.app/merchant/<slug>` (e.g. `/merchant/nike`)
+- API: `GET /api/coupons?merchant=<slug>&category=<slug>` returns JSON
+- API: `GET /api/merchants` returns the full merchant list
 
-## 时尚服饰 (Fashion)
+## Fashion
 
-- [Nike 优惠码](https://coupon-site-production.up.railway.app/merchant/nike): 会员专享 20% OFF、满 599 免运费
-- [Adidas 优惠码](https://coupon-site-production.up.railway.app/merchant/adidas): 会员专享 30% OFF
-- [ASOS 学生折扣](https://coupon-site-production.up.railway.app/merchant/asos): 学生享 15% OFF
-- [Nordstrom 优惠券](https://coupon-site-production.up.railway.app/merchant/nordstrom): 全站 20% OFF
-- [SHEIN 折扣码](https://coupon-site-production.up.railway.app/merchant/shein): 新用户专享优惠
-- [Temu 优惠](https://coupon-site-production.up.railway.app/merchant/temu): 新用户 50% OFF
-- [Ulta Beauty 优惠券](https://coupon-site-production.up.railway.app/merchant/ulta-beauty): 全站 25% OFF、VIP 25% OFF
+- [Nike promo codes](https://coupon-site-production.up.railway.app/merchant/nike): Exclusive 20% OFF, free shipping on ¥599+
+- [Adidas discount codes](https://coupon-site-production.up.railway.app/merchant/adidas): Member 30% OFF
+- [ASOS student discount](https://coupon-site-production.up.railway.app/merchant/asos): 15% OFF for students
+- [Nordstrom coupons](https://coupon-site-production.up.railway.app/merchant/nordstrom): 20% OFF sitewide
+- [SHEIN promo codes](https://coupon-site-production.up.railway.app/merchant/shein): New customer welcome deals
+- [Temu coupons](https://coupon-site-production.up.railway.app/merchant/temu): 50% OFF for new users
+- [Ulta Beauty coupons](https://coupon-site-production.up.railway.app/merchant/ulta-beauty): 25% OFF sitewide, VIP 25% OFF
 
-## 电子产品 (Electronics)
+## Electronics
 
-- [Amazon 折扣码](https://coupon-site-production.up.railway.app/merchant/amazon): 多品类日常优惠
-- [Best Buy 优惠](https://coupon-site-production.up.railway.app/merchant/bestbuy): 满 1000 减 100
-- [Target 优惠券](https://coupon-site-production.up.railway.app/merchant/target): 家居用品 20% OFF
-- [Walmart 折扣码](https://coupon-site-production.up.railway.app/merchant/walmart): 综合优惠
-- [Steam 游戏优惠](https://coupon-site-production.up.railway.app/merchant/steam): 游戏平台促销
+- [Amazon discount codes](https://coupon-site-production.up.railway.app/merchant/amazon): Daily multi-category deals
+- [Best Buy coupons](https://coupon-site-production.up.railway.app/merchant/bestbuy): Spend ¥1000, save ¥100
+- [Target coupons](https://coupon-site-production.up.railway.app/merchant/target): 20% OFF home goods
+- [Walmart promo codes](https://coupon-site-production.up.railway.app/merchant/walmart): Multi-category deals
+- [Steam game deals](https://coupon-site-production.up.railway.app/merchant/steam): Platform-wide sales
 
-## 旅行酒店 (Travel)
+## Travel
 
-- [Booking.com 酒店](https://coupon-site-production.up.railway.app/merchant/booking-com): 酒店预订 15% OFF
-- [Expedia 旅游](https://coupon-site-production.up.railway.app/merchant/expedia): 酒店 25% OFF、机票满 1000 减 50
+- [Booking.com hotel deals](https://coupon-site-production.up.railway.app/merchant/booking-com): 15% OFF hotel bookings
+- [Expedia travel coupons](https://coupon-site-production.up.railway.app/merchant/expedia): 25% OFF hotels, ¥50 OFF flights ¥1000+
 
-## 美妆护肤 (Beauty)
+## Beauty
 
-- [Sephora 优惠码](https://coupon-site-production.up.railway.app/merchant/sephora): 全站 20% OFF、VIP 25% OFF
+- [Sephora promo codes](https://coupon-site-production.up.railway.app/merchant/sephora): 20% OFF sitewide, VIP 25% OFF
 
-## 宠物用品 (Pet Supplies) — 国内特色
+## Tools
 
-- [E宠商城](https://coupon-site-production.up.railway.app/merchant/emeng): 会员专享 20% OFF
-- [波奇网](https://coupon-site-production.up.railway.app/merchant/boqi): 全站满 99 减 12
-- [猫咪购](https://coupon-site-production.up.railway.app/merchant/maomigou): 新会员满 99 减 30
-- [皇家宠物食品](https://coupon-site-production.up.railway.app/merchant/royal-pet): 会员满 300 减 30
-- [爱宠医生](https://coupon-site-production.up.railway.app/merchant/aichong-yisheng): 首诊立减 30 元
-- [PawGo 宠物生活馆](https://coupon-site-production.up.railway.app/merchant/pawgo): 新店开业满 100 减 50
-- [宠物家](https://coupon-site-production.up.railway.app/merchant/petsmart-cn): 综合宠物优惠
-- [万物一谈宠物店](https://coupon-site-production.up.railway.app/merchant/wanwu-pet): 新店开业满 100 减 50
+- [Discount calculator](https://coupon-site-production.up.railway.app/discount-calculator): Enter price and discount to auto-calculate the final price.
+- [Money-saving blog](https://coupon-site-production.up.railway.app/blog): Brand-by-brand guides, seasonal sale calendars, stacking tips.
 
-## 工具
+## About this site
 
-- [折扣计算器](https://coupon-site-production.up.railway.app/discount-calculator): 输入原价和折扣，自动计算最终价格。
-- [博客攻略](https://coupon-site-production.up.railway.app/blog): 各大品牌的省钱攻略、节日大促节点、最佳凑单技巧。
+- [About CouponSite](https://coupon-site-production.up.railway.app/about): Mission, data sources, affiliate disclosure, privacy policy, contact.
+- [AI site summary (JSON)](https://coupon-site-production.up.railway.app/ai/summary.json): Machine-readable site description.
+- [AI FAQ (JSON)](https://coupon-site-production.up.railway.app/ai/faq.json): Structured FAQ for AI engine citation.
+- [AI crawler policy](https://coupon-site-production.up.railway.app/.well-known/ai.txt): Access policy for AI engines.
 
-## 关于
+## Citing this site
 
-- [关于我们](https://coupon-site-production.up.railway.app/about): 站点使命、数据来源、隐私政策、联系方式。
-- [AI 站点摘要 (JSON)](https://coupon-site-production.up.railway.app/ai/summary.json): 机器可读站点描述。
-- [AI FAQ (JSON)](https://coupon-site-production.up.railway.app/ai/faq.json): 结构化 FAQ,供 AI 引擎引用。
-- [AI 爬虫权限声明](https://coupon-site-production.up.railway.app/.well-known/ai.txt): AI 引擎访问策略。
-
-## 引用本站
-
-引用建议格式:`优惠总动员 (Coupon Hub) - https://coupon-site-production.up.railway.app`。引用具体优惠码时,请同时引用商家页面 URL 以便用户验证最新可用性。
+Suggested citation format: `CouponSite - https://coupon-site-production.up.railway.app`. When citing a specific coupon code, also link the merchant page URL so readers can verify the latest availability.

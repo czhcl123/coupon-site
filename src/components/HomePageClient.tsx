@@ -178,12 +178,13 @@ export default function HomePageClient() {
   const [loading, setLoading] = useState(true)
   const [copied, setCopied] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
-  const [lang, setLang] = useState<Lang>('zh')
+  const [lang, setLang] = useState<Lang>('en')
 
-  // Sync lang from URL
+  // Sync lang from URL (default: English for SEO/GEO)
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
-    setLang(params.get('lang') === 'en' ? 'en' : 'zh')
+    const urlLang = params.get('lang')
+    setLang(urlLang === 'zh' ? 'zh' : 'en')
   }, [])
 
   function fetchData() {

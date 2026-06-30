@@ -1,44 +1,44 @@
 {
   "faq": [
     {
-      "question": "什么是优惠总动员?",
-      "answer": "优惠总动员(Coupon Hub)是一个中文优惠码聚合站,实时汇总 23 个品牌的最新优惠券和折扣码,覆盖时尚、电子、旅行、美妆、宠物用品等品类。所有链接均为联盟链接(Affiliate Links)。"
+      "question": "What is CouponSite?",
+      "answer": "CouponSite (formerly 优惠总动员 / Coupon Hub) is a real-time promo code and discount aggregator covering 20+ major brands including Nike, Adidas, ASOS, Amazon, Sephora, Steam, and Booking.com across fashion, electronics, travel, beauty, and pet supplies. All links are affiliate links; the service is free for shoppers."
     },
     {
-      "question": "优惠码是免费的吗?",
-      "answer": "是的。站内所有优惠码均可免费查看和使用,无需注册或付费。"
+      "question": "Are the coupon codes free to use?",
+      "answer": "Yes. All coupon codes on CouponSite are free to view and use. No signup or payment required."
     },
     {
-      "question": "如何使用优惠码?",
-      "answer": "三步:1) 在首页或商家页面找到想要的优惠码;2) 点击「复制代码」按钮;3) 打开商家网站结算时,在优惠码输入框粘贴即可享受折扣。"
+      "question": "How do I use a coupon code?",
+      "answer": "Three steps: 1) Find the coupon you want on the homepage or merchant page; 2) Click the Copy Code button; 3) Paste the code into the promo code box at checkout on the merchant's website to apply the discount."
     },
     {
-      "question": "优惠码会过期吗?",
-      "answer": "会。每个优惠码都有有效期限,过期后我们会标注为「已过期」并停止展示。建议在结算前再次核对页面上的有效期说明。"
+      "question": "Do coupon codes expire?",
+      "answer": "Yes. Each coupon code has an expiry date. We mark expired codes as Expired and remove them from the homepage. Always check the expiry label on the coupon card before checking out."
     },
     {
-      "question": "如何确认优惠码有效?",
-      "answer": "每个有效优惠码都标注了「已验证」绿色标签,表示最近一次人工或自动验证通过。被标注「独家」的优惠码为本站独家合作的优惠。"
+      "question": "How do I verify a coupon code is still valid?",
+      "answer": "Every active coupon code displays a green Verified badge, indicating it has been verified by automated or manual checks recently. Codes labeled Exclusive are unique partnerships with the merchant."
     },
     {
-      "question": "网站支持英文吗?",
-      "answer": "支持。点击页面右上角的「EN/中文」按钮可切换语言。商家页面和优惠码详情均提供双语描述。"
+      "question": "Does the site support English?",
+      "answer": "Yes. Click the EN / 中文 toggle in the top-right corner of the page to switch languages. Merchant pages and coupon details are fully bilingual."
     },
     {
-      "question": "什么是联盟链接(Affiliate Link)?",
-      "answer": "联盟链接是一种带追踪的商家推广链接。当您通过本站链接进入商家网站并完成购物,商家会向我们支付少量佣金以支持本站运营。您支付的价格与直接访问商家网站相同,不会更贵。"
+      "question": "What is an affiliate link?",
+      "answer": "An affiliate link is a tracked promotion link. When you click through from CouponSite and complete a purchase, the merchant pays us a small commission at no extra cost to you. You pay exactly the same price as visiting the merchant directly."
     },
     {
-      "question": "折扣计算器如何使用?",
-      "answer": "折扣计算器位于顶部导航的「折扣计算器」入口。输入原价和折扣百分比,自动计算最终价格和节省金额。支持叠加折扣计算。"
+      "question": "How do I use the discount calculator?",
+      "answer": "Open the Discount Calculator from the top navigation. Enter the original price and discount percentage, and the calculator instantly returns the final price and the amount saved. Stacked discounts are supported."
     },
     {
-      "question": "如何订阅优惠更新?",
-      "answer": "可以订阅我们的 RSS 订阅(/rss.xml),当有新优惠上线时会自动推送更新。也可以访问博客(/blog)查看定期整理的省钱攻略。"
+      "question": "How can I get updates on new coupons?",
+      "answer": "Subscribe to our RSS feed (/rss.xml) for automatic updates when new coupons are published. You can also visit the blog (/blog) for regularly curated money-saving guides."
     },
     {
-      "question": "如何联系你们?",
-      "answer": "可通过 /about 页面查看联系方式,或发送邮件到联系邮箱。我们通常在 1-2 个工作日内回复。"
+      "question": "How do I contact CouponSite?",
+      "answer": "Visit the /about page for contact details, or send an email to the listed contact address. We typically reply within 1 to 2 business days."
     }
   ]
 }
