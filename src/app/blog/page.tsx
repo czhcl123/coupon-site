@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+﻿import { Metadata } from 'next'
 import Link from 'next/link'
 import { articles } from '@/data/articles'
 
@@ -39,7 +39,7 @@ export async function generateMetadata({
   searchParams: Promise<{ lang?: string }>
 }): Promise<Metadata> {
   const sp = await searchParams
-  const lang = (sp.lang === 'en' ? 'en' : 'zh') as Lang
+  const lang = (sp.lang === 'zh' ? 'zh' : 'en') as Lang
   return {
     title: lang === 'zh'
       ? '购物攻略与折扣资讯 | 优惠总动员'
@@ -57,7 +57,7 @@ export default async function BlogPage({
   searchParams: Promise<{ lang?: string }>
 }) {
   const sp = await searchParams
-  const lang = (sp.lang === 'en' ? 'en' : 'zh') as Lang
+  const lang = (sp.lang === 'zh' ? 'zh' : 'en') as Lang
   const nextLang: Lang = lang === 'zh' ? 'en' : 'zh'
 
   return (

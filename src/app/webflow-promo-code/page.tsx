@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import Link from 'next/link'
 
 type Lang = 'zh' | 'en'
@@ -317,7 +317,7 @@ export async function generateMetadata({
   searchParams: Promise<{ lang?: string }>
 }): Promise<Metadata> {
   const sp = await searchParams
-  const lang = (sp.lang === 'en' ? 'en' : 'zh') as Lang
+  const lang = (sp.lang === 'zh' ? 'zh' : 'en') as Lang
   const c = (lang === 'en' ? en : zh) as typeof en
 
   return {
@@ -357,7 +357,7 @@ export default async function WebflowPromoCodePage({
   searchParams: Promise<{ lang?: string }>
 }) {
   const sp = await searchParams
-  const lang = (sp.lang === 'en' ? 'en' : 'zh') as Lang
+  const lang = (sp.lang === 'zh' ? 'zh' : 'en') as Lang
   const nextLang: Lang = lang === 'zh' ? 'en' : 'zh'
   const c = (lang === 'en' ? en : zh) as typeof en
 

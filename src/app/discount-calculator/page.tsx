@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+﻿import { Metadata } from 'next'
 import { Suspense } from 'react'
 import DiscountCalculator from '@/components/DiscountCalculator'
 
@@ -10,7 +10,7 @@ export async function generateMetadata({
   searchParams: Promise<{ lang?: string }>
 }): Promise<Metadata> {
   const sp = await searchParams
-  const lang = (sp.lang === 'en' ? 'en' : 'zh') as Lang
+  const lang = (sp.lang === 'zh' ? 'zh' : 'en') as Lang
 
   if (lang === 'en') {
     return {
@@ -32,7 +32,7 @@ export default async function DiscountCalculatorPage({
   searchParams: Promise<{ lang?: string }>
 }) {
   const sp = await searchParams
-  const lang = (sp.lang === 'en' ? 'en' : 'zh') as Lang
+  const lang = (sp.lang === 'zh' ? 'zh' : 'en') as Lang
   const nextLang: Lang = lang === 'zh' ? 'en' : 'zh'
 
   return (
