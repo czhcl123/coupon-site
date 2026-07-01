@@ -36,6 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    {
+      url: `${base}/webflow-promo-code`,
+      lastModified: new Date('2026-07-01'),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
     ...blogUrls,
-  ]
+  ]   
 }
