@@ -92,6 +92,31 @@ function formatExpiry(dateStr: string | null, lang: Lang) {
   return uVars('expireInDays', { n: String(days) }, lang)
 }
 
+// Hardcoded brand homepage fallback for merchants without an affiliate URL.
+// Used as a transparent safety net: user always sees a working CTA.
+// Kept short — only covers the 15 active merchants in the DB.
+const BRAND_HOMEPAGE: Record<string, string> = {
+  'nike': 'https://www.nike.com',
+  'asos': 'https://www.asos.com',
+  'adidas': 'https://www.adidas.com',
+  'amazon': 'https://www.amazon.com',
+  'best buy': 'https://www.bestbuy.com',
+  'booking.com': 'https://www.booking.com',
+  'expedia': 'https://www.expedia.com',
+  'nordstrom': 'https://www.shop.nordstrom.com',
+  'shein': 'https://www.shein.com',
+  'sephora': 'https://www.sephora.com',
+  'steam': 'https://store.steampowered.com',
+  'target': 'https://www.target.com',
+  'temu': 'https://www.temu.com',
+  'ulta beauty': 'https://www.ulta.com',
+  'walmart': 'https://www.walmart.com',
+}
+
+function brandHomepageFallback(name: string): string | null {
+  return BRAND_HOMEPAGE[name.toLowerCase().trim()] ?? null
+}
+
 function translateTitle(title: string, lang: Lang) {
   if (lang === 'zh') return title
   const map: Record<string, string> = {
@@ -313,38 +338,41 @@ export default async function MerchantPage({
                   </div>
                 )}
 
-                {coupon.code ? (
-                  <>
-                    <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
-                      <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
-                      <span className="text-xs text-gray-400">{u('copyCode', lang)}</span>
-                    </div>
-                    {merchant.affiliateUrl && (
+                {(() => {
+                  const fallbackUrl = merchant.affiliateUrl || brandHomepageFallback(merchant.name)
+                  if (!fallbackUrl) return null
+                  const btnText = merchant.affiliateUrl
+                    ? u('goUse', lang)
+                    : (lang === 'zh' ? '访问品牌官网 →' : 'Visit brand site →')
+                  return coupon.code ? (
+                    <>
+                      <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
+                        <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
+                        <span className="text-xs text-gray-400">{u('copyCode', lang)}</span>
+                      </div>
                       <a
-                        href={merchant.affiliateUrl}
+                        href={fallbackUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
                       >
-                        {u('goUse', lang)}
+                        {btnText}
                       </a>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    <div className="text-xs text-gray-400 mb-2">{u('noCodeHint', lang)}</div>
-                    {merchant.affiliateUrl && (
+                    </>
+                  ) : (
+                    <>
+                      <div className="text-xs text-gray-400 mb-2">{u('noCodeHint', lang)}</div>
                       <a
-                        href={merchant.affiliateUrl}
+                        href={fallbackUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
                       >
-                        {u('goUse', lang)}
+                        {btnText}
                       </a>
-                    )}
-                  </>
-                )}
+                    </>
+                  )
+                })()}
 
                 <div className="flex items-center justify-between text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
                   <span>{formatExpiry(coupon.expiresAt, lang)}</span>

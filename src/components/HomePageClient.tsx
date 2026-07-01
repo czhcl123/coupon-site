@@ -431,30 +431,26 @@ export default function HomePageClient() {
                           {copied === coupon.id ? t[lang].copied : t[lang].copyCode}
                         </button>
                       </div>
-                      {coupon.merchant.affiliateUrl && (
-                        <a
-                          href={coupon.merchant.affiliateUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
-                        >
-                          {t[lang].useNow}
-                        </a>
-                      )}
+                      <a
+                        href={coupon.merchant.affiliateUrl || `/merchant/${coupon.merchant.slug}?lang=${lang}`}
+                        target={coupon.merchant.affiliateUrl ? '_blank' : undefined}
+                        rel={coupon.merchant.affiliateUrl ? 'noopener noreferrer' : undefined}
+                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                      >
+                        {coupon.merchant.affiliateUrl ? t[lang].useNow : (lang === 'zh' ? '查看更多 →' : 'View all deals →')}
+                      </a>
                     </>
                   ) : (
                     <>
                       <div className="text-xs text-gray-400 mb-2">{t[lang].noCodeHint}</div>
-                      {coupon.merchant.affiliateUrl && (
-                        <a
-                          href={coupon.merchant.affiliateUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
-                        >
-                          {t[lang].useNow}
-                        </a>
-                      )}
+                      <a
+                        href={coupon.merchant.affiliateUrl || `/merchant/${coupon.merchant.slug}?lang=${lang}`}
+                        target={coupon.merchant.affiliateUrl ? '_blank' : undefined}
+                        rel={coupon.merchant.affiliateUrl ? 'noopener noreferrer' : undefined}
+                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                      >
+                        {coupon.merchant.affiliateUrl ? t[lang].useNow : (lang === 'zh' ? '查看更多 →' : 'View all deals →')}
+                      </a>
                     </>
                   )}
                 </div>
