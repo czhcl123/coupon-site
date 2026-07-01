@@ -338,41 +338,34 @@ export default async function MerchantPage({
                   </div>
                 )}
 
-                {(() => {
-                  const fallbackUrl = merchant.affiliateUrl || brandHomepageFallback(merchant.name)
-                  if (!fallbackUrl) return null
-                  const btnText = merchant.affiliateUrl
-                    ? u('goUse', lang)
-                    : (lang === 'zh' ? '访问品牌官网 →' : 'Visit brand site →')
-                  return coupon.code ? (
-                    <>
-                      <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
-                        <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
-                        <span className="text-xs text-gray-400">{u('copyCode', lang)}</span>
-                      </div>
-                      <a
-                        href={fallbackUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
-                      >
-                        {btnText}
-                      </a>
-                    </>
-                  ) : (
-                    <>
-                      <div className="text-xs text-gray-400 mb-2">{u('noCodeHint', lang)}</div>
-                      <a
-                        href={fallbackUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
-                      >
-                        {btnText}
-                      </a>
-                    </>
-                  )
-                })()}
+                {coupon.code ? (
+                  <>
+                    <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
+                      <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
+                      <span className="text-xs text-gray-400">{u('copyCode', lang)}</span>
+                    </div>
+                    <a
+                      href={merchant.affiliateUrl || brandHomepageFallback(merchant.name) || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                    >
+                      {u('goUse', lang)}
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <div className="text-xs text-gray-400 mb-2">{u('noCodeHint', lang)}</div>
+                    <a
+                      href={merchant.affiliateUrl || brandHomepageFallback(merchant.name) || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                    >
+                      {u('goUse', lang)}
+                    </a>
+                  </>
+                )}
 
                 <div className="flex items-center justify-between text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
                   <span>{formatExpiry(coupon.expiresAt, lang)}</span>
