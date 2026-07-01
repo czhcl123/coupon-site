@@ -42,6 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    {
+      url: `${base}/canva-pro-coupon-code`,
+      lastModified: new Date('2026-07-01'),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
     ...blogUrls,
   ]   
 }
