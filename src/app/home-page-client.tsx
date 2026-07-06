@@ -387,21 +387,41 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
                 )}
 
                 {coupon.code ? (
-                  <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
-                    <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
-                    <button
-                      onClick={() => copyCode(coupon.code!, coupon.id)}
-                      className={`text-xs px-3 py-1 rounded-full font-medium transition-colors ${
-                        copied === coupon.id
-                          ? 'bg-green-500 text-white'
-                          : 'bg-orange-500 text-white hover:bg-orange-600'
-                      }`}
+                  <>
+                    <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
+                      <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
+                      <button
+                        onClick={() => copyCode(coupon.code!, coupon.id)}
+                        className={`text-xs px-3 py-1 rounded-full font-medium transition-colors ${
+                          copied === coupon.id
+                            ? 'bg-green-500 text-white'
+                            : 'bg-orange-500 text-white hover:bg-orange-600'
+                        }`}
+                      >
+                        {copied === coupon.id ? u('copied') : u('copyCode')}
+                      </button>
+                    </div>
+                    <a
+                      href={coupon.merchant.affiliateUrl || `/merchant/${coupon.merchant.slug}?lang=${lang}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
                     >
-                      {copied === coupon.id ? u('copied') : u('copyCode')}
-                    </button>
-                  </div>
+                      {u('useNow')}
+                    </a>
+                  </>
                 ) : (
-                  <div className="text-xs text-gray-400 mb-2">{u('noCodeHint')}</div>
+                  <>
+                    <div className="text-xs text-gray-400 mb-2">{u('noCodeHint')}</div>
+                    <a
+                      href={coupon.merchant.affiliateUrl || `/merchant/${coupon.merchant.slug}?lang=${lang}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                    >
+                      {u('useNow')}
+                    </a>
+                  </>
                 )}
 
                 <div className="flex items-center justify-between text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
