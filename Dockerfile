@@ -1,4 +1,3 @@
-# cache-bust-2026-07-06: force Railway to rebuild from scratch
 FROM node:22-slim
 
 WORKDIR /app
