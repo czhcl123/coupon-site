@@ -47,5 +47,43 @@ export default async function AboutPage({
 }) {
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
-  return <AboutClient initialLang={lang} />
+
+  const base = 'https://coupon-site-production.up.railway.app'
+  const today = new Date().toISOString().split('T')[0]
+  const aboutSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About CouponSite',
+    description: 'Learn about CouponSite\'s mission, data sources, affiliate disclosure, and contact information. Real-time coupon aggregator covering 20+ brands across fashion, electronics, travel, beauty, and pet supplies.',
+    url: `${base}/about`,
+    inLanguage: ['en-US', 'zh-CN'],
+    dateModified: today,
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      url: `${base}/og-image.svg`,
+    },
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'CouponSite',
+      url: base,
+    },
+    about: {
+      '@type': 'Organization',
+      name: 'CouponSite',
+      alternateName: 'Coupon Hub',
+      url: base,
+      foundingDate: '2026',
+      description: 'Real-time promo code and discount aggregator covering 20+ major brands across fashion, electronics, travel, beauty, and pet supplies.',
+    },
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
+      <AboutClient initialLang={lang} />
+    </>
+  )
 }

@@ -434,6 +434,64 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
         )}
       </main>
 
+      {/* Cross-site funnel: coupon-site → tools-site (JSON formatter / word counter / discount calculator) */}
+      <section className="max-w-6xl mx-auto px-4 pb-12">
+        <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 md:p-8 border border-orange-200">
+          <h2 className="text-lg md:text-xl font-bold text-gray-800 mb-2">
+            {lang === 'zh' ? '不止是优惠码——试试这些免费工具' : 'Beyond Coupons — Free Tools'}
+          </h2>
+          <p className="text-sm text-gray-600 mb-5">
+            {lang === 'zh'
+              ? '不知道买的折扣码打几折?用下面的工具 1 秒算清。'
+              : 'Not sure what your coupon saves? Calculate it in 1 second.'}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <a
+              href="https://tools-site-production.up.railway.app/discount-calculator"
+              className="block bg-white rounded-xl p-4 border border-orange-100 hover:border-orange-300 hover:shadow-md transition-all"
+            >
+              <div className="text-2xl mb-1">🧮</div>
+              <div className="font-semibold text-gray-800 text-sm mb-1">
+                {lang === 'zh' ? '折扣计算器' : 'Discount Calculator'}
+              </div>
+              <div className="text-xs text-gray-500">
+                {lang === 'zh' ? '原价×折扣,1秒出结果' : 'Original × discount, instant'}
+              </div>
+            </a>
+            <a
+              href="https://tools-site-production.up.railway.app/word-counter"
+              className="block bg-white rounded-xl p-4 border border-orange-100 hover:border-orange-300 hover:shadow-md transition-all"
+            >
+              <div className="text-2xl mb-1">📝</div>
+              <div className="font-semibold text-gray-800 text-sm mb-1">
+                {lang === 'zh' ? '字数统计' : 'Word Counter'}
+              </div>
+              <div className="text-xs text-gray-500">
+                {lang === 'zh' ? '论文字数 / SEO meta 长度' : 'Essay words / SEO meta length'}
+              </div>
+            </a>
+            <a
+              href="https://tools-site-production.up.railway.app/json-formatter"
+              className="block bg-white rounded-xl p-4 border border-orange-100 hover:border-orange-300 hover:shadow-md transition-all"
+            >
+              <div className="text-2xl mb-1">🔧</div>
+              <div className="font-semibold text-gray-800 text-sm mb-1">
+                {lang === 'zh' ? 'JSON 格式化' : 'JSON Formatter'}
+              </div>
+              <div className="text-xs text-gray-500">
+                {lang === 'zh' ? 'API 响应调试 / 嵌套层级' : 'API debug / nested levels'}
+              </div>
+            </a>
+          </div>
+          <p className="text-xs text-gray-400 mt-4 text-center">
+            {lang === 'zh' ? '工具来自 ' : 'Tools from '}
+            <a href="https://tools-site-production.up.railway.app" className="underline hover:text-orange-500">
+              Practical Tools
+            </a>
+          </p>
+        </div>
+      </section>
+
       <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
         <nav className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 mb-3 text-xs">
           <Link href={`/?lang=${lang}`} className="hover:text-orange-500 transition-colors">{u('home')}</Link>

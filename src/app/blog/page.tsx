@@ -60,8 +60,58 @@ export default async function BlogPage({
   const lang = (sp.lang === 'zh' ? 'zh' : 'en') as Lang
   const nextLang: Lang = lang === 'zh' ? 'en' : 'zh'
 
+  const base = 'https://coupon-site-production.up.railway.app'
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'CouponSite Blog - Money-Saving Guides & Deal Tips',
+    description: 'Expert shopping guides, deal alerts, and money-saving tips for online shopping across Nike, ASOS, Sephora, Steam, Booking.com and 20+ more brands.',
+    url: `${base}/blog`,
+    inLanguage: ['en-US', 'zh-CN'],
+    publisher: {
+      '@type': 'Organization',
+      name: 'CouponSite',
+      alternateName: 'Coupon Hub',
+      url: base,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${base}/favicon.ico`,
+        width: 256,
+        height: 256,
+      },
+    },
+    blogPost: articles.slice(0, 10).map((article) => ({
+      '@type': 'BlogPosting',
+      headline: article.title,
+      description: article.description,
+      url: `${base}/blog/${article.slug}`,
+      datePublished: article.publishedAt,
+      author: {
+        '@type': 'Organization',
+        name: 'CouponSite',
+        url: base,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'CouponSite',
+        url: base,
+      },
+      keywords: article.tags.join(', '),
+      about: {
+        '@type': 'Thing',
+        name: article.merchant,
+      },
+      inLanguage: lang === 'zh' ? 'zh-CN' : 'en-US',
+    })),
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -126,5 +176,6 @@ export default async function BlogPage({
         <p className="mt-1">{u('footer2', lang)}</p>
       </footer>
     </div>
+    </>
   )
 }

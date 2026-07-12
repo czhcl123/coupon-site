@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <text x="80" y="220" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="84" font-weight="800" fill="#ffffff">CouponSite</text>
+  <text x="80" y="290" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="38" font-weight="500" fill="#fed7aa">Verified Promo Codes &amp; Discounts</text>
+  <text x="80" y="380" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" font-weight="400" fill="#ffffff">Nike · Adidas · ASOS · Amazon · Sephora</text>
+  <text x="80" y="420" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="28" font-weight="400" fill="#ffffff">Steam · Booking.com · +20 more brands</text>
+  <text x="80" y="530" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="24" font-weight="600" fill="#ffffff">Updated daily · Free · Bilingual zh/en</text>
+  <text x="80" y="580" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="20" font-weight="400" fill="#fed7aa">coupon-site-production.up.railway.app</text>
+</svg>

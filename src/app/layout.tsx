@@ -60,7 +60,11 @@ const organizationSchema = {
     'Beauty and skincare discounts',
   ],
   sameAs: [
-    'https://coupon-site-production.up.railway.app',
+    'https://github.com/czhcl123',
+    'https://twitter.com/couponsite_hub',
+    'https://www.producthunt.com/products/couponsite',
+    'https://en.wikipedia.org/wiki/Coupon_code',
+    'https://www.wikidata.org/wiki/Q6514947',
   ],
   contactPoint: {
     '@type': 'ContactPoint',

@@ -72,9 +72,56 @@ async function fetchInitialData() {
 export default async function HomePage() {
   const { coupons, merchants } = await fetchInitialData()
 
+  const base = 'https://coupon-site-production.up.railway.app'
+  const today = new Date().toISOString().split('T')[0]
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'Today\'s Top Promo Codes & Discounts from 20+ Brands',
+    description: 'Real-time verified promo codes and discounts from Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and 20+ more top brands. Updated daily.',
+    image: `${base}/og-image.svg`,
+    datePublished: '2026-06-01',
+    dateModified: today,
+    inLanguage: ['en-US', 'zh-CN'],
+    author: {
+      '@type': 'Organization',
+      name: 'CouponSite',
+      url: base,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'CouponSite',
+      alternateName: 'Coupon Hub',
+      url: base,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${base}/favicon.ico`,
+        width: 256,
+        height: 256,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': base,
+    },
+    about: [
+      { '@type': 'Thing', name: 'Coupon codes' },
+      { '@type': 'Thing', name: 'Discount codes' },
+      { '@type': 'Thing', name: 'Promo codes' },
+      { '@type': 'Thing', name: 'Online shopping deals' },
+    ],
+    keywords: 'coupon codes, promo codes, discount codes, deals, savings, Nike promo, Adidas discount, ASOS coupon, Amazon deals, Sephora promo, Steam sale, Booking.com discount',
+  }
+
   return (
-    <Suspense fallback={<div className="min-h-screen bg-gray-50" />}>
-      <HomePageClient initialCoupons={coupons} initialMerchants={merchants} />
-    </Suspense>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <Suspense fallback={<div className="min-h-screen bg-gray-50" />}>
+        <HomePageClient initialCoupons={coupons} initialMerchants={merchants} />
+      </Suspense>
+    </>
   )
 }
