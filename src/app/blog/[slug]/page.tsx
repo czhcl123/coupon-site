@@ -54,16 +54,26 @@ export async function generateMetadata({
   const lang = (sp.lang === 'en' ? 'en' : 'zh') as Lang
   const article = getArticleBySlug(slug)
   if (!article) return {}
+  // GKP-friendly title: append year for freshness signal + GKP main keyword
+  const titleEn = `${article.title} (2026)`
+  const titleZh = `${article.title} (2026 最新)`
   return {
-    title: article.title,
+    title: lang === 'zh' ? titleZh : titleEn,
     description: article.description,
     openGraph: {
-      title: article.title,
+      title: lang === 'zh' ? titleZh : titleEn,
       description: article.description,
       type: 'article',
       publishedTime: article.publishedAt,
     },
-    alternates: { canonical: `/blog/${slug}` },
+    alternates: {
+      canonical: `/blog/${slug}`,
+      languages: {
+        'en-US': `/blog/${slug}?lang=en`,
+        'zh-CN': `/blog/${slug}?lang=zh`,
+        'x-default': `/blog/${slug}?lang=en`,
+      },
+    },
   }
 }
 

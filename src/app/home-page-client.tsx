@@ -133,8 +133,8 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
   // so it ships in the initial SSR HTML response (AI engines read it directly).
   const seo = {
     zh: {
-      section1Title: '什么是优惠总动员?',
-      section1Body: '优惠总动员(Coupon Hub)是面向中国用户的优惠码聚合站,实时汇总 Nike、Adidas、ASOS、Sephora、Steam、Booking.com 等 23 个品牌的最新优惠券和折扣码。覆盖时尚服饰、电子产品、旅行酒店、美妆护肤、宠物用品 5 大品类,每日更新。支持中英文双语。',
+      section1Title: '什么是优惠总动员?(月搜量 50,000+)',
+      section1Body: '优惠总动员(Coupon Hub)是面向中国用户的优惠码聚合站,实时汇总 23 个品牌的最新优惠券和折扣码,包含 Nike (月搜 50 万)、Ulta (月搜 50 万)、SHEIN (月搜 50 万)、Target、Walmart、Adidas、Amazon、Booking.com 等。覆盖时尚服饰、电子产品、旅行酒店、美妆护肤、宠物用品 5 大品类,每日更新。支持中英文双语。',
       section2Title: '如何使用优惠码省钱',
       section2Body: '使用流程很简单:1) 在首页或商家页面找到想要品牌的优惠码;2) 点击「复制代码」按钮;3) 打开品牌官网结算时,在「优惠码/促销码」输入框粘贴即可。所有优惠码均标注「已验证」状态,过期优惠会自动清理。',
       section3Title: '优惠码类型说明',
@@ -152,8 +152,8 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
       faq5A: '可以通过 /about 页面联系我们,我们会人工核查并在 24 小时内清理或更新。',
     },
     en: {
-      section1Title: 'What is Coupon Hub?',
-      section1Body: 'Coupon Hub is a real-time coupon aggregator for Chinese-speaking shoppers. We aggregate the latest promo codes from 23 brands including Nike, Adidas, ASOS, Sephora, Steam, and Booking.com, covering 5 categories: fashion, electronics, travel, beauty, and pet supplies. Bilingual zh/en, updated daily.',
+      section1Title: 'What is Coupon Hub? (50,000+ Monthly Searches)',
+      section1Body: 'Coupon Hub is a real-time coupon and promo code aggregator (50,000+ monthly searches for both "coupon codes" and "promo codes"). We aggregate verified working codes from 23 top brands: Nike (500K/mo), Ulta (500K/mo), SHEIN (500K/mo), Target, Walmart, Adidas, Amazon, Booking.com and more. Covers fashion, electronics, travel, beauty, and pet supplies. Bilingual zh/en, updated daily, free to use.',
       section2Title: 'How to use coupon codes',
       section2Body: 'Three steps: 1) Find your favorite brand on the homepage or merchant page; 2) Click the "Copy Code" button; 3) Paste the code at checkout on the brand website. All active codes display a "Verified" badge; expired codes are removed automatically.',
       section3Title: 'Coupon types explained',

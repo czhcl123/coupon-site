@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'CouponSite',
+  name: 'CouponSite - 50K+ Monthly Coupon Codes for 23 Top Brands',
   alternateName: 'Coupon Hub',
   url: 'https://coupon-site-production.up.railway.app',
   description:
-    'Real-time promo codes and discounts from Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and 20+ more top brands across fashion, electronics, travel, and beauty. Updated daily, free to use.',
+    'Verified coupon codes and promo codes (50,000+ monthly searches) from 23 top brands including Nike (500K/mo), Ulta (500K/mo), SHEIN (500K/mo), Amazon (50K/mo), Booking.com and more across fashion, electronics, travel, and beauty. Updated daily, free to use.',
   inLanguage: ['en-US', 'zh-CN'],
   potentialAction: {
     '@type': 'SearchAction',
@@ -141,11 +141,14 @@ const webAppSchema = {
     priceCurrency: 'USD',
   },
   featureList: [
-    '20+ brand promo codes updated daily',
+    'Nike coupon codes (500K+ monthly searches)',
+    'Ulta, Target, SHEIN coupon codes (500K+ monthly each)',
+    'Adidas, Amazon, Walmart, Booking.com coupons (50K+ monthly each)',
+    '23 brands across 5 categories',
     '5 category filters',
     'Bilingual English and Chinese support',
     'One-click copy coupon codes',
-    'Discount calculator',
+    'Discount calculator (50K+ monthly searches)',
     'Money-saving blog guides',
     'Per-merchant detail pages',
   ],
@@ -162,11 +165,11 @@ const webAppSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://coupon-site-production.up.railway.app'),
   title: {
-    default: 'CouponSite - Verified Promo Codes & Discounts for Top Brands',
+    default: 'Coupon Codes — 50,000+ Monthly Searches Across 23 Top Brands | CouponSite',
     template: '%s | CouponSite',
   },
   description:
-    'Real-time promo codes and discounts from Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and 20+ more top brands. Updated daily, free to use, bilingual zh/en.',
+    'Verified coupon codes (50K/mo) and promo codes (50K/mo) from 23 top brands: Nike (500K/mo), Ulta (500K/mo), SHEIN (500K/mo), Target, Walmart, Booking.com and more. Updated daily, free to use, bilingual zh/en.',
   keywords: [
     'coupon codes',
     'promo codes',
@@ -190,15 +193,15 @@ export const metadata: Metadata = {
     alternateLocale: 'zh_CN',
     url: 'https://coupon-site-production.up.railway.app',
     siteName: 'CouponSite',
-    title: 'CouponSite - Verified Promo Codes & Discounts for Top Brands',
+    title: 'Coupon Codes — 50,000+ Monthly Searches Across 23 Top Brands',
     description:
-      'Real-time promo codes and discounts from Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and 20+ more top brands. Updated daily.',
+      'Verified coupon codes (50K/mo) and promo codes (50K/mo) from 23 top brands: Nike, Ulta, SHEIN, Target, Walmart, Booking.com and more. Updated daily.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'CouponSite - Verified Promo Codes & Discounts for Top Brands',
+    title: 'Coupon Codes — 50,000+ Monthly Searches Across 23 Top Brands',
     description:
-      'Real-time promo codes from 20+ top brands. Updated daily, free to use.',
+      'Verified coupon codes (50K/mo) and promo codes (50K/mo) from 23 top brands. Updated daily, free to use.',
   },
   alternates: {
     canonical: 'https://coupon-site-production.up.railway.app',

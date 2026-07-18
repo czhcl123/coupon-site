@@ -162,6 +162,25 @@ interface CouponRow {
   category_slug: string | null
 }
 
+// GKP 主词数据表 (2026-07-18) — title/desc 加月搜量 + benefit 提升 CTR
+const GKP_DATA: Record<string, { keyword: string; volLabel: string; volZh: string }> = {
+  'nike':         { keyword: 'nike coupon code',         volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
+  'shein':        { keyword: 'shein coupon code',        volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
+  'ulta-beauty':  { keyword: 'ulta coupon',              volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
+  'target':       { keyword: 'target promo code',        volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
+  'walmart':      { keyword: 'walmart promo code',       volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
+  'booking-com':  { keyword: 'booking com promo code',   volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
+  'bestbuy':      { keyword: 'best buy promo code',      volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
+  'amazon':       { keyword: 'amazon coupon',            volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
+  'adidas':       { keyword: 'adidas promo code',        volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
+  'sephora':      { keyword: 'sephora discount code',    volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
+  'steam':        { keyword: 'steam sale',               volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
+  'expedia':      { keyword: 'expedia coupon code',      volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
+  'nordstrom':    { keyword: 'nordstrom anniversary sale', volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
+  'temu':         { keyword: 'temu coupon code',         volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
+  'asos':         { keyword: 'asos discount code',       volLabel: '5,000+ Monthly Searches',  volZh: '月搜 5 千' },
+}
+
 export async function generateMetadata({
   params,
   searchParams,
@@ -177,14 +196,26 @@ export async function generateMetadata({
   if (!merchants.length) return {}
 
   const merchant = merchants[0]
+  const gkp = GKP_DATA[slug]
+  const volLabel = gkp?.volLabel || 'Verified Coupons'
+  const volZh = gkp?.volZh || '已验证优惠码'
+  const gkpKw = gkp?.keyword || `${merchant.name.toLowerCase()} coupon code`
+
   return {
     title: lang === 'zh'
-      ? `${merchant.name} 优惠券折扣码 | 优惠总动员`
-      : `${merchant.name} Coupon Codes & Deals | Coupon Hub`,
+      ? `${merchant.name} 优惠码 — ${volZh}最新验证 2026`
+      : `${merchant.name} Coupon Code — ${volLabel} (Verified 2026)`,
     description: lang === 'zh'
-      ? `获取 ${merchant.name} 最新优惠券和折扣码，帮你省钱购物。`
-      : `Get the latest ${merchant.name} coupons and discount codes to save on your purchase.`,
-    alternates: { canonical: `/merchant/${slug}` },
+      ? `${merchant.name} 最新优惠码 (${volZh}):最新验证折扣码、复制即用、覆盖全场商品。每月自动清理过期码。`
+      : `Verified ${merchant.name} ${gkpKw} (${volLabel}). Latest working codes copied in one click. Expired codes auto-removed daily.`,
+    alternates: {
+      canonical: `/merchant/${slug}`,
+      languages: {
+        'en-US': `/merchant/${slug}?lang=en`,
+        'zh-CN': `/merchant/${slug}?lang=zh`,
+        'x-default': `/merchant/${slug}?lang=en`,
+      },
+    },
   }
 }
 
