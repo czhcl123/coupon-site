@@ -42,6 +42,26 @@ function uVars(key: keyof typeof t.en, vars: Record<string, string>, lang: Lang)
   return s
 }
 
+// GKP blog data (2026-07-18) — desc gets brand GKP main keyword + monthly volume
+// Same volumes as merchant/[slug] GKP_DATA so internal consistency holds.
+const GKP_BLOG_DATA: Record<string, { volLabel: string; volZh: string; cpc: string }> = {
+  'nike':       { volLabel: '500,000+ monthly searches', volZh: '月搜 50 万', cpc: 'CPC $7-$28' },
+  'shein':      { volLabel: '500,000+ monthly searches', volZh: '月搜 50 万', cpc: 'CPC $2-$8' },
+  'ulta-beauty':{ volLabel: '500,000+ monthly searches', volZh: '月搜 50 万', cpc: 'CPC $4-$12' },
+  'target':     { volLabel: '500,000+ monthly searches', volZh: '月搜 50 万', cpc: 'CPC $2-$6' },
+  'walmart':    { volLabel: '500,000+ monthly searches', volZh: '月搜 50 万', cpc: 'CPC $5-$6' },
+  'booking-com':{ volLabel: '50,000+ monthly searches',  volZh: '月搜 5 万',  cpc: 'CPC $16-$49' },
+  'bestbuy':    { volLabel: '50,000+ monthly searches',  volZh: '月搜 5 万',  cpc: 'CPC $4-$30' },
+  'amazon':     { volLabel: '50,000+ monthly searches',  volZh: '月搜 5 万',  cpc: 'CPC $5-$28' },
+  'adidas':     { volLabel: '50,000+ monthly searches',  volZh: '月搜 5 万',  cpc: 'CPC $13-$22' },
+  'sephora':    { volLabel: '50,000+ monthly searches',  volZh: '月搜 5 万',  cpc: 'CPC $4-$12' },
+  'steam':      { volLabel: '50,000+ monthly searches',  volZh: '月搜 5 万',  cpc: 'CPC varies' },
+  'expedia':    { volLabel: '50,000+ monthly searches',  volZh: '月搜 5 万',  cpc: 'CPC $6-$27' },
+  'nordstrom':  { volLabel: '50,000+ monthly searches',  volZh: '月搜 5 万',  cpc: 'CPC varies' },
+  'temu':       { volLabel: '50,000+ monthly searches',  volZh: '月搜 5 万',  cpc: 'CPC $0-$3' },
+  'asos':       { volLabel: '5,000+ monthly searches',   volZh: '月搜 5 千',  cpc: 'CPC $5-$8' },
+}
+
 export async function generateMetadata({
   params,
   searchParams,
@@ -57,12 +77,20 @@ export async function generateMetadata({
   // GKP-friendly title: append year for freshness signal + GKP main keyword
   const titleEn = `${article.title} (2026)`
   const titleZh = `${article.title} (2026 最新)`
+  // GKP-aligned desc: keep original intro + append monthly volume + benefit
+  const gkp = GKP_BLOG_DATA[article.merchantSlug]
+  const descEn = gkp
+    ? `${article.description} [${gkp.volLabel} (${gkp.cpc}); updated 2026.]`
+    : article.description
+  const descZh = gkp
+    ? `${article.description} [${gkp.volZh}；${gkp.cpc}；2026 最新更新。]`
+    : article.description
   return {
     title: lang === 'zh' ? titleZh : titleEn,
-    description: article.description,
+    description: lang === 'zh' ? descZh : descEn,
     openGraph: {
       title: lang === 'zh' ? titleZh : titleEn,
-      description: article.description,
+      description: lang === 'zh' ? descZh : descEn,
       type: 'article',
       publishedTime: article.publishedAt,
     },
