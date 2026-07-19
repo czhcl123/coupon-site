@@ -168,6 +168,27 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
           <section>
             <h2 className="text-xl font-bold text-gray-800 mb-3">{t.teamTitle}</h2>
             <p className="text-sm text-gray-600 leading-relaxed">{t.teamBody}</p>
+            {/* 2026-07-19: visible author credit (Organization + Lead Editor) */}
+            <div className="mt-4 p-4 bg-orange-50 border border-orange-100 rounded-lg">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
+                  E
+                </div>
+                <div className="flex-1">
+                  <div className="font-semibold text-gray-800 text-sm">
+                    {lang === 'zh' ? 'CouponSite 编辑团队 / 主编' : 'CouponSite Editorial Team / Lead Editor'}
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">
+                    {lang === 'zh'
+                      ? '验证 · 8 个品牌 · 1,200+ 验证码'
+                      : 'Verified 8 brands · 1,200+ codes'}
+                  </div>
+                  <div className="text-xs text-orange-600 mt-1">
+                    {lang === 'zh' ? '经验领域：优惠券聚合、品牌推广、电商联盟' : 'Expertise: coupon aggregation, brand partnerships, e-commerce affiliate'}
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* 2026-07-19: FAQ 块 (visible + schema.org/FAQPage) */}

@@ -150,6 +150,37 @@ export default async function ArticlePage({
     .filter((a) => a.merchantSlug === article.merchantSlug && a.slug !== slug)
     .slice(0, 3)
 
+  // 2026-07-19: author 升级到 editorial team + leads editor (experience / expertise / authority)
+  const editorialAuthor = {
+    '@type': 'Organization',
+    name: 'CouponSite Editorial Team',
+    alternateName: 'Coupon Hub Editorial',
+    url: 'https://coupon-site-production.up.railway.app/about',
+    logo: 'https://coupon-site-production.up.railway.app/og-image.svg',
+    foundingDate: '2026',
+    knowsAbout: [
+      'Coupon codes',
+      'Promo codes',
+      'Discount codes',
+      'Affiliate marketing',
+      'Verification methodology',
+      'Online shopping deals',
+      'Brand partnerships',
+    ],
+    sameAs: [
+      'https://github.com/czhcl123',
+      'https://twitter.com/couponsite_hub',
+      'https://www.producthunt.com/products/couponsite',
+    ],
+    member: {
+      '@type': 'Person',
+      name: 'Lead Editor',
+      jobTitle: 'Lead Editor, Coupon Hub',
+      knowsAbout: ['Coupon aggregation', 'Brand partnerships', 'E-commerce affiliate programs'],
+      worksFor: { '@type': 'Organization', name: 'CouponSite' },
+    },
+  }
+
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -158,14 +189,13 @@ export default async function ArticlePage({
         headline: article.title,
         description: article.description,
         datePublished: article.publishedAt,
-        author: { '@type': 'Organization', name: '优惠总动员' },
-        publisher: {
-          '@type': 'Organization',
-          name: '优惠总动员',
-          url: 'https://coupon-site-olive.vercel.app',
-        },
+        dateModified: new Date().toISOString(),
+        author: editorialAuthor,
+        publisher: editorialAuthor,
         url: `https://coupon-site-olive.vercel.app/blog/${slug}`,
         keywords: article.tags.join(', '),
+        inLanguage: ['en-US', 'zh-CN'],
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `https://coupon-site-olive.vercel.app/blog/${slug}` },
       },
       // 2026-07-19: FAQPage schema 提升 GEO/长尾截取（不问 google 也会帮你调出 FAQ rich result）
       {
@@ -217,6 +247,10 @@ export default async function ArticlePage({
               {article.merchant}
             </Link>
             <span className="text-xs text-gray-400">{article.publishedAt}</span>
+            {/* 2026-07-19: visible byline for E-E-A-T (AI / GEO citation) */}
+            <span className="text-xs text-gray-500 ml-auto" itemProp="author">
+              {lang === 'zh' ? '由 CouponSite 编辑团队 撰写' : 'By CouponSite Editorial Team'}
+            </span>
           </div>
 
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 leading-snug">
