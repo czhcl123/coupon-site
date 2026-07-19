@@ -3,7 +3,53 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { query } from '@/lib/db'
 
-type Lang = 'zh' | 'en'
+type Lang = 'zh' | 'en' | 'id' | 'ja' | 'ar' | 'pt'
+
+// 2026-07-19: 多语言本地化 metadata (GSC 出现 id/ja/ar/pt 长尾查询)
+// 扩充 4 个 GSC 高优 slug 的 title/desc 覆盖印尼/日本/沙特/巴西/葡语用户
+// 查词: kupon(印尼) クーポン(日) كود خصم(阿语) código promocional(葡语)
+type Localized = { title: string; desc: string }
+type LocaleTable = Record<Lang, Localized>
+type SlugI18n = Record<string, LocaleTable>
+
+const META_I18N: SlugI18n = {
+  // Sephora: 美妆高意图, 东南亚 + 日本 + 中东市场
+  sephora: {
+    en: { title: 'Sephora sephora discount code: 15% OFF + Free Shipping (Updated Daily)', desc: 'Verified Sephora sephora discount code — 15% OFF + Free Shipping. Updated Daily; 50,000+ monthly searches. Click to copy the strongest working code; expired codes auto-removed daily.' },
+    zh: { title: 'Sephora 优惠码 — 15% OFF 免运费(每日更新) + 近期 30 个验证码', desc: 'Sephora 15% OFF + 免运费。每日更新、月搜 5 万、复制即用、过期码每日自动清理。点开即取最强码。' },
+    id: { title: 'Kode Promo Sephora — Diskon 15% + Gratis Ongkos Kirim (Diperbarui Harian)', desc: 'Kode diskon Sephora terverifikasi — diskon 15% + gratis ongkos kirim. Diperbarui harian; 50K+ pencarian bulanan. Klik untuk menyalin kode yang masih berlaku.' },
+    ja: { title: 'セフォラ クーポンコード — 15% OFF + 送料無料(毎日更新)', desc: 'セフォラ 本人確認済み クーポン — 15% OFF + 送料無料。毎月 5 万検索、毎日更新。クリックして有効なコードをコピー。' },
+    ar: { title: 'كود خصم سيبورا — خصم 15% + شحن مجاني (يومي التحديث)', desc: 'كود خصم سيبورا موثّق — خصم 15% + شحن مجاني. يُحدَّث يومياً؛ 50 ألف بحث شهرياً. اضغط لنسخ الكود الفعّال.' },
+    pt: { title: 'Código Promocional Sephora — 15% OFF + Frete Grátis (Atualizado Diariamente)', desc: 'Código Sephora verificado — 15% OFF + frete grátis. Atualizado diariamente; 50 mil buscas mensais. Clique para copiar o código ativo.' },
+  },
+  // Nordstrom: 高端服饰, 阿语 + 葡语用户中高端
+  nordstrom: {
+    en: { title: 'Nordstrom nordstrom anniversary sale: 25% OFF Anniversary Sale (July 2026 Early Access)', desc: 'Verified Nordstrom anniversary sale — 25% OFF Anniversary Sale. July 2026 Early Access; 50,000+ monthly searches. Click to copy the strongest working code; expired codes auto-removed daily.' },
+    zh: { title: 'Nordstrom 优惠码 — 周年庆 25% OFF(2026 7 月抢先购) + 近期 30 个验证码', desc: 'Nordstrom 周年庆 25% OFF。2026 7 月抢先购、月搜 5 万、复制即用、过期码每日自动清理。点开即取最强码。' },
+    id: { title: 'Kode Promo Nordstrom — Diskon 25% Anniversary Sale (Akses Awal Juli 2026)', desc: 'Kode diskon Nordstrom Anniversary Sale — diskon 25%. Akses awal Juli 2026; 50 ribu pencarian bulanan. Klik untuk menyalin kode aktif.' },
+    ja: { title: 'ノードストロム クーポン — アニバーサリーセール 25% OFF(2026 年 7 月先行アクセス)', desc: 'ノードストロム アニバーサリーセール 確認済み — 25% OFF。2026 年 7 月先行アクセス、毎月 5 万検索。クリックしてコードをコピー。' },
+    ar: { title: 'كود خصم نوردستروم — خصم 25% تخفيضات الذكرى السنوية (وصول مبكر يوليو 2026)', desc: 'كود خصم نوردستروم موثّق — خصم 25% تخفيضات الذكرى السنوية. وصول مبكر يوليو 2026؛ 50 ألف بحث شهرياً.' },
+    pt: { title: 'Código Promocional Nordstrom — 25% OFF Sale de Aniversário (Acesso Antecipado Julho 2026)', desc: 'Código Nordstrom verificado — 25% OFF Sale de Aniversário. Acesso antecipado julho 2026; 50 mil buscas mensais.' },
+  },
+  // Target: 大众零售, 拉美/巴西/印尼用户多
+  target: {
+    en: { title: 'Target target promo code: 5% Circle Deal + Free Shipping (New Codes This Week)', desc: 'Verified Target promo code — 5% Circle Deal + Free Shipping. New Codes This Week; 500,000+ monthly searches. Click to copy the strongest working code; expired codes auto-removed daily.' },
+    zh: { title: 'Target 优惠码 — Circle 周特卖 + 免运费(本周新码) + 近期 30 个验证码', desc: 'Target Circle 周特卖 + 免运费。本周新码、月搜 50 万、复制即用、过期码每日自动清理。点开即取最强码。' },
+    id: { title: 'Kode Promo Target — Circle Deal 5% + Gratis Ongkos Kirim (Kode Baru Minggu Ini)', desc: 'Kode diskon Target terverifikasi — Circle Deal 5% + gratis ongkos kirim. Kode baru minggu ini; 500 ribu pencarian bulanan. Klik untuk menyalin.' },
+    ja: { title: 'ターゲット クーポンコード — サークルディール 5% + 送料無料(今週の新コード)', desc: 'ターゲット サークルディール 確認済み — 5% OFF + 送料無料。今週の新コード、毎月 50 万検索。クリックしてコードをコピー。' },
+    ar: { title: 'كود خصم تارجت — عرض سيركل 5% + شحن مجاني (أكواد جديدة هذا الأسبوع)', desc: 'كود خصم تارجت موثّق — عرض سيركل 5% + شحن مجاني. أكواد جديدة هذا الأسبوع؛ 500 ألف بحث شهرياً.' },
+    pt: { title: 'Código Promocional Target — Circle Deal 5% + Frete Grátis (Novos Códigos Esta Semana)', desc: 'Código Target verificado — Circle Deal 5% + frete grátis. Novos códigos esta semana; 500 mil buscas mensais.' },
+  },
+  // Asos: 学生 + 国际时尚, 全球年轻用户多
+  asos: {
+    en: { title: 'ASOS asos discount code: 25% Student Code + Free Shipping (Verified Today)', desc: 'Verified ASOS discount code — 25% Student Code + Free Shipping. Verified Today; 5,000+ monthly searches. Click to copy the strongest working code; expired codes auto-removed daily.' },
+    zh: { title: 'ASOS 优惠码 — 25% 学生码 + 免运费(今日验证) + 近期 30 个验证码', desc: 'ASOS 25% 学生码 + 免运费。今日验证、月搜 5 千、复制即用、过期码每日自动清理。点开即取最强码。' },
+    id: { title: 'Kode Diskon ASOS — Kode Mahasiswa 25% + Gratis Ongkos Kirim (Diverifikasi Hari Ini)', desc: 'Kode diskon ASOS terverifikasi — kode mahasiswa 25% + gratis ongkos kirim. Diverifikasi hari ini; 5 ribu pencarian bulanan.' },
+    ja: { title: 'ASOS 割引コード — 学生コード 25% + 送料無料(本日確認済み)', desc: 'ASOS 確認済み 割引コード — 学生 25% + 送料無料。本日確認、毎月 5 千検索。クリックしてコードをコピー。' },
+    ar: { title: 'كود خصم إيه سوس — كود الطلاب 25% + شحن مجاني (تم التحقق اليوم)', desc: 'كود خصم ASOS موثّق — كود الطلاب 25% + شحن مجاني. تم التحقق اليوم؛ 5 آلاف بحث شهرياً.' },
+    pt: { title: 'Código de Desconto ASOS — Código Estudante 25% + Frete Grátis (Verificado Hoje)', desc: 'Código ASOS verificado — código estudante 25% + frete grátis. Verificado hoje; 5 mil buscas mensais.' },
+  },
+}
 
 const t = {
   zh: {
@@ -171,7 +217,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params
   const sp = await searchParams
-  const lang = (sp.lang === 'en' ? 'en' : 'zh') as Lang
+  // 2026-07-19: 扩充到 6 locale (zh/en/id/ja/ar/pt) 迎拥 GSC 出现的多语言查询
+  const lang = (['zh','en','id','ja','ar','pt'].includes(sp.lang || '') ? sp.lang! : 'zh') as Lang
 
   const merchants = await query<MerchantRow[]>('SELECT * FROM Merchant WHERE slug = ?', [slug])
   if (!merchants.length) return {}
@@ -182,8 +229,29 @@ export async function generateMetadata({
   const volZh = gkp?.volZh || '已验证优惠码'
   const gkpKw = gkp?.keyword || `${merchant.name.toLowerCase()} coupon code`
 
-  // 2026-07-19: GSC 高曝光 4 slug 走 specific override，title/desc 主词前置 + benefit + urgency + 数字
-  // 其余 11 slug 走通用模板不变
+  // 2026-07-19: 4 个 GSC 高优 slug × 6 语言 本地化 metadata override
+  // 包含 id/ja/ar/pt 本地关键词 (kupon / クーポン / كود خصم / código promocional)
+  if (META_I18N[slug]) {
+    const loc = META_I18N[slug][lang] || META_I18N[slug].en
+    return {
+      title: loc.title,
+      description: loc.desc,
+      alternates: {
+        canonical: `/merchant/${slug}`,
+        languages: {
+          'en-US': `/merchant/${slug}?lang=en`,
+          'zh-CN': `/merchant/${slug}?lang=zh`,
+          'id-ID': `/merchant/${slug}?lang=id`,
+          'ja-JP': `/merchant/${slug}?lang=ja`,
+          'ar-SA': `/merchant/${slug}?lang=ar`,
+          'pt-BR': `/merchant/${slug}?lang=pt`,
+          'x-default': `/merchant/${slug}?lang=en`,
+        },
+      },
+    }
+  }
+
+  // GSC 高曝光 4 slug 中不限 6-lang 本地化的其他 slug 走双语言 override
   if (gkp?.benefitEn && gkp?.urgencyEn) {
     return {
       title: lang === 'zh'
