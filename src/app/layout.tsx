@@ -235,6 +235,8 @@ export default function RootLayout({
     >
       <head>
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-friendly site index" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM-friendly full content" />
+        <link rel="alternate" type="text/markdown" href="/llms-full.txt" title="LLM-friendly site index (markdown)" />
         <link rel="alternate" type="application/rss+xml" title="CouponSite RSS Feed" href="/rss.xml" />
       </head>
       <body className="min-h-full flex flex-col">
