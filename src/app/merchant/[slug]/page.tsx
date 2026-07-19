@@ -141,22 +141,25 @@ interface CouponRow {
 }
 
 // GKP 主词数据表 (2026-07-18) — title/desc 加月搜量 + benefit 提升 CTR
-const GKP_DATA: Record<string, { keyword: string; volLabel: string; volZh: string }> = {
+// 2026-07-19: 给 GSC 高曝光 4 个 slug (sephora/nordstrom/target/asos) 加 benefit + urgency
+// 用于 generateMetadata 中 specific override，title/desc 主词前置 + 数字 + benefit + 紧迫感
+interface GkpEntry { keyword: string; volLabel: string; volZh: string; benefitEn?: string; benefitZh?: string; urgencyEn?: string; urgencyZh?: string }
+const GKP_DATA: Record<string, GkpEntry> = {
   'nike':         { keyword: 'nike coupon code',         volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
   'shein':        { keyword: 'shein coupon code',        volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
   'ulta-beauty':  { keyword: 'ulta coupon',              volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
-  'target':       { keyword: 'target promo code',        volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
+  'target':       { keyword: 'target promo code',        volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万', benefitEn: '5% Circle Deal + Free Shipping', benefitZh: 'Circle 周特卖 + 免运费', urgencyEn: 'New Codes This Week', urgencyZh: '本周新码' },
   'walmart':      { keyword: 'walmart promo code',       volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
   'booking-com':  { keyword: 'booking com promo code',   volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
   'bestbuy':      { keyword: 'best buy promo code',      volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
   'amazon':       { keyword: 'amazon coupon',            volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
   'adidas':       { keyword: 'adidas promo code',        volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
-  'sephora':      { keyword: 'sephora discount code',    volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
+  'sephora':      { keyword: 'sephora discount code',    volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万', benefitEn: '15% OFF + Free Shipping', benefitZh: '15% OFF + 免运费', urgencyEn: 'Updated Daily', urgencyZh: '每日更新' },
   'steam':        { keyword: 'steam sale',               volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
   'expedia':      { keyword: 'expedia coupon code',      volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
-  'nordstrom':    { keyword: 'nordstrom anniversary sale', volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
+  'nordstrom':    { keyword: 'nordstrom anniversary sale', volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万', benefitEn: '25% OFF Anniversary Sale', benefitZh: '周年庆 25% OFF', urgencyEn: 'July 2026 Early Access', urgencyZh: '2026 7 月抢先购' },
   'temu':         { keyword: 'temu coupon code',         volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
-  'asos':         { keyword: 'asos discount code',       volLabel: '5,000+ Monthly Searches',  volZh: '月搜 5 千' },
+  'asos':         { keyword: 'asos discount code',       volLabel: '5,000+ Monthly Searches',  volZh: '月搜 5 千', benefitEn: '25% Student Code + Free Shipping', benefitZh: '25% 学生码 + 免运费', urgencyEn: 'Verified Today', urgencyZh: '今日验证' },
 }
 
 export async function generateMetadata({
@@ -178,6 +181,27 @@ export async function generateMetadata({
   const volLabel = gkp?.volLabel || 'Verified Coupons'
   const volZh = gkp?.volZh || '已验证优惠码'
   const gkpKw = gkp?.keyword || `${merchant.name.toLowerCase()} coupon code`
+
+  // 2026-07-19: GSC 高曝光 4 slug 走 specific override，title/desc 主词前置 + benefit + urgency + 数字
+  // 其余 11 slug 走通用模板不变
+  if (gkp?.benefitEn && gkp?.urgencyEn) {
+    return {
+      title: lang === 'zh'
+        ? `${merchant.name} 优惠码 — ${gkp.benefitZh}(${gkp.urgencyZh}) + 近期 30 个验证码`
+        : `${merchant.name} ${gkpKw}: ${gkp.benefitEn} (${gkp.urgencyEn})`,
+      description: lang === 'zh'
+        ? `${merchant.name} ${gkp.benefitZh}。${gkp.urgencyZh}、${volZh}、复制即用、过期码每日自动清理。点开即取最强码。`
+        : `${merchant.name} ${gkpKw} — ${gkp.benefitEn}. ${gkp.urgencyEn}; ${volLabel}. Click to copy the strongest working code; expired codes auto-removed daily.`,
+      alternates: {
+        canonical: `/merchant/${slug}`,
+        languages: {
+          'en-US': `/merchant/${slug}?lang=en`,
+          'zh-CN': `/merchant/${slug}?lang=zh`,
+          'x-default': `/merchant/${slug}?lang=en`,
+        },
+      },
+    }
+  }
 
   return {
     title: lang === 'zh'

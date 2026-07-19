@@ -233,6 +233,13 @@ Best Buy 有 15 天价格保护期，降价可申请退差价。
 
 ### 购买建议
 不要等"最低价"，游戏打到一半就不想玩了的大有人在。
+
+## Steam 相关优惠与攻略
+
+- 🎮 <a href="/merchant/steam">Steam 最新优惠码</a> — 每日更新
+- 💰 <a href="/blog/nike-discount-code-guide">Nike 折扣码完全指南</a> — 学生 / 会员 / 银行叠加
+- 🎮 <a href="/blog/amazon-prime-day-guide">Amazon Prime Day 攻略</a> — 游戏外设 / 礼品卡叠加
+- 🔥 <a href="/blog/bestbuy-tv-buying-guide">Best Buy 电视购买指南</a> — 电竞显示器促销节点
     `,
     merchant: 'Steam',
     merchantSlug: 'steam',

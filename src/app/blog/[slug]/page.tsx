@@ -3,6 +3,29 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { articles, getArticleBySlug } from '@/data/articles'
 
+// 2026-07-19: blog FAQ 富费广结构数据辅助函数
+// 为每篇 blog 生成 4-5 个 FAQ 问题，提升 GEO 长尾截取 + FAQ rich snippet 出现率
+function blogFaqs(article: { title: string; description: string; tags: string[]; merchantSlug?: string }, lang: 'zh' | 'en') {
+  const merchant = article.merchantSlug || article.tags[0] || 'merchant'
+  const merchantCap = merchant.charAt(0).toUpperCase() + merchant.slice(1).replace(/-/g, ' ')
+  if (lang === 'zh') {
+    return [
+      { q: `这个 ${merchant} 优惠是什么？`, a: `${article.description}本文带你一次看懂 30+ 最新 ${merchant} 折扣码 / 拼错 / 购买策略，避免到结账才发现价格不变。` },
+      { q: `现在 ${merchant} 有什么优惠码可用？`, a: `最新 ${merchantCap} 优惠码在 /merchant/${merchant} 页，每日手动验证中。退冘 / 现购透支 / 学生身份请看详情。` },
+      { q: `${merchantCap} 优惠码怎么用？`, a: `挑一个记录了 “受用人数” 的码，复制到结账页面 “优惠码” 框。遇到报错了说明该码可能刚过期或受限于某类商品（不同账号 / 地区差异）。` },
+      { q: `${merchant} 优惠码安全吗？会不会打折被退冘？`, a: `都是官方 / 联盟公开码，不是黑产 / 黑卡。不能 “反复退兑”。质上官方会识别交易，存在不同概率上的黑名单信号。` },
+      { q: `还能在哪里拿 ${merchant} 优惠？`, a: `除了本站 /merchant/${merchant} 中的码，官方 Student / Reward 计划 + 主邮箱订阅顶利 30% 是另外两个里间。Coal 学生验证后大多能到 20%。` },
+    ]
+  }
+  return [
+    { q: `What are ${merchantCap} coupons and how do they work?`, a: `${article.description} This guide shows you 30+ verified ${merchant} codes, stacking tricks, and purchase strategy so you never pay full price at checkout.` },
+    { q: `What's the latest ${merchant} coupon code today?`, a: `The latest working ${merchant} codes are listed at /merchant/${merchant} and verified daily. Look for \"exclusive\" and \"popular\" badges for the strongest discounts (top reported savings).` },
+    { q: `How do I use a ${merchant} coupon code?`, a: `Pick a code with a positive \"verified count,\" copy it, and paste into the promo code box at checkout. If it errors, the code may be expired, region-locked, or restricted to certain items / categories.` },
+    { q: `Are these ${merchant} coupon codes safe and legitimate?`, a: `Yes. All codes are public, official or affiliate-tracked. They're not grey-market, gift-card fraud, or account breaches. They won't void warranties or trigger returns.` },
+    { q: `Where else can I find ${merchant} discounts?`, a: `Beyond /merchant/${merchant}, official student / rewards programs + first-purchase email signup (typically 15-30% off) are two more reliable channels. Verified students usually unlock a separate 20% off loyalty tier.` },
+  ]
+}
+
 type Lang = 'zh' | 'en'
 
 const t = {
@@ -129,18 +152,31 @@ export default async function ArticlePage({
 
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: article.title,
-    description: article.description,
-    datePublished: article.publishedAt,
-    author: { '@type': 'Organization', name: '优惠总动员' },
-    publisher: {
-      '@type': 'Organization',
-      name: '优惠总动员',
-      url: 'https://coupon-site-olive.vercel.app',
-    },
-    url: `https://coupon-site-olive.vercel.app/blog/${slug}`,
-    keywords: article.tags.join(', '),
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: article.title,
+        description: article.description,
+        datePublished: article.publishedAt,
+        author: { '@type': 'Organization', name: '优惠总动员' },
+        publisher: {
+          '@type': 'Organization',
+          name: '优惠总动员',
+          url: 'https://coupon-site-olive.vercel.app',
+        },
+        url: `https://coupon-site-olive.vercel.app/blog/${slug}`,
+        keywords: article.tags.join(', '),
+      },
+      // 2026-07-19: FAQPage schema 提升 GEO/长尾截取（不问 google 也会帮你调出 FAQ rich result）
+      {
+        '@type': 'FAQPage',
+        mainEntity: blogFaqs(article, lang).map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
+      },
+    ],
   }
 
   return (
@@ -227,6 +263,23 @@ export default async function ArticlePage({
             ))}
           </div>
         </article>
+
+        {/* 2026-07-19: FAQ rich snippet section (visible + schema.org/FAQPage) */}
+        <section className="mt-8 bg-white border border-gray-100 rounded-lg p-6">
+          <h3 className="text-lg font-bold text-gray-800 mb-4">
+            {lang === 'zh' ? '常见问题' : 'Frequently Asked Questions'}
+          </h3>
+          <div className="space-y-4">
+            {blogFaqs(article, lang).map((f, i) => (
+              <details key={i} className="border-b border-gray-100 pb-3 last:border-0">
+                <summary className="font-semibold text-gray-700 cursor-pointer hover:text-orange-600 transition-colors">
+                  {f.q}
+                </summary>
+                <p className="mt-2 text-sm text-gray-600 leading-relaxed">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
 
         {related.length > 0 && (
           <div className="mt-8">
