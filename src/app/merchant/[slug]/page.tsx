@@ -15,8 +15,8 @@ type SlugI18n = Record<string, LocaleTable>
 const META_I18N: SlugI18n = {
   // Sephora: 美妆高意图, 东南亚 + 日本 + 中东市场
   sephora: {
-    en: { title: 'Sephora sephora discount code: 15% OFF + Free Shipping (Updated Daily)', desc: 'Verified Sephora sephora discount code — 15% OFF + Free Shipping. Updated Daily; 50,000+ monthly searches. Click to copy the strongest working code; expired codes auto-removed daily.' },
-    zh: { title: 'Sephora 优惠码 — 15% OFF 免运费(每日更新) + 近期 30 个验证码', desc: 'Sephora 15% OFF + 免运费。每日更新、月搜 5 万、复制即用、过期码每日自动清理。点开即取最强码。' },
+    en: { title: 'Sephora Coupon Codes — 15% OFF + Free Samples & Gifts (Updated Daily)', desc: 'Verified Sephora coupon codes for sale, gift cards, makeup & Dyson Airwrap. 15% OFF + free samples. 50,000+ monthly searches; click to copy the strongest working code; expired codes auto-removed daily.' },
+    zh: { title: 'Sephora 优惠码 — 15% OFF + 生日礼物/礼品卡(每日更新) + 近期 30 个验证码', desc: 'Sephora 优惠码涵盖 护肤品/彩妆/Dyson/礼品卡。15% OFF + 生日礼物。月搜 5 万、每日更新、复制即用、过期码每日自动清理。' },
     id: { title: 'Kode Promo Sephora — Diskon 15% + Gratis Ongkos Kirim (Diperbarui Harian)', desc: 'Kode diskon Sephora terverifikasi — diskon 15% + gratis ongkos kirim. Diperbarui harian; 50K+ pencarian bulanan. Klik untuk menyalin kode yang masih berlaku.' },
     ja: { title: 'セフォラ クーポンコード — 15% OFF + 送料無料(毎日更新)', desc: 'セフォラ 本人確認済み クーポン — 15% OFF + 送料無料。毎月 5 万検索、毎日更新。クリックして有効なコードをコピー。' },
     ar: { title: 'كود خصم سيبورا — خصم 15% + شحن مجاني (يومي التحديث)', desc: 'كود خصم سيبورا موثّق — خصم 15% + شحن مجاني. يُحدَّث يومياً؛ 50 ألف بحث شهرياً. اضغط لنسخ الكود الفعّال.' },
@@ -24,8 +24,8 @@ const META_I18N: SlugI18n = {
   },
   // Nordstrom: 高端服饰, 阿语 + 葡语用户中高端
   nordstrom: {
-    en: { title: 'Nordstrom nordstrom anniversary sale: 25% OFF Anniversary Sale (July 2026 Early Access)', desc: 'Verified Nordstrom anniversary sale — 25% OFF Anniversary Sale. July 2026 Early Access; 50,000+ monthly searches. Click to copy the strongest working code; expired codes auto-removed daily.' },
-    zh: { title: 'Nordstrom 优惠码 — 周年庆 25% OFF(2026 7 月抢先购) + 近期 30 个验证码', desc: 'Nordstrom 周年庆 25% OFF。2026 7 月抢先购、月搜 5 万、复制即用、过期码每日自动清理。点开即取最强码。' },
+    en: { title: 'Nordstrom Coupon Codes — 25% OFF Anniversary Sale + Skims Early Access (2026)', desc: 'Verified Nordstrom coupon codes for Anniversary Sale, Rack, Skims, dresses & shoes. 25% OFF insider early access. 5M+ monthly searches; click to copy the strongest working code; expired codes auto-removed daily.' },
+    zh: { title: 'Nordstrom 优惠码 — 周年庆 25% OFF + Skims 抢先购(2026) + 近期 30 个验证码', desc: 'Nordstrom 优惠码涵盖 周年庆/Rack/Skims/连衣裙/鞋类。25% OFF 会员抢先购。月搜 500 万、复制即用、过期码每日自动清理。' },
     id: { title: 'Kode Promo Nordstrom — Diskon 25% Anniversary Sale (Akses Awal Juli 2026)', desc: 'Kode diskon Nordstrom Anniversary Sale — diskon 25%. Akses awal Juli 2026; 50 ribu pencarian bulanan. Klik untuk menyalin kode aktif.' },
     ja: { title: 'ノードストロム クーポン — アニバーサリーセール 25% OFF(2026 年 7 月先行アクセス)', desc: 'ノードストロム アニバーサリーセール 確認済み — 25% OFF。2026 年 7 月先行アクセス、毎月 5 万検索。クリックしてコードをコピー。' },
     ar: { title: 'كود خصم نوردستروم — خصم 25% تخفيضات الذكرى السنوية (وصول مبكر يوليو 2026)', desc: 'كود خصم نوردستروم موثّق — خصم 25% تخفيضات الذكرى السنوية. وصول مبكر يوليو 2026؛ 50 ألف بحث شهرياً.' },
@@ -33,8 +33,8 @@ const META_I18N: SlugI18n = {
   },
   // Target: 大众零售, 拉美/巴西/印尼用户多
   target: {
-    en: { title: 'Target target promo code: 5% Circle Deal + Free Shipping (New Codes This Week)', desc: 'Verified Target promo code — 5% Circle Deal + Free Shipping. New Codes This Week; 500,000+ monthly searches. Click to copy the strongest working code; expired codes auto-removed daily.' },
-    zh: { title: 'Target 优惠码 — Circle 周特卖 + 免运费(本周新码) + 近期 30 个验证码', desc: 'Target Circle 周特卖 + 免运费。本周新码、月搜 50 万、复制即用、过期码每日自动清理。点开即取最强码。' },
+    en: { title: 'Target Coupon Codes — 5% Circle Deal + Optical & Beauty (New Codes This Week)', desc: 'Verified Target coupon codes for Circle Deal, optical, beauty, electronics & toys. 5% OFF + free shipping. 5M+ monthly searches; click to copy the strongest working code; expired codes auto-removed daily.' },
+    zh: { title: 'Target 优惠码 — Circle 5% OFF + 眼镜/美妆(本周新码) + 近期 30 个验证码', desc: 'Target 优惠码涵盖 Circle Deal/眼镜/美妆/电子/玩具。5% OFF + 免运费。月搜 500 万、复制即用、过期码每日自动清理。' },
     id: { title: 'Kode Promo Target — Circle Deal 5% + Gratis Ongkos Kirim (Kode Baru Minggu Ini)', desc: 'Kode diskon Target terverifikasi — Circle Deal 5% + gratis ongkos kirim. Kode baru minggu ini; 500 ribu pencarian bulanan. Klik untuk menyalin.' },
     ja: { title: 'ターゲット クーポンコード — サークルディール 5% + 送料無料(今週の新コード)', desc: 'ターゲット サークルディール 確認済み — 5% OFF + 送料無料。今週の新コード、毎月 50 万検索。クリックしてコードをコピー。' },
     ar: { title: 'كود خصم تارجت — عرض سيركل 5% + شحن مجاني (أكواد جديدة هذا الأسبوع)', desc: 'كود خصم تارجت موثّق — عرض سيركل 5% + شحن مجاني. أكواد جديدة هذا الأسبوع؛ 500 ألف بحث شهرياً.' },
@@ -42,8 +42,8 @@ const META_I18N: SlugI18n = {
   },
   // Asos: 学生 + 国际时尚, 全球年轻用户多
   asos: {
-    en: { title: 'ASOS asos discount code: 25% Student Code + Free Shipping (Verified Today)', desc: 'Verified ASOS discount code — 25% Student Code + Free Shipping. Verified Today; 5,000+ monthly searches. Click to copy the strongest working code; expired codes auto-removed daily.' },
-    zh: { title: 'ASOS 优惠码 — 25% 学生码 + 免运费(今日验证) + 近期 30 个验证码', desc: 'ASOS 25% 学生码 + 免运费。今日验证、月搜 5 千、复制即用、过期码每日自动清理。点开即取最强码。' },
+    en: { title: 'ASOS Coupon Codes — 25% Student + Free Shipping (Dresses, Curve & Plus Size)', desc: 'Verified ASOS coupon codes for US, dresses, curve & plus size, menswear. 25% student code + free shipping. 500,000+ monthly searches; click to copy the strongest working code; expired codes auto-removed daily.' },
+    zh: { title: 'ASOS 优惠码 — 25% 学生码 + 免运费(连衣裙/加大码) + 近期 30 个验证码', desc: 'ASOS 优惠码涵盖 连衣裙/Curve/加大码/男装。25% 学生码 + 免运费。月搜 50 万、复制即用、过期码每日自动清理。' },
     id: { title: 'Kode Diskon ASOS — Kode Mahasiswa 25% + Gratis Ongkos Kirim (Diverifikasi Hari Ini)', desc: 'Kode diskon ASOS terverifikasi — kode mahasiswa 25% + gratis ongkos kirim. Diverifikasi hari ini; 5 ribu pencarian bulanan.' },
     ja: { title: 'ASOS 割引コード — 学生コード 25% + 送料無料(本日確認済み)', desc: 'ASOS 確認済み 割引コード — 学生 25% + 送料無料。本日確認、毎月 5 千検索。クリックしてコードをコピー。' },
     ar: { title: 'كود خصم إيه سوس — كود الطلاب 25% + شحن مجاني (تم التحقق اليوم)', desc: 'كود خصم ASOS موثّق — كود الطلاب 25% + شحن مجاني. تم التحقق اليوم؛ 5 آلاف بحث شهرياً.' },
