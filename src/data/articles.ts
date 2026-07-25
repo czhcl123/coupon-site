@@ -211,11 +211,13 @@ Best Buy 有 15 天价格保护期，降价可申请退差价。
     publishedAt: '2025-07-15',
   },
   {
-    slug: 'steam-sale-calendar',
+        slug: 'steam-sale-calendar',
     title: 'Steam 游戏折扣日历：抓住每一个史低价',
     description: 'Steam 促销时间表、Humble Bundle 互补购买、CDKeys 平台介绍。',
     content: `
 ## Steam 游戏折扣攻略
+
+还在找 Steam 最新可用的优惠码？我们每天手动验证 <a href="/merchant/steam">Steam 优惠码页</a>的折扣码，让你在史低叠加额外 10-20% OFF。
 
 ### Steam 四大促销节点
 1. **夏季特卖**（6月底-7月中）：最大型
@@ -224,7 +226,7 @@ Best Buy 有 15 天价格保护期，降价可申请退差价。
 4. **春季特卖**（3月）：独立游戏专场
 
 ### 价格历史查询
-用 SteamDB 或 IsThereAnyDeal 查询历史价格，低于历史最低价再入手。
+用 SteamDB 或 IsThereAnyDeal 查询历史价格，低于历史最低价再入手。别忘了和 <a href="/merchant/steam">Steam 优惠码页</a>的当前可用码叠加。
 
 ### 叠加购买策略
 - 先买 Humble Bundle Bundle，再激活到 Steam
@@ -244,7 +246,7 @@ Best Buy 有 15 天价格保护期，降价可申请退差价。
     merchant: 'Steam',
     merchantSlug: 'steam',
     tags: ['Steam 折扣', '游戏促销', 'Steam 特卖'],
-    publishedAt: '2025-08-22',
+    publishedAt: '2026-07-25',
   },
   {
     slug: 'target-circle-app',
