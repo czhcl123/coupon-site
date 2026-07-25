@@ -390,6 +390,68 @@ export default async function MerchantPage({
           </div>
         </div>
 
+        {/* 2026-07-25 P0 重做: ASOS SEO 内容块 (必须在 MerchantPage 内, coupons 已定义) */}
+        {/* 不用 prose 类, 避免 Tailwind 4 CSS-based config 兼容问题 */}
+        {slug === 'asos' && (lang === 'en' ? (
+          <section className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-8 text-sm text-gray-600 leading-relaxed">
+            <h2 className="text-lg font-bold text-gray-800 mb-3">About ASOS Coupon Codes — Updated Daily</h2>
+            <p className="mb-3">
+              ASOS is the UK&apos;s largest online fashion retailer serving 850+ brands and 85,000+ products across womenswear, menswear, Curve &amp; Plus Size, Maternity and beauty. This page aggregates every verified ASOS promo code we confirmed in the last 24 hours — student discounts, teacher discounts, first-order codes, free-shipping thresholds and sample sale access.
+            </p>
+            <p className="mb-4">
+              Currently <strong className="text-gray-800">{coupons.length} active ASOS coupons</strong> are listed below, sorted exclusive-first. The strongest verified code is always at the top.
+            </p>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">How to redeem an ASOS coupon</h3>
+            <ol className="list-decimal list-inside mb-4 space-y-1 pl-1">
+              <li>Click <strong className="text-gray-800">Use Now</strong> on any coupon card — the code is copied to your clipboard and ASOS opens in a new tab.</li>
+              <li>Add dresses, jeans, sneakers or beauty items to your bag (aim £30+ for most free-shipping codes).</li>
+              <li>Paste the code at checkout in the &ldquo;Promo code&rdquo; box and apply.</li>
+              <li>Student? Sign in to UNiDAYS or Student Beans first, then stack your student 10% with the strongest code below.</li>
+            </ol>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Popular ASOS coupon categories</h3>
+            <ul className="list-disc list-inside mb-2 space-y-1 pl-1">
+              <li><strong className="text-gray-800">ASOS student discount</strong> — 10% OFF year-round via UNiDAYS / Student Beans verification.</li>
+              <li><strong className="text-gray-800">ASOS teacher discount</strong> — 10% OFF for verified teachers via UNiDAYS.</li>
+              <li><strong className="text-gray-800">Free shipping UK</strong> — most codes require a £30 minimum spend.</li>
+              <li><strong className="text-gray-800">First order ASOS</strong> — 15% OFF for new email subscribers.</li>
+              <li><strong className="text-gray-800">Sample sale</strong> — seasonal up-to-70% clearance events (members-only access via the ASOS app).</li>
+              <li><strong className="text-gray-800">Birthday discount</strong> — 20% OFF during your birthday month if subscribed to ASOS emails.</li>
+            </ul>
+            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
+              Codes are verified every 24 hours against ASOS.co.uk. Expired codes are removed within 24 hours of expiration — if you spot an expired code, please report it via our <a href="/about" className="text-orange-500 underline">contact form</a>.
+            </p>
+          </section>
+        ) : (
+          <section className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-8 text-sm text-gray-600 leading-relaxed">
+            <h2 className="text-lg font-bold text-gray-800 mb-3">ASOS 优惠码使用指南 — 每日更新</h2>
+            <p className="mb-3">
+              ASOS 是英国最大的在线时尚零售商,合作 850+ 品牌、85,000+ 商品,覆盖女装、男装、加大码、孕妇装和美妆。本页汇总过去 24 小时内所有验证有效的 ASOS 优惠码,包括学生折扣、教师折扣、新用户码、免运费门槛和 Sample Sale 抢购通道。
+            </p>
+            <p className="mb-4">
+              目前共 <strong className="text-gray-800">{coupons.length} 张有效 ASOS 优惠码</strong>,独家码排在最前。最强的验证码始终置顶显示。
+            </p>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">ASOS 优惠码使用方法</h3>
+            <ol className="list-decimal list-inside mb-4 space-y-1 pl-1">
+              <li>点击任意优惠卡上的 <strong className="text-gray-800">去使用</strong>,码自动复制到剪贴板,并新窗口打开 ASOS。</li>
+              <li>把商品加到购物车(免运费码大多要求满 £30)。</li>
+              <li>结算页 &ldquo;Promo code&rdquo; 框粘贴码并应用。</li>
+              <li>学生先通过 UNiDAYS 或 Student Beans 验证,即可把学生 10% 与下方最强码叠加使用。</li>
+            </ol>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">热门 ASOS 优惠类型</h3>
+            <ul className="list-disc list-inside mb-2 space-y-1 pl-1">
+              <li><strong className="text-gray-800">ASOS 学生折扣</strong> — 通过 UNiDAYS / Student Beans 验证后全年 10% OFF。</li>
+              <li><strong className="text-gray-800">ASOS 教师折扣</strong> — 验证教师身份后 10% OFF(UNiDAYS 通道)。</li>
+              <li><strong className="text-gray-800">英国免运费</strong> — 多数码要求满 £30。</li>
+              <li><strong className="text-gray-800">ASOS 新用户</strong> — 新邮箱订阅立享 15% OFF。</li>
+              <li><strong className="text-gray-800">Sample Sale</strong> — 季度清仓最高 70% OFF(仅 ASOS App 会员通道)。</li>
+              <li><strong className="text-gray-800">生日折扣</strong> — 订阅 ASOS 邮件后生日月可领 20% OFF。</li>
+            </ul>
+            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
+              所有码每日针对 ASOS.co.uk 验证。过期码将在 24 小时内清除;如发现过期码,请通过 <a href="/about" className="text-orange-500 underline">联系我们</a> 上报。
+            </p>
+          </section>
+        ))}
+
         {/* 优惠券列表 */}
         {coupons.length === 0 ? (
           <div className="text-center py-16 text-gray-400">
