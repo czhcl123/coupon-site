@@ -452,6 +452,67 @@ export default async function MerchantPage({
           </section>
         ))}
 
+        {/* 2026-07-25 P1: Target SEO 内容块 */}
+        {slug === 'target' && (lang === 'en' ? (
+          <section className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-8 text-sm text-gray-600 leading-relaxed">
+            <h2 className="text-lg font-bold text-gray-800 mb-3">About Target Coupon Codes — Updated Daily</h2>
+            <p className="mb-3">
+              Target is a US general merchandise retailer with 2,000+ stores nationwide, known for affordable style across home, fashion, beauty, electronics, grocery and more. This page aggregates every verified Target promo code we confirmed in the last 24 hours — category-specific discounts (home, apparel, beauty), Target Circle app savings, RedCard holder perks, and seasonal sale access (Target Deal Days, Black Friday).
+            </p>
+            <p className="mb-4">
+              Currently <strong className="text-gray-800">{coupons.length} active Target coupons</strong> are listed below, sorted exclusive-first. The strongest verified code is always at the top.
+            </p>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">How to redeem a Target coupon</h3>
+            <ol className="list-decimal list-inside mb-4 space-y-1 pl-1">
+              <li>Click <strong className="text-gray-800">Use Now</strong> on any coupon card — the code is copied to your clipboard and Target opens in a new tab.</li>
+              <li>Add home goods, apparel, electronics, beauty or grocery items to your bag.</li>
+              <li>Paste the code at checkout in the &ldquo;Promo code&rdquo; box and apply.</li>
+              <li>Target Circle member? Stack your Circle offers on top of the strongest code below for double savings.</li>
+            </ol>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Popular Target coupon categories</h3>
+            <ul className="list-disc list-inside mb-2 space-y-1 pl-1">
+              <li><strong className="text-gray-800">Target Circle offers</strong> — app-only daily deals, 5% OFF birthday reward, personalized discounts.</li>
+              <li><strong className="text-gray-800">Target RedCard discount</strong> — extra 5% OFF sitewide (free shipping) for debit / credit card holders.</li>
+              <li><strong className="text-gray-800">Target home coupons</strong> — 20% OFF home goods, bedding, kitchen, decor.</li>
+              <li><strong className="text-gray-800">Target apparel codes</strong> — Cat &amp; Jack, All in Motion, A New Day brand-specific savings.</li>
+              <li><strong className="text-gray-800">Target Deal Days</strong> — twice-yearly sale in spring / fall competing with Amazon Prime Day.</li>
+              <li><strong className="text-gray-800">Target free shipping</strong> — free 2-day shipping on $35+ orders, or with RedCard no minimum.</li>
+            </ul>
+            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
+              Codes are verified every 24 hours against Target.com. Expired codes are removed within 24 hours of expiration — if you spot an expired code, please report it via our <a href="/about" className="text-orange-500 underline">contact form</a>.
+            </p>
+          </section>
+        ) : (
+          <section className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-8 text-sm text-gray-600 leading-relaxed">
+            <h2 className="text-lg font-bold text-gray-800 mb-3">Target 优惠码使用指南 — 每日更新</h2>
+            <p className="mb-3">
+              Target 是美国综合零售巨头,全美 2,000+ 门店,以高性价比的家居、时尚、美妆、电子产品和杂货闻名。本页汇总过去 24 小时内所有验证有效的 Target 优惠码,包括品类专项折扣码(家居、服装、美妆)、Target Circle App 专享、RedCard 信用卡会员权益,以及 Target Deal Days、黑五等季节性 Sale 通道。
+            </p>
+            <p className="mb-4">
+              目前共 <strong className="text-gray-800">{coupons.length} 张有效 Target 优惠码</strong>,独家码排在最前。最强的验证码始终置顶显示。
+            </p>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Target 优惠码使用方法</h3>
+            <ol className="list-decimal list-inside mb-4 space-y-1 pl-1">
+              <li>点击任意优惠卡上的 <strong className="text-gray-800">去使用</strong>,码自动复制到剪贴板,并新窗口打开 Target。</li>
+              <li>把家居、服装、电子产品、美妆或杂货商品加到购物车。</li>
+              <li>结算页 &ldquo;Promo code&rdquo; 框粘贴码并应用。</li>
+              <li>Target Circle 会员?先在 App 激活专属优惠,可与下方最强码叠加使用。</li>
+            </ol>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">热门 Target 优惠类型</h3>
+            <ul className="list-disc list-inside mb-2 space-y-1 pl-1">
+              <li><strong className="text-gray-800">Target Circle 优惠</strong> — App 独享每日特惠、生日月 5% OFF、个性化折扣。</li>
+              <li><strong className="text-gray-800">Target RedCard 折扣</strong> — 借记卡 / 信用卡会员全场额外 5% OFF(免运费)。</li>
+              <li><strong className="text-gray-800">Target 家居优惠码</strong> — 家居、床上用品、厨房、装饰 20% OFF。</li>
+              <li><strong className="text-gray-800">Target 服装码</strong> — Cat &amp; Jack、All in Motion、A New Day 品牌专属。</li>
+              <li><strong className="text-gray-800">Target Deal Days</strong> — 春 / 秋两次大型 Sale,与 Amazon Prime Day 同台竞争。</li>
+              <li><strong className="text-gray-800">Target 免运费</strong> — $35+ 订单免 2 日运费(RedCard 无最低门槛)。</li>
+            </ul>
+            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
+              所有码每日针对 Target.com 验证。过期码将在 24 小时内清除;如发现过期码,请通过 <a href="/about" className="text-orange-500 underline">联系我们</a> 上报。
+            </p>
+          </section>
+        ))}
+
         {/* 2026-07-25 P1: Nordstrom SEO 内容块 */}
         {slug === 'nordstrom' && (lang === 'en' ? (
           <section className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-8 text-sm text-gray-600 leading-relaxed">
