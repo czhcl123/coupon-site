@@ -452,6 +452,67 @@ export default async function MerchantPage({
           </section>
         ))}
 
+        {/* 2026-07-25 P1: Nordstrom SEO 内容块 */}
+        {slug === 'nordstrom' && (lang === 'en' ? (
+          <section className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-8 text-sm text-gray-600 leading-relaxed">
+            <h2 className="text-lg font-bold text-gray-800 mb-3">About Nordstrom Coupon Codes — Updated Daily</h2>
+            <p className="mb-3">
+              Nordstrom is a US-based luxury department store chain carrying 200+ designer and contemporary brands across fashion, beauty, shoes, accessories and home. This page aggregates every verified Nordstrom promo code we confirmed in the last 24 hours — sitewide percentage discounts, fashion-category coupons, free shipping thresholds and seasonal sale access (Half-Yearly Sale, Anniversary Sale, Black Friday).
+            </p>
+            <p className="mb-4">
+              Currently <strong className="text-gray-800">{coupons.length} active Nordstrom coupons</strong> are listed below, sorted exclusive-first. The strongest verified code is always at the top.
+            </p>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">How to redeem a Nordstrom coupon</h3>
+            <ol className="list-decimal list-inside mb-4 space-y-1 pl-1">
+              <li>Click <strong className="text-gray-800">Use Now</strong> on any coupon card — the code is copied to your clipboard and Nordstrom opens in a new tab.</li>
+              <li>Add designer apparel, shoes, bags or beauty items to your bag (most codes are sitewide; some are fashion-only).</li>
+              <li>Paste the code at checkout in the &ldquo;Promo code&rdquo; box and apply.</li>
+              <li>Nordstrom card holder? Sign in first to unlock card-member-only extra discounts on top of the code.</li>
+            </ol>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Popular Nordstrom coupon categories</h3>
+            <ul className="list-disc list-inside mb-2 space-y-1 pl-1">
+              <li><strong className="text-gray-800">Nordstrom Anniversary Sale</strong> — early access to new fall merchandise (July), card-members get first dibs.</li>
+              <li><strong className="text-gray-800">Nordstrom Half-Yearly Sale</strong> — sitewide clearance in May / November, up to 70% OFF designer.</li>
+              <li><strong className="text-gray-800">Nordstrom Rack coupons</strong> — off-price sister site with separate codes (additional 10-20% OFF already-reduced items).</li>
+              <li><strong className="text-gray-800">Nordstrom free shipping</strong> — free standard shipping on $50+ orders (lower threshold for card-holders).</li>
+              <li><strong className="text-gray-800">Designer brand codes</strong> — Tory Burch, Rag &amp; Bone, Vans, Free People brand-specific launches.</li>
+              <li><strong className="text-gray-800">First order Nordstrom</strong> — 15% OFF for new email subscribers (often stacks with sale).</li>
+            </ul>
+            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
+              Codes are verified every 24 hours against Nordstrom.com. Expired codes are removed within 24 hours of expiration — if you spot an expired code, please report it via our <a href="/about" className="text-orange-500 underline">contact form</a>.
+            </p>
+          </section>
+        ) : (
+          <section className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-8 text-sm text-gray-600 leading-relaxed">
+            <h2 className="text-lg font-bold text-gray-800 mb-3">Nordstrom 优惠码使用指南 — 每日更新</h2>
+            <p className="mb-3">
+              Nordstrom 是美国高端百货连锁,合作 200+ 设计师和当代品牌,覆盖时装、美妆、鞋履、配饰和家居。本页汇总过去 24 小时内所有验证有效的 Nordstrom 优惠码,包括全场折扣码、时尚品类码、免运费门槛,以及 Half-Yearly Sale、Anniversary Sale、黑五等季节性 Sale 通道。
+            </p>
+            <p className="mb-4">
+              目前共 <strong className="text-gray-800">{coupons.length} 张有效 Nordstrom 优惠码</strong>,独家码排在最前。最强的验证码始终置顶显示。
+            </p>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Nordstrom 优惠码使用方法</h3>
+            <ol className="list-decimal list-inside mb-4 space-y-1 pl-1">
+              <li>点击任意优惠卡上的 <strong className="text-gray-800">去使用</strong>,码自动复制到剪贴板,并新窗口打开 Nordstrom。</li>
+              <li>把设计师服装、鞋、包或美妆商品加到购物车(多数码全场通用,部分仅限时尚品类)。</li>
+              <li>结算页 &ldquo;Promo code&rdquo; 框粘贴码并应用。</li>
+              <li>Nordstrom 信用卡会员?先登录账户,可在码的基础上叠加会员专属额外折扣。</li>
+            </ol>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">热门 Nordstrom 优惠类型</h3>
+            <ul className="list-disc list-inside mb-2 space-y-1 pl-1">
+              <li><strong className="text-gray-800">Nordstrom Anniversary Sale</strong> — 7 月新季秋季商品首发(信用卡会员优先购)。</li>
+              <li><strong className="text-gray-800">Nordstrom Half-Yearly Sale</strong> — 5 月 / 11 月全场清仓,设计师商品最高 70% OFF。</li>
+              <li><strong className="text-gray-800">Nordstrom Rack 优惠码</strong> — 姐妹折扣站独立优惠码(已降价商品再减 10-20%)。</li>
+              <li><strong className="text-gray-800">Nordstrom 免运费</strong> — $50+ 订单免标准运费(信用卡会员门槛更低)。</li>
+              <li><strong className="text-gray-800">设计师品牌码</strong> — Tory Burch、Rag &amp; Bone、Vans、Free People 品牌专属。</li>
+              <li><strong className="text-gray-800">Nordstrom 新用户</strong> — 新邮箱订阅立享 15% OFF(可与 Sale 叠加)。</li>
+            </ul>
+            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
+              所有码每日针对 Nordstrom.com 验证。过期码将在 24 小时内清除;如发现过期码,请通过 <a href="/about" className="text-orange-500 underline">联系我们</a> 上报。
+            </p>
+          </section>
+        ))}
+
         {/* 2026-07-25 P1: Sephora SEO 内容块 (2 步走,验证模板后复制) */}
         {slug === 'sephora' && (lang === 'en' ? (
           <section className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-8 text-sm text-gray-600 leading-relaxed">
