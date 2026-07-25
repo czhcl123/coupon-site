@@ -452,6 +452,67 @@ export default async function MerchantPage({
           </section>
         ))}
 
+        {/* 2026-07-25 P1: Sephora SEO 内容块 (2 步走,验证模板后复制) */}
+        {slug === 'sephora' && (lang === 'en' ? (
+          <section className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-8 text-sm text-gray-600 leading-relaxed">
+            <h2 className="text-lg font-bold text-gray-800 mb-3">About Sephora Coupon Codes — Updated Daily</h2>
+            <p className="mb-3">
+              Sephora is the world&apos;s leading prestige beauty retailer, carrying 340+ brands across skincare, makeup, fragrance, hair and tools. This page aggregates every verified Sephora promo code we confirmed in the last 24 hours — sitewide discounts, Beauty Insider / VIP member exclusives, free-shipping thresholds, and brand-specific savings (Rare Beauty, Sol de Janeiro, Drunk Elephant, The Ordinary and more).
+            </p>
+            <p className="mb-4">
+              Currently <strong className="text-gray-800">{coupons.length} active Sephora coupons</strong> are listed below, sorted exclusive-first. The strongest verified code is always at the top.
+            </p>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">How to redeem a Sephora coupon</h3>
+            <ol className="list-decimal list-inside mb-4 space-y-1 pl-1">
+              <li>Click <strong className="text-gray-800">Use Now</strong> on any coupon card — the code is copied to your clipboard and Sephora opens in a new tab.</li>
+              <li>Add skincare, makeup, fragrance or hair items to your bag (most free-shipping codes require a $50 minimum spend).</li>
+              <li>Paste the code at checkout in the &ldquo;Promo code&rdquo; box and apply.</li>
+              <li>Beauty Insider member? Stack your 20% OFF Beauty Insider code with the strongest code below for double savings.</li>
+            </ol>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Popular Sephora coupon categories</h3>
+            <ul className="list-disc list-inside mb-2 space-y-1 pl-1">
+              <li><strong className="text-gray-800">Sephora Beauty Insider discount</strong> — 20% OFF seasonal for Rouge / VIB / Insider members.</li>
+              <li><strong className="text-gray-800">Sephora free shipping</strong> — free standard shipping on $50+ orders sitewide.</li>
+              <li><strong className="text-gray-800">Sephora birthday gift</strong> — free birthday gift during your birthday month (Insider / VIB / Rouge tiered).</li>
+              <li><strong className="text-gray-800">First order Sephora</strong> — 15% OFF for new email subscribers (often stacks with sale).</li>
+              <li><strong className="text-gray-800">Sephora sale events</strong> — Beauty Sale (April / November) up to 50% OFF.</li>
+              <li><strong className="text-gray-800">Brand-specific codes</strong> — Rare Beauty, Sol de Janeiro, Drunk Elephant, The Ordinary exclusive launches.</li>
+            </ul>
+            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
+              Codes are verified every 24 hours against Sephora.com. Expired codes are removed within 24 hours of expiration — if you spot an expired code, please report it via our <a href="/about" className="text-orange-500 underline">contact form</a>.
+            </p>
+          </section>
+        ) : (
+          <section className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 mb-8 text-sm text-gray-600 leading-relaxed">
+            <h2 className="text-lg font-bold text-gray-800 mb-3">Sephora 优惠码使用指南 — 每日更新</h2>
+            <p className="mb-3">
+              Sephora 是全球领先的高端美妆零售商,合作 340+ 品牌,覆盖护肤、彩妆、香氛、美发和工具。本页汇总过去 24 小时内所有验证有效的 Sephora 优惠码,包括全场折扣、Beauty Insider / VIP 会员独享、免运费门槛,以及 Rare Beauty、Sol de Janeiro、Drunk Elephant、The Ordinary 等品牌专属优惠。
+            </p>
+            <p className="mb-4">
+              目前共 <strong className="text-gray-800">{coupons.length} 张有效 Sephora 优惠码</strong>,独家码排在最前。最强的验证码始终置顶显示。
+            </p>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">Sephora 优惠码使用方法</h3>
+            <ol className="list-decimal list-inside mb-4 space-y-1 pl-1">
+              <li>点击任意优惠卡上的 <strong className="text-gray-800">去使用</strong>,码自动复制到剪贴板,并新窗口打开 Sephora。</li>
+              <li>把护肤、彩妆、香氛或美发商品加到购物车(免运费码大多要求满 $50)。</li>
+              <li>结算页 &ldquo;Promo code&rdquo; 框粘贴码并应用。</li>
+              <li>Beauty Insider 会员?先登录账户,即可把 20% OFF 会员码与下方最强码叠加使用。</li>
+            </ol>
+            <h3 className="text-base font-semibold text-gray-800 mb-2 mt-4">热门 Sephora 优惠类型</h3>
+            <ul className="list-disc list-inside mb-2 space-y-1 pl-1">
+              <li><strong className="text-gray-800">Sephora Beauty Insider 折扣</strong> — Rouge / VIB / Insider 会员每季 20% OFF 专属。</li>
+              <li><strong className="text-gray-800">Sephora 免运费</strong> — 全场 $50+ 订单免标准运费。</li>
+              <li><strong className="text-gray-800">Sephora 生日礼物</strong> — 生日月可领免费生日礼(Insider / VIB / Rouge 等级不同)。</li>
+              <li><strong className="text-gray-800">Sephora 新用户</strong> — 新邮箱订阅立享 15% OFF(可与 Sale 叠加)。</li>
+              <li><strong className="text-gray-800">Sephora Sale 季</strong> — Beauty Sale(4 月 / 11 月)最高 50% OFF。</li>
+              <li><strong className="text-gray-800">品牌专属码</strong> — Rare Beauty、Sol de Janeiro、Drunk Elephant、The Ordinary 新品首发。</li>
+            </ul>
+            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
+              所有码每日针对 Sephora.com 验证。过期码将在 24 小时内清除;如发现过期码,请通过 <a href="/about" className="text-orange-500 underline">联系我们</a> 上报。
+            </p>
+          </section>
+        ))}
+
         {/* 优惠券列表 */}
         {coupons.length === 0 ? (
           <div className="text-center py-16 text-gray-400">
