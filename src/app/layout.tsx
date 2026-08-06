@@ -191,15 +191,15 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     alternateLocale: 'zh_CN',
-    url: 'https://coupon-site-production.up.railway.app',
     siteName: 'CouponSite',
-    title: 'Coupon Codes — 50,000+ Monthly Searches Across 23 Top Brands',
+    // url/title omitted: Next.js will fill from metadataBase + pathname + page title template
+    // (fix Ahrefs issue #C5: 16 pages with og:url pointing to root and repeated og:title)
     description:
       'Verified coupon codes (50K/mo) and promo codes (50K/mo) from 23 top brands: Nike, Ulta, SHEIN, Target, Walmart, Booking.com and more. Updated daily.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Coupon Codes — 50,000+ Monthly Searches Across 23 Top Brands',
+    // title omitted: Next.js will use page title (fix C5 og:title duplication)
     description:
       'Verified coupon codes (50K/mo) and promo codes (50K/mo) from 23 top brands. Updated daily, free to use.',
   },
