@@ -344,7 +344,7 @@ export async function generateMetadata({
     title: c.meta.title,
     description: c.meta.description,
     alternates: {
-      canonical: PAGE_URL,
+      canonical: `${PAGE_URL}?lang=${lang}`,
       languages: {
         'en-US': `${SITE_URL}${PAGE_URL}?lang=en`,
         'zh-CN': `${SITE_URL}${PAGE_URL}?lang=zh`,

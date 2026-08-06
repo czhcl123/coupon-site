@@ -5,6 +5,27 @@ import HomePageClient, { type Coupon, type Merchant } from './home-page-client'
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
+import type { Metadata } from 'next'
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ lang?: string }>
+}): Promise<Metadata> {
+  const sp = await searchParams
+  const lang = sp.lang === 'en' ? 'en' : 'zh'
+  return {
+    alternates: {
+      canonical: `/?lang=${lang}`,
+      languages: {
+        'en-US': '/?lang=en',
+        'zh-CN': '/?lang=zh',
+        'x-default': '/?lang=en',
+      },
+    },
+  }
+}
+
 // SSR: fetch initial coupons and merchants directly from MySQL.
 // This ensures the initial HTML response contains real coupon data,
 // so AI engines (which don't always execute JavaScript) can see and cite it.
