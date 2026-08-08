@@ -85,6 +85,19 @@ const GKP_BLOG_DATA: Record<string, { volLabel: string; volZh: string; cpc: stri
   'asos':       { volLabel: '5,000+ monthly searches',   volZh: '月搜 5 千',  cpc: 'CPC $5-$8' },
 }
 
+const BLOG_PER_SLUG: Record<string, { zhExtra: string; enExtra: string }> = {
+  'nike-discount-code-guide': { zhExtra: '覆盖学生优惠、会员专享、节假日促销与叠加技巧, 实测每月新码首发, 双语 zh/en 显示。', enExtra: 'Covers student discount, member exclusives, holiday sales, and stacking tips. New codes added monthly; bilingual zh/en display.' },
+  'amazon-prime-day-guide': { zhExtra: '涵盖秒杀叠加、Lightning Deal、Prime 专享、避坑先涨后降, 实测每日更新。', enExtra: 'Lightning Deals, Prime exclusives, stacking strategies, and how to spot fake discounts. Updated daily.' },
+  'asos-student-discount': { zhExtra: '覆盖学生 10% OFF、新用户 25% OFF、Curve 与 Plus Size 免运, 实测每月新码。', enExtra: 'Student 10% OFF, new customer 25% OFF, Curve and Plus Size free shipping. New codes verified monthly.' },
+  'adidas-outlet-secrets': { zhExtra: '官网 outlet + 季末清仓 + 会员 30% OFF + 学生码, 实测每季更新。', enExtra: 'Outlet pricing + end-of-season clearance + member 30% OFF + student code. Updated each season.' },
+  'sephora-coupon-strategy': { zhExtra: '新用户礼包 + Beauty Insider 生日礼物 + Rouge 25% OFF + 免运费, 实测每日更新。', enExtra: 'New customer bundle + Beauty Insider birthday gift + Rouge 25% OFF + free shipping. Updated daily.' },
+  'bestbuy-tv-buying-guide': { zhExtra: 'OLED vs QLED 对比 + 尺寸选择 + 折扣时机 + 学生优惠, 实测每月更新。', enExtra: 'OLED vs QLED comparison + sizing guide + discount timing + student deal. Updated monthly.' },
+  'nordstrom-sale-guide': { zhExtra: 'Anniversary Sale + Half-Yearly + Rack + 设计师品牌 + Early Access, 实测每季更新。', enExtra: 'Anniversary Sale + Half-Yearly Sale + Rack + designer brands + Early Access. Updated each season.' },
+  'steam-sale-calendar': { zhExtra: '夏冬节日 + Humble Bundle + CDKeys + 季节性促销时间表, 实测每季更新。', enExtra: 'Summer/Winter sales + Humble Bundle + CDKeys + seasonal calendar. Updated each season.' },
+  'target-circle-app': { zhExtra: 'Circle 周特卖 + RedCard 5% + 儿童折扣 + 信用卡返现, 实测每周更新。', enExtra: 'Circle weekly deals + RedCard 5% + kids discount + credit card cashback. Updated weekly.' },
+  'uluta-beauty-skin-guide': { zhExtra: 'Platinum 21 Days of Beauty + 肤质测试 + 积分兑换, 实测每月更新。', enExtra: 'Platinum 21 Days of Beauty + skin type quiz + points redemption. Updated monthly.' },
+}
+
 export async function generateMetadata({
   params,
   searchParams,
@@ -102,12 +115,17 @@ export async function generateMetadata({
   const titleZh = `${article.title} (2026 最新)`
   // GKP-aligned desc: keep original intro + append monthly volume + benefit
   const gkp = GKP_BLOG_DATA[article.merchantSlug]
-  const descEn = gkp
-    ? `${article.description} [${gkp.volLabel} (${gkp.cpc}); updated 2026.]`
-    : article.description
-  const descZh = gkp
-    ? `${article.description} [${gkp.volZh}；${gkp.cpc}；2026 最新更新。]`
-    : article.description
+  const blogExtra = BLOG_PER_SLUG[slug]
+  const descEn = gkp && blogExtra
+    ? `${article.description} ${blogExtra.enExtra} [${gkp.volLabel} (${gkp.cpc}); updated 2026.]`
+    : gkp
+      ? `${article.description} [${gkp.volLabel} (${gkp.cpc}); updated 2026.]`
+      : article.description
+  const descZh = gkp && blogExtra
+    ? `${article.description} ${blogExtra.zhExtra} [${gkp.volZh}；${gkp.cpc}；2026 最新更新。]`
+    : gkp
+      ? `${article.description} [${gkp.volZh}；${gkp.cpc}；2026 最新更新。]`
+      : article.description
   return {
     title: lang === 'zh' ? titleZh : titleEn,
     description: lang === 'zh' ? descZh : descEn,
