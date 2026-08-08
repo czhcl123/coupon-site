@@ -208,6 +208,69 @@ const GKP_DATA: Record<string, GkpEntry> = {
   'asos':         { keyword: 'asos discount code',       volLabel: '5,000+ Monthly Searches',  volZh: '月搜 5 千', benefitEn: '25% Student Code + Free Shipping', benefitZh: '25% 学生码 + 免运费', urgencyEn: 'Verified Today', urgencyZh: '今日验证' },
 }
 
+const META_PER_SLUG: Record<string, { zh: { title: string; desc: string }; en: { title: string; desc: string } }> = {
+  'steam': {
+    zh: { title: 'Steam 平台特卖 + 季节促销 — 月搜 5 万 | CouponSite', desc: 'Steam 平台全场促销 + 季节性特卖 (夏冬节日)。汇集最新验证折扣码, 点击即复制最强码, 过期码每日自动清理。月搜 5 万, 双语 zh/en, 覆盖全场游戏。' },
+    en: { title: 'Steam Sale & Seasonal Promo — 50K/mo Verified | CouponSite', desc: 'Steam platform-wide sales + seasonal events (Summer/Winter). Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 50K monthly searches, bilingual zh/en, all game categories.' },
+  },
+  'temu': {
+    zh: { title: 'Temu 新客折扣码 + 免运费 — 月搜 5 万 | CouponSite', desc: 'Temu 新用户礼包 + 全场免运 + 节假日促销。汇集最新验证折扣码, 点击即复制最强码, 过期码每日自动清理。月搜 5 万, 双语 zh/en, 全品类适用。' },
+    en: { title: 'Temu New User 50% OFF + Free Shipping — 50K/mo | CouponSite', desc: 'Temu new customer welcome bundle + free shipping sitewide + holiday deals. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 50K monthly searches, bilingual zh/en.' },
+  },
+  'nike': {
+    zh: { title: 'Nike 会员折扣码 + 学生专属 — 月搜 50 万 | CouponSite', desc: 'Nike 官方折扣码 + 会员专属 + 学生 10% OFF + 节假日促销。汇集最新验证折扣码, 点击即复制最强码。月搜 50 万, 双语 zh/en, 覆盖鞋服全线。' },
+    en: { title: 'Nike Member Discount + Student Code — 500K/mo | CouponSite', desc: 'Nike official discount codes + member exclusives + student 10% OFF + seasonal sales. Verified working codes, click to copy the strongest one. 500K monthly searches, bilingual zh/en, all footwear and apparel.' },
+  },
+  'amazon': {
+    zh: { title: 'Amazon 优惠券 + Prime 专享 — 月搜 5 万 | CouponSite', desc: 'Amazon 全品类折扣码 + Prime 会员专享 + Lightning Deal。汇集最新验证折扣码, 点击即复制最强码。月搜 5 万, 双语 zh/en, 多品类适用。' },
+    en: { title: 'Amazon Coupon Codes + Prime Exclusives — 50K/mo | CouponSite', desc: 'Amazon all-category discount codes + Prime member exclusives + Lightning Deals. Verified working codes, click to copy the strongest one. 50K monthly searches, bilingual zh/en, multi-category.' },
+  },
+  'adidas': {
+    zh: { title: 'Adidas 会员折扣码 + 季末特卖 — 月搜 5 万 | CouponSite', desc: 'Adidas 会员 30% OFF + 季末清仓 + 学生折扣。汇集最新验证折扣码, 点击即复制最强码, 过期码每日清理。月搜 5 万, 双语 zh/en, 鞋服配件全覆盖。' },
+    en: { title: 'Adidas Member 30% OFF + End-of-Season — 50K/mo | CouponSite', desc: 'Adidas member 30% OFF + end-of-season clearance + student discount. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 50K monthly searches, bilingual zh/en.' },
+  },
+  'shein': {
+    zh: { title: 'SHEIN 新客折扣码 + 免运费 — 月搜 50 万 | CouponSite', desc: 'SHEIN 新用户礼包 + 全场免运 + 节假日促销。汇集最新验证折扣码, 点击即复制最强码, 过期码每日清理。月搜 50 万, 双语 zh/en, 女装男装童装。' },
+    en: { title: 'SHEIN New User Code + Free Shipping — 500K/mo | CouponSite', desc: 'SHEIN new customer welcome bundle + free shipping sitewide + holiday deals. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 500K monthly searches, bilingual zh/en.' },
+  },
+  'expedia': {
+    zh: { title: 'Expedia 酒店机票折扣码 — 月搜 5 万 | CouponSite', desc: 'Expedia 酒店 25% OFF + 机票满减 + 会员专享。汇集最新验证折扣码, 点击即复制最强码, 过期码每日清理。月搜 5 万, 双语 zh/en, 全球酒店。' },
+    en: { title: 'Expedia Hotel 25% OFF + Flight Deals — 50K/mo | CouponSite', desc: 'Expedia hotel 25% OFF + flight discount + member exclusives. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 50K monthly searches, bilingual zh/en, global hotels.' },
+  },
+  'bestbuy': {
+    zh: { title: 'Best Buy 折扣码 + 会员专享 — 月搜 5 万 | CouponSite', desc: 'Best Buy 满 1000 减 100 + 学生优惠 + 季末清仓。汇集最新验证折扣码, 点击即复制最强码, 过期码每日清理。月搜 5 万, 双语 zh/en, 电子家电。' },
+    en: { title: 'Best Buy $100 OFF $1000 + Student Deal — 50K/mo | CouponSite', desc: 'Best Buy $100 off $1000 + student discount + end-of-season clearance. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 50K monthly searches, bilingual zh/en.' },
+  },
+  'ulta-beauty': {
+    zh: { title: 'Ulta Beauty 21 Days of Beauty — 月搜 50 万 | CouponSite', desc: 'Ulta Beauty 21 Days of Beauty + Platinum 会员 25% OFF。汇集最新验证折扣码, 点击即复制最强码。月搜 50 万, 双语 zh/en, 美妆护肤。' },
+    en: { title: 'Ulta Beauty 21 Days of Beauty — 500K/mo | CouponSite', desc: 'Ulta Beauty 21 Days of Beauty + Platinum member 25% OFF. Verified working codes, click to copy the strongest one. 500K monthly searches, bilingual zh/en, all beauty and skincare.' },
+  },
+  'booking-com': {
+    zh: { title: 'Booking.com Genius 折扣 + 酒店优惠 — 月搜 5 万 | CouponSite', desc: 'Booking.com Genius 会员专享 + 早鸟价格 + 酒店满减。汇集最新验证折扣码, 点击即复制最强码, 过期码每日清理。月搜 5 万, 双语 zh/en。' },
+    en: { title: 'Booking.com Genius Discount + Hotel Deals — 50K/mo | CouponSite', desc: 'Booking.com Genius member exclusives + early-bird pricing + hotel discount. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 50K monthly searches, bilingual zh/en.' },
+  },
+  'walmart': {
+    zh: { title: 'Walmart 折扣码 + Rollback 优惠 — 月搜 50 万 | CouponSite', desc: 'Walmart 全品类 + Rollback + 会员免费配送 + Walmart+ 专享。汇集最新验证折扣码, 点击即复制最强码。月搜 50 万, 双语 zh/en。' },
+    en: { title: 'Walmart Promo Code + Rollback Deals — 500K/mo | CouponSite', desc: 'Walmart all-category + Rollback + free delivery + Walmart+ exclusives. Verified working codes, click to copy the strongest one. 500K monthly searches, bilingual zh/en.' },
+  },
+  'asos': {
+    zh: { title: 'ASOS 学生折扣码 + 新客礼包 — 月搜 5 千 | CouponSite', desc: 'ASOS 学生 10% OFF + 新用户 25% OFF + 免运费。汇集最新验证折扣码, 点击即复制最强码, 过期码每日清理。月搜 5 千, 双语 zh/en, 多品牌时尚。' },
+    en: { title: 'ASOS Student 10% OFF + New User 25% OFF — 5K/mo | CouponSite', desc: 'ASOS student 10% OFF + new customer 25% OFF + free shipping. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 5K monthly searches, bilingual zh/en.' },
+  },
+  'target': {
+    zh: { title: 'Target Circle 折扣 + 5% OFF — 月搜 50 万 | CouponSite', desc: 'Target Circle 周特卖 + RedCard 5% OFF + 免运费 + 本周新码。汇集最新验证折扣码, 点击即复制最强码。月搜 50 万, 双语 zh/en。' },
+    en: { title: 'Target Circle Deal + RedCard 5% OFF — 500K/mo | CouponSite', desc: 'Target Circle weekly deals + RedCard 5% OFF + free shipping + new codes this week. Verified working codes, click to copy the strongest one. 500K monthly searches, bilingual zh/en.' },
+  },
+  'nordstrom': {
+    zh: { title: 'Nordstrom Anniversary Sale + 25% OFF — 月搜 5 万 | CouponSite', desc: 'Nordstrom Anniversary Sale 25% OFF + Half-Yearly + Rack + 设计师品牌。汇集最新验证折扣码, 点击即复制最强码。月搜 5 万, 双语 zh/en。' },
+    en: { title: 'Nordstrom Anniversary Sale 25% OFF — 50K/mo | CouponSite', desc: 'Nordstrom Anniversary Sale 25% OFF + Half-Yearly Sale + Rack + designer brands. Verified working codes, click to copy the strongest one. 50K monthly searches, bilingual zh/en.' },
+  },
+  'sephora': {
+    zh: { title: 'Sephora 15% OFF + Beauty Insider — 月搜 5 万 | CouponSite', desc: 'Sephora 15% OFF + Beauty Insider 生日礼物 + 免运费 + 每日更新。汇集最新验证折扣码, 点击即复制最强码。月搜 5 万, 双语 zh/en。' },
+    en: { title: 'Sephora 15% OFF + Beauty Insider — 50K/mo | CouponSite', desc: 'Sephora 15% OFF + Beauty Insider birthday gift + free shipping + daily updates. Verified working codes, click to copy the strongest one. 50K monthly searches, bilingual zh/en.' },
+  },
+}
+
 export async function generateMetadata({
   params,
   searchParams,
@@ -271,6 +334,25 @@ export async function generateMetadata({
     }
   }
 
+  // 2026-08-08: per-slug unique title + description (Google Search Central best practice:
+  // each page distinct, no boilerplate). Falls back to generic template for unknown slugs.
+  if (META_PER_SLUG[slug]) {
+    const m = META_PER_SLUG[slug][lang] || META_PER_SLUG[slug].en
+    return {
+      title: m.title,
+      description: m.desc,
+      alternates: {
+        canonical: `/merchant/${slug}?lang=${lang}`,
+        languages: {
+          'en-US': `/merchant/${slug}?lang=en`,
+          'zh-CN': `/merchant/${slug}?lang=zh`,
+          'x-default': `/merchant/${slug}`,
+        },
+      },
+    }
+  }
+
+  // Generic fallback (used only if slug is not in META_PER_SLUG)
   return {
     title: lang === 'zh'
       ? `${merchant.name} 优惠码 — ${volZh}最新验证 2026`
