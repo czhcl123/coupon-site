@@ -150,6 +150,10 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
       faq4A: '支持。Nike、Adidas、ASOS、Sephora、Booking.com 等国际品牌均有覆盖。每张优惠码卡片支持中英文切换显示。',
       faq5Q: '如何举报失效的优惠码?',
       faq5A: '可以通过 /about 页面联系我们,我们会人工核查并在 24 小时内清理或更新。',
+    footerBrands: '热门品牌',
+    footerTools: '实用工具',
+    footerGuides: '购物攻略',
+    discountCalculator: '折扣计算器',
     },
     en: {
       section1Title: 'What is Coupon Hub? (50,000+ Monthly Searches)',
@@ -169,6 +173,10 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
       faq4A: 'Yes. Nike, Adidas, ASOS, Sephora, Booking.com, and many more are covered. Each card supports bilingual zh/en display.',
       faq5Q: 'How do I report an expired coupon?',
       faq5A: 'Use the contact form on /about. We verify manually and update within 24 hours.',
+    footerBrands: 'Top Brands',
+    footerTools: 'Tools',
+    footerGuides: 'Guides',
+    discountCalculator: 'Discount Calculator',
     },
   } as const
   const s = seo[lang]
@@ -498,10 +506,59 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
           <span className="text-gray-200">·</span>
           <Link href={`/about?lang=${lang}`} className="hover:text-orange-500 transition-colors">{u('about')}</Link>
           <span className="text-gray-200">·</span>
+          <Link href={`/blog?lang=${lang}`} className="hover:text-orange-500 transition-colors">{u('blog')}</Link>
+          <span className="text-gray-200">·</span>
           <a href="/llms.txt" className="hover:text-orange-500 transition-colors">llms.txt</a>
           <span className="text-gray-200">·</span>
           <a href="/rss.xml" className="hover:text-orange-500 transition-colors">RSS</a>
         </nav>
+        {/* 2026-08-08: Internal linking to fix Ahrefs "Orphaned canonical URLs" issue. */}
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left mb-6">
+          <div>
+            <h3 className="text-sm font-bold text-gray-700 mb-2">{u('footerBrands')}</h3>
+            <ul className="space-y-1 text-xs">
+              <li><Link href={`/merchant/nike?lang=${lang}`} className="hover:text-orange-500 transition-colors">Nike</Link></li>
+              <li><Link href={`/merchant/sephora?lang=${lang}`} className="hover:text-orange-500 transition-colors">Sephora</Link></li>
+              <li><Link href={`/merchant/nordstrom?lang=${lang}`} className="hover:text-orange-500 transition-colors">Nordstrom</Link></li>
+              <li><Link href={`/merchant/target?lang=${lang}`} className="hover:text-orange-500 transition-colors">Target</Link></li>
+              <li><Link href={`/merchant/asos?lang=${lang}`} className="hover:text-orange-500 transition-colors">ASOS</Link></li>
+              <li><Link href={`/merchant/adidas?lang=${lang}`} className="hover:text-orange-500 transition-colors">Adidas</Link></li>
+              <li><Link href={`/merchant/amazon?lang=${lang}`} className="hover:text-orange-500 transition-colors">Amazon</Link></li>
+              <li><Link href={`/merchant/shein?lang=${lang}`} className="hover:text-orange-500 transition-colors">SHEIN</Link></li>
+              <li><Link href={`/merchant/ulta-beauty?lang=${lang}`} className="hover:text-orange-500 transition-colors">Ulta Beauty</Link></li>
+              <li><Link href={`/merchant/walmart?lang=${lang}`} className="hover:text-orange-500 transition-colors">Walmart</Link></li>
+              <li><Link href={`/merchant/bestbuy?lang=${lang}`} className="hover:text-orange-500 transition-colors">Best Buy</Link></li>
+              <li><Link href={`/merchant/booking-com?lang=${lang}`} className="hover:text-orange-500 transition-colors">Booking.com</Link></li>
+              <li><Link href={`/merchant/steam?lang=${lang}`} className="hover:text-orange-500 transition-colors">Steam</Link></li>
+              <li><Link href={`/merchant/temu?lang=${lang}`} className="hover:text-orange-500 transition-colors">Temu</Link></li>
+              <li><Link href={`/merchant/expedia?lang=${lang}`} className="hover:text-orange-500 transition-colors">Expedia</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-bold text-gray-700 mb-2">{u('footerTools')}</h3>
+            <ul className="space-y-1 text-xs">
+              <li><Link href={`/discount-calculator?lang=${lang}`} className="hover:text-orange-500 transition-colors">{u('discountCalculator')}</Link></li>
+              <li><Link href={`/canva-pro-coupon-code?lang=${lang}`} className="hover:text-orange-500 transition-colors">Canva Pro Coupon Code</Link></li>
+              <li><Link href={`/shopify-discount-code?lang=${lang}`} className="hover:text-orange-500 transition-colors">Shopify Discount Code</Link></li>
+              <li><Link href={`/webflow-promo-code?lang=${lang}`} className="hover:text-orange-500 transition-colors">Webflow Promo Code</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-bold text-gray-700 mb-2">{u('footerGuides')}</h3>
+            <ul className="space-y-1 text-xs">
+              <li><Link href={`/blog/nike-discount-code-guide?lang=${lang}`} className="hover:text-orange-500 transition-colors">Nike Discount Code Guide</Link></li>
+              <li><Link href={`/blog/nordstrom-sale-guide?lang=${lang}`} className="hover:text-orange-500 transition-colors">Nordstrom Anniversary Sale Guide</Link></li>
+              <li><Link href={`/blog/sephora-coupon-strategy?lang=${lang}`} className="hover:text-orange-500 transition-colors">Sephora Coupon Strategy</Link></li>
+              <li><Link href={`/blog/amazon-prime-day-guide?lang=${lang}`} className="hover:text-orange-500 transition-colors">Amazon Prime Day Guide</Link></li>
+              <li><Link href={`/blog/steam-sale-calendar?lang=${lang}`} className="hover:text-orange-500 transition-colors">Steam Sale Calendar</Link></li>
+              <li><Link href={`/blog/asos-student-discount?lang=${lang}`} className="hover:text-orange-500 transition-colors">ASOS Student Discount</Link></li>
+              <li><Link href={`/blog/adidas-outlet-secrets?lang=${lang}`} className="hover:text-orange-500 transition-colors">Adidas Outlet Secrets</Link></li>
+              <li><Link href={`/blog/bestbuy-tv-buying-guide?lang=${lang}`} className="hover:text-orange-500 transition-colors">Best Buy TV Guide</Link></li>
+              <li><Link href={`/blog/target-circle-app?lang=${lang}`} className="hover:text-orange-500 transition-colors">Target Circle App Guide</Link></li>
+              <li><Link href={`/blog/uluta-beauty-skin-guide?lang=${lang}`} className="hover:text-orange-500 transition-colors">Ulta Beauty Skin Guide</Link></li>
+            </ul>
+          </div>
+        </div>
         <p>{u('footer1')}</p>
         <p className="mt-1">{u('footer2')}</p>
       </footer>
