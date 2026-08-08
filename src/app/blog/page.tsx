@@ -47,7 +47,14 @@ export async function generateMetadata({
     description: lang === 'zh'
       ? '专业购物攻略：Nike、ASOS、Sephora、Steam 等品牌折扣码获取技巧，帮你在海淘和国内外电商购物时省更多。'
       : 'Expert shopping guides: Nike, ASOS, Sephora, Steam discount code tips for domestic and international shopping.',
-    alternates: { canonical: '/blog' },
+    alternates: {
+      canonical: '/blog',
+      languages: {
+        'en-US': '/blog?lang=en',
+        'zh-CN': '/blog?lang=zh',
+        'x-default': '/blog',
+      },
+    },
   }
 }
 

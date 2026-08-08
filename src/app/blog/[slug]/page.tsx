@@ -122,7 +122,11 @@ export async function generateMetadata({
       languages: {
         'en-US': `/blog/${slug}?lang=en`,
         'zh-CN': `/blog/${slug}?lang=zh`,
-        'x-default': `/blog/${slug}?lang=en`,
+        'id-ID': `/blog/${slug}?lang=id`,
+        'ja-JP': `/blog/${slug}?lang=ja`,
+        'ar-SA': `/blog/${slug}?lang=ar`,
+        'pt-BR': `/blog/${slug}?lang=pt`,
+        'x-default': `/blog/${slug}`,
       },
     },
   }
