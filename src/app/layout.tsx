@@ -224,17 +224,12 @@ export const metadata: Metadata = {
   },
 };
 
-// Map injected x-html-lang (from middleware, sourced from ?lang= query)
-// to a BCP-47 value. Defaults to "en" when no / unrecognized query.
+// Trust the BCP-47 value injected by middleware (see src/middleware.ts).
+// Falls back to "en" when header is absent or not a recognized BCP-47 lang code.
 function resolveHtmlLang(raw: string | null | undefined): string {
   if (!raw) return "en";
-  if (raw === "zh") return "zh-CN";
-  if (raw === "id") return "id";
-  if (raw === "ja") return "ja";
-  if (raw === "ar") return "ar";
-  if (raw === "pt" || raw === "pt-BR") return "pt-BR";
-  if (raw === "en") return "en";
-  return "en";
+  const allow = new Set(["en", "zh-CN", "id", "ja", "ar", "pt-BR"]);
+  return allow.has(raw) ? raw : "en";
 }
 
 export default async function RootLayout({
