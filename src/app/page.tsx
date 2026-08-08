@@ -20,7 +20,7 @@ export async function generateMetadata({
       languages: {
         'en-US': '/?lang=en',
         'zh-CN': '/?lang=zh',
-        'x-default': '/?lang=en',
+        'x-default': '/',
       },
     },
   }

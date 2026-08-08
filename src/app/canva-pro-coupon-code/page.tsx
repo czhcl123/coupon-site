@@ -348,7 +348,7 @@ export async function generateMetadata({
       languages: {
         'en-US': `${SITE_URL}${PAGE_URL}?lang=en`,
         'zh-CN': `${SITE_URL}${PAGE_URL}?lang=zh`,
-        'x-default': `${SITE_URL}${PAGE_URL}?lang=en`,
+        'x-default': `${SITE_URL}${PAGE_URL}`,
       },
     },
     openGraph: {

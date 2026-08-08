@@ -245,7 +245,7 @@ export async function generateMetadata({
           'ja-JP': `/merchant/${slug}?lang=ja`,
           'ar-SA': `/merchant/${slug}?lang=ar`,
           'pt-BR': `/merchant/${slug}?lang=pt`,
-          'x-default': `/merchant/${slug}?lang=en`,
+          'x-default': `/merchant/${slug}`,
         },
       },
     }
@@ -283,7 +283,7 @@ export async function generateMetadata({
       languages: {
         'en-US': `/merchant/${slug}?lang=en`,
         'zh-CN': `/merchant/${slug}?lang=zh`,
-        'x-default': `/merchant/${slug}?lang=en`,
+        'x-default': `/merchant/${slug}`,
       },
     },
   }
