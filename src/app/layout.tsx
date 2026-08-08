@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -223,14 +224,31 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+// Map injected x-html-lang (from middleware, sourced from ?lang= query)
+// to a BCP-47 value. Defaults to "en" when no / unrecognized query.
+function resolveHtmlLang(raw: string | null | undefined): string {
+  if (!raw) return "en";
+  if (raw === "zh") return "zh-CN";
+  if (raw === "id") return "id";
+  if (raw === "ja") return "ja";
+  if (raw === "ar") return "ar";
+  if (raw === "pt" || raw === "pt-BR") return "pt-BR";
+  if (raw === "en") return "en";
+  return "en";
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Read lang injected by middleware (see src/middleware.ts).
+  // This makes <html lang> follow ?lang= query without changing URLs.
+  const headerStore = await headers();
+  const htmlLang = resolveHtmlLang(headerStore.get("x-html-lang"));
   return (
     <html
-      lang="en"
+      lang={htmlLang}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
