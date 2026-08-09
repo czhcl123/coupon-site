@@ -13,7 +13,7 @@ const en = {
   meta: {
     title: 'Canva Pro Coupon Code — Free for Education, Verified July 2026',
     description:
-      'Canva Pro is 100% free for verified students, teachers, and nonprofits in 2026. Pricing, eligibility, seasonal promos, FAQs, and a tools-site cross-link guide.',
+      'Canva Pro is 100% free for students, teachers & nonprofits in 2026. Pricing, eligibility, seasonal promos, FAQs, and tools-site guide.',
   },
   hero: {
     badge: 'Verified · Updated July 1, 2026',

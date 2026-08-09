@@ -15,16 +15,16 @@ type SlugI18n = Record<string, LocaleTable>
 const META_I18N: SlugI18n = {
   // Sephora: 美妆高意图, 东南亚 + 日本 + 中东市场
   sephora: {
-    en: { title: 'Sephora Coupon Codes — 15% OFF + Free Samples & Gifts (Updated Daily)', desc: 'Verified Sephora coupon codes for sale, gift cards, makeup & Dyson Airwrap. 15% OFF + free samples. 50,000+ monthly searches; click to copy the strongest working code; expired codes auto-removed daily.' },
+    en: { title: 'Sephora Coupon Codes — 15% OFF + Free Samples & Gifts (Updated Daily)', desc: 'Sephora coupon codes — 15% OFF + free samples on makeup, Dyson & skincare. Verified daily, copy the strongest working code.' },
     zh: { title: 'Sephora 优惠码 — 15% OFF + 生日礼物/礼品卡(每日更新) + 近期 30 个验证码', desc: 'Sephora 优惠码涵盖 护肤品/彩妆/Dyson/礼品卡。15% OFF + 生日礼物。月搜 5 万、每日更新、复制即用、过期码每日自动清理。' },
-    id: { title: 'Kode Promo Sephora — Diskon 15% + Gratis Ongkos Kirim (Diperbarui Harian)', desc: 'Kode diskon Sephora terverifikasi — diskon 15% + gratis ongkos kirim. Diperbarui harian; 50K+ pencarian bulanan. Klik untuk menyalin kode yang masih berlaku.' },
+    id: { title: 'Kode Promo Sephora — Diskon 15% + Gratis Ongkos Kirim (Diperbarui Harian)', desc: 'Kode diskon Sephora — diskon 15% + gratis ongkos kirim. Diperbarui harian. Klik untuk menyalin kode terbaik.' },
     ja: { title: 'セフォラ クーポンコード — 15% OFF + 送料無料(毎日更新)', desc: 'セフォラ 本人確認済み クーポン — 15% OFF + 送料無料。毎月 5 万検索、毎日更新。クリックして有効なコードをコピー。' },
     ar: { title: 'كود خصم سيبورا — خصم 15% + شحن مجاني (يومي التحديث)', desc: 'كود خصم سيبورا موثّق — خصم 15% + شحن مجاني. يُحدَّث يومياً؛ 50 ألف بحث شهرياً. اضغط لنسخ الكود الفعّال.' },
     pt: { title: 'Código Promocional Sephora — 15% OFF + Frete Grátis (Atualizado Diariamente)', desc: 'Código Sephora verificado — 15% OFF + frete grátis. Atualizado diariamente; 50 mil buscas mensais. Clique para copiar o código ativo.' },
   },
   // Nordstrom: 高端服饰, 阿语 + 葡语用户中高端
   nordstrom: {
-    en: { title: 'Nordstrom Coupon Codes — 25% OFF Anniversary Sale + Skims Early Access (2026)', desc: 'Verified Nordstrom coupon codes for Anniversary Sale, Rack, Skims, dresses & shoes. 25% OFF insider early access. 5M+ monthly searches; click to copy the strongest working code; expired codes auto-removed daily.' },
+    en: { title: 'Nordstrom Coupon Codes — 25% OFF Anniversary Sale + Skims Early Access (2026)', desc: 'Nordstrom coupon codes — 25% OFF Anniversary Sale + Skims early access. Verified daily, copy the strongest working code.' },
     zh: { title: 'Nordstrom 优惠码 — 周年庆 25% OFF + Skims 抢先购(2026) + 近期 30 个验证码', desc: 'Nordstrom 优惠码涵盖 周年庆/Rack/Skims/连衣裙/鞋类。25% OFF 会员抢先购。月搜 500 万、复制即用、过期码每日自动清理。' },
     id: { title: 'Kode Promo Nordstrom — Diskon 25% Anniversary Sale (Akses Awal Juli 2026)', desc: 'Kode diskon Nordstrom Anniversary Sale — diskon 25%. Akses awal Juli 2026; 50 ribu pencarian bulanan. Klik untuk menyalin kode aktif.' },
     ja: { title: 'ノードストロム クーポン — アニバーサリーセール 25% OFF(2026 年 7 月先行アクセス)', desc: 'ノードストロム アニバーサリーセール 確認済み — 25% OFF。2026 年 7 月先行アクセス、毎月 5 万検索。クリックしてコードをコピー。' },
@@ -33,7 +33,7 @@ const META_I18N: SlugI18n = {
   },
   // Target: 大众零售, 拉美/巴西/印尼用户多
   target: {
-    en: { title: 'Target Coupon Codes — 5% Circle Deal + Optical & Beauty (New Codes This Week)', desc: 'Verified Target coupon codes for Circle Deal, optical, beauty, electronics & toys. 5% OFF + free shipping. 5M+ monthly searches; click to copy the strongest working code; expired codes auto-removed daily.' },
+    en: { title: 'Target Coupon Codes — 5% Circle Deal + Optical & Beauty (New Codes This Week)', desc: 'Target coupon codes — 5% Circle Deal + free shipping on beauty, electronics & toys. Verified daily, copy the strongest code.' },
     zh: { title: 'Target 优惠码 — Circle 5% OFF + 眼镜/美妆(本周新码) + 近期 30 个验证码', desc: 'Target 优惠码涵盖 Circle Deal/眼镜/美妆/电子/玩具。5% OFF + 免运费。月搜 500 万、复制即用、过期码每日自动清理。' },
     id: { title: 'Kode Promo Target — Circle Deal 5% + Gratis Ongkos Kirim (Kode Baru Minggu Ini)', desc: 'Kode diskon Target terverifikasi — Circle Deal 5% + gratis ongkos kirim. Kode baru minggu ini; 500 ribu pencarian bulanan. Klik untuk menyalin.' },
     ja: { title: 'ターゲット クーポンコード — サークルディール 5% + 送料無料(今週の新コード)', desc: 'ターゲット サークルディール 確認済み — 5% OFF + 送料無料。今週の新コード、毎月 50 万検索。クリックしてコードをコピー。' },
@@ -42,7 +42,7 @@ const META_I18N: SlugI18n = {
   },
   // Asos: 学生 + 国际时尚, 全球年轻用户多
   asos: {
-    en: { title: 'ASOS Coupon Codes — 25% Student + Free Shipping (Dresses, Curve & Plus Size)', desc: 'Verified ASOS coupon codes for US, dresses, curve & plus size, menswear. 25% student code + free shipping. 500,000+ monthly searches; click to copy the strongest working code; expired codes auto-removed daily.' },
+    en: { title: 'ASOS Coupon Codes — 25% Student + Free Shipping (Dresses, Curve & Plus Size)', desc: 'ASOS coupon codes — 25% student + free shipping on dresses, Curve & menswear. Verified daily, copy the strongest working code.' },
     zh: { title: 'ASOS 优惠码 — 25% 学生码 + 免运费(连衣裙/加大码) + 近期 30 个验证码', desc: 'ASOS 优惠码涵盖 连衣裙/Curve/加大码/男装。25% 学生码 + 免运费。月搜 50 万、复制即用、过期码每日自动清理。' },
     id: { title: 'Kode Diskon ASOS — Kode Mahasiswa 25% + Gratis Ongkos Kirim (Diverifikasi Hari Ini)', desc: 'Kode diskon ASOS terverifikasi — kode mahasiswa 25% + gratis ongkos kirim. Diverifikasi hari ini; 5 ribu pencarian bulanan.' },
     ja: { title: 'ASOS 割引コード — 学生コード 25% + 送料無料(本日確認済み)', desc: 'ASOS 確認済み 割引コード — 学生 25% + 送料無料。本日確認、毎月 5 千検索。クリックしてコードをコピー。' },
@@ -210,64 +210,64 @@ const GKP_DATA: Record<string, GkpEntry> = {
 
 const META_PER_SLUG: Record<string, { zh: { title: string; desc: string }; en: { title: string; desc: string } }> = {
   'steam': {
-    zh: { title: 'Steam 平台特卖 + 季节促销 — 月搜 5 万 | CouponSite', desc: 'Steam 平台全场促销 + 季节性特卖 (夏冬节日)。汇集最新验证折扣码, 点击即复制最强码, 过期码每日自动清理。月搜 5 万, 双语 zh/en, 覆盖全场游戏。' },
-    en: { title: 'Steam Sale & Seasonal Promo — 50K/mo Verified | CouponSite', desc: 'Steam platform-wide sales + seasonal events (Summer/Winter). Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 50K monthly searches, bilingual zh/en, all game categories.' },
+    zh: { title: 'Steam 平台特卖 + 季节促销 — 月搜 5 万 | CouponSite', desc: 'Steam 优惠码 — 平台促销、季节特卖、捆绑包。每日验证，复制最强可用码。' },
+    en: { title: 'Steam Sale & Seasonal Promo — 50K/mo Verified | CouponSite', desc: 'Steam coupon codes — platform sales, seasonal events & bundles to save on PC games. Verified daily, copy the strongest code.' },
   },
   'temu': {
-    zh: { title: 'Temu 新客折扣码 + 免运费 — 月搜 5 万 | CouponSite', desc: 'Temu 新用户礼包 + 全场免运 + 节假日促销。汇集最新验证折扣码, 点击即复制最强码, 过期码每日自动清理。月搜 5 万, 双语 zh/en, 全品类适用。' },
-    en: { title: 'Temu New User 50% OFF + Free Shipping — 50K/mo | CouponSite', desc: 'Temu new customer welcome bundle + free shipping sitewide + holiday deals. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 50K monthly searches, bilingual zh/en.' },
+    zh: { title: 'Temu 新客折扣码 + 免运费 — 月搜 5 万 | CouponSite', desc: 'Temu 优惠码 — 电子产品和家居低至 2 折。每日验证，点击复制最强验证码。' },
+    en: { title: 'Temu New User 50% OFF + Free Shipping — 50K/mo | CouponSite', desc: 'Temu coupon codes — 50% OFF + free shipping on electronics & home. Verified daily, copy the strongest working code.' },
   },
   'nike': {
-    zh: { title: 'Nike 会员折扣码 + 学生专属 — 月搜 50 万 | CouponSite', desc: 'Nike 官方折扣码 + 会员专属 + 学生 10% OFF + 节假日促销。汇集最新验证折扣码, 点击即复制最强码。月搜 50 万, 双语 zh/en, 覆盖鞋服全线。' },
-    en: { title: 'Nike Member Discount + Student Code — 500K/mo | CouponSite', desc: 'Nike official discount codes + member exclusives + student 10% OFF + seasonal sales. Verified working codes, click to copy the strongest one. 500K monthly searches, bilingual zh/en, all footwear and apparel.' },
+    zh: { title: 'Nike 会员折扣码 + 学生专属 — 月搜 50 万 | CouponSite', desc: 'Nike 优惠码 — Air Force 1、Air Max、Dunk 独家折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Nike Member Discount + Student Code — 500K/mo | CouponSite', desc: 'Nike coupon codes — exclusive discounts on Air Force 1, Air Max & Dunk. Verified daily, copy the strongest code.' },
   },
   'amazon': {
-    zh: { title: 'Amazon 优惠券 + Prime 专享 — 月搜 5 万 | CouponSite', desc: 'Amazon 全品类折扣码 + Prime 会员专享 + Lightning Deal。汇集最新验证折扣码, 点击即复制最强码。月搜 5 万, 双语 zh/en, 多品类适用。' },
-    en: { title: 'Amazon Coupon Codes + Prime Exclusives — 50K/mo | CouponSite', desc: 'Amazon all-category discount codes + Prime member exclusives + Lightning Deals. Verified working codes, click to copy the strongest one. 50K monthly searches, bilingual zh/en, multi-category.' },
+    zh: { title: 'Amazon 优惠券 + Prime 专享 — 月搜 5 万 | CouponSite', desc: 'Amazon 优惠码 — 电子产品、时尚、家居和游戏最强折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Amazon Coupon Codes + Prime Exclusives — 50K/mo | CouponSite', desc: 'Amazon coupon codes — electronics, fashion, home & gaming deals. Verified daily, copy the strongest working code.' },
   },
   'adidas': {
-    zh: { title: 'Adidas 会员折扣码 + 季末特卖 — 月搜 5 万 | CouponSite', desc: 'Adidas 会员 30% OFF + 季末清仓 + 学生折扣。汇集最新验证折扣码, 点击即复制最强码, 过期码每日清理。月搜 5 万, 双语 zh/en, 鞋服配件全覆盖。' },
-    en: { title: 'Adidas Member 30% OFF + End-of-Season — 50K/mo | CouponSite', desc: 'Adidas member 30% OFF + end-of-season clearance + student discount. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 50K monthly searches, bilingual zh/en.' },
+    zh: { title: 'Adidas 会员折扣码 + 季末特卖 — 月搜 5 万 | CouponSite', desc: 'Adidas 优惠码 — Stanstan、Samba、Ultraboost 和 Outlet 最强折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Adidas Member 30% OFF + End-of-Season — 50K/mo | CouponSite', desc: 'Adidas coupon codes — Stanstan, Samba, Ultraboost & outlet deals. Verified daily, copy the strongest working code.' },
   },
   'shein': {
-    zh: { title: 'SHEIN 新客折扣码 + 免运费 — 月搜 50 万 | CouponSite', desc: 'SHEIN 新用户礼包 + 全场免运 + 节假日促销。汇集最新验证折扣码, 点击即复制最强码, 过期码每日清理。月搜 50 万, 双语 zh/en, 女装男装童装。' },
-    en: { title: 'SHEIN New User Code + Free Shipping — 500K/mo | CouponSite', desc: 'SHEIN new customer welcome bundle + free shipping sitewide + holiday deals. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 500K monthly searches, bilingual zh/en.' },
+    zh: { title: 'SHEIN 新客折扣码 + 免运费 — 月搜 50 万 | CouponSite', desc: 'SHEIN 优惠码 — 全场时尚配饰低至 5 折。每日验证，点击复制最强验证码。' },
+    en: { title: 'SHEIN New User Code + Free Shipping — 500K/mo | CouponSite', desc: 'SHEIN coupon codes — 50% OFF sitewide on fashion & accessories. Verified daily, copy the strongest working code.' },
   },
   'expedia': {
-    zh: { title: 'Expedia 酒店机票折扣码 — 月搜 5 万 | CouponSite', desc: 'Expedia 酒店 25% OFF + 机票满减 + 会员专享。汇集最新验证折扣码, 点击即复制最强码, 过期码每日清理。月搜 5 万, 双语 zh/en, 全球酒店。' },
-    en: { title: 'Expedia Hotel 25% OFF + Flight Deals — 50K/mo | CouponSite', desc: 'Expedia hotel 25% OFF + flight discount + member exclusives. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 50K monthly searches, bilingual zh/en, global hotels.' },
+    zh: { title: 'Expedia 酒店机票折扣码 — 月搜 5 万 | CouponSite', desc: 'Expedia 优惠码 — 酒店和度假套餐最强折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Expedia Hotel 25% OFF + Flight Deals — 50K/mo | CouponSite', desc: 'Expedia coupon codes — hotel & vacation package deals, flight deals. Verified daily, copy the strongest working code.' },
   },
   'bestbuy': {
-    zh: { title: 'Best Buy 折扣码 + 会员专享 — 月搜 5 万 | CouponSite', desc: 'Best Buy 满 1000 减 100 + 学生优惠 + 季末清仓。汇集最新验证折扣码, 点击即复制最强码, 过期码每日清理。月搜 5 万, 双语 zh/en, 电子家电。' },
-    en: { title: 'Best Buy $100 OFF $1000 + Student Deal — 50K/mo | CouponSite', desc: 'Best Buy $100 off $1000 + student discount + end-of-season clearance. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 50K monthly searches, bilingual zh/en.' },
+    zh: { title: 'Best Buy 折扣码 + 会员专享 — 月搜 5 万 | CouponSite', desc: 'Best Buy 优惠码 — 笔记本、电视、游戏和家电最强折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Best Buy $100 OFF $1000 + Student Deal — 50K/mo | CouponSite', desc: 'Best Buy coupon codes — laptop, TV, gaming & appliance deals. Verified daily, copy the strongest working code.' },
   },
   'ulta-beauty': {
-    zh: { title: 'Ulta Beauty 21 Days of Beauty — 月搜 50 万 | CouponSite', desc: 'Ulta Beauty 21 Days of Beauty + Platinum 会员 25% OFF。汇集最新验证折扣码, 点击即复制最强码。月搜 50 万, 双语 zh/en, 美妆护肤。' },
-    en: { title: 'Ulta Beauty 21 Days of Beauty — 500K/mo | CouponSite', desc: 'Ulta Beauty 21 Days of Beauty + Platinum member 25% OFF. Verified working codes, click to copy the strongest one. 500K monthly searches, bilingual zh/en, all beauty and skincare.' },
+    zh: { title: 'Ulta Beauty 21 Days of Beauty — 月搜 50 万 | CouponSite', desc: 'Ulta Beauty 优惠码 — 20% OFF + 化妆品护肤免邮。每日验证，点击复制最强验证码。' },
+    en: { title: 'Ulta Beauty 21 Days of Beauty — 500K/mo | CouponSite', desc: 'Ulta Beauty coupon codes — 20% OFF + free shipping on makeup & skincare. Verified daily, copy the strongest code.' },
   },
   'booking-com': {
-    zh: { title: 'Booking.com Genius 折扣 + 酒店优惠 — 月搜 5 万 | CouponSite', desc: 'Booking.com Genius 会员专享 + 早鸟价格 + 酒店满减。汇集最新验证折扣码, 点击即复制最强码, 过期码每日清理。月搜 5 万, 双语 zh/en。' },
-    en: { title: 'Booking.com Genius Discount + Hotel Deals — 50K/mo | CouponSite', desc: 'Booking.com Genius member exclusives + early-bird pricing + hotel discount. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 50K monthly searches, bilingual zh/en.' },
+    zh: { title: 'Booking.com Genius 折扣 + 酒店优惠 — 月搜 5 万 | CouponSite', desc: 'Booking.com 优惠码 — 酒店和旅行最强折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Booking.com Genius Discount + Hotel Deals — 50K/mo | CouponSite', desc: 'Booking.com coupon codes — verified hotel & travel deals, last-minute specials. Verified daily, copy the strongest code.' },
   },
   'walmart': {
-    zh: { title: 'Walmart 折扣码 + Rollback 优惠 — 月搜 50 万 | CouponSite', desc: 'Walmart 全品类 + Rollback + 会员免费配送 + Walmart+ 专享。汇集最新验证折扣码, 点击即复制最强码。月搜 50 万, 双语 zh/en。' },
-    en: { title: 'Walmart Promo Code + Rollback Deals — 500K/mo | CouponSite', desc: 'Walmart all-category + Rollback + free delivery + Walmart+ exclusives. Verified working codes, click to copy the strongest one. 500K monthly searches, bilingual zh/en.' },
+    zh: { title: 'Walmart 折扣码 + Rollback 优惠 — 月搜 50 万 | CouponSite', desc: 'Walmart 优惠码 — 电子产品、家居和杂货最强折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Walmart Promo Code + Rollback Deals — 500K/mo | CouponSite', desc: 'Walmart coupon codes — Rollback deals on electronics, home & grocery. Verified daily, copy the strongest working code.' },
   },
   'asos': {
-    zh: { title: 'ASOS 学生折扣码 + 新客礼包 — 月搜 5 千 | CouponSite', desc: 'ASOS 学生 10% OFF + 新用户 25% OFF + 免运费。汇集最新验证折扣码, 点击即复制最强码, 过期码每日清理。月搜 5 千, 双语 zh/en, 多品牌时尚。' },
-    en: { title: 'ASOS Student 10% OFF + New User 25% OFF — 5K/mo | CouponSite', desc: 'ASOS student 10% OFF + new customer 25% OFF + free shipping. Verified working codes, click to copy the strongest one, expired codes auto-removed daily. 5K monthly searches, bilingual zh/en.' },
+    zh: { title: 'ASOS 学生折扣码 + 新客礼包 — 月搜 5 千 | CouponSite', desc: 'ASOS 优惠码 — 25% 学生折扣 + 裙装、大码、男装免邮。每日验证，点击复制最强验证码。' },
+    en: { title: 'ASOS Student 10% OFF + New User 25% OFF — 5K/mo | CouponSite', desc: 'ASOS coupon codes — 25% student + free shipping on dresses, Curve & menswear. Verified daily, copy the strongest code.' },
   },
   'target': {
-    zh: { title: 'Target Circle 折扣 + 5% OFF — 月搜 50 万 | CouponSite', desc: 'Target Circle 周特卖 + RedCard 5% OFF + 免运费 + 本周新码。汇集最新验证折扣码, 点击即复制最强码。月搜 50 万, 双语 zh/en。' },
-    en: { title: 'Target Circle Deal + RedCard 5% OFF — 500K/mo | CouponSite', desc: 'Target Circle weekly deals + RedCard 5% OFF + free shipping + new codes this week. Verified working codes, click to copy the strongest one. 500K monthly searches, bilingual zh/en.' },
+    zh: { title: 'Target Circle 折扣 + 5% OFF — 月搜 50 万 | CouponSite', desc: 'Target 优惠码 — Circle 5% OFF + 美妆和电子产品。每日验证，点击复制最强验证码。' },
+    en: { title: 'Target Circle Deal + RedCard 5% OFF — 500K/mo | CouponSite', desc: 'Target coupon codes — 5% Circle Deal + free shipping on beauty, electronics & toys. Verified daily, copy the strongest code.' },
   },
   'nordstrom': {
-    zh: { title: 'Nordstrom Anniversary Sale + 25% OFF — 月搜 5 万 | CouponSite', desc: 'Nordstrom Anniversary Sale 25% OFF + Half-Yearly + Rack + 设计师品牌。汇集最新验证折扣码, 点击即复制最强码。月搜 5 万, 双语 zh/en。' },
-    en: { title: 'Nordstrom Anniversary Sale 25% OFF — 50K/mo | CouponSite', desc: 'Nordstrom Anniversary Sale 25% OFF + Half-Yearly Sale + Rack + designer brands. Verified working codes, click to copy the strongest one. 50K monthly searches, bilingual zh/en.' },
+    zh: { title: 'Nordstrom Anniversary Sale + 25% OFF — 月搜 5 万 | CouponSite', desc: 'Nordstrom 优惠码 — 周年庆 25% OFF + Skims 提前购。每日验证，复制最强可用码。' },
+    en: { title: 'Nordstrom Anniversary Sale 25% OFF — 50K/mo | CouponSite', desc: 'Nordstrom coupon codes — 25% OFF Anniversary Sale + Skims early access. Verified daily, copy the strongest code.' },
   },
   'sephora': {
-    zh: { title: 'Sephora 15% OFF + Beauty Insider — 月搜 5 万 | CouponSite', desc: 'Sephora 15% OFF + Beauty Insider 生日礼物 + 免运费 + 每日更新。汇集最新验证折扣码, 点击即复制最强码。月搜 5 万, 双语 zh/en。' },
-    en: { title: 'Sephora 15% OFF + Beauty Insider — 50K/mo | CouponSite', desc: 'Sephora 15% OFF + Beauty Insider birthday gift + free shipping + daily updates. Verified working codes, click to copy the strongest one. 50K monthly searches, bilingual zh/en.' },
+    zh: { title: 'Sephora 15% OFF + Beauty Insider — 月搜 5 万 | CouponSite', desc: 'Sephora 优惠码 — 15% OFF + 化妆品、戴森和护肤品的免费样品。每日验证，复制最强可用码。' },
+    en: { title: 'Sephora 15% OFF + Beauty Insider — 50K/mo | CouponSite', desc: 'Sephora coupon codes — 15% OFF + free samples on makeup, Dyson & skincare. Verified daily, copy the strongest code.' },
   },
 }
 

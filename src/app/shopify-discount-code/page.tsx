@@ -13,7 +13,7 @@ const en = {
   meta: {
     title: 'Shopify Discount Code — Real Ways to Save in 2026 (No Third-Party Codes)',
     description:
-      'Shopify does not accept third-party discount codes at checkout. Working alternatives in July 2026: 3-day free trial, annual billing savings, rate-locking before 2027 price increase.',
+      'Shopify does not accept third-party discount codes. Alternatives: 3-day free trial, annual billing savings, rate-locking before 2027 price increase.',
   },
   hero: {
     badge: 'Verified · Updated July 1, 2026',

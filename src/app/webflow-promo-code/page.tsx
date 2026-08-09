@@ -13,7 +13,7 @@ const en = {
   meta: {
     title: 'Webflow Promo Code — 50% Off Education & Startups (July 2026)',
     description:
-      'Save up to 50% on Webflow with the official Education, Startups, and Nonprofits programs — verified working in July 2026. Pricing, eligibility, application steps, and FAQs.',
+      'Webflow 50% Off for students, startups & nonprofits — verified working in July 2026. Pricing, eligibility, application steps, and FAQs.',
   },
   hero: {
     badge: 'Verified · Updated July 1, 2026',

@@ -170,7 +170,7 @@ export const metadata: Metadata = {
     template: '%s | CouponSite',
   },
   description:
-    'Verified coupon codes (50K/mo) and promo codes (50K/mo) from 23 top brands: Nike (500K/mo), Ulta (500K/mo), SHEIN (500K/mo), Target, Walmart, Booking.com and more. Updated daily, free to use, bilingual zh/en.',
+    'Coupon codes & promo codes from 23 top brands: Nike, Ulta, SHEIN, Target, Walmart, Booking.com and more. Verified daily, free to use, bilingual zh/en.',
   keywords: [
     'coupon codes',
     'promo codes',
