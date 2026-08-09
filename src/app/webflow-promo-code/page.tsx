@@ -140,10 +140,8 @@ const en = {
     p: 'Looking for a different service? These pages follow the same verification standard.',
     links: [
       { label: 'Canva Pro Coupon Code', href: '/canva-pro-coupon-code' },
-      { label: 'NordVPN Student Discount', href: '/nordvpn-student-discount' },
-      { label: 'Shopify Discount Code', href: '/shopify-discount-code' },
-      { label: 'Coursera Plus Coupon', href: '/coursera-plus-coupon' },
-    ],
+            { label: 'Shopify Discount Code', href: '/shopify-discount-code' },
+          ],
   },
   footer: {
     line1: 'CouponSite is reader-supported. When you buy through some links on this page, we may earn a commission at no extra cost to you.',
@@ -291,10 +289,8 @@ const zh = {
     p: '需要其他服务的优惠?以下页面采用同样的核验标准。',
     links: [
       { label: 'Canva Pro 优惠码', href: '/canva-pro-coupon-code' },
-      { label: 'NordVPN 学生折扣', href: '/nordvpn-student-discount' },
-      { label: 'Shopify 折扣码', href: '/shopify-discount-code' },
-      { label: 'Coursera Plus 优惠', href: '/coursera-plus-coupon' },
-    ],
+            { label: 'Shopify 折扣码', href: '/shopify-discount-code' },
+          ],
   },
   footer: {
     line1: 'CouponSite 由读者支持。当你通过本页某些链接下单时,我们可能获得佣金,对你不收取任何额外费用。',

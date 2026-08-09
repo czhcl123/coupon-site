@@ -143,10 +143,8 @@ const en = {
     p: 'Looking for a different design or productivity tool? These adjacent pages may also save you money.',
     links: [
       { label: 'Webflow Promo Code (50% Education)', href: '/webflow-promo-code' },
-      { label: 'NordVPN Student Discount', href: '/nordvpn-student-discount' },
-      { label: 'Shopify Discount Code', href: '/shopify-discount-code' },
-      { label: 'Coursera Plus Coupon', href: '/coursera-plus-coupon' },
-    ],
+            { label: 'Shopify Discount Code', href: '/shopify-discount-code' },
+          ],
   },
   crossSite: {
     h2: 'Design tools in the same family',
@@ -304,10 +302,8 @@ const zh = {
     p: '需要其他设计或生产力工具的优惠?以下相邻页面或许也能帮你省钱。',
     links: [
       { label: 'Webflow 优惠码(教育版 50%)', href: '/webflow-promo-code' },
-      { label: 'NordVPN 学生折扣', href: '/nordvpn-student-discount' },
-      { label: 'Shopify 折扣码', href: '/shopify-discount-code' },
-      { label: 'Coursera Plus 优惠', href: '/coursera-plus-coupon' },
-    ],
+            { label: 'Shopify 折扣码', href: '/shopify-discount-code' },
+          ],
   },
   crossSite: {
     h2: '同系列设计工具推荐',

@@ -141,9 +141,7 @@ const en = {
     links: [
       { label: 'Webflow Promo Code (50% Education)', href: '/webflow-promo-code' },
       { label: 'Canva Pro Coupon Code (Free Education)', href: '/canva-pro-coupon-code' },
-      { label: 'NordVPN Student Discount', href: '/nordvpn-student-discount' },
-      { label: 'Coursera Plus Coupon', href: '/coursera-plus-coupon' },
-    ],
+                ],
   },
   crossSite: {
     h2: 'Calculators and tools for Shopify merchants',
@@ -299,9 +297,7 @@ const zh = {
     links: [
       { label: 'Webflow 优惠码(教育版 50%)', href: '/webflow-promo-code' },
       { label: 'Canva Pro 优惠码(教育版免费)', href: '/canva-pro-coupon-code' },
-      { label: 'NordVPN 学生折扣', href: '/nordvpn-student-discount' },
-      { label: 'Coursera Plus 优惠', href: '/coursera-plus-coupon' },
-    ],
+                ],
   },
   crossSite: {
     h2: 'Shopify 商家计算与工具',
