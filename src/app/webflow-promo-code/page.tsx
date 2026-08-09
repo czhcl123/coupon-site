@@ -324,10 +324,10 @@ export async function generateMetadata({
     title: c.meta.title,
     description: c.meta.description,
     alternates: {
-      canonical: `${PAGE_URL}?lang=${lang}`,
+      canonical: PAGE_URL,
       languages: {
-        'en-US': `${SITE_URL}${PAGE_URL}?lang=en`,
-        'zh-CN': `${SITE_URL}${PAGE_URL}?lang=zh`,
+        'en-US': `${SITE_URL}${PAGE_URL}`,
+        'zh-CN': `${SITE_URL}${PAGE_URL}`,
         'x-default': `${SITE_URL}${PAGE_URL}`,
       },
     },
@@ -421,11 +421,11 @@ export default async function WebflowPromoCodePage({
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href={`/?lang=${lang}`} className="text-2xl font-bold text-orange-500 hover:text-orange-600">
+            <Link href="/" className="text-2xl font-bold text-orange-500 hover:text-orange-600">
               {c.ui.siteTitle}
             </Link>
             <div className="flex items-center gap-3">
-              <Link href={`/?lang=${lang}`} className="text-sm text-gray-500 hover:text-orange-500">
+              <Link href="/" className="text-sm text-gray-500 hover:text-orange-500">
                 {c.ui.backHome}
               </Link>
               <Link
@@ -611,7 +611,7 @@ export default async function WebflowPromoCodePage({
         <p className="max-w-4xl mx-auto px-4">{c.footer.line1}</p>
         <p className="max-w-4xl mx-auto px-4 mt-2">{c.footer.line2}</p>
         <p className="mt-3">
-          <Link href={`/?lang=${lang}`} className="hover:text-orange-500">
+          <Link href="/" className="hover:text-orange-500">
             {c.ui.siteTitle}
           </Link>
         </p>

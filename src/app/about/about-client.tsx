@@ -97,7 +97,7 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-3xl mx-auto px-4 py-3 flex items-center gap-3">
-          <Link href={`/?lang=${lang}`} className="flex-shrink-0 flex items-center gap-1.5 text-base font-bold text-orange-500 hover:text-orange-600 transition-colors">
+          <Link href="/" className="flex-shrink-0 flex items-center gap-1.5 text-base font-bold text-orange-500 hover:text-orange-600 transition-colors">
             <span className="text-xl">🏷️</span>
             <span className="hidden sm:inline text-sm">{lang === 'zh' ? '优惠总动员' : 'Coupon Hub'}</span>
           </Link>
@@ -225,19 +225,19 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
         </article>
 
         <div className="text-center">
-          <Link href={`/?lang=${lang}`} className="text-sm text-orange-600 hover:text-orange-700 hover:underline">
+          <Link href="/" className="text-sm text-orange-600 hover:text-orange-700 hover:underline">
             {t.backHome}
           </Link>
         </div>
 
         <nav className="bg-white rounded-2xl border border-gray-200 p-4 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-gray-500">
-          <Link href={`/?lang=${lang}`} className="hover:text-orange-500">{lang === 'zh' ? '首页' : 'Home'}</Link>
+          <Link href="/" className="hover:text-orange-500">{lang === 'zh' ? '首页' : 'Home'}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/about?lang=${lang}`} className="hover:text-orange-500">{lang === 'zh' ? '关于' : 'About'}</Link>
+          <Link href="/about" className="hover:text-orange-500">{lang === 'zh' ? '关于' : 'About'}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/discount-calculator?lang=${lang}`} className="hover:text-orange-500">{lang === 'zh' ? '折扣计算器' : 'Calculator'}</Link>
+          <Link href="/discount-calculator" className="hover:text-orange-500">{lang === 'zh' ? '折扣计算器' : 'Calculator'}</Link>
           <span className="text-gray-200">·</span>
-          <Link href={`/blog?lang=${lang}`} className="hover:text-orange-500">{lang === 'zh' ? '博客' : 'Blog'}</Link>
+          <Link href="/blog" className="hover:text-orange-500">{lang === 'zh' ? '博客' : 'Blog'}</Link>
           <span className="text-gray-200">·</span>
           <a href="/llms.txt" className="hover:text-orange-500">llms.txt</a>
           <span className="text-gray-200">·</span>

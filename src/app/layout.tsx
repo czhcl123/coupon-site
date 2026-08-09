@@ -207,9 +207,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://coupon-site-production.up.railway.app',
     languages: {
-      'en-US': 'https://coupon-site-production.up.railway.app/?lang=en',
-      'zh-CN': 'https://coupon-site-production.up.railway.app/?lang=zh',
-      'x-default': 'https://coupon-site-production.up.railway.app/?lang=en',
+      'en-US': 'https://coupon-site-production.up.railway.app/',
+      'zh-CN': 'https://coupon-site-production.up.railway.app/',
+      'x-default': 'https://coupon-site-production.up.railway.app/',
     },
   },
   robots: {

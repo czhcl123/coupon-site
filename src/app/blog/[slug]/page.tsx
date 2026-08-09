@@ -138,12 +138,12 @@ export async function generateMetadata({
     alternates: {
       canonical: `/blog/${slug}`,
       languages: {
-        'en-US': `/blog/${slug}?lang=en`,
-        'zh-CN': `/blog/${slug}?lang=zh`,
-        'id-ID': `/blog/${slug}?lang=id`,
-        'ja-JP': `/blog/${slug}?lang=ja`,
-        'ar-SA': `/blog/${slug}?lang=ar`,
-        'pt-BR': `/blog/${slug}?lang=pt`,
+        'en-US': `/blog/${slug}`,
+        'zh-CN': `/blog/${slug}`,
+        'id-ID': `/blog/${slug}`,
+        'ja-JP': `/blog/${slug}`,
+        'ar-SA': `/blog/${slug}`,
+        'pt-BR': `/blog/${slug}`,
         'x-default': `/blog/${slug}`,
       },
     },
@@ -241,11 +241,11 @@ export default async function ArticlePage({
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href={`/?lang=${lang}`} className="text-2xl font-bold text-orange-500 hover:text-orange-600">
+            <Link href="/" className="text-2xl font-bold text-orange-500 hover:text-orange-600">
               {u('siteTitle', lang)}
             </Link>
             <div className="flex items-center gap-3">
-              <Link href={`/blog?lang=${lang}`} className="text-sm text-gray-500 hover:text-orange-500">
+              <Link href="/blog" className="text-sm text-gray-500 hover:text-orange-500">
                 {u('backList', lang)}
               </Link>
               <Link
@@ -263,7 +263,7 @@ export default async function ArticlePage({
         <article className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
           <div className="flex items-center gap-2 mb-4">
             <Link
-              href={`/?lang=${lang}`}
+              href="/"
               className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full hover:bg-orange-200"
             >
               {article.merchant}
@@ -344,7 +344,7 @@ export default async function ArticlePage({
               {related.map((r) => (
                 <Link
                   key={r.slug}
-                  href={`/blog/${r.slug}?lang=${lang}`}
+                  href={`/blog/${r.slug}`}
                   className="bg-white rounded-lg p-4 border border-gray-100 hover:shadow-sm transition-shadow block"
                 >
                   <h4 className="font-semibold text-gray-800 text-sm leading-snug">{r.title}</h4>
@@ -360,7 +360,7 @@ export default async function ArticlePage({
             {uVars('ctaText', { merchant: article.merchant }, lang)}
           </p>
           <Link
-            href={`/?lang=${lang}`}
+            href="/"
             className="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-orange-600 transition-colors"
           >
             {u('ctaBtn', lang)}

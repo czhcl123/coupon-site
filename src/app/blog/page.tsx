@@ -50,8 +50,8 @@ export async function generateMetadata({
     alternates: {
       canonical: '/blog',
       languages: {
-        'en-US': '/blog?lang=en',
-        'zh-CN': '/blog?lang=zh',
+        'en-US': '/blog',
+        'zh-CN': '/blog',
         'x-default': '/blog',
       },
     },
@@ -123,13 +123,13 @@ export default async function BlogPage({
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <Link href={`/?lang=${lang}`} className="text-2xl font-bold text-orange-500 hover:text-orange-600">
+              <Link href="/" className="text-2xl font-bold text-orange-500 hover:text-orange-600">
                 {u('siteTitle', lang)}
               </Link>
               <p className="text-sm text-gray-400 mt-1">{u('siteSubtitle', lang)}</p>
             </div>
             <div className="flex items-center gap-3">
-              <Link href={`/?lang=${lang}`} className="text-sm text-gray-500 hover:text-orange-500">
+              <Link href="/" className="text-sm text-gray-500 hover:text-orange-500">
                 {u('backHome', lang)}
               </Link>
               <Link
@@ -153,7 +153,7 @@ export default async function BlogPage({
           {articles.map((article) => (
             <Link
               key={article.slug}
-              href={`/blog/${article.slug}?lang=${lang}`}
+              href={`/blog/${article.slug}`}
               className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100 block"
             >
               <div className="flex items-center gap-2 mb-3">

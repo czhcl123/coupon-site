@@ -16,10 +16,10 @@ export async function generateMetadata({
   const lang = sp.lang === 'en' ? 'en' : 'zh'
   return {
     alternates: {
-      canonical: `/?lang=${lang}`,
+      canonical: '/',
       languages: {
-        'en-US': '/?lang=en',
-        'zh-CN': '/?lang=zh',
+        'en-US': '/',
+        'zh-CN': '/',
         'x-default': '/',
       },
     },

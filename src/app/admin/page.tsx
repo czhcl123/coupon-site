@@ -325,7 +325,7 @@ function AdminContent() {
         </div>
 
         <div className="mt-6 text-center text-sm text-gray-400">
-          <Link href={`/?lang=${lang}`} className="hover:text-gray-600">
+          <Link href="/" className="hover:text-gray-600">
             {u('backHome', lang)}
           </Link>
         </div>

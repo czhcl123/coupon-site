@@ -300,14 +300,14 @@ export async function generateMetadata({
       title: loc.title,
       description: loc.desc,
       alternates: {
-        canonical: `/merchant/${slug}?lang=${lang}`,
+        canonical: `/merchant/${slug}`,
         languages: {
-          'en-US': `/merchant/${slug}?lang=en`,
-          'zh-CN': `/merchant/${slug}?lang=zh`,
-          'id-ID': `/merchant/${slug}?lang=id`,
-          'ja-JP': `/merchant/${slug}?lang=ja`,
-          'ar-SA': `/merchant/${slug}?lang=ar`,
-          'pt-BR': `/merchant/${slug}?lang=pt`,
+          'en-US': `/merchant/${slug}`,
+          'zh-CN': `/merchant/${slug}`,
+          'id-ID': `/merchant/${slug}`,
+          'ja-JP': `/merchant/${slug}`,
+          'ar-SA': `/merchant/${slug}`,
+          'pt-BR': `/merchant/${slug}`,
           'x-default': `/merchant/${slug}`,
         },
       },
@@ -324,11 +324,11 @@ export async function generateMetadata({
         ? `${merchant.name} ${gkp.benefitZh}。${gkp.urgencyZh}、${volZh}、复制即用、过期码每日自动清理。点开即取最强码。`
         : `${merchant.name} ${gkpKw} — ${gkp.benefitEn}. ${gkp.urgencyEn}; ${volLabel}. Click to copy the strongest working code; expired codes auto-removed daily.`,
       alternates: {
-        canonical: `/merchant/${slug}?lang=${lang}`,
+        canonical: `/merchant/${slug}`,
         languages: {
-          'en-US': `/merchant/${slug}?lang=en`,
-          'zh-CN': `/merchant/${slug}?lang=zh`,
-          'x-default': `/merchant/${slug}?lang=en`,
+          'en-US': `/merchant/${slug}`,
+          'zh-CN': `/merchant/${slug}`,
+          'x-default': `/merchant/${slug}`,
         },
       },
     }
@@ -342,10 +342,10 @@ export async function generateMetadata({
       title: m.title,
       description: m.desc,
       alternates: {
-        canonical: `/merchant/${slug}?lang=${lang}`,
+        canonical: `/merchant/${slug}`,
         languages: {
-          'en-US': `/merchant/${slug}?lang=en`,
-          'zh-CN': `/merchant/${slug}?lang=zh`,
+          'en-US': `/merchant/${slug}`,
+          'zh-CN': `/merchant/${slug}`,
           'x-default': `/merchant/${slug}`,
         },
       },
@@ -361,10 +361,10 @@ export async function generateMetadata({
       ? `${merchant.name} 最新优惠码 (${volZh}):最新验证折扣码、复制即用、覆盖全场商品。每月自动清理过期码。`
       : `Verified ${merchant.name} ${gkpKw} (${volLabel}). Latest working codes copied in one click. Expired codes auto-removed daily.`,
     alternates: {
-      canonical: `/merchant/${slug}?lang=${lang}`,
+      canonical: `/merchant/${slug}`,
       languages: {
-        'en-US': `/merchant/${slug}?lang=en`,
-        'zh-CN': `/merchant/${slug}?lang=zh`,
+        'en-US': `/merchant/${slug}`,
+        'zh-CN': `/merchant/${slug}`,
         'x-default': `/merchant/${slug}`,
       },
     },
@@ -440,11 +440,11 @@ export default async function MerchantPage({
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href={`/?lang=${lang}`} className="text-2xl font-bold text-orange-500 hover:text-orange-600">
+            <Link href="/" className="text-2xl font-bold text-orange-500 hover:text-orange-600">
               {u('siteTitle', lang)}
             </Link>
             <div className="flex items-center gap-3">
-              <Link href={`/?lang=${lang}`} className="text-sm text-gray-500 hover:text-orange-500">
+              <Link href="/" className="text-sm text-gray-500 hover:text-orange-500">
                 {u('backHome', lang)}
               </Link>
               <Link
