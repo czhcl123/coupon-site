@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { articles, getArticleBySlug } from '@/data/articles'
 
+export const dynamic = 'force-static'
+export const revalidate = 86400
+
 // 2026-07-19: blog FAQ 富费广结构数据辅助函数
 // 为每篇 blog 生成 4-5 个 FAQ 问题，提升 GEO 长尾截取 + FAQ rich snippet 出现率
 function blogFaqs(article: { title: string; description: string; tags: string[]; merchantSlug?: string }, lang: 'zh' | 'en') {

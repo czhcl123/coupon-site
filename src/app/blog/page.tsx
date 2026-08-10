@@ -2,6 +2,9 @@
 import Link from 'next/link'
 import { articles } from '@/data/articles'
 
+export const dynamic = 'force-static'
+export const revalidate = 86400
+
 type Lang = 'zh' | 'en'
 
 const t = {
