@@ -365,7 +365,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
                       onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
                     />
                   )}
-                  <Link href="/merchant/${coupon.merchant.slug}" className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
+                  <Link href={`/merchant/${coupon.merchant.slug}`} className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
                     {coupon.merchant.name}
                   </Link>
                   {coupon.isVerified && (
