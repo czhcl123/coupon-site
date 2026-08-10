@@ -18,8 +18,6 @@ export async function generateMetadata({
     alternates: {
       canonical: '/',
       languages: {
-        'en-US': '/',
-        'zh-CN': '/',
         'x-default': '/',
       },
     },

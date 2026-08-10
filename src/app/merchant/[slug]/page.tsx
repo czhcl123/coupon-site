@@ -302,12 +302,6 @@ export async function generateMetadata({
       alternates: {
         canonical: `/merchant/${slug}`,
         languages: {
-          'en-US': `/merchant/${slug}`,
-          'zh-CN': `/merchant/${slug}`,
-          'id-ID': `/merchant/${slug}`,
-          'ja-JP': `/merchant/${slug}`,
-          'ar-SA': `/merchant/${slug}`,
-          'pt-BR': `/merchant/${slug}`,
           'x-default': `/merchant/${slug}`,
         },
       },

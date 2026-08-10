@@ -32,8 +32,6 @@ export async function generateMetadata({
     alternates: {
       canonical: 'https://coupon-site-production.up.railway.app/about',
       languages: {
-        'zh-CN': 'https://coupon-site-production.up.railway.app/about',
-        'en-US': 'https://coupon-site-production.up.railway.app/about',
         'x-default': 'https://coupon-site-production.up.railway.app/about',
       },
     },

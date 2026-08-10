@@ -50,8 +50,6 @@ export async function generateMetadata({
     alternates: {
       canonical: '/blog',
       languages: {
-        'en-US': '/blog',
-        'zh-CN': '/blog',
         'x-default': '/blog',
       },
     },
