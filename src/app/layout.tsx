@@ -131,7 +131,6 @@ const webAppSchema = {
   description:
     'Real-time aggregator of promo codes and discounts from 20+ major brands (Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com, and more) across fashion, electronics, travel, and beauty.',
   applicationCategory: 'ShoppingApplication',
-  applicationSubCategory: 'CouponAggregator',
   operatingSystem: 'Any (web browser with JavaScript)',
   browserRequirements: 'Requires JavaScript. Requires HTML5.',
   inLanguage: ['en-US', 'zh-CN'],
