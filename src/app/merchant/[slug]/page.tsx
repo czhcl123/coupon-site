@@ -320,8 +320,6 @@ export async function generateMetadata({
       alternates: {
         canonical: `/merchant/${slug}`,
         languages: {
-          'en-US': `/merchant/${slug}`,
-          'zh-CN': `/merchant/${slug}`,
           'x-default': `/merchant/${slug}`,
         },
       },
@@ -338,8 +336,6 @@ export async function generateMetadata({
       alternates: {
         canonical: `/merchant/${slug}`,
         languages: {
-          'en-US': `/merchant/${slug}`,
-          'zh-CN': `/merchant/${slug}`,
           'x-default': `/merchant/${slug}`,
         },
       },
@@ -357,8 +353,6 @@ export async function generateMetadata({
     alternates: {
       canonical: `/merchant/${slug}`,
       languages: {
-        'en-US': `/merchant/${slug}`,
-        'zh-CN': `/merchant/${slug}`,
         'x-default': `/merchant/${slug}`,
       },
     },
