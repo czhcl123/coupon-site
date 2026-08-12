@@ -3,6 +3,10 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { query } from '@/lib/db'
 
+// 2026-08-12: 静态化 + ISR (Ahrefs 报 nordstrom TTFB 27s)
+export const dynamic = 'force-static'
+export const revalidate = 86400 // 24h
+
 type Lang = 'zh' | 'en' | 'id' | 'ja' | 'ar' | 'pt'
 
 // 2026-07-19: 多语言本地化 metadata (GSC 出现 id/ja/ar/pt 长尾查询)
@@ -800,4 +804,15 @@ export default async function MerchantPage({
       </footer>
     </div>
   )
+}
+
+// 2026-08-12: ISR - 预渲染所有 merchant 页面 (Ahrefs 报 nordstrom TTFB 27s)
+export async function generateStaticParams() {
+  try {
+    const rows = await query<{ slug: string }>('SELECT slug FROM merchants')
+    return rows.map((r) => ({ slug: r.slug }))
+  } catch {
+    // Build 环境无数据库访问，跳过预渲染
+    return []
+  }
 }
