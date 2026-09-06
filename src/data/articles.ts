@@ -182,32 +182,94 @@ Best Buy 有 15 天价格保护期，降价可申请退差价。
   },
   {
     slug: 'nordstrom-sale-guide',
-    title: 'Nordstrom Anniversary Sale 攻略：为什么抢不过代购',
-    description: 'Nordstrom 周年庆抢先购买技巧，会员 Early Access 怎么拿到。',
+    title: 'Nordstrom Sale Guide 2026: Anniversary Sale + Half-Yearly Deals',
+    description: 'Complete Nordstrom sale guide for 2026: Anniversary Sale dates, Early Access tips, Half-Yearly Sale calendar, Rack deals, and stacking strategies to save 40-60%.',
     content: `
-## Nordstrom 周年庆完全指南
+## Nordstrom Sale Guide 2026: Everything You Need to Know
 
-### 什么是 Anniversary Sale
-每年 7 月的周年庆是 Nordstrom 全年最大促销，很多热门款低至 5 折。
+Nordstrom runs several major sales each year, but the **Anniversary Sale** (July) is by far the biggest — offering brand-new fall merchandise at 30-60% off before it hits regular prices. This guide covers every Nordstrom sale in 2026, plus how to get Early Access and stack additional discounts.
 
-### Early Access 怎么拿
-- Nordstrom 信用卡持有人提前 2 天开抢
-- VIB 会员有优先购买权
-- 部分品牌提前 1 周
+### Nordstrom Anniversary Sale 2026
 
-### 代购为什么抢得过？
-代购通常用机器人脚本 + 多个账号批量抢。我们普通人怎么应对：
-1. 提前做好功课，看中款式直接加车
-2. 提前设置地址和支付方式
-3. 订阅邮件提醒，收到通知马上动手
+- **Preview**: Early July (browse, add to wishlist)
+- **Early Access**: Mid-July (credit card holders + Nordy Club Ambassadors)
+- **Public Access**: Late July
+- **Last Call**: August (final markdowns, up to 60% off)
 
-### 购买技巧
-- 选" pickup in store" 比快递更快
-- 服装尺寸偏大，建议选小一号
+The Anniversary Sale is unique because it discounts **new arrivals**, not old inventory. That's why popular sizes and colors sell out fast.
+
+### How to Get Nordstrom Anniversary Sale Early Access
+
+1. **Nordstrom credit card**: Automatic 2-day early access
+2. **Nordy Club Ambassador status**: Spend $1,000/year to unlock
+3. **Credit card + Ambassador**: Get access even earlier
+4. **Nordstrom debit card**: Same early access as credit card (no credit check)
+
+### Half-Yearly Sale (June & December)
+
+- **Spring Half-Yearly**: Late May - Early June — up to 40% off spring/summer
+- **Holiday Half-Yearly**: Late December — up to 50% off winter items
+
+Unlike the Anniversary Sale, Half-Yearly discounts clearance items from the previous season.
+
+### Nordstrom Rack vs. Main Store
+
+Nordstrom Rack is the off-price division, offering 30-70% off every day. Key differences:
+
+- **Main store**: Curated brands, personal styling, free alterations
+- **Rack**: Overstock + past-season items, more volume, less curation
+
+Pro tip: Rack online has better selection than in-store. Check <a href="/merchant/nordstrom">Nordstrom coupon codes</a> before checkout.
+
+### How to Stack Discounts at Nordstrom
+
+1. Start with <a href="/merchant/nordstrom">Nordstrom coupons</a> from our verified page
+2. Apply Nordstrom credit card points (up to $20 per $200 spent)
+3. Use a cashback credit card (Chase Freedom, Citi Double Cash)
+4. Shop during Anniversary Sale for deepest markdowns
+5. Use Nordstrom Rewards points (earned from purchases)
+
+### Best Nordstrom Sale Categories
+
+- **Fragrances**: 20-30% off during Anniversary (best time to buy)
+- **Designer handbags**: Rare discounts, Anniversary is the time
+- **Athletic wear**: Nike, Adidas, Lululemon rarely go on sale elsewhere
+- **Beauty**: Gift sets during holidays, GWP (gift with purchase) year-round
+
+### 2026 Nordstrom Sale Calendar
+
+| Month | Sale Type | Discount |
+|-------|-----------|----------|
+| January | Winter Clearance | Up to 60% off |
+| February | End of Winter | Up to 50% off |
+| March | Spring Preview | New arrivals |
+| April | Spring Sale | Up to 30% off |
+| May | Pre-Half-Yearly | Up to 40% off |
+| June | Half-Yearly Sale | Up to 40% off |
+| July | Anniversary Sale | 30-60% off (NEW items) |
+| August | Anniversary Last Call | Up to 60% off |
+| September | Fall Preview | New arrivals |
+| October | Pre-Holiday | Up to 30% off |
+| November | Black Friday | Up to 50% off |
+| December | Holiday Half-Yearly | Up to 50% off |
+
+### Nordstrom Sale Tips from Regular Shoppers
+
+- Set up wishlist BEFORE the sale — items sell out in hours
+- Buy during Early Access if you have the credit card
+- Price match within 14 days if it drops further
+- Free alterations on full-price purchases (in-store)
+- Return policy: 40 days for regular, 45 days for cardholders
+
+### Related Coupons and Deals
+
+- <a href="/merchant/nordstrom">Nordstrom coupon codes</a> — verified daily
+- <a href="/merchant/nike">Nike discount codes</a> — stack with Nordstrom athletic section
+- <a href="/merchant/sephora">Sephora coupons</a> — compare beauty deals
     `,
     merchant: 'Nordstrom',
     merchantSlug: 'nordstrom',
-    tags: ['Nordstrom 折扣', 'Nordstrom 周年庆', '时尚电商'],
+    tags: ['Nordstrom sale', 'Nordstrom Anniversary Sale', 'Nordstrom deals', 'Nordstrom coupon codes', 'fashion deals'],
     publishedAt: '2025-07-15',
   },
   {
