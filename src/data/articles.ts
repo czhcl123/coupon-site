@@ -73,31 +73,96 @@ ASOS 是英国知名的时尚电商，全球免运费是它最大的优势之一
   },
   {
     slug: 'amazon-prime-day-guide',
-    title: 'Amazon Prime Day 购物攻略：如何抢到真正的好价',
-    description: 'Amazon Prime Day 秒杀技巧、折扣叠加方法、避免先涨后降的识别方法。',
+    title: 'Amazon Prime Day 2026: Best Deals, Dates & Stacking Tips',
+    description: 'Amazon Prime Day 2026 guide with exact dates, best deal categories, Lightning Deal strategies, and stacking tips to save 50% or more.',
     content: `
-## Prime Day 抢购攻略
+## Amazon Prime Day 2026: Complete Shopping Guide
 
-Amazon Prime Day 通常在每年 7 月中旬，是亚马逊年度最大促销。
+Amazon Prime Day is Amazon's biggest sale event of the year, rivaling Black Friday in scale. In 2026, Prime Day is expected in **mid-July** (typically 2 days). This guide covers everything you need to score the best deals and avoid common traps.
 
-### 准备工作
-1. 提前加购物车，记录日常价格
-2. 下载 Amazon App，设置降价提醒
-3. 提前充值 Prime 会员
+### When Is Amazon Prime Day 2026?
 
-### 识别真降价
-- 用 Keepa 插件查看历史价格
-- 先涨后降是常见套路
-- 关注 Products 页面"Was/Now"价格
+| Event | Expected Date | Notes |
+|-------|--------------|-------|
+| Prime Day | July 15-16, 2026 | 48-hour flash sale |
+| Early Deals | July 1-14 | Warm-up deals for Prime members |
+| Extended Deals | July 17-18 | Clearance on remaining stock |
 
-### 叠加技巧
-- Prime 会员专享价 + 信用卡返现
-- 购买 Gift Card 再购物可多赚积分
+**Tip**: Early deals often match Prime Day prices — don't wait until Day 2 if you see a good deal.
+
+### Best Prime Day Deal Categories
+
+Based on historical data, these categories get the deepest discounts:
+
+- **Electronics**: 30-60% off (TVs, headphones, smart home devices)
+- **Amazon devices**: 40-70% off (Echo, Fire TV, Kindle, Ring)
+- **Home & Kitchen**: 25-50% off (instant pots, air fryers, bedding)
+- **Fashion**: 20-40% off (Amazon Essentials, select brands)
+- **Beauty**: 20-35% off (sunscreen, skincare sets, hair tools)
+- **Toys**: 20-40% off (LEGO, action figures, games)
+
+### Lightning Deal Strategy
+
+Lightning Deals are time-limited offers (usually 4-6 hours) with limited quantity:
+
+1. **Set up wishlist** with items you want BEFORE Prime Day
+2. **Enable deal notifications** in the Amazon App
+3. **Act within first 15 minutes** — popular deals sell out fast
+4. **Join waitlist** if a deal is claimed — you'll get a notification if someone doesn't complete purchase
+5. **Use Prime exclusive deal badges** — only visible to Prime members
+
+### How to Spot Fake Discounts
+
+Amazon has a problem with sellers raising prices before Prime Day then "discounting" back to normal:
+
+1. **Install Keepa** (free browser extension) — shows 12-month price history
+2. **Check the "Was" price** — if it was higher only in the last week, it's likely fake
+3. **Use CamelCamelCamel** (camelcamelcamel.com) — similar price tracking
+4. **Compare with other retailers** — Best Buy, Walmart, Target often match
+
+### Stacking Strategies for Maximum Savings
+
+1. Start with <a href="/merchant/amazon">Amazon coupon codes</a> from our verified page
+2. Use Amazon credit card (5% back on Amazon purchases)
+3. Apply Discover/Cashback bonus categories
+4. Buy Amazon gift cards at 5-10% off before Prime Day
+5. Stack Subscribe & Save discounts (extra 5-15% off)
+
+**Example stack**: Prime Day 30% off + credit card 5% + gift card 10% off = **45% total savings**
+
+### Amazon Prime Day vs. Black Friday
+
+| Factor | Prime Day | Black Friday |
+|--------|-----------|--------------|
+| **Best for** | Amazon devices, electronics | Everything |
+| **Deals depth** | 30-60% off | 20-50% off |
+| **Duration** | 2 days | 1 week+ |
+| **Membership** | Prime required | Open to all |
+| **Best deals** | Echo, Fire, Kindle | TVs, laptops, gaming |
+
+**Verdict**: Buy Amazon devices on Prime Day. Everything else, compare both events.
+
+### Prime Day Shopping Checklist
+
+- [ ] Verify Prime membership is active
+- [ ] Install Keepa price tracker
+- [ ] Set up deal notifications in Amazon App
+- [ ] Create wishlist with target items
+- [ ] Check <a href="/merchant/amazon">Amazon promo codes</a> page
+- [ ] Load gift cards purchased at discount
+- [ ] Compare prices on Best Buy, Walmart, Target
+- [ ] Set a budget — impulse buys are real
+
+### Related Deals
+
+- <a href="/merchant/amazon">Amazon coupon codes</a> — verified daily
+- <a href="/blog/bestbuy-tv-buying-guide">Best Buy TV buying guide</a> — compare prices
+- <a href="/merchant/target">Target deals</a> — price match option
     `,
     merchant: 'Amazon',
     merchantSlug: 'amazon',
-    tags: ['Amazon 折扣', 'Prime Day', '海淘攻略'],
-    publishedAt: '2025-03-10',
+    tags: ['Amazon Prime Day', 'Amazon deals', 'Amazon coupon codes', 'Prime Day 2026', 'flash sale'],
+    publishedAt: '2025-06-01',
   },
   {
     slug: 'adidas-outlet-secrets',
