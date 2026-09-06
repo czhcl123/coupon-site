@@ -127,29 +127,84 @@ Adidas 会员每月收到专属折扣码，部分款式额外 9 折。
   },
   {
     slug: 'sephora-coupon-strategy',
-    title: 'Sephora 丝芙兰折扣码使用完全指南',
-    description: 'Sephora 新用户礼包、会员生日优惠、VIB 折扣攻略。',
-    content: `
-## Sephora 丝芙兰省钱攻略
+    title: 'Sephora Coupon Codes 2026: How to Stack Discounts for 40% Off',
+    description: 'Verified Sephora coupon codes and stacking strategy for 2026. Save 40% with insider tips on VIB sales, birthday rewards, promo codes, and cashback.',
+    content: `## Sephora Coupon Strategy 2026: Save Up to 40% Every Order
 
-### 新用户首单优惠
-首次注册可获得 8 折码，有效期 30 天，需在 30 天内使用。
+Sephora rarely offers sitewide discounts, but savvy shoppers can stack multiple strategies to save 20-40% on every purchase. This guide covers every legitimate Sephora coupon method in 2026.
 
-### 会员生日礼物
-- Insider 会员：生日当月 8 折
-- VIB 会员：生日当月 8 折 + 专属礼包
-- Rouge 会员：生日当月 8 折 + 生日套装
+### Sephora Coupon Codes That Actually Work
 
-### VIB 会员申请建议
-年消费满 $350 即升级 VIB，8 折码用两次就回本。
+| Code Type | Discount | How to Get It |
+|-----------|----------|---------------|
+| Welcome offer | 15-20% off first order | New email signup |
+| Birthday gift | Free full-size product | Insider+ members, birthday month |
+| Friends & Family | 20% off | Periodically, usually March & September |
+| Sample with purchase | Free deluxe samples | Orders over $35-50 |
 
-### 节假日促销
-- 12.12 年终大促：部分套装 5 折
-- 会员日（通常 3 月和 9 月）：额外 8 折专区
+Pro tip: <a href="/merchant/sephora">Check our verified Sephora codes page</a> — we update daily with working promo codes.
+
+### Sephora VIB Sale Calendar 2026
+
+The VIB/Rouge sales are Sephora's biggest discount events:
+
+- **Spring Savings Event** (April): Rouge 20% off, VIB 15% off, Insider 10% off
+- **Fall Savings Event** (October): Same tiers as spring
+- **Holiday Bonus** (November-December): Points multiplier events
+
+How to get VIB status: Spend $350/year at Sephora. VIB members get 15% off during sales vs. Insider's 10%.
+
+### Birthday Reward Strategy
+
+- **Insider** (free): Birthday month — free mini gift
+- **VIB** ($350/year): Birthday month — free full-size product
+- **Rouge** ($1,000/year): Birthday month — choose from premium gift set
+
+Stacking tip: Use your birthday reward during a VIB sale for maximum savings.
+
+### How to Stack Sephora Discounts
+
+1. Start with <a href="/merchant/sephora">Sephora promo codes</a> from our page
+2. Shop during VIB/F&F sale events (up to 20% off)
+3. Use a cashback credit card (Chase Freedom 5% on beauty, Rakuten 3-8%)
+4. Buy gift cards at discount (10-15% off from Costco, raise.com)
+5. Redeem Beauty Insider points for $10-$100 rewards
+
+Example stack: VIB 20% off + cashback card 5% + discounted gift card 10% = **35% total savings**
+
+### Sephora vs. Ulta: Where to Get Better Deals
+
+- **Sephora**: Better for luxury brands (Dior, Chanel, Tom Ford), unique exclusives
+- **Ulta**: Better everyday rewards (points on every dollar), 21 Days of Beauty sales
+
+Both stores price-match major competitors on identical items.
+
+### Sephora Sale Calendar 2026
+
+| Month | Event | Discount |
+|-------|-------|----------|
+| January | New Year Refresh | Points multiplier |
+| February | Valentine's Sets | Limited edition bundles |
+| March | Friends & Family | 20% off (invite-only) |
+| April | Spring VIB Sale | 15-20% off |
+| May | Memorial Day | Gift with purchase |
+| June | Summer Sale | Up to 50% off select |
+| July | VIB Bonus Points | 2-4x points events |
+| August | Back to Beauty | Gift sets |
+| September | Friends & Family | 20% off |
+| October | Fall VIB Sale | 15-20% off |
+| November | Holiday Bonus Points | 4x points |
+| December | Holiday Sets | Best value bundles |
+
+### Related Deals
+
+- <a href="/merchant/sephora">Sephora coupon codes</a> — verified daily
+- <a href="/merchant/ulta-beauty">Ulta Beauty deals</a> — compare beauty savings
+- <a href="/merchant/nike">Nike discount codes</a> — athletic gear
     `,
     merchant: 'Sephora',
-    merchantSlug: 'sephora',
-    tags: ['Sephora 折扣', '丝芙兰优惠', '美妆攻略'],
+    merchantSlug: 'nordstrom',
+    tags: ['Sephora coupon codes', 'Sephora deals', 'VIB sale', 'beauty deals', 'coupon strategy'],
     publishedAt: '2025-05-18',
   },
   {
@@ -273,42 +328,85 @@ Pro tip: Rack online has better selection than in-store. Check <a href="/merchan
     publishedAt: '2025-07-15',
   },
   {
-        slug: 'steam-sale-calendar',
-    title: 'Steam 游戏折扣日历：抓住每一个史低价',
-    description: 'Steam 促销时间表、Humble Bundle 互补购买、CDKeys 平台介绍。',
-    content: `
-## Steam 游戏折扣攻略
+    slug: 'steam-sale-calendar',
+    title: 'Steam Sale Calendar 2026: Every Major Sale Date & Best Deals',
+    description: 'Complete Steam sale calendar for 2026 with exact dates, historical low prices, and stacking strategies. Never miss a Steam deal again.',
+    content: `## Steam Sale Calendar 2026: Every Sale Date You Need
 
-还在找 Steam 最新可用的优惠码？我们每天手动验证 <a href="/merchant/steam">Steam 优惠码页</a>的折扣码，让你在史低叠加额外 10-20% OFF。
+Steam runs 4 major seasonal sales plus publisher and themed events throughout the year. Knowing the exact dates helps you plan purchases and combine <a href="/merchant/steam">Steam coupon codes</a> with sale discounts for maximum savings.
 
-### Steam 四大促销节点
-1. **夏季特卖**（6月底-7月中）：最大型
-2. **冬季特卖**（12月底）：年度最低
-3. **万圣节特卖**（10月底）：恐怖游戏专区
-4. **春季特卖**（3月）：独立游戏专场
+### Steam Major Sales 2026
 
-### 价格历史查询
-用 SteamDB 或 IsThereAnyDeal 查询历史价格，低于历史最低价再入手。别忘了和 <a href="/merchant/steam">Steam 优惠码页</a>的当前可用码叠加。
+| Sale | Expected Dates | Typical Discount |
+|------|---------------|------------------|
+| Spring Sale | March 12 - March 19 | 20-60% off |
+| Summer Sale | June 26 - July 10 | 30-80% off |
+| Halloween Sale | October 28 - November 4 | 30-70% off |
+| Autumn Sale | November 25 - December 2 | 20-70% off |
+| Winter Sale | December 19 - January 2 | 40-90% off (biggest) |
 
-### 叠加购买策略
-- 先买 Humble Bundle Bundle，再激活到 Steam
-- Epic Games Store 每周免费游戏值得领
-- CDKeys 等第三方平台价格通常更低
+Pro tip: The **Winter Sale** (December) has the deepest discounts. The **Summer Sale** (June-July) covers the widest catalog.
 
-### 购买建议
-不要等"最低价"，游戏打到一半就不想玩了的大有人在。
+### Steam Publisher & Themed Sales
 
-## Steam 相关优惠与攻略
+Beyond the big 5, Steam also runs:
 
-- 🎮 <a href="/merchant/steam">Steam 最新优惠码</a> — 每日更新
-- 💰 <a href="/blog/nike-discount-code-guide">Nike 折扣码完全指南</a> — 学生 / 会员 / 银行叠加
-- 🎮 <a href="/blog/amazon-prime-day-guide">Amazon Prime Day 攻略</a> — 游戏外设 / 礼品卡叠加
-- 🔥 <a href="/blog/bestbuy-tv-buying-guide">Best Buy 电视购买指南</a> — 电竞显示器促销节点
+- **Publisher Weekends**: Franchise sales (Ubisoft, Capcom, etc.) — typically 50-75% off
+- **Lunar New Year Sale**: February — Asia-focused deals
+- **Publisher Fest**: Various publishers, year-round
+- **Next Fest**: Free game demos (February, June, October)
+
+### How to Find the Best Steam Deals
+
+1. **SteamDB** (steamdb.info): Track price history and current lowest prices
+2. **IsThereAnyDeal** (isthereanydeal.com): Aggregate prices across stores
+3. **Deku Deals** (dekudeals.com): Best for Switch + PC comparison
+4. **<a href="/merchant/steam">Steam coupon page</a>**: Our daily-verified codes for extra discounts
+
+### Steam Price History: When to Buy
+
+- **Add to wishlist first**: Steam emails you when a wishlisted game goes on sale
+- **Check price history**: If current price is below the green line on SteamDB, it's a good deal
+- **Don't wait for "lowest"**: Games on your list for 2+ years rarely drop further
+
+### How to Stack Steam Savings
+
+1. Start with <a href="/merchant/steam">Steam promo codes</a> from our verified page
+2. Wait for a Steam sale event (30-90% off)
+3. Buy discounted Steam gift cards from Costco, Green Man Gaming, or eBay
+4. Use cashback credit cards (3-5% back)
+5. Combine with Humble Bundle for extra keys
+
+Example: Winter Sale 40% off + gift card 10% off + cashback 5% = **55% total savings**
+
+### Steam vs. Epic vs. GOG
+
+| Store | Pros | Cons |
+|-------|------|------|
+| **Steam** | Biggest library, Workshop, achievements | Rare exclusives |
+| **Epic** | Weekly free games, occasional exclusives | Smaller community features |
+| **GOG** | DRM-free, classic games | Fewer modern releases |
+
+Strategy: Claim free games on Epic, buy the rest on Steam during sales.
+
+### Steam Holiday Sale Tips
+
+- **Day 1**: Browse, add items to cart but don't buy
+- **Day 2-3**: Prices are stable — buy your must-haves
+- **Last 2 days**: Flash deals may appear, but popular titles rarely drop further
+- **Gift cards**: Buy discounted ones BEFORE the sale starts
+
+### Related Deals
+
+- <a href="/merchant/steam">Steam coupon codes</a> — verified daily
+- <a href="/blog/nike-discount-code-guide">Nike discount codes</a>
+- <a href="/blog/amazon-prime-day-guide">Amazon Prime Day guide</a>
+- <a href="/blog/bestbuy-tv-buying-guide">Best Buy TV buying guide</a>
     `,
-    merchant: 'Steam',
-    merchantSlug: 'steam',
-    tags: ['Steam 折扣', '游戏促销', 'Steam 特卖'],
-    publishedAt: '2026-07-25',
+    merchant: 'Nordstrom',
+    merchantSlug: 'nordstrom',
+    tags: ['Nordstrom sale', 'Nordstrom Anniversary Sale', 'Nordstrom deals', 'Nordstrom coupon codes', 'fashion deals'],
+    publishedAt: '2025-07-15',
   },
   {
     slug: 'target-circle-app',
