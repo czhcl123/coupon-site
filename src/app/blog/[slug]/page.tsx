@@ -212,10 +212,10 @@ export default async function ArticlePage({
         dateModified: new Date().toISOString(),
         author: editorialAuthor,
         publisher: editorialAuthor,
-        url: `https://coupon-site-olive.vercel.app/blog/${slug}`,
+        url: `https://coupon-site-production.up.railway.app/blog/${slug}`,
         keywords: article.tags.join(', '),
         inLanguage: ['en-US', 'zh-CN'],
-        mainEntityOfPage: { '@type': 'WebPage', '@id': `https://coupon-site-olive.vercel.app/blog/${slug}` },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `https://coupon-site-production.up.railway.app/blog/${slug}` },
       },
       // 2026-07-19: FAQPage schema 提升 GEO/长尾截取（不问 google 也会帮你调出 FAQ rich result）
       {

@@ -268,7 +268,7 @@ Both stores price-match major competitors on identical items.
 - <a href="/merchant/nike">Nike discount codes</a> — athletic gear
     `,
     merchant: 'Sephora',
-    merchantSlug: 'nordstrom',
+    merchantSlug: 'sephora',
     tags: ['Sephora coupon codes', 'Sephora deals', 'VIB sale', 'beauty deals', 'coupon strategy'],
     publishedAt: '2025-05-18',
   },
@@ -468,10 +468,10 @@ Strategy: Claim free games on Epic, buy the rest on Steam during sales.
 - <a href="/blog/amazon-prime-day-guide">Amazon Prime Day guide</a>
 - <a href="/blog/bestbuy-tv-buying-guide">Best Buy TV buying guide</a>
     `,
-    merchant: 'Nordstrom',
-    merchantSlug: 'nordstrom',
-    tags: ['Nordstrom sale', 'Nordstrom Anniversary Sale', 'Nordstrom deals', 'Nordstrom coupon codes', 'fashion deals'],
-    publishedAt: '2025-07-15',
+    merchant: 'Steam',
+    merchantSlug: 'steam',
+    tags: ['Steam sale calendar', 'Steam deals', 'Steam discounts', 'PC gaming', 'Steam sale dates'],
+    publishedAt: '2026-07-25',
   },
   {
     slug: 'target-circle-app',
@@ -534,6 +534,298 @@ RedCard 申请后享额外 5% 折扣：
     merchantSlug: 'ulta-beauty',
     tags: ['Ulta Beauty 折扣', '美妆护肤', '美国电商'],
     publishedAt: '2025-10-12',
+  },
+  {
+    // 2026-10-07: 新增 4 篇 SEO 博客（英文，干净 desc，不加 GKP 数据后缀，配合下周 meta 清理）
+    slug: 'black-friday-guide',
+    title: 'Black Friday Deals & Coupon Guide',
+    description: 'Black Friday 2026 dates, best brand deals, early access tips, and fake-discount traps to avoid.',
+    content: `
+## Black Friday 2026: Dates and Key Facts
+
+Black Friday falls on the fourth Friday of November each year. In 2026 the whole shopping week runs from late November into Cyber Monday.
+
+| Event | 2026 Date | What Happens |
+|-------|-----------|--------------|
+| Early Access | Mid-November | Loyalty members and email subscribers get first picks |
+| Thanksgiving | November 26 | Store closures, online deals start |
+| Black Friday | November 27 | Deepest discounts of the week |
+| Small Business Saturday | November 28 | Local and indie brand promotions |
+| Cyber Monday | November 30 | Online-only deals, electronics and fashion focus |
+
+### What to Expect This Year
+
+Historical trends for the categories shoppers search most:
+
+| Category | Typical Discount | Where |
+|----------|-----------------|-------|
+| Electronics and TVs | 30-60% off | Best Buy, Target, Amazon |
+| Fashion and sneakers | 20-50% off | Nike, ASOS, Nordstrom Rack |
+| Beauty | 25-50% off | Sephora, Ulta |
+| Home and kitchen | 25-45% off | Target, Amazon |
+| Toys | 30-50% off | Target, Walmart |
+
+### Early Access Strategies
+
+1. Join email lists now — brands announce early access codes to subscribers first
+
+2. Create free loyalty accounts (Nordy Club, Sephora Beauty Insider, Target Circle)
+
+3. Apply for store credit cards before the event if you plan a large purchase
+
+4. Follow brand social accounts — flash codes often drop there first
+
+5. Check <a href="/merchant/nike">Nike coupon codes</a> and <a href="/merchant/asos">ASOS codes</a> in the week before Black Friday
+
+### How to Spot Fake Black Friday Discounts
+
+Some retailers inflate prices in October then "discount" back to the normal price.
+
+1. Check the 90-day price history with Keepa or CamelCamelCamel before buying
+
+2. Compare the "was" price across three retailers — if only one shows a huge strike-through, be skeptical
+
+3. Treat doorbuster claims carefully — deep discounts are usually on older models
+
+4. Skip third-party "Black Friday coupon" sites promising unrealistic amounts
+
+### Black Friday vs Cyber Monday
+
+| Factor | Black Friday | Cyber Monday |
+|--------|--------------|--------------|
+| Best for | TVs, toys, in-store exclusives | Fashion, electronics, small retailers |
+| Deals depth | Deepest overall | Close second, online-only |
+| Availability | Limited stock in stores | Restocked online |
+| Duration | One day plus early access | One day plus extension week |
+
+Verdict: buy big-ticket electronics on Black Friday, fashion and travel on Cyber Monday, and compare both before checking out anywhere.
+
+### Related Guides
+
+- <a href="/merchant/nike">Nike coupon codes</a> — athletic gear deals
+
+- <a href="/merchant/asos">ASOS discount codes</a> — fashion and Curve
+
+- <a href="/blog/amazon-prime-day-guide">Amazon Prime Day guide</a> — the other big sale event
+
+- <a href="/blog/nordstrom-sale-guide">Nordstrom sale guide</a> — Anniversary Sale timing
+    `,
+    merchant: 'Black Friday',
+    merchantSlug: 'nike',
+    tags: ['Black Friday 2026', 'Black Friday deals', 'Black Friday coupon codes', 'Cyber Monday', 'holiday shopping'],
+    publishedAt: '2026-10-07',
+  },
+  {
+    slug: 'shein-coupon-code-guide',
+    title: 'SHEIN Coupon Codes & Sale Calendar',
+    description: 'How SHEIN coupons really work: new-user deals, coins, sale calendars, and stacking tricks.',
+    content: `
+## How SHEIN Coupons Actually Work
+
+SHEIN issues several coupon types, and knowing which applies to your cart is the difference between a real discount and a dead code.
+
+| Coupon Type | Typical Value | Where It Comes From |
+|-------------|--------------|---------------------|
+| New user code | 15-25% off or $ off | First purchase, app signup |
+| Sitewide percentage | 10-20% off | Email signup, app popups |
+| Category coupon | $3-$15 off | Specific departments (dresses, plus size) |
+| Free shipping coupon | Waives shipping fee | App-exclusive, threshold-based |
+| Coins discount | 1-5% off | Redeemed from SHEIN coins balance |
+
+### New User vs Existing Customer
+
+New shoppers get the strongest one-time offers (often 15-25% off the first order). Existing customers rely on:
+
+1. SHEIN coins earned per order (coins expire, so redeem regularly)
+
+2. App-only flash coupons that rotate weekly
+
+3. Birthday coupons in the SHEIN app profile
+
+4. Points exchange events around major sales
+
+### SHEIN Sale Calendar 2026
+
+| Sale | When | Discount Level |
+|------|------|----------------|
+| 11.11 Singles Day | November 11 | Deepest of the year (30-50% off) |
+| Black Friday week | Late November | 20-40% off plus codes |
+| End of season | January and July | 50-70% off clearance |
+| Flash sales | Weekly in app | Rotating category deals |
+
+### Stacking Tips for the Real Lowest Price
+
+1. Start with the app-only new user or flash coupon
+
+2. Reach the free shipping threshold instead of paying shipping
+
+3. Pay with coins to shave another few percent
+
+4. Wait for a sitewide sale week before using category coupons on big carts
+
+5. Check <a href="/merchant/shein">SHEIN coupon codes</a> on our verified page before checkout
+
+### How to Avoid Fake SHEIN Codes
+
+1. Ignore any site offering a free $750 SHEIN credit — those are phishing scams
+
+2. Real codes only come from the SHEIN app, official emails, and partner pages
+
+3. If a code asks for your password or card PIN, it is fake
+
+### Checklist
+
+1. Install the SHEIN app — most real coupons are app-exclusive
+
+2. Redeem coins before they expire
+
+3. Compare the final cart price with and without a coupon
+
+4. Time big orders for 11.11 or Black Friday weeks
+
+5. Verify codes at <a href="/merchant/shein">SHEIN codes</a> before paying
+    `,
+    merchant: 'SHEIN',
+    merchantSlug: 'shein',
+    tags: ['SHEIN coupon codes', 'SHEIN sale calendar', 'SHEIN discounts', '11.11 deals', 'SHEIN coupons for existing customers'],
+    publishedAt: '2026-10-07',
+  },
+  {
+    slug: 'expedia-coupon-code',
+    title: 'Expedia Coupon Codes & Travel Deals',
+    description: 'Expedia coupon codes, One Key rewards stacking, and booking timing tricks that cut travel prices.',
+    content: `
+## Types of Expedia Coupons
+
+Expedia distributes discounts through several channels, and each targets a different part of the booking.
+
+| Coupon Type | Typical Value | Best Used On |
+|-------------|--------------|--------------|
+| Package discount | $20-$75 off flight + hotel | Bundled trips |
+| Hotel coupon | 10% off select properties | Flexible hotel-only trips |
+| App-only deal | Extra 5-10% off | Mobile bookings |
+| Member price | 10-25% off at VIP Access hotels | Logged-in users |
+| Car rental coupon | $10-$20 off | Road trips |
+
+### One Key Rewards
+
+Expedia runs One Key across Expedia, Hotels.com, and Vrbo:
+
+1. Earn OneKeyCash on eligible bookings (members earn on most stays)
+
+2. Apply OneKeyCash at checkout like a coupon
+
+3. Silver and Gold members get extra perks (price matching, room upgrades)
+
+4. Prices improve when you log in — member rates are not shown to guests
+
+### When to Book for the Lowest Price
+
+1. Domestic flights: roughly 1-2 months ahead is the sweet spot
+
+2. Hotels: flexible midweek stays (Tuesday to Thursday) run cheaper
+
+3. Packages usually beat separate flight + hotel bookings on the same dates
+
+4. Book refundable rates when plans might change — the flexibility often costs little
+
+### How to Stack Expedia Savings
+
+1. Apply a verified coupon from <a href="/merchant/expedia">Expedia coupon codes</a>
+
+2. Log in to unlock member pricing before comparing
+
+3. Pay with a travel credit card that earns points or miles
+
+4. Use OneKeyCash from past trips at checkout
+
+5. Compare the package price with separate flight and hotel before paying
+
+### Spotting Fake Expedia Codes
+
+1. Ignore sites offering a free $750 travel credit — these are phishing scams
+
+2. Expedia codes only appear on official emails, the app, and partner pages
+
+3. A real code fails gracefully at checkout; a fake site asks for card details first
+
+### Checklist
+
+1. Create a free One Key account before searching
+
+2. Compare package vs separate prices for the same dates
+
+3. Check <a href="/merchant/expedia">Expedia promo codes</a> before payment
+
+4. Track flight prices and set alerts for route drops
+    `,
+    merchant: 'Expedia',
+    merchantSlug: 'expedia',
+    tags: ['Expedia coupon codes', 'Expedia promo code', 'travel deals', 'One Key rewards', 'hotel discounts'],
+    publishedAt: '2026-10-07',
+  },
+  {
+    slug: 'nordstrom-rack-coupons',
+    title: 'Nordstrom Rack Coupons & Sale Guide',
+    description: 'Rack vs Nordstrom, markdown timing, flash events, and stacking rules for the lowest Rack price.',
+    content: `
+## Nordstrom Rack vs Nordstrom
+
+Nordstrom Rack carries marked-down Nordstrom inventory plus Rack-exclusive lines. The price gap is real, but so are the tradeoffs.
+
+| Factor | Nordstrom | Nordstrom Rack |
+|--------|-----------|----------------|
+| Pricing | Full price plus sales | 30-70% off retail |
+| Selection | Current season | Past season and overstock |
+| Returns | Full policy, generous | Same policy, faster markdowns |
+| Alterations | Available in store | Limited |
+
+### When Markdowns Drop
+
+1. New markdowns typically hit online Thursday through Sunday
+
+2. In-store Rack locations mark down on their own cadence — call ahead for big items
+
+3. The "Last Chance" section holds final markdowns before items disappear
+
+4. Popular sizes sell out first online — check the app early in the week
+
+### Nordstrom Rack Flash Events
+
+Clear the Rack events (about four times a year) take an extra 25-30% off already-reduced prices:
+
+1. Spring (March) and fall (September) are the usual windows
+
+2. Event codes arrive by email to Nordy Club members first
+
+3. Stack the event discount with clearance pricing for the deepest cuts
+
+### Can You Use Coupons at Rack
+
+1. Nordstrom rarely issues sitewide coupons, and Rack follows the same rule
+
+2. Nordy Club points accrue on Rack purchases too
+
+3. Price adjustments are not guaranteed at Rack — buy when the price is right
+
+4. Credit card rewards and shopping portals stack where coupons do not
+
+### Returns and Nordy Club
+
+Rack accepts the same generous Nordstrom returns (40 days, 45 for cardholders), and Nordy Club members earn points on Rack purchases that count toward status.
+
+### Related Guides
+
+- <a href="/merchant/nordstrom">Nordstrom coupon codes</a> — verified daily
+
+- <a href="/blog/nordstrom-sale-guide">Nordstrom sale guide</a> — Anniversary Sale timing
+
+- <a href="/merchant/nike">Nike discount codes</a> — athletic gear at Rack prices
+    `,
+    merchant: 'Nordstrom Rack',
+    merchantSlug: 'nordstrom',
+    tags: ['Nordstrom Rack coupons', 'Nordstrom Rack sale', 'Clear the Rack', 'designer outlet deals', 'clearance shopping'],
+    publishedAt: '2026-10-07',
   },
 ]
 
