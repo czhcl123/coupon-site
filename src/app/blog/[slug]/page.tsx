@@ -110,7 +110,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params
   const sp = await searchParams
-  const lang = (sp.lang === 'en' ? 'en' : 'zh') as Lang
+  // 2026-10-07: 默认英文（配合 middleware ?lang=en → 301 干净 URL；中文走 ?lang=zh）
+  const lang = (sp.lang === 'zh' ? 'zh' : 'en') as Lang
   const article = getArticleBySlug(slug)
   if (!article) return {}
   // GKP-friendly title: append year for freshness signal + GKP main keyword
@@ -160,7 +161,7 @@ export default async function ArticlePage({
 }) {
   const { slug } = await params
   const sp = await searchParams
-  const lang = (sp.lang === 'en' ? 'en' : 'zh') as Lang
+  const lang = (sp.lang === 'zh' ? 'zh' : 'en') as Lang
   const nextLang: Lang = lang === 'zh' ? 'en' : 'zh'
   const article = getArticleBySlug(slug)
   if (!article) notFound()

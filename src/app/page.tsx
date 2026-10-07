@@ -13,7 +13,8 @@ export async function generateMetadata({
   searchParams: Promise<{ lang?: string }>
 }): Promise<Metadata> {
   const sp = await searchParams
-  const lang = sp.lang === 'en' ? 'en' : 'zh'
+  // 2026-10-07: 默认英文（配合 middleware ?lang=en → 301 干净 URL；中文走 ?lang=zh）
+  const lang = sp.lang === 'zh' ? 'zh' : 'en'
   return {
     alternates: {
       canonical: '/',

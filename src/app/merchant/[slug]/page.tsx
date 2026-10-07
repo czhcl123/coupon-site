@@ -284,7 +284,8 @@ export async function generateMetadata({
   const { slug } = await params
   const sp = await searchParams
   // 2026-07-19: 扩充到 6 locale (zh/en/id/ja/ar/pt) 迎拥 GSC 出现的多语言查询
-  const lang = (['zh','en','id','ja','ar','pt'].includes(sp.lang || '') ? sp.lang! : 'zh') as Lang
+  // 2026-10-07: 默认 en（配合 middleware ?lang=en → 301 干净 URL；此前默认 zh 导致英文版不可达）
+  const lang = (['zh','en','id','ja','ar','pt'].includes(sp.lang || '') ? sp.lang! : 'en') as Lang
 
   const merchants = await query<MerchantRow[]>('SELECT * FROM Merchant WHERE slug = ?', [slug])
   if (!merchants.length) return {}
@@ -371,7 +372,8 @@ export default async function MerchantPage({
 }) {
   const { slug } = await params
   const sp = await searchParams
-  const lang = (sp.lang === 'en' ? 'en' : 'zh') as Lang
+  // 2026-10-07: 默认英文（配合 middleware ?lang=en → 301 干净 URL；中文走 ?lang=zh）
+  const lang = (sp.lang === 'zh' ? 'zh' : 'en') as Lang
   const nextLang: Lang = lang === 'zh' ? 'en' : 'zh'
 
   const merchants = await query<MerchantRow[]>('SELECT * FROM Merchant WHERE slug = ?', [slug])
