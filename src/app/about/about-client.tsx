@@ -49,7 +49,7 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       contactEmail: '邮箱',
       backHome: '← 返回首页',
       lastUpdated: '最后更新',
-      lastUpdatedDate: '2026 年 7 月 19 日',
+      lastUpdatedDate: '2026 年 10 月 14 日',
     },
     en: {
       title: 'About Coupon Hub',
@@ -89,7 +89,7 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       contactEmail: 'Email',
       backHome: '← Back to home',
       lastUpdated: 'Last updated',
-      lastUpdatedDate: 'July 19, 2026',
+      lastUpdatedDate: 'October 14, 2026',
     },
   }[lang]
 
@@ -180,8 +180,8 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
                   </div>
                   <div className="text-xs text-gray-500 mt-1">
                     {lang === 'zh'
-                      ? '验证 · 8 个品牌 · 1,200+ 验证码'
-                      : 'Verified 8 brands · 1,200+ codes'}
+                      ? '验证 · 23 个品牌 · 500+ 验证码'
+                      : 'Verified 23 brands · 500+ codes'}
                   </div>
                   <div className="text-xs text-orange-600 mt-1">
                     {lang === 'zh' ? '经验领域：优惠券聚合、品牌推广、电商联盟' : 'Expertise: coupon aggregation, brand partnerships, e-commerce affiliate'}
@@ -212,8 +212,8 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
             <ul className="text-sm space-y-1">
               <li>
                 <strong className="text-gray-800">{t.contactEmail}:</strong>{' '}
-                <a href="mailto:contact@coupon-site-production.up.railway.app" className="text-orange-600 hover:underline">
-                  contact@coupon-site-production.up.railway.app
+                <a href="mailto:czhcl@hotmail.com" className="text-orange-600 hover:underline">
+                  czhcl@hotmail.com
                 </a>
               </li>
             </ul>

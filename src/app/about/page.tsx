@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import AboutClient from './about-client'
 
-export const dynamic = 'force-dynamic'
-
 export async function generateMetadata({
   searchParams,
 }: {
