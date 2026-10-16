@@ -39,7 +39,7 @@ async function fetchInitialData() {
        FROM Coupon c
        JOIN Merchant m ON c.merchantId = m.id
        LEFT JOIN Category cat ON c.categoryId = cat.id
-       WHERE c.status = 'ACTIVE'
+       WHERE c.status = 'ACTIVE' AND (c.expiresAt IS NULL OR c.expiresAt > NOW())
          AND (c.expiresAt IS NULL OR c.expiresAt >= NOW())
        ORDER BY c.isExclusive DESC, c.isVerified DESC, c.clickCount DESC
        LIMIT 20`
@@ -47,7 +47,7 @@ async function fetchInitialData() {
 
     const merchantRows = await query<Record<string, unknown>>(
       `SELECT m.id, m.name, m.slug, m.logo,
-              (SELECT COUNT(*) FROM Coupon c WHERE c.merchantId = m.id AND c.status = 'ACTIVE'
+              (SELECT COUNT(*) FROM Coupon c WHERE c.merchantId = m.id AND c.status = 'ACTIVE' AND (c.expiresAt IS NULL OR c.expiresAt > NOW())
                AND (c.expiresAt IS NULL OR c.expiresAt >= NOW())) AS couponCount
        FROM Merchant m
        ORDER BY couponCount DESC, m.name ASC`

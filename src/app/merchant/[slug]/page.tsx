@@ -384,7 +384,7 @@ export default async function MerchantPage({
     `SELECT c.*, cat.name as category_name, cat.slug as category_slug
      FROM Coupon c
      LEFT JOIN Category cat ON c.categoryId = cat.id
-     WHERE c.merchantId = ? AND c.status = 'ACTIVE'
+     WHERE c.merchantId = ? AND c.status = 'ACTIVE' AND (c.expiresAt IS NULL OR c.expiresAt > NOW())
      ORDER BY c.isExclusive DESC, c.isVerified DESC, c.clickCount DESC`,
     [merchant.id]
   )
