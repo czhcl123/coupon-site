@@ -16,23 +16,23 @@ const en = {
   meta: {
     title: 'Shopify Discount Code — Real Ways to Save in 2026 (No Third-Party Codes)',
     description:
-      'Shopify does not accept third-party discount codes. Alternatives: 3-day free trial, annual billing savings, rate-locking before 2027 price increase.',
+      'Shopify does not accept third-party discount codes. Alternatives: 3-day free trial, annual billing savings, 12-month rate locking.',
   },
   hero: {
-    badge: 'Verified · Updated July 1, 2026',
+    badge: 'Verified · Updated October 16, 2026',
     h1: 'Shopify Discount Code — Real Ways to Save on Shopify',
     subtitle:
-      'Shopify does not accept third-party promo codes on any subscription tier in 2026. Below is a working strategy using the free trial, annual billing, and rate lock before the 2027 hike.',
+      'Shopify does not accept third-party promo codes on any subscription tier in 2026. Below is a working strategy using the free trial, annual billing, and 12-month rate locking.',
     ctaPrimary: 'Start 3-Day Free Trial',
     ctaSecondary: 'See Pricing',
   },
   intro: {
     h2: 'Is there a Shopify discount code that works?',
-    p: `No, not in the way most people search for one. Shopify does not accept third-party discount codes at checkout on its Starter, Basic, Shopify, or Advanced plans \u2014 any code you find on a coupon site will fail. The only legitimate path to a lower Shopify bill is structural: use the 3-day free trial to verify the product fits before committing, switch from monthly to annual billing to lock in a 25% saving, and avoid price-hike exposure by renewing annual plans before the next rate increase, which historically happens once per 18 months. Shopify Plus is reserved for high-volume merchants and uses custom contract pricing, not coupon codes.`,
+    p: `No, not in the way most people search for one. Shopify does not accept third-party discount codes at checkout on its Starter, Basic, Grow, or Advanced plans \u2014 any code you find on a coupon site will fail. The only legitimate path to a lower Shopify bill is structural: use the 3-day free trial to verify the product fits before committing, switch from monthly to annual billing to lock in a 25% saving, and renew annually to lock the current rate for 12 months (Shopify cut Basic from $49 to $27 per month in 2026). Shopify Plus is reserved for high-volume merchants and uses custom contract pricing, not coupon codes.`,
     lastUpdated: `Last updated: ${LAST_UPDATED} · Author: CouponSite Editorial · Sources: shopify.com/pricing, shopify.com/free-trial`,
   },
   deals: {
-    h2: 'Working Money-Saving Strategies (July 2026)',
+    h2: 'Working Money-Saving Strategies (October 2026)',
     p: 'Three strategies actually move the needle on Shopify spend. None require entering any code.',
     cards: [
       {
@@ -47,15 +47,15 @@ const en = {
         emoji: '📆',
         title: 'Annual Billing Saves 25%',
         discount: '-25%',
-        desc: 'Pay monthly \u2014 or pay once a year and effectively save 25%. Example: Basic plan drops from $49/month to $39/month (billed yearly as $468 once). Mid-year switch is possible from your plan settings.',
+        desc: 'Pay monthly \u2014 or pay once a year and effectively save 25%. Example: Basic plan drops from $27/month to $20/month (billed yearly as $240 once). Mid-year switch is possible from your plan settings.',
         cta: 'See pricing',
         link: 'https://www.shopify.com/pricing',
       },
       {
         emoji: '🔒',
-        title: 'Lock Rate Before 2027 Hike',
+        title: 'Lock Your Rate for 12 Months',
         discount: 'PROTECT',
-        desc: 'Shopify raised prices in 2023 and 2024 (Basic: $29 \u2192 $39). Annual renewal locks current rate for 12 months even if Shopify announces a hike mid-year \u2014 customers are grandfathered.',
+        desc: 'Shopify has moved plan pricing repeatedly — most recently cutting Basic monthly to $27 in 2026. Annual renewal locks current rate for 12 months even if Shopify announces a hike mid-year \u2014 customers are grandfathered.',
         cta: 'Renew annually',
         link: 'https://www.shopify.com/pricing',
       },
@@ -66,24 +66,24 @@ const en = {
     intro: 'These five practical moves actually impact your Shopify cost. None of them require a non-existent promo code.',
     items: [
       'Start with the free 3-day trial (no credit card) to validate the platform \u2014 import a product, place a test order, refund it.',
-      'If committed, choose Basic (most stores) or Shopify (dropshipping / multi-channel) and select Annual billing at signup \u2014 the 25% saving begins immediately.',
+      'If committed, choose Basic (most stores) or Grow (dropshipping / multi-channel) and select Annual billing at signup \u2014 the 25% saving begins immediately.',
       'On annual renewal every year, lock in current pricing for 12 months even if Shopify announces a mid-year increase. The rate is grandfathered.',
       'Pause rather than cancel: if you have a slow season, switch the store to "paused" status at $0/month instead of canceling \u2014 all products, themes, and design remain intact for 90 days.',
       'For Shopify Payments, use the standard rates \u2014 third-party gateway surcharges negate the saving. For shipping, negotiate directly with USPS/UPS accounts after $5k/mo shipping volume.',
     ],
   },
   pricing: {
-    h2: 'Shopify Pricing Plans (Annual vs Monthly, July 2026)',
-    p: 'The "Annual" column shows the per-month equivalent when paying yearly. Pause is a $0/month state that keeps the store dormant but recoverable for 90 days.',
+    h2: 'Shopify Pricing Plans (Annual vs Monthly, October 2026)',
+    p: 'The "Annual" column shows the per-month equivalent when paying yearly. Pause is a $0/month state that keeps the store dormant but recoverable for 90 days. Current signup promo: 3 days free, then $1/month for 3 months.',
     headers: ['Plan', 'Monthly billing', 'Annual (per month)', 'Strategy'],
     rows: [
       ['Starter ($5 plan, social-only)', '$5', '$5', 'No annual discount'],
-      ['Basic', '$49', '$39', 'Free trial then annual'],
-      ['Shopify', '$105', '$89', 'Free trial then annual'],
-      ['Advanced', '$399', '$399', 'Annual saves ~$240\u2013$1k/yr'],
+      ['Basic', '$27', '$20', 'Free trial then annual'],
+      ['Grow', '$65', '$49', 'Free trial then annual'],
+      ['Advanced', '$399', '$299', 'Annual saves $1,200/yr'],
       ['Pause (store asleep)', '$0', '$0', 'During slow seasons'],
     ],
-    footnote: 'Source: shopify.com/pricing (verified July 1, 2026). Shopify Plus pricing is custom and not listed.',
+    footnote: 'Source: shopify.com/pricing (verified October 16, 2026). Shopify Plus starts at $2,300/month with custom terms.',
   },
   who: {
     h2: 'Who actually saves money on Shopify?',
@@ -91,17 +91,17 @@ const en = {
       {
         icon: '🛍️',
         title: 'New merchants validating demand',
-        text: 'If you launch under $5k/mo revenue, the 3-day trial + annual billing Basic plan covers 12 months for $468 \u2014 that is your all-in Shopify cost year one. Pause through slow seasons, resume when sales pick up.',
+        text: 'If you launch under $5k/mo revenue, the 3-day trial + annual billing Basic plan covers 12 months for $240 \u2014 that is your all-in Shopify cost year one. Pause through slow seasons, resume when sales pick up.',
       },
       {
         icon: '📊',
         title: 'Established stores growing mid-year',
-        text: 'When you upgrade from Basic to Shopify mid-year, Shopify charges a prorated amount for the remaining days then bills annually at the new tier. After 30 days of running on the new plan, contact Shopify Support to confirm annual-pricing intent \u2014 they often grandfather the start date so the next renewal is annual.',
+        text: 'When you upgrade from Basic to Grow mid-year, Shopify charges a prorated amount for the remaining days then bills annually at the new tier. After 30 days of running on the new plan, contact Shopify Support to confirm annual-pricing intent \u2014 they often grandfather the start date so the next renewal is annual.',
       },
       {
         icon: '🏢',
         title: 'Agencies and freelancers',
-        text: 'Buy one Shopify Plus partner account ($2k+/mo) and resell it to 5\u201320 clients under your own billing at markup. Shopify has a partner program with up to 50% off your plan if you sell 5+ Shopify Plans as a partner in a 12-month cycle.',
+        text: 'Buy one Shopify Plus partner account ($2.3k+/mo) and resell it to 5\u201320 clients under your own billing at markup. Shopify has a partner program with up to 50% off your plan if you sell 5+ Shopify Plans as a partner in a 12-month cycle.',
       },
     ],
     notCovered: {
@@ -114,11 +114,11 @@ const en = {
     items: [
       {
         q: 'Is there a Shopify discount code right now?',
-        a: 'No third-party Shopify discount code works at checkout in 2026. Shopify does not provide discount codes for its subscription plans; it offers flat pricing instead. The only working money-saving paths are the 3-day free trial, annual billing (effectively -25%), and rate-locking before the next price increase. Shopify Plus is custom-priced.',
+        a: 'No third-party Shopify discount code works at checkout in 2026. Shopify does not provide discount codes for its subscription plans; it offers flat pricing instead. The only working money-saving paths are the 3-day free trial, annual billing (effectively -25%), and 12-month rate locking. Shopify Plus is custom-priced.',
       },
       {
         q: 'How much does Shopify cost per month?',
-        a: 'In July 2026, Shopify pricing is: Starter $5/month (social-only stores), Basic $49/month or $39/month on annual, Shopify $105/month or $89/month on annual, Advanced $399/month. Annual billing saves roughly 25% versus monthly. There is no startup or pay-once-only plan.',
+        a: 'In October 2026, Shopify pricing is: Starter $5/month (social-only stores), Basic $27/month or $20/month on annual, Grow $65/month or $49/month on annual, Advanced $399/month or $299/month on annual. Annual billing saves roughly 25% versus monthly. There is no startup or pay-once-only plan.',
       },
       {
         q: 'Does Shopify have a free trial?',
@@ -134,7 +134,7 @@ const en = {
       },
       {
         q: 'Is Shopify cheaper than WooCommerce?',
-        a: 'On raw subscription cost, Shopify Basic ($39/mo annual) is higher than WordPress + WooCommerce ($5\u201325/mo hosting + paid plugins). But Shopify includes hosting, security, CDN, payment processing, theme infrastructure, and 24/7 chat support in one line item \u2014 which is roughly $40\u2013$80/mo in equivalent WordPress overhead. For most merchants processing $1\u201320k/mo in revenue, Shopify has lower total cost than self-hosted WooCommerce.',
+        a: 'On raw subscription cost, Shopify Basic ($20/mo annual) is higher than WordPress + WooCommerce ($5\u201325/mo hosting + paid plugins). But Shopify includes hosting, security, CDN, payment processing, theme infrastructure, and 24/7 chat support in one line item \u2014 which is roughly $40\u2013$80/mo in equivalent WordPress overhead. For most merchants processing $1\u201320k/mo in revenue, Shopify has lower total cost than self-hosted WooCommerce.',
       },
     ],
   },
@@ -156,7 +156,7 @@ const en = {
   },
   footer: {
     line1: 'CouponSite is reader-supported. When you buy through some links on this page, we may earn a commission at no extra cost to you.',
-    line2: 'Shopify\u00ae is a trademark of Shopify Inc. CouponSite is not affiliated with Shopify. Prices verified directly against shopify.com/pricing on July 1, 2026.',
+    line2: 'Shopify\u00ae is a trademark of Shopify Inc. CouponSite is not affiliated with Shopify. Prices verified directly against shopify.com/pricing on October 16, 2026.',
   },
   ui: {
     siteTitle: '🏷️ Coupon Hub',
@@ -172,23 +172,23 @@ const zh = {
   meta: {
     title: 'Shopify 优惠码 — 2026 年真实省钱方式(无第三方码)',
     description:
-      'Shopify 不接受第三方优惠码。2026 年 7 月可用路径:3 天免费试用、年付 25% 折扣、2027 涨价前锁定价格。',
+      'Shopify 不接受第三方优惠码。2026 年 10 月可用路径:3 天免费试用、年付 25% 折扣、年付锁定 12 个月价格。',
   },
   hero: {
-    badge: '已验证 · 更新于 2026 年 7 月 1 日',
+    badge: '已验证 · 更新于 2026 年 10 月 16 日',
     h1: 'Shopify 优惠码 — 实际能省钱的 3 种方法',
     subtitle:
-      'Shopify 不接受任何第三方折扣码适用于其订阅计划。2026 年的省钱策略只能走结构性路径:免费试用、年付折扣、2027 涨价前锁定。',
+      'Shopify 不接受任何第三方折扣码适用于其订阅计划。2026 年的省钱策略只能走结构性路径:免费试用、年付折扣、年付锁价。',
     ctaPrimary: '开始 3 天免费试用',
     ctaSecondary: '查看定价',
   },
   intro: {
     h2: '真有可用的 Shopify 优惠码吗?',
-    p: `没有,至少不是大家搜索时期望的那种。Shopify 在 Starter、Basic、Shopify 或 Advanced 任何订阅档都不接受第三方优惠码,在结算页都会报错。降低 Shopify 费用的合法路径只有结构性方式:用 3 天免费试用先验证产品契合度,然后从月付切换到年付锁定 25% 节省,再通过每年续订避免下一年 18 个月一次的涨价。Shopify Plus 仅供高交易量商家使用,采用合同定价,不接受优惠码。`,
+    p: `没有,至少不是大家搜索时期望的那种。Shopify 在 Starter、Basic、Grow 或 Advanced 任何订阅档都不接受第三方优惠码,在结算页都会报错。降低 Shopify 费用的合法路径只有结构性方式:用 3 天免费试用先验证产品契合度,然后从月付切换到年付锁定 25% 节省,再通过每年续订锁定当前价格 12 个月(2026 年刚下调过价格)。Shopify Plus 仅供高交易量商家使用,采用合同定价,不接受优惠码。`,
     lastUpdated: `最后更新:${LAST_UPDATED} · 作者:CouponSite 编辑部 · 数据来源:shopify.com/pricing, shopify.com/free-trial`,
   },
   deals: {
-    h2: '2026 年 7 月可用的省钱路径',
+    h2: '2026 年 10 月可用的省钱路径',
     p: '三种策略真正能影响 Shopify 支出,都不需要输入任何代码。',
     cards: [
       {
@@ -203,15 +203,15 @@ const zh = {
         emoji: '📆',
         title: '年付立省 25%',
         discount: '-25%',
-        desc: '月付 \u2014 或年付一次结算,等价省 25%。例如 Basic 从 $49/月 降到 $39/月(年付一次性 $468)。中途可在计划设置里切换。',
+        desc: '月付 \u2014 或年付一次结算,等价省 25%。例如 Basic 从 $27/月 降到 $20/月(年付一次性 $240)。中途可在计划设置里切换。',
         cta: '查看定价',
         link: 'https://www.shopify.com/pricing',
       },
       {
         emoji: '🔒',
-        title: '在 2027 涨价前锁定价格',
+        title: '年付锁定 12 个月价格',
         discount: '锁定',
-        desc: 'Shopify 在 2023、2024 各涨过一次(Basic: $29 \u2192 $39)。每年续订年付可锁定当前价格 12 个月,即使 Shopify 宣布涨价也以现有费率老用户过渡。',
+        desc: 'Shopify 的计划定价多次调整(最近一次是 2026 年下调:Basic 月付 $27)。每年续订年付可锁定当前价格 12 个月,即使 Shopify 宣布涨价也以现有费率老用户过渡。',
         cta: '续订年付',
         link: 'https://www.shopify.com/pricing',
       },
@@ -222,24 +222,24 @@ const zh = {
     intro: '这 5 个实用的操作真的能影响你的 Shopify 成本,都不需要任何不存在的优惠码。',
     items: [
       '先用免费 3 天试用(无需信用卡)验证平台 \u2014 导入产品、下一笔测试订单、退款。',
-      '确定后,选 Basic(大部分店铺)或 Shopify(多渠道/代发货),注册时直接年付 \u2014 25% 折扣立即生效。',
+      '确定后,选 Basic(大部分店铺)或 Grow（多渠道/代发货）,注册时直接年付 \u2014 25% 折扣立即生效。',
       '每年续订年付,在 Shopify 中途涨价的情况下也能锁定当前价 12 个月,价格老用户过渡。',
       '淡季时暂停而非取消:店铺切到"暂停"状态 $0/月,商品、主题、设计 90 天内完整保留。',
       '支付网关用 Shopify Payments 标准费率 \u2014 第三方支付网关附加费会抵消节省。运费在月发货量超过 $5k 后直接与 USPS/UPS 谈账户折扣。',
     ],
   },
   pricing: {
-    h2: 'Shopify 定价表(月付 vs 年付,2026 年 7 月)',
-    p: '"年付"列为按年结算的每月折算价;"暂停"档为 $0/月的冬眠状态,店铺可保留 90 天随时恢复。',
+    h2: 'Shopify 定价表(月付 vs 年付,2026 年 10 月)',
+    p: '"年付"列为按年结算的每月折算价;"暂停"档为 $0/月的冬眠状态,店铺可保留 90 天随时恢复。当前注册促销:3 天免费后 $1/月 × 3 个月。',
     headers: ['方案', '月付', '年付(每月折算)', '建议'],
     rows: [
       ['Starter(社交店铺)', '$5', '$5', '无年付折扣'],
-      ['Basic', '$49', '$39', '免费试用后年付'],
-      ['Shopify', '$105', '$89', '免费试用后年付'],
-      ['Advanced', '$399', '$399', '年付每年约省 $240-$1k'],
+      ['Basic', '$27', '$20', '免费试用后年付'],
+      ['Grow', '$65', '$49', '免费试用后年付'],
+      ['Advanced', '$399', '$299', '年付每年省 $1,200'],
       ['暂停(店铺休眠)', '$0', '$0', '淡季启用'],
     ],
-    footnote: '来源:shopify.com/pricing(2026 年 7 月 1 日核验)。Shopify Plus 报价另行定制。',
+    footnote: '来源:shopify.com/pricing(2026 年 10 月 16 日核验)。Shopify Plus $2,300/月起,条款定制。',
   },
   who: {
     h2: '谁真的能在 Shopify 上省钱?',
@@ -247,17 +247,17 @@ const zh = {
       {
         icon: '🛍️',
         title: '验证期的初期商家',
-        text: '如果你是首年月收入低于 $5k 的新商家,3 天免费试用 + Basic 年付覆盖 12 个月总计 $468 \u2014 这就是 Shopify 第一年的全部成本。淡季可暂停,旺季恢复。',
+        text: '如果你是首年月收入低于 $5k 的新商家,3 天免费试用 + Basic 年付覆盖 12 个月总计 $240 \u2014 这就是 Shopify 第一年的全部成本。淡季可暂停,旺季恢复。',
       },
       {
         icon: '📊',
         title: '正在成长的成熟店铺',
-        text: '中途从 Basic 升级到 Shopify 时,Shopify 按剩余天数折算费用,然后按新档次年付。运行 30 天后联系 Shopify Support 确认年付起始日,他们通常会老用户过渡到首次年付,让你下次续订就是年付周期。',
+        text: '中途从 Basic 升级到 Grow 时,Shopify 按剩余天数折算费用,然后按新档次年付。运行 30 天后联系 Shopify Support 确认年付起始日,他们通常会老用户过渡到首次年付,让你下次续订就是年付周期。',
       },
       {
         icon: '🏢',
         title: '代理商与自由职业者',
-        text: '买一份 Shopify Plus 合作账户($2k+/月),转售给 5\u201320 个客户,按你的额度加价。Shopify 合作项目对每年成功售出 5+ Shopify Plan 的合作伙伴提供最高 50% 的计划折扣。',
+        text: '买一份 Shopify Plus 合作账户($2.3k+/月),转售给 5\u201320 个客户,按你的额度加价。Shopify 合作项目对每年成功售出 5+ Shopify Plan 的合作伙伴提供最高 50% 的计划折扣。',
       },
     ],
     notCovered: {
@@ -270,11 +270,11 @@ const zh = {
     items: [
       {
         q: '目前有 Shopify 优惠码吗?',
-        a: '2026 年没有第三方 Shopify 优惠码在结算页可用。Shopify 不为订阅计划提供优惠码,统一采用统一的定价。能影响支出的只有 3 天免费试用、年付(约 -25%)和涨价前的价格锁定。Shopify Plus 是合同定价。',
+        a: '2026 年没有第三方 Shopify 优惠码在结算页可用。Shopify 不为订阅计划提供优惠码,统一采用统一的定价。能影响支出的只有 3 天免费试用、年付（约 -25%）和年付锁价。Shopify Plus 是合同定价。',
       },
       {
         q: 'Shopify 一个月多少钱?',
-        a: '2026 年 7 月 Shopify 定价:Starter $5/月(仅社交店铺),Basic 月付 $49 或年付每月 $39,Shopify 月付 $105 或年付每月 $89,Advanced $399/月。年付比月付省约 25%。没有起步价更低或一次付清的方案。',
+        a: '2026 年 10 月 Shopify 定价:Starter $5/月(仅社交店铺),Basic 月付 $27 或年付每月 $20,Grow 月付 $65 或年付每月 $49,Advanced 月付 $399 或年付每月 $299。年付比月付省约 25%。没有起步价更低或一次付清的方案。',
       },
       {
         q: 'Shopify 有免费试用吗?',
@@ -290,7 +290,7 @@ const zh = {
       },
       {
         q: 'Shopify 比 WooCommerce 便宜吗?',
-        a: '从订阅成本看,Shopify Basic 年付 $39/月 高于 WordPress + WooCommerce($5\u201325/月主机加付费插件)。但 Shopify 在一项费用中包含主机、安全、CDN、支付处理、主题基础设施、24/7 聊天支持 \u2014 这些在 WordPress 上加起来通常 $40\u2013$80/月。对大部分月营收 $1\u201320k 的商家,Shopify 总成本低于自托管 WooCommerce。',
+        a: '从订阅成本看,Shopify Basic 年付 $20/月 高于 WordPress + WooCommerce($5\u201325/月主机加付费插件)。但 Shopify 在一项费用中包含主机、安全、CDN、支付处理、主题基础设施、24/7 聊天支持 \u2014 这些在 WordPress 上加起来通常 $40\u2013$80/月。对大部分月营收 $1\u201320k 的商家,Shopify 总成本低于自托管 WooCommerce。',
       },
     ],
   },
@@ -312,7 +312,7 @@ const zh = {
   },
   footer: {
     line1: 'CouponSite 由读者支持。当你通过本页某些链接下单时,我们可能获得佣金,对你不收取任何额外费用。',
-    line2: 'Shopify\u00ae 为 Shopify Inc. 的注册商标。CouponSite 与 Shopify 无从属关系。价格于 2026 年 7 月 1 日对照 shopify.com/pricing 直接核验。',
+    line2: 'Shopify\u00ae 为 Shopify Inc. 的注册商标。CouponSite 与 Shopify 无从属关系。价格于 2026 年 10 月 16 日对照 shopify.com/pricing 直接核验。',
   },
   ui: {
     siteTitle: '🏷️ 优惠总动员',
