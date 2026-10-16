@@ -93,17 +93,17 @@ export default async function AboutPage({
         mainEntity:
           lang === 'zh'
             ? [
-                { '@type': 'Question', name: '优惠总动员是什么？', acceptedAnswer: { '@type': 'Answer', text: '优惠总动员是汇总中型品牌的优惠码 / 折扣码聚合站。我们覆盖 23 个品牌、月搜量 50 万+、提供中英双语。' } },
+                { '@type': 'Question', name: '优惠总动员是什么？', acceptedAnswer: { '@type': 'Answer', text: '优惠总动员是汇总中型品牌的优惠码 / 折扣码聚合站。我们覆盖 23 个品牌的官方促销与会员折扣，提供中英双语。' } },
                 { '@type': 'Question', name: '本站收益怎么来的？', acceptedAnswer: { '@type': 'Answer', text: '我们与一些品牌有联盟推广合作。当你点击本站跳转链接进入品牌页面后完成购物，品牌会给我们一点佣金，你不会多付。' } },
-                { '@type': 'Question', name: '优惠码为什么会失效？', acceptedAnswer: { '@type': 'Answer', text: '品牌方会定期下线优惠码，这很常见。我们后端会每周跱检 已验证的码是否过期，过期码会在 24 小时内下架。' } },
+                { '@type': 'Question', name: '优惠码为什么会失效？', acceptedAnswer: { '@type': 'Answer', text: '品牌方会定期更换促销活动，这很常见。活动结束我们会下架对应条目；拿不到码时，每个商家页都提供直达官网活动页的链接。' } },
                 { '@type': 'Question', name: '能否提交新优惠码？', acceptedAnswer: { '@type': 'Answer', text: '可以。请发邮件到本页联系邮箱，附上优惠码详情（品牌、过期时间、限制）。我们在 24h 内人工验证，上线会回邮件。' } },
                 { '@type': 'Question', name: '本站是否收集用户购物记录？', acceptedAnswer: { '@type': 'Answer', text: '不。本站不收集购物记录、身份信息，也不投放跨站追踪。所有站内搜索都是 URL 参数、匿名、不持久化。' } },
                 { '@type': 'Question', name: '为什么有时看到不同价格的优惠码？', acceptedAnswer: { '@type': 'Answer', text: '品牌同一时间可能发不同消费门槛的码（例：满 50% 与任意使用）。高使用门槛的码往往折扣更大，被腘赖，跳其他码位置。' } },
               ]
             : [
-                { '@type': 'Question', name: 'What is Coupon Hub?', acceptedAnswer: { '@type': 'Answer', text: 'Coupon Hub is a coupon and promo code aggregator for 23 mid-to-large brands across fashion, electronics, travel, and beauty. We publish 500+ verified codes, serve 500,000+ monthly searches, and support bilingual zh/en.' } },
+                { '@type': 'Question', name: 'What is Coupon Hub?', acceptedAnswer: { '@type': 'Answer', text: 'Coupon Hub is a coupon and promo code aggregator for 23 mid-to-large brands across fashion, electronics, travel, and beauty. We track official promotions and member discounts, and support bilingual zh/en.' } },
                 { '@type': 'Question', name: 'How does Coupon Hub make money?', acceptedAnswer: { '@type': 'Answer', text: 'We have affiliate partnerships with several brands. When you click a link on our site and complete a purchase, the merchant pays us a small commission — at no extra cost to you.' } },
-                { '@type': 'Question', name: 'Why do coupon codes expire?', acceptedAnswer: { '@type': 'Answer', text: 'Brands rotate their promotions regularly; expiry is normal. Our backend rechecks codes weekly and removes failing ones within 24 hours.' } },
+                { '@type': 'Question', name: 'Why do coupon codes expire?', acceptedAnswer: { '@type': 'Answer', text: 'Brands rotate their promotions regularly; expiry is normal. We remove ended promotions promptly, and when no code works every merchant page links straight to the official sale page.' } },
                 { '@type': 'Question', name: 'Can I submit a new coupon code?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Email the address on this page with the code, brand, expiry date, and any restrictions. We verify manually within 24 hours and reply when published.' } },
                 { '@type': 'Question', name: 'Does Coupon Hub collect my shopping data?', acceptedAnswer: { '@type': 'Answer', text: 'No. We do not collect purchase history, personally identifiable information, or run cross-site tracking. All on-site search is anonymous URL parameters and is not persisted.' } },
                 { '@type': 'Question', name: 'Why do I see multiple coupons with different discounts?', acceptedAnswer: { '@type': 'Answer', text: 'Brands often run several promotions at the same time (e.g. 50% off with code A, free shipping with code B). Higher-discount codes usually have stricter conditions; we surface all of them so you can pick.' } },

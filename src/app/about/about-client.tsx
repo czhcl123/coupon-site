@@ -19,27 +19,22 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       statsTitle: '本站数据',
       statBrands: '覆盖品牌',
       statBrandsValue: '23 个',
-      statCoupons: '已验证码数',
-      statCouponsValue: '500+ 个',
-      statSearch: '月搜词量',
-      statSearchValue: '50 万+',
-      statUpdate: '过期清理',
-      statUpdateValue: '<24h',
+      statCoupons: '优惠来源', statCouponsValue: '官网/联盟/投稿', statSearch: '收录品类', statSearchValue: '5 大类', statUpdate: '更新方式', statUpdateValue: '人工核查',
       methodologyTitle: '验证方法论',
-      methodologyBody: '我们採用 3 步验证流程,确保每一个优惠券都在本站上线时是有效的:\n\n1. 厡始调取:从商家官方活动页 / 联盟合作伴侣 / 用户投稿取码;每个码都记录厡始时间戳。\n\n2. 生鲜验证:运行时每次有用户点击，我们后端会重新跱脸调取商家验证是否生效;过期码在 24h 内自动下架。\n\n3. 人验上位:已验证的码按 “被使用次数” 排序，热门码置顶;偶有错误点击人工查验。',
+      methodologyBody: '我们的核查方式很简单:\n\n1. 来源:品牌官方活动页、联盟合作伙伴、用户投稿。\n\n2. 上架:有明确优惠内容才收录,标注适用条件。\n\n3. 下架:活动结束或收到失效反馈后人工下架;拿不到码时,页面直达官网活动页。',
       howTitle: '数据来源',
-      howBody: '我们通过三种方式获取优惠码:1) 商家官方活动页;2) 一手联盟合作伙伴提供的专属码;3) 用户投稿(我们会人工验证)。所有展示的优惠码均标注「已验证」或「独家」标签,过期优惠会及时清理。',
+      howBody: '我们通过三种方式获取优惠码:1) 商家官方活动页;2) 一手联盟合作伙伴提供的专属码;3) 用户投稿(我们会人工验证)。活动结束或确认失效后下架;拿不到码的活动直达官网活动页。',
       affiliateTitle: '联盟链接说明',
-      affiliateBody: '本站所有跳转链接均为联盟链接(Affiliate Links)。当您通过本站链接进入商家并完成购物,商家会向我们支付少量佣金以支持本站运营。您支付的价格与直接访问商家完全相同,不会因为使用本站链接而多付钱。这是一种 win-win 模式:您省钱,我们获得运营资金。',
+      affiliateBody: '本站部分跳转链接为联盟链接(Affiliate Links)。当您通过本站链接进入商家并完成购物,商家会向我们支付少量佣金以支持本站运营。您支付的价格与直接访问商家完全相同,不会因为使用本站链接而多付钱。这是一种 win-win 模式:您省钱,我们获得运营资金。',
       privacyTitle: '隐私与数据',
       privacyBody: '我们不收集用户的购物记录、个人身份信息(PII),也不投放跨站追踪广告。站内搜索基于 URL 参数,匿名且不持久化。',
       teamTitle: '团队',
-      teamBody: '优惠总动员由小编运营团队维护。主编负责品牌拓店与品质控制,验证值守三方轮换责任。是以“小机构 + 严格验证”而不是“大平台 + 机器聚合”为指导思想。',
+      teamBody: '优惠总动员由小编团队维护。原则很朴素:宁可少收录,也不虚标「已验证」。',
       faqTitle: '常见问题',
       faqItems: [
-        { q: '优惠总动员是什么？', a: '优惠总动员是汇总中型品牌的优惠码 / 折扣码聚合站。我们覆盖 23 个品牌、月搜量 50 万+、提供中英双语。' },
+        { q: '优惠总动员是什么？', a: '优惠总动员是汇总中型品牌的优惠码 / 折扣码聚合站。我们覆盖 23 个品牌的官方促销与会员折扣,提供中英双语。' },
         { q: '本站收益怎么来的？', a: '我们与一些品牌有联盟推广合作。当你点击本站跳转链接进入品牌页面后完成购物，品牌会给我们一点佣金，你不会多付。' },
-        { q: '优惠码为什么会失效？', a: '品牌方会定期下线优惠码，这很常见。我们后端会每周跱检 已验证的码是否过期，过期码会在 24 小时内下架。' },
+        { q: '优惠码为什么会失效？', a: '品牌方会定期更换促销活动,这很常见。活动结束我们会下架对应条目;拿不到码时,每个商家页都提供直达官网活动页的链接。' },
         { q: '能否提交新优惠码？', a: '可以。请发邮件到本页联系邮箱，附上优惠码详情（品牌、过期时间、限制）。我们在 24h 内人工验证，上线会回邮件。' },
         { q: '本站是否收集用户购物记录？', a: '不。本站不收集购物记录、身份信息，也不投放跨站追踪。所有站内搜索都是 URL 参数、匿名、不持久化。' },
         { q: '为什么有时看到不同价格的优惠码？', a: '品牌同一时间可能发不同消费门槛的码（例：满 50% 与任意使用）。高使用门槛的码往往折扣更大，被腘赖，跳其他码位置。' },
@@ -49,7 +44,7 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       contactEmail: '邮箱',
       backHome: '← 返回首页',
       lastUpdated: '最后更新',
-      lastUpdatedDate: '2026 年 10 月 14 日',
+      lastUpdatedDate: '2026 年 10 月 16 日',
     },
     en: {
       title: 'About Coupon Hub',
@@ -59,27 +54,22 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       statsTitle: 'By the numbers',
       statBrands: 'Brands covered',
       statBrandsValue: '23',
-      statCoupons: 'Verified codes',
-      statCouponsValue: '500+',
-      statSearch: 'Monthly searches',
-      statSearchValue: '500,000+',
-      statUpdate: 'Expiry cleanup',
-      statUpdateValue: '<24h',
+      statCoupons: 'Offer sources', statCouponsValue: 'Official / Affiliate / Users', statSearch: 'Categories', statSearchValue: '5', statUpdate: 'Update method', statUpdateValue: 'Manual review',
       methodologyTitle: 'Verification methodology',
-      methodologyBody: 'Every coupon listed on Coupon Hub passes a 3-step verification process before being published:\n\n1. Source capture: codes are sourced from official brand promotion pages, first-party affiliate partners, and user submissions; each code carries a timestamp of first appearance.\n\n2. Live verification: every time a user clicks a code, our backend re-checks the merchant page at click-time to confirm validity; codes that fail are removed automatically within 24 hours.\n\n3. Manual QA: verified codes are ranked by "people used" count, with top-performers pinned. Periodic manual review catches edge cases the automation misses.',
+      methodologyBody: 'Our verification is simple and manual:\n\n1. Source: official brand promotion pages, affiliate partners, and user submissions.\n\n2. Publish: offers are listed only when the discount terms are clear.\n\n3. Remove: ended promotions are taken down, on schedule or after user reports; when no code works, the page links to the official sale.',
       howTitle: 'How we source coupons',
-      howBody: 'Three channels: 1) Official brand promotion pages; 2) Exclusive codes from first-party affiliate partners; 3) User submissions (verified manually). All active codes are labeled "Verified" or "Exclusive"; expired codes are removed promptly.',
+      howBody: 'Three channels: 1) Official brand promotion pages; 2) Exclusive codes from first-party affiliate partners; 3) User submissions (verified manually). Promotions are removed once they end; when no code works, the page links to the official sale.',
       affiliateTitle: 'Affiliate disclosure',
-      affiliateBody: 'All outbound links are affiliate links. When you click through and complete a purchase, the merchant pays us a small commission at no extra cost to you. This is a win-win model: you save money, we earn operational funding.',
+      affiliateBody: 'Some outbound links are affiliate links. When you click through and complete a purchase, the merchant pays us a small commission at no extra cost to you. This is a win-win model: you save money, we earn operational funding.',
       privacyTitle: 'Privacy and data',
       privacyBody: 'We do not collect purchase histories, personally identifiable information, or run cross-site tracking ads. On-site search uses URL parameters only and is not persisted.',
       teamTitle: 'Editorial team',
-      teamBody: 'Coupon Hub is run by a small editorial team. The lead editor handles brand outreach and quality control; verification duty rotates among three editors. We operate under a "small team + strict verification" model rather than "big platform + machine aggregation", prioritizing accuracy and freshness over coverage.',
+      teamBody: 'Coupon Hub is run by a small editorial team. Simple principle: we would rather list fewer offers than label anything "verified" without checking.',
       faqTitle: 'Frequently asked questions',
       faqItems: [
-        { q: 'What is Coupon Hub?', a: 'Coupon Hub is a coupon and promo code aggregator for 23 mid-to-large brands across fashion, electronics, travel, and beauty. We publish 500+ verified codes, serve 500,000+ monthly searches, and support bilingual zh/en.' },
+        { q: 'What is Coupon Hub?', a: 'Coupon Hub is a coupon and promo code aggregator for 23 mid-to-large brands across fashion, electronics, travel, and beauty. We track official promotions and member discounts across 23 brands, and support bilingual zh/en.' },
         { q: 'How does Coupon Hub make money?', a: 'We have affiliate partnerships with several brands. When you click a link on our site and complete a purchase, the merchant pays us a small commission — at no extra cost to you.' },
-        { q: 'Why do coupon codes expire?', a: 'Brands rotate their promotions regularly; expiry is normal. Our backend rechecks codes weekly and removes failing ones within 24 hours.' },
+        { q: 'Why do coupon codes expire?', a: 'Brands rotate their promotions regularly; expiry is normal. We remove ended promotions promptly; every merchant page links straight to the official sale page.' },
         { q: 'Can I submit a new coupon code?', a: 'Yes. Email the address on this page with the code, brand, expiry date, and any restrictions. We verify manually within 24 hours and reply when published.' },
         { q: 'Does Coupon Hub collect my shopping data?', a: 'No. We do not collect purchase history, personally identifiable information, or run cross-site tracking. All on-site search is anonymous URL parameters and is not persisted.' },
         { q: 'Why do I see multiple coupons with different discounts?', a: 'Brands often run several promotions at the same time (e.g. 50% off with code A, free shipping with code B). Higher-discount codes usually have stricter conditions; we surface all of them so you can pick.' },
@@ -89,7 +79,7 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       contactEmail: 'Email',
       backHome: '← Back to home',
       lastUpdated: 'Last updated',
-      lastUpdatedDate: 'October 14, 2026',
+      lastUpdatedDate: 'October 16, 2026',
     },
   }[lang]
 
@@ -180,8 +170,8 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
                   </div>
                   <div className="text-xs text-gray-500 mt-1">
                     {lang === 'zh'
-                      ? '验证 · 23 个品牌 · 500+ 验证码'
-                      : 'Verified 23 brands · 500+ codes'}
+                      ? '人工核查 · 23 个品牌 · 官方促销'
+                      : 'Manually reviewed · 23 brands · Official promotions'}
                   </div>
                   <div className="text-xs text-orange-600 mt-1">
                     {lang === 'zh' ? '经验领域：优惠券聚合、品牌推广、电商联盟' : 'Expertise: coupon aggregation, brand partnerships, e-commerce affiliate'}
