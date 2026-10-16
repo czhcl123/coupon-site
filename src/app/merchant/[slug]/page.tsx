@@ -213,64 +213,64 @@ const GKP_DATA: Record<string, GkpEntry> = {
 
 const META_PER_SLUG: Record<string, { zh: { title: string; desc: string }; en: { title: string; desc: string } }> = {
   'steam': {
-    zh: { title: 'title: 'Steam 平台特卖 + 季节促销', desc: 'Steam 优惠码 — 平台促销、季节特卖、捆绑包。每日验证，复制最强可用码。' },
+    zh: { title: 'Steam 平台特卖 + 季节促销', desc: 'Steam 优惠码 — 平台促销、季节特卖、捆绑包。每日验证，复制最强可用码。' },
     en: { title: 'Steam Sale & Seasonal Promo', desc: 'Steam coupon codes — platform sales, seasonal events & bundles to save on PC games. Verified daily, copy the strongest code.' },
   },
   'temu': {
-    zh: { title: 'title: 'Temu 新客折扣码 + 免运费', desc: 'Temu 优惠码 — 电子产品和家居低至 2 折。每日验证，点击复制最强验证码。' },
-    en: { title: 'title: 'Temu New User 50% OFF + Free Shipping', desc: 'Temu coupon codes — 50% OFF + free shipping on electronics & home. Verified daily, copy the strongest working code.' },
+    zh: { title: 'Temu 新客折扣码 + 免运费', desc: 'Temu 优惠码 — 电子产品和家居低至 2 折。每日验证，点击复制最强验证码。' },
+    en: { title: 'Temu New User 50% OFF + Free Shipping', desc: 'Temu coupon codes — 50% OFF + free shipping on electronics & home. Verified daily, copy the strongest working code.' },
   },
   'nike': {
-    zh: { title: 'title: 'Nike 会员折扣码 + 学生专属', desc: 'Nike 优惠码 — Air Force 1、Air Max、Dunk 独家折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'title: 'Nike Member Discount + Student Code', desc: 'Nike coupon codes — exclusive discounts on Air Force 1, Air Max & Dunk. Verified daily, copy the strongest code.' },
+    zh: { title: 'Nike 会员折扣码 + 学生专属', desc: 'Nike 优惠码 — Air Force 1、Air Max、Dunk 独家折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Nike Member Discount + Student Code', desc: 'Nike coupon codes — exclusive discounts on Air Force 1, Air Max & Dunk. Verified daily, copy the strongest code.' },
   },
   'amazon': {
-    zh: { title: 'title: 'Amazon 优惠券 + Prime 专享', desc: 'Amazon 优惠码 — 电子产品、时尚、家居和游戏最强折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'title: 'Amazon Coupon Codes + Prime Exclusives', desc: 'Amazon coupon codes — electronics, fashion, home & gaming deals. Verified daily, copy the strongest working code.' },
+    zh: { title: 'Amazon 优惠券 + Prime 专享', desc: 'Amazon 优惠码 — 电子产品、时尚、家居和游戏最强折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Amazon Coupon Codes + Prime Exclusives', desc: 'Amazon coupon codes — electronics, fashion, home & gaming deals. Verified daily, copy the strongest working code.' },
   },
   'adidas': {
-    zh: { title: 'title: 'Adidas 会员折扣码 + 季末特卖', desc: 'Adidas 优惠码 — Stanstan、Samba、Ultraboost 和 Outlet 最强折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'title: 'Adidas Member 30% OFF + End-of-Season', desc: 'Adidas coupon codes — Stanstan, Samba, Ultraboost & outlet deals. Verified daily, copy the strongest working code.' },
+    zh: { title: 'Adidas 会员折扣码 + 季末特卖', desc: 'Adidas 优惠码 — Stanstan、Samba、Ultraboost 和 Outlet 最强折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Adidas Member 30% OFF + End-of-Season', desc: 'Adidas coupon codes — Stanstan, Samba, Ultraboost & outlet deals. Verified daily, copy the strongest working code.' },
   },
   'shein': {
-    zh: { title: 'title: 'SHEIN 新客折扣码 + 免运费', desc: 'SHEIN 优惠码 — 全场时尚配饰低至 5 折。每日验证，点击复制最强验证码。' },
-    en: { title: 'title: 'SHEIN New User Code + Free Shipping', desc: 'SHEIN coupon codes — 50% OFF sitewide on fashion & accessories. Verified daily, copy the strongest working code.' },
+    zh: { title: 'SHEIN 新客折扣码 + 免运费', desc: 'SHEIN 优惠码 — 全场时尚配饰低至 5 折。每日验证，点击复制最强验证码。' },
+    en: { title: 'SHEIN New User Code + Free Shipping', desc: 'SHEIN coupon codes — 50% OFF sitewide on fashion & accessories. Verified daily, copy the strongest working code.' },
   },
   'expedia': {
-    zh: { title: 'title: 'Expedia 酒店机票折扣码', desc: 'Expedia 优惠码 — 酒店和度假套餐最强折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'title: 'Expedia Hotel 25% OFF + Flight Deals', desc: 'Expedia coupon codes — hotel & vacation package deals, flight deals. Verified daily, copy the strongest working code.' },
+    zh: { title: 'Expedia 酒店机票折扣码', desc: 'Expedia 优惠码 — 酒店和度假套餐最强折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Expedia Hotel 25% OFF + Flight Deals', desc: 'Expedia coupon codes — hotel & vacation package deals, flight deals. Verified daily, copy the strongest working code.' },
   },
   'bestbuy': {
-    zh: { title: 'title: 'Best Buy 折扣码 + 会员专享', desc: 'Best Buy 优惠码 — 笔记本、电视、游戏和家电最强折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'title: 'Best Buy $100 OFF $1000 + Student Deal', desc: 'Best Buy coupon codes — laptop, TV, gaming & appliance deals. Verified daily, copy the strongest working code.' },
+    zh: { title: 'Best Buy 折扣码 + 会员专享', desc: 'Best Buy 优惠码 — 笔记本、电视、游戏和家电最强折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Best Buy $100 OFF $1000 + Student Deal', desc: 'Best Buy coupon codes — laptop, TV, gaming & appliance deals. Verified daily, copy the strongest working code.' },
   },
   'ulta-beauty': {
-    zh: { title: 'title: 'Ulta Beauty 21 Days of Beauty', desc: 'Ulta Beauty 优惠码 — 20% OFF + 化妆品护肤免邮。每日验证，点击复制最强验证码。' },
-    en: { title: 'title: 'Ulta Beauty 21 Days of Beauty', desc: 'Ulta Beauty coupon codes — 20% OFF + free shipping on makeup & skincare. Verified daily, copy the strongest code.' },
+    zh: { title: 'Ulta Beauty 21 Days of Beauty', desc: 'Ulta Beauty 优惠码 — 20% OFF + 化妆品护肤免邮。每日验证，点击复制最强验证码。' },
+    en: { title: 'Ulta Beauty 21 Days of Beauty', desc: 'Ulta Beauty coupon codes — 20% OFF + free shipping on makeup & skincare. Verified daily, copy the strongest code.' },
   },
   'booking-com': {
-    zh: { title: 'title: 'Booking.com Genius 折扣 + 酒店优惠', desc: 'Booking.com 优惠码 — 酒店和旅行最强折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'title: 'Booking.com Genius Discount + Hotel Deals', desc: 'Booking.com coupon codes — verified hotel & travel deals, last-minute specials. Verified daily, copy the strongest code.' },
+    zh: { title: 'Booking.com Genius 折扣 + 酒店优惠', desc: 'Booking.com 优惠码 — 酒店和旅行最强折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Booking.com Genius Discount + Hotel Deals', desc: 'Booking.com coupon codes — verified hotel & travel deals, last-minute specials. Verified daily, copy the strongest code.' },
   },
   'walmart': {
-    zh: { title: 'title: 'Walmart 折扣码 + Rollback 优惠', desc: 'Walmart 优惠码 — 电子产品、家居和杂货最强折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'title: 'Walmart Promo Code + Rollback Deals', desc: 'Walmart coupon codes — Rollback deals on electronics, home & grocery. Verified daily, copy the strongest working code.' },
+    zh: { title: 'Walmart 折扣码 + Rollback 优惠', desc: 'Walmart 优惠码 — 电子产品、家居和杂货最强折扣。每日验证，点击复制最强验证码。' },
+    en: { title: 'Walmart Promo Code + Rollback Deals', desc: 'Walmart coupon codes — Rollback deals on electronics, home & grocery. Verified daily, copy the strongest working code.' },
   },
   'asos': {
-    zh: { title: 'title: 'ASOS 学生折扣码 + 新客礼包', desc: 'ASOS 优惠码 — 25% 学生折扣 + 裙装、大码、男装免邮。每日验证，点击复制最强验证码。' },
-    en: { title: 'title: 'ASOS Student 10% OFF + New User 25% OFF', desc: 'ASOS coupon codes — 25% student + free shipping on dresses, Curve & menswear. Verified daily, copy the strongest code.' },
+    zh: { title: 'ASOS 学生折扣码 + 新客礼包', desc: 'ASOS 优惠码 — 25% 学生折扣 + 裙装、大码、男装免邮。每日验证，点击复制最强验证码。' },
+    en: { title: 'ASOS Student 10% OFF + New User 25% OFF', desc: 'ASOS coupon codes — 25% student + free shipping on dresses, Curve & menswear. Verified daily, copy the strongest code.' },
   },
   'target': {
-    zh: { title: 'title: 'Target Circle 折扣 + 5% OFF', desc: 'Target 优惠码 — Circle 5% OFF + 美妆和电子产品。每日验证，点击复制最强验证码。' },
-    en: { title: 'title: 'Target Circle Deal + RedCard 5% OFF', desc: 'Target coupon codes — 5% Circle Deal + free shipping on beauty, electronics & toys. Verified daily, copy the strongest code.' },
+    zh: { title: 'Target Circle 折扣 + 5% OFF', desc: 'Target 优惠码 — Circle 5% OFF + 美妆和电子产品。每日验证，点击复制最强验证码。' },
+    en: { title: 'Target Circle Deal + RedCard 5% OFF', desc: 'Target coupon codes — 5% Circle Deal + free shipping on beauty, electronics & toys. Verified daily, copy the strongest code.' },
   },
   'nordstrom': {
-    zh: { title: 'title: 'Nordstrom Anniversary Sale + 25% OFF', desc: 'Nordstrom 优惠码 — 周年庆 25% OFF + Skims 提前购。每日验证，复制最强可用码。' },
-    en: { title: 'title: 'Nordstrom Anniversary Sale 25% OFF', desc: 'Nordstrom coupon codes — 25% OFF Anniversary Sale + Skims early access. Verified daily, copy the strongest code.' },
+    zh: { title: 'Nordstrom Anniversary Sale + 25% OFF', desc: 'Nordstrom 优惠码 — 周年庆 25% OFF + Skims 提前购。每日验证，复制最强可用码。' },
+    en: { title: 'Nordstrom Anniversary Sale 25% OFF', desc: 'Nordstrom coupon codes — 25% OFF Anniversary Sale + Skims early access. Verified daily, copy the strongest code.' },
   },
   'sephora': {
-    zh: { title: 'title: 'Sephora 15% OFF + Beauty Insider', desc: 'Sephora 优惠码 — 15% OFF + 化妆品、戴森和护肤品的免费样品。每日验证，复制最强可用码。' },
-    en: { title: 'title: 'Sephora 15% OFF + Beauty Insider', desc: 'Sephora coupon codes — 15% OFF + free samples on makeup, Dyson & skincare. Verified daily, copy the strongest code.' },
+    zh: { title: 'Sephora 15% OFF + Beauty Insider', desc: 'Sephora 优惠码 — 15% OFF + 化妆品、戴森和护肤品的免费样品。每日验证，复制最强可用码。' },
+    en: { title: 'Sephora 15% OFF + Beauty Insider', desc: 'Sephora coupon codes — 15% OFF + free samples on makeup, Dyson & skincare. Verified daily, copy the strongest code.' },
   },
 }
 
