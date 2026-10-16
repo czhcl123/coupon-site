@@ -7,19 +7,19 @@ export const revalidate = 86400
 type Lang = 'zh' | 'en'
 const SITE_URL = 'https://coupon-site-production.up.railway.app'
 const PAGE_URL = '/canva-pro-coupon-code'
-const LAST_UPDATED = '2026-07-01'
+const LAST_UPDATED = '2026-10-16'
 
 // =====================================================
 // ENGLISH CONTENT
 // =====================================================
 const en = {
   meta: {
-    title: 'Canva Pro Coupon Code — Free for Education, Verified July 2026',
+    title: 'Canva Pro Coupon Code — Free for Education, Verified October 2026',
     description:
       'Canva Pro is 100% free for students, teachers & nonprofits in 2026. Pricing, eligibility, seasonal promos, FAQs, and tools-site guide.',
   },
   hero: {
-    badge: 'Verified · Updated July 1, 2026',
+    badge: 'Verified · Updated October 16, 2026',
     h1: 'Canva Pro Coupon Code — Free for Education & Nonprofits',
     subtitle:
       'Canva offers two paths to discount: free Education/Nonprofits access for eligible users, and seasonal promo codes posted on promo.canva.com. The Black Friday 2025 deal (50% off Pro + Teams annual) is the most commonly requested code online.',
@@ -32,7 +32,7 @@ const en = {
     lastUpdated: `Last updated: ${LAST_UPDATED} · Author: CouponSite Editorial · Sources: canva.com/education, canva.com/promo, canva.com/pricing`,
   },
   deals: {
-    h2: 'Working Canva Pro Discounts Right Now (July 2026)',
+    h2: 'Working Canva Pro Discounts Right Now (October 2026)',
     p: 'The two education / nonprofit programs are always-on and require only one-time verification. Seasonal codes appear every quarter.',
     cards: [
       {
@@ -173,12 +173,12 @@ const en = {
 // =====================================================
 const zh = {
   meta: {
-    title: 'Canva Pro 优惠码 — 学生/非营利免费(2026 年 7 月)',
+    title: 'Canva Pro 优惠码 — 学生/非营利免费(2026 年 10 月)',
     description:
-      'Canva Pro 学生/非营利免费。含定价表、申请步骤、季节性折扣、跨站工具推荐,2026 年 7 月最新核验。',
+      'Canva Pro 学生/非营利免费。含定价表、申请步骤、季节性折扣、跨站工具推荐,2026 年 10 月最新核验。',
   },
   hero: {
-    badge: '已验证 · 更新于 2026 年 7 月 1 日',
+    badge: '已验证 · 更新于 2026 年 10 月 16 日',
     h1: 'Canva Pro 优惠码 — 教育版与非营利版全免费',
     subtitle:
       'Canva 提供两条省钱路径:经过审核的教育版与非营利版用户免费使用 Pro 功能;以及促销期间在 promo.canva.com 公开的折扣码。最常被搜索的是 2025 年黑色星期五的 Pro + Teams 年付 5 折码。',

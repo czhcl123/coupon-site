@@ -13,7 +13,7 @@ export interface Article {
 export const articles: Article[] = [
   {
     slug: 'nike-discount-code-guide',
-    title: '2025年 Nike 折扣码完整指南：如何获取最佳优惠',
+    title: '2026年 Nike 折扣码完整指南：如何获取最佳优惠',
     description: '完整攻略教你如何获取 Nike 官方折扣码，包括学生优惠、会员专属活动、节假日促销等技巧。',
     content: `
 ## Nike 折扣码哪里找？
@@ -47,7 +47,7 @@ Nike 有专门的学生折扣计划，使用 .edu 邮箱注册可获得额外 9 
   },
   {
     slug: 'asos-student-discount',
-    title: 'ASOS 学生折扣码 2025：25% 优惠怎么拿',
+    title: 'ASOS 学生折扣码 2026：25% 优惠怎么拿',
     description: 'ASOS 学生折扣码获取攻略，25% 折扣码有效期和使用技巧。',
     content: `
 ## ASOS 学生折扣码

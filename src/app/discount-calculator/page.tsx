@@ -20,9 +20,9 @@ export async function generateMetadata({
 
   if (lang === 'en') {
     return {
-      title: 'Discount Calculator — Calculate Sale Price After X% Off (50K/mo)',
+      title: 'Discount Calculator — Calculate Sale Price After X% Off',
       description:
-        'Calculate the final price after any discount: percentage off, fixed amount, or free shipping. 50,000+ monthly searches. Free, no signup, instant results.',
+        'Calculate the final price after any discount: percentage off, fixed amount, or free shipping. Free, no signup, instant results.',
       alternates: {
         canonical: PAGE_URL,
         languages: {

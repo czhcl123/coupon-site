@@ -7,19 +7,19 @@ export const revalidate = 86400
 type Lang = 'zh' | 'en'
 const SITE_URL = 'https://coupon-site-production.up.railway.app'
 const PAGE_URL = '/webflow-promo-code'
-const LAST_UPDATED = '2026-07-01'
+const LAST_UPDATED = '2026-10-16'
 
 // =====================================================
 // ENGLISH CONTENT
 // =====================================================
 const en = {
   meta: {
-    title: 'Webflow Promo Code — 50% Off Education & Startups (July 2026)',
+    title: 'Webflow Promo Code — 50% Off Education & Startups (October 2026)',
     description:
-      'Webflow 50% Off for students, startups & nonprofits — verified working in July 2026. Pricing, eligibility, application steps, and FAQs.',
+      'Webflow 50% Off for students, startups & nonprofits — verified working in October 2026. Pricing, eligibility, application steps, and FAQs.',
   },
   hero: {
-    badge: 'Verified · Updated July 1, 2026',
+    badge: 'Verified · Updated October 16, 2026',
     h1: 'Webflow Promo Code — Save Up to 50% on Annual Plans',
     subtitle:
       'Webflow does not issue third-party coupon codes. The three officially published discount programs (Education, Startups, Nonprofits) are the only working Webflow promotions in 2026.',
@@ -32,7 +32,7 @@ const en = {
     lastUpdated: `Last updated: ${LAST_UPDATED} · Author: CouponSite Editorial · Sources: webflow.com/pricing, webflow.com/education`,
   },
   deals: {
-    h2: 'Working Webflow Discounts Right Now (July 2026)',
+    h2: 'Working Webflow Discounts Right Now (October 2026)',
     p: 'All three programs are published directly by Webflow and renew as long as eligibility is maintained.',
     cards: [
       {
@@ -163,12 +163,12 @@ const en = {
 // =====================================================
 const zh = {
   meta: {
-    title: 'Webflow 优惠码 — 学生/初创/非营利 50% 折扣(2026 年 7 月)',
+    title: 'Webflow 优惠码 — 学生/初创/非营利 50% 折扣(2026 年 10 月)',
     description:
-      'Webflow 官方三大折扣项目详解:学生 50%、初创 50%、非营利 50%。含定价表、申请步骤、FAQ,7 月最新验证。',
+      'Webflow 官方三大折扣项目详解:学生 50%、初创 50%、非营利 50%。含定价表、申请步骤、FAQ,10 月最新验证。',
   },
   hero: {
-    badge: '已验证 · 更新于 2026 年 7 月 1 日',
+    badge: '已验证 · 更新于 2026 年 10 月 16 日',
     h1: 'Webflow 优惠码 — 年付立省 50%',
     subtitle:
       'Webflow 不接受第三方优惠码。2026 年唯一有效的三个官方折扣项目:教育版 50%、初创版 50%、非营利版 50%。',

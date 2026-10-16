@@ -68,9 +68,9 @@ function uVars(key: keyof typeof t.en, vars: Record<string, string>, lang: Lang)
   return s
 }
 
-// GKP blog data (2026-07-18) — desc gets brand GKP main keyword + monthly volume
-// Same volumes as merchant/[slug] GKP_DATA so internal consistency holds.
-const GKP_BLOG_DATA: Record<string, { volLabel: string; volZh: string; cpc: string }> = {
+// GKP blog data (2026-07-18) — 已停用于 meta(2026-10-16:月搜量/CPC 属内部数据,不进 title/desc);数据表保留备查
+/* eslint-disable @typescript-eslint/no-unused-vars */
+const GKP_BLOG_DATA_UNUSED: Record<string, { volLabel: string; volZh: string; cpc: string }> = {
   'nike':       { volLabel: '500,000+ monthly searches', volZh: '月搜 50 万', cpc: 'CPC $7-$28' },
   'shein':      { volLabel: '500,000+ monthly searches', volZh: '月搜 50 万', cpc: 'CPC $2-$8' },
   'ulta-beauty':{ volLabel: '500,000+ monthly searches', volZh: '月搜 50 万', cpc: 'CPC $4-$12' },
@@ -114,22 +114,16 @@ export async function generateMetadata({
   const lang = (sp.lang === 'zh' ? 'zh' : 'en') as Lang
   const article = getArticleBySlug(slug)
   if (!article) return {}
-  // GKP-friendly title: append year for freshness signal + GKP main keyword
-  const titleEn = `${article.title} (2026)`
-  const titleZh = `${article.title} (2026 最新)`
-  // GKP-aligned desc: keep original intro + append monthly volume + benefit
-  const gkp = GKP_BLOG_DATA[article.merchantSlug]
+  // 2026-10-16 SEO meta 清理:title 不再拼年份(与 articles.ts 内年份冲突成双年份);desc 去掉月搜量/CPC(内部数据不进 meta)
+  const titleEn = article.title
+  const titleZh = article.title
   const blogExtra = BLOG_PER_SLUG[slug]
-  const descEn = gkp && blogExtra
-    ? `${article.description} ${blogExtra.enExtra} [${gkp.volLabel} (${gkp.cpc}); updated 2026.]`
-    : gkp
-      ? `${article.description} [${gkp.volLabel} (${gkp.cpc}); updated 2026.]`
-      : article.description
-  const descZh = gkp && blogExtra
-    ? `${article.description} ${blogExtra.zhExtra} [${gkp.volZh}；${gkp.cpc}；2026 最新更新。]`
-    : gkp
-      ? `${article.description} [${gkp.volZh}；${gkp.cpc}；2026 最新更新。]`
-      : article.description
+  const descEn = blogExtra
+    ? `${article.description} ${blogExtra.enExtra}`
+    : article.description
+  const descZh = blogExtra
+    ? `${article.description} ${blogExtra.zhExtra}`
+    : article.description
   return {
     title: lang === 'zh' ? titleZh : titleEn,
     description: lang === 'zh' ? descZh : descEn,

@@ -97,8 +97,8 @@ export default async function HomePage() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: '50,000+ Monthly Coupon Codes & Promo Codes from 23 Top Brands — Updated Daily',
-    description: 'Verified working coupon codes and promo codes from 23 top brands including Nike (500K/mo), Ulta (500K/mo), SHEIN (500K/mo), Target, Walmart, Adidas, Amazon, Booking.com. Updated daily, free to use, bilingual zh/en.',
+    headline: 'Verified Coupon Codes & Promo Codes from 23 Top Brands — Updated Daily',
+    description: 'Verified working coupon codes and promo codes from 23 top brands including Nike, Ulta, SHEIN, Target, Walmart, Adidas, Amazon, Booking.com. Updated daily, free to use, bilingual zh/en.',
     image: `${base}/og-image.svg`,
     datePublished: '2026-06-01',
     dateModified: today,

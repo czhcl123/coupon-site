@@ -20,7 +20,7 @@ const websiteSchema = {
   alternateName: 'Coupon Hub',
   url: 'https://coupon-site-production.up.railway.app',
   description:
-    'Verified coupon codes and promo codes (50,000+ monthly searches) from 23 top brands including Nike (500K/mo), Ulta (500K/mo), SHEIN (500K/mo), Amazon (50K/mo), Booking.com and more across fashion, electronics, travel, and beauty. Updated daily, free to use.',
+    'Verified coupon codes and promo codes from 23 top brands including Nike, Ulta, SHEIN, Amazon, Booking.com and more across fashion, electronics, travel, and beauty. Updated daily, free to use.',
   inLanguage: ['en-US', 'zh-CN'],
   potentialAction: {
     '@type': 'SearchAction',
@@ -165,7 +165,7 @@ const webAppSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://coupon-site-production.up.railway.app'),
   title: {
-    default: 'Coupon Codes — 50,000+ Monthly Searches Across 23 Top Brands | CouponSite',
+    default: 'Coupon Codes — 23 Top Brands, Verified Daily | CouponSite',
     template: '%s | CouponSite',
   },
   description:
@@ -195,13 +195,13 @@ export const metadata: Metadata = {
     // url/title omitted: Next.js will fill from metadataBase + pathname + page title template
     // (fix Ahrefs issue #C5: 16 pages with og:url pointing to root and repeated og:title)
     description:
-      'Verified coupon codes (50K/mo) and promo codes (50K/mo) from 23 top brands: Nike, Ulta, SHEIN, Target, Walmart, Booking.com and more. Updated daily.',
+      'Verified coupon codes and promo codes from 23 top brands: Nike, Ulta, SHEIN, Target, Walmart, Booking.com and more. Updated daily.',
   },
   twitter: {
     card: 'summary_large_image',
     // title omitted: Next.js will use page title (fix C5 og:title duplication)
     description:
-      'Verified coupon codes (50K/mo) and promo codes (50K/mo) from 23 top brands. Updated daily, free to use.',
+      'Verified coupon codes and promo codes from 23 top brands. Updated daily, free to use.',
   },
   alternates: {
     canonical: 'https://coupon-site-production.up.railway.app',
