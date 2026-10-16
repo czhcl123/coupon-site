@@ -11,6 +11,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  const merchantSlugs = [
+    'nike', 'adidas', 'amazon', 'asos', 'bestbuy', 'booking-com', 'expedia',
+    'nordstrom', 'sephora', 'shein', 'steam', 'target', 'temu', 'ulta-beauty', 'walmart',
+  ]
+  const merchantUrls: MetadataRoute.Sitemap = merchantSlugs.map((slug) => ({
+    url: `${base}/merchant/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'daily',
+    priority: 0.8,
+  }))
+
   return [
     {
       url: base,
@@ -54,6 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.7,
     },
+    ...merchantUrls,
     ...blogUrls,
-  ]   
+  ] 
 }
