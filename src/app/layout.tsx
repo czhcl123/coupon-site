@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'CouponSite - 50K+ Monthly Coupon Codes for 23 Top Brands',
+  name: 'CouponSite: Coupon Codes and Official Brand Sales',
   alternateName: 'Coupon Hub',
   url: `${SITE_URL}`,
   description:
-    'Verified coupon codes and promo codes from 23 top brands including Nike, Ulta, SHEIN, Amazon, Booking.com and more across fashion, electronics, travel, and beauty. Updated daily, free to use.',
+    'Coupon codes and official brand sale pages for 15 major brands. We list a code only when we can verify it; otherwise we link to the brand sale page.',
   inLanguage: ['en-US', 'zh-CN'],
   potentialAction: {
     '@type': 'SearchAction',
@@ -47,7 +47,7 @@ const organizationSchema = {
   alternateName: 'Coupon Hub',
   url: `${SITE_URL}`,
   description:
-    'CouponSite is a real-time promo code and discount aggregator covering 20+ major brands across fashion, electronics, travel, beauty and pet supplies. Free to use, bilingual zh/en, updated daily.',
+    'CouponSite is a real-time promo code and discount aggregator covering 15 major brands across fashion, electronics, travel, beauty and pet supplies. Free to use, bilingual zh/en, updated daily.',
   foundingDate: '2026',
   knowsAbout: [
     'Coupon codes',
@@ -130,7 +130,7 @@ const webAppSchema = {
   alternateName: 'Coupon Hub',
   url: `${SITE_URL}`,
   description:
-    'Real-time aggregator of promo codes and discounts from 20+ major brands (Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com, and more) across fashion, electronics, travel, and beauty.',
+    'Real-time aggregator of promo codes and discounts from 15 major brands (Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com, and more) across fashion, electronics, travel, and beauty.',
   applicationCategory: 'ShoppingApplication',
   operatingSystem: 'Any (web browser with JavaScript)',
   browserRequirements: 'Requires JavaScript. Requires HTML5.',
@@ -142,14 +142,13 @@ const webAppSchema = {
     priceCurrency: 'USD',
   },
   featureList: [
-    'Nike coupon codes (500K+ monthly searches)',
-    'Ulta, Target, SHEIN coupon codes (500K+ monthly each)',
-    'Adidas, Amazon, Walmart, Booking.com coupons (50K+ monthly each)',
-    '23 brands across 5 categories',
+    'Coupon codes listed only after verification',
+    'Direct links to official brand sale pages',
+    '15 brands across 5 categories',
     '5 category filters',
     'Bilingual English and Chinese support',
     'One-click copy coupon codes',
-    'Discount calculator (50K+ monthly searches)',
+    'Discount calculator',
     'Money-saving blog guides',
     'Per-merchant detail pages',
   ],
@@ -166,11 +165,11 @@ const webAppSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL(`${SITE_URL}`),
   title: {
-    default: 'Coupon Codes — 23 Top Brands, Verified Daily | CouponSite',
+    default: 'Coupon Codes and Official Brand Deals | CouponSite',
     template: '%s | CouponSite',
   },
   description:
-    'Coupon codes & promo codes from 23 top brands: Nike, Ulta, SHEIN, Target, Walmart, Booking.com and more. Verified daily, free to use, bilingual zh/en.',
+    'Coupon codes and official brand sale pages for 15 major brands: Amazon, ASOS, Expedia, Nike and more. No invented codes, free to use.',
   keywords: [
     'coupon codes',
     'promo codes',
@@ -196,13 +195,13 @@ export const metadata: Metadata = {
     // url/title omitted: Next.js will fill from metadataBase + pathname + page title template
     // (fix Ahrefs issue #C5: 16 pages with og:url pointing to root and repeated og:title)
     description:
-      'Verified coupon codes and promo codes from 23 top brands: Nike, Ulta, SHEIN, Target, Walmart, Booking.com and more. Updated daily.',
+      'Coupon codes and official brand sale pages for 15 major brands. We list a code only when we can verify it.',
   },
   twitter: {
     card: 'summary_large_image',
     // title omitted: Next.js will use page title (fix C5 og:title duplication)
     description:
-      'Verified coupon codes and promo codes from 23 top brands. Updated daily, free to use.',
+      'Verified coupon codes and official brand deals from 15 major brands. Free to use.',
   },
   alternates: {
     canonical: `${SITE_URL}`,
@@ -268,6 +267,12 @@ export default async function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        {/* Skimlinks — rewrites outbound merchant links into tracked affiliate links */}
+        <script
+          type="text/javascript"
+          src="https://s.skimresources.com/js/311551X1800063.skimlinks.js"
+          async
         />
         {children}
       </body>

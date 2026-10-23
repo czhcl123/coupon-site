@@ -134,7 +134,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
   const seo = {
     zh: {
       section1Title: '什么是优惠总动员?',
-      section1Body: '优惠总动员(Coupon Hub)汇总 23 个品牌的官方促销、会员折扣与应季大促,包含 Nike、Ulta、SHEIN、Target、Walmart、Adidas、Amazon、Booking.com 等。品牌发布可用优惠码时我们会上架,活动结束即下架;没有码的活动直达官网促销页。覆盖时尚服饰、电子产品、旅行酒店、美妆护肤、宠物用品 5 大品类。支持中英文双语。',
+      section1Body: '优惠总动员(Coupon Hub)汇总 15 个品牌的官方促销、会员折扣与应季大促,包含 Nike、Ulta、SHEIN、Target、Walmart、Adidas、Amazon、Booking.com 等。品牌发布可用优惠码时我们会上架,活动结束即下架;没有码的活动直达官网促销页。覆盖时尚服饰、电子产品、旅行酒店、美妆护肤、宠物用品 5 大品类。支持中英文双语。',
       section2Title: '如何使用优惠码省钱',
       section2Body: '使用流程很简单:1) 在首页或商家页面找到想要的品牌;2) 有可用码就点「复制代码」,没码就点链接直达官网活动页;3) 打开品牌官网结算时粘贴优惠码或直接享受折扣。',
       section3Title: '优惠码类型说明',
@@ -157,7 +157,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
     },
     en: {
       section1Title: 'What is Coupon Hub?',
-      section1Body: 'Coupon Hub tracks official promotions, member discounts, and seasonal sales from 23 top brands: Nike, Ulta, SHEIN, Target, Walmart, Adidas, Amazon, Booking.com and more. When a brand publishes a working promo code we list it; when a promotion runs without a code we link straight to the official sale page. Covers fashion, electronics, travel, beauty, and pet supplies. Bilingual zh/en, free to use.',
+      section1Body: 'Coupon Hub tracks official promotions, member discounts, and seasonal sales from 15 top brands: Nike, Ulta, SHEIN, Target, Walmart, Adidas, Amazon, Booking.com and more. When a brand publishes a working promo code we list it; when a promotion runs without a code we link straight to the official sale page. Covers fashion, electronics, travel, beauty, and pet supplies. Bilingual zh/en, free to use.',
       section2Title: 'How to use coupon codes',
       section2Body: 'Three steps: 1) Find your favorite brand on the homepage or merchant page; 2) Copy any promo code shown, or follow the link straight to the brand\u2019s official sale page; 3) Redeem at checkout on the brand website.',
       section3Title: 'Coupon types explained',

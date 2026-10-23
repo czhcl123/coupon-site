@@ -16,41 +16,37 @@ type LocaleTable = Record<Lang, Localized>
 type SlugI18n = Record<string, LocaleTable>
 
 const META_I18N: SlugI18n = {
-  // Sephora: 美妆高意图, 东南亚 + 日本 + 中东市场
   sephora: {
-    en: { title: 'Sephora Coupon Codes — 15% OFF + Free Samples & Gifts (Updated Daily)', desc: 'Sephora coupon codes — 15% OFF + free samples on makeup, Dyson & skincare. Verified daily, copy the strongest working code.' },
-    zh: { title: 'Sephora 优惠码 — 15% OFF + 生日礼物/礼品卡(每日更新) + 近期 30 个验证码', desc: 'Sephora 优惠码涵盖 护肤品/彩妆/Dyson/礼品卡。15% OFF + 生日礼物。每日更新、复制即用、过期码每日自动清理。' },
-    id: { title: 'Kode Promo Sephora — Diskon 15% + Gratis Ongkos Kirim (Diperbarui Harian)', desc: 'Kode diskon Sephora — diskon 15% + gratis ongkos kirim. Diperbarui harian. Klik untuk menyalin kode terbaik.' },
-    ja: { title: 'セフォラ クーポンコード — 15% OFF + 送料無料(毎日更新)', desc: 'セフォラ 本人確認済み クーポン — 15% OFF + 送料無料。毎日更新。クリックして有効なコードをコピー。' },
-    ar: { title: 'كود خصم سيبورا — خصم 15% + شحن مجاني (يومي التحديث)', desc: 'كود خصم سيبورا موثّق — خصم 15% + شحن مجاني. يُحدَّث يومياً. اضغط لنسخ الكود الفعّال.' },
-    pt: { title: 'Código Promocional Sephora — 15% OFF + Frete Grátis (Atualizado Diariamente)', desc: 'Código Sephora verificado — 15% OFF + frete grátis. Atualizado diariamente. Clique para copiar o código ativo.' },
+    en: { title: 'Sephora Discount Code: Beauty Insider Deals', desc: 'Official Sephora promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
+    zh: { title: 'Sephora 优惠码：Beauty Insider 折扣', desc: 'Sephora 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    id: { title: 'Kode Promo Sephora: Diskon Beauty Insider', desc: 'Promo resmi Sephora dan penawaran anggota. Kode hanya setelah diverifikasi; bila tidak ada, kami tautkan ke halaman promo resmi.' },
+    ja: { title: 'セフォラ クーポン：Beauty Insider 特典', desc: 'セフォラ 公式のセールと会員特典。コードは確認済みのみ掲載し、使えない場合は公式セールページへリンクします。' },
+    ar: { title: 'كود خصم سيبورا: عروض Beauty Insider', desc: 'عروض سيبورا الرسمية ومزايا الأعضاء. لا نعرض أي كود قبل التحقق، وإن لم يعمل نوجهك إلى صفحة العروض الرسمية.' },
+    pt: { title: 'Código Promocional Sephora: Beauty Insider', desc: 'Promoções oficiais da Sephora e ofertas para membros. Código só após verificação; se não funcionar, indicamos a página oficial.' },
   },
-  // Nordstrom: 高端服饰, 阿语 + 葡语用户中高端
   nordstrom: {
-    en: { title: 'Nordstrom Coupon Codes — 25% OFF Anniversary Sale + Skims Early Access (2026)', desc: 'Nordstrom coupon codes — 25% OFF Anniversary Sale + Skims early access. Verified daily, copy the strongest working code.' },
-    zh: { title: 'Nordstrom 优惠码 — 周年庆 25% OFF + Skims 抢先购(2026) + 近期 30 个验证码', desc: 'Nordstrom 优惠码涵盖 周年庆/Rack/Skims/连衣裙/鞋类。25% OFF 会员抢先购。复制即用、过期码每日自动清理。' },
-    id: { title: 'Kode Promo Nordstrom — Diskon 25% Anniversary Sale (Akses Awal Juli 2026)', desc: 'Kode diskon Nordstrom Anniversary Sale — diskon 25%. Akses awal Juli 2026. Klik untuk menyalin kode aktif.' },
-    ja: { title: 'ノードストロム クーポン — アニバーサリーセール 25% OFF(2026 年 7 月先行アクセス)', desc: 'ノードストロム アニバーサリーセール 確認済み — 25% OFF。2026 年 7 月先行アクセス。クリックしてコードをコピー。' },
-    ar: { title: 'كود خصم نوردستروم — خصم 25% تخفيضات الذكرى السنوية (وصول مبكر يوليو 2026)', desc: 'كود خصم نوردستروم موثّق — خصم 25% تخفيضات الذكرى السنوية. وصول مبكر يوليو 2026.' },
-    pt: { title: 'Código Promocional Nordstrom — 25% OFF Sale de Aniversário (Acesso Antecipado Julho 2026)', desc: 'Código Nordstrom verificado — 25% OFF Sale de Aniversário. Acesso antecipado julho 2026.' },
+    en: { title: 'Nordstrom Anniversary Sale & Coupon Info', desc: 'Official Nordstrom promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
+    zh: { title: 'Nordstrom 周年庆与优惠码信息', desc: 'Nordstrom 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    id: { title: 'Kode Promo Nordstrom: Info Anniversary Sale', desc: 'Promo resmi Nordstrom dan penawaran anggota. Kode hanya setelah diverifikasi; bila tidak ada, kami tautkan ke halaman promo resmi.' },
+    ja: { title: 'ノードストロム クーポン：アニバーサリー情報', desc: 'ノードストロム 公式のセールと会員特典。コードは確認済みのみ掲載し、使えない場合は公式セールページへリンクします。' },
+    ar: { title: 'كود خصم نوردستروم: عروض وتخفيضات', desc: 'عروض نوردستروم الرسمية ومزايا الأعضاء. لا نعرض أي كود قبل التحقق، وإن لم يعمل نوجهك إلى صفحة العروض الرسمية.' },
+    pt: { title: 'Código Promocional Nordstrom: Ofertas', desc: 'Promoções oficiais da Nordstrom e ofertas para membros. Código só após verificação; se não funcionar, indicamos a página oficial.' },
   },
-  // Target: 大众零售, 拉美/巴西/印尼用户多
   target: {
-    en: { title: 'Target Coupon Codes — 5% Circle Deal + Optical & Beauty (New Codes This Week)', desc: 'Target coupon codes — 5% Circle Deal + free shipping on beauty, electronics & toys. Verified daily, copy the strongest code.' },
-    zh: { title: 'Target 优惠码 — Circle 5% OFF + 眼镜/美妆(本周新码) + 近期 30 个验证码', desc: 'Target 优惠码涵盖 Circle Deal/眼镜/美妆/电子/玩具。5% OFF + 免运费。复制即用、过期码每日自动清理。' },
-    id: { title: 'Kode Promo Target — Circle Deal 5% + Gratis Ongkos Kirim (Kode Baru Minggu Ini)', desc: 'Kode diskon Target terverifikasi — Circle Deal 5% + gratis ongkos kirim. Kode baru minggu ini. Klik untuk menyalin.' },
-    ja: { title: 'ターゲット クーポンコード — サークルディール 5% + 送料無料(今週の新コード)', desc: 'ターゲット サークルディール 確認済み — 5% OFF + 送料無料。今週の新コード。クリックしてコードをコピー。' },
-    ar: { title: 'كود خصم تارجت — عرض سيركل 5% + شحن مجاني (أكواد جديدة هذا الأسبوع)', desc: 'كود خصم تارجت موثّق — عرض سيركل 5% + شحن مجاني. أكواد جديدة هذا الأسبوع.' },
-    pt: { title: 'Código Promocional Target — Circle Deal 5% + Frete Grátis (Novos Códigos Esta Semana)', desc: 'Código Target verificado — Circle Deal 5% + frete grátis. Novos códigos esta semana.' },
+    en: { title: 'Target Promo Code: Circle Rewards & Deals', desc: 'Official Target promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
+    zh: { title: 'Target 优惠码：Circle 奖励与促销', desc: 'Target 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    id: { title: 'Kode Promo Target: Circle Rewards', desc: 'Promo resmi Target dan penawaran anggota. Kode hanya setelah diverifikasi; bila tidak ada, kami tautkan ke halaman promo resmi.' },
+    ja: { title: 'ターゲット クーポン：サークル特典', desc: 'ターゲット 公式のセールと会員特典。コードは確認済みのみ掲載し、使えない場合は公式セールページへリンクします。' },
+    ar: { title: 'كود خصم تارجت: عروض Circle', desc: 'عروض تارجت الرسمية ومزايا الأعضاء. لا نعرض أي كود قبل التحقق، وإن لم يعمل نوجهك إلى صفحة العروض الرسمية.' },
+    pt: { title: 'Código Promocional Target: Circle', desc: 'Promoções oficiais da Target e ofertas para membros. Código só após verificação; se não funcionar, indicamos a página oficial.' },
   },
-  // Asos: 学生 + 国际时尚, 全球年轻用户多
   asos: {
-    en: { title: 'ASOS Coupon Codes — 25% Student + Free Shipping (Dresses, Curve & Plus Size)', desc: 'ASOS coupon codes — 25% student + free shipping on dresses, Curve & menswear. Verified daily, copy the strongest working code.' },
-    zh: { title: 'ASOS 优惠码 — 25% 学生码 + 免运费(连衣裙/加大码) + 近期 30 个验证码', desc: 'ASOS 优惠码涵盖 连衣裙/Curve/加大码/男装。25% 学生码 + 免运费。复制即用、过期码每日自动清理。' },
-    id: { title: 'Kode Diskon ASOS — Kode Mahasiswa 25% + Gratis Ongkos Kirim (Diverifikasi Hari Ini)', desc: 'Kode diskon ASOS terverifikasi — kode mahasiswa 25% + gratis ongkos kirim. Diverifikasi hari ini.' },
-    ja: { title: 'ASOS 割引コード — 学生コード 25% + 送料無料(本日確認済み)', desc: 'ASOS 確認済み 割引コード — 学生 25% + 送料無料。本日確認。クリックしてコードをコピー。' },
-    ar: { title: 'كود خصم إيه سوس — كود الطلاب 25% + شحن مجاني (تم التحقق اليوم)', desc: 'كود خصم ASOS موثّق — كود الطلاب 25% + شحن مجاني. تم التحقق اليوم.' },
-    pt: { title: 'Código de Desconto ASOS — Código Estudante 25% + Frete Grátis (Verificado Hoje)', desc: 'Código ASOS verificado — código estudante 25% + frete grátis. Verificado hoje.' },
+    en: { title: 'ASOS Discount Code: Student & Sale Info', desc: 'Official ASOS promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
+    zh: { title: 'ASOS 优惠码：学生折扣与促销信息', desc: 'ASOS 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    id: { title: 'Kode Diskon ASOS: Diskon Mahasiswa', desc: 'Promo resmi ASOS dan penawaran anggota. Kode hanya setelah diverifikasi; bila tidak ada, kami tautkan ke halaman promo resmi.' },
+    ja: { title: 'ASOS 割引コード：学生割引とセール', desc: 'ASOS 公式のセールと会員特典。コードは確認済みのみ掲載し、使えない場合は公式セールページへリンクします。' },
+    ar: { title: 'كود خصم ASOS: خصم الطلاب والعروض', desc: 'عروض ASOS الرسمية ومزايا الأعضاء. لا نعرض أي كود قبل التحقق، وإن لم يعمل نوجهك إلى صفحة العروض الرسمية.' },
+    pt: { title: 'Código de Desconto ASOS: Estudante', desc: 'Promoções oficiais da ASOS e ofertas para membros. Código só após verificação; se não funcionar, indicamos a página oficial.' },
   },
 }
 
@@ -189,88 +185,86 @@ interface CouponRow {
   category_slug: string | null
 }
 
-// GKP 主词数据表 (2026-07-18) — title/desc 加月搜量 + benefit 提升 CTR
-// 2026-07-19: 给 GSC 高曝光 4 个 slug (sephora/nordstrom/target/asos) 加 benefit + urgency
-// 用于 generateMetadata 中 specific override，title/desc 主词前置 + 数字 + benefit + 紧迫感
-interface GkpEntry { keyword: string; volLabel: string; volZh: string; benefitEn?: string; benefitZh?: string; urgencyEn?: string; urgencyZh?: string }
+// GKP 主词数据表 — 只保留主关键词；2026-10-23 删除月搜量与 benefit/urgency 宣称
+interface GkpEntry { keyword: string }
 const GKP_DATA: Record<string, GkpEntry> = {
-  'nike':         { keyword: 'nike coupon code',         volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
-  'shein':        { keyword: 'shein coupon code',        volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
-  'ulta-beauty':  { keyword: 'ulta coupon',              volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
-  'target':       { keyword: 'target promo code',        volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万', benefitEn: '5% Circle Deal + Free Shipping', benefitZh: 'Circle 周特卖 + 免运费', urgencyEn: 'New Codes This Week', urgencyZh: '本周新码' },
-  'walmart':      { keyword: 'walmart promo code',       volLabel: '500K+ Monthly Searches', volZh: '月搜 50 万' },
-  'booking-com':  { keyword: 'booking com promo code',   volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
-  'bestbuy':      { keyword: 'best buy promo code',      volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
-  'amazon':       { keyword: 'amazon coupon',            volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
-  'adidas':       { keyword: 'adidas promo code',        volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
-  'sephora':      { keyword: 'sephora discount code',    volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万', benefitEn: '15% OFF + Free Shipping', benefitZh: '15% OFF + 免运费', urgencyEn: 'Updated Daily', urgencyZh: '每日更新' },
-  'steam':        { keyword: 'steam sale',               volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
-  'expedia':      { keyword: 'expedia coupon code',      volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
-  'nordstrom':    { keyword: 'nordstrom anniversary sale', volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万', benefitEn: '25% OFF Anniversary Sale', benefitZh: '周年庆 25% OFF', urgencyEn: 'July 2026 Early Access', urgencyZh: '2026 7 月抢先购' },
-  'temu':         { keyword: 'temu coupon code',         volLabel: '50,000+ Monthly Searches', volZh: '月搜 5 万' },
-  'asos':         { keyword: 'asos discount code',       volLabel: '5,000+ Monthly Searches',  volZh: '月搜 5 千', benefitEn: '25% Student Code + Free Shipping', benefitZh: '25% 学生码 + 免运费', urgencyEn: 'Verified Today', urgencyZh: '今日验证' },
+  'nike':         { keyword: 'nike coupon code' },
+  'shein':        { keyword: 'shein coupon code' },
+  'ulta-beauty':  { keyword: 'ulta coupon' },
+  'target':       { keyword: 'target promo code' },
+  'walmart':      { keyword: 'walmart promo code' },
+  'booking-com':  { keyword: 'booking com promo code' },
+  'bestbuy':      { keyword: 'best buy promo code' },
+  'amazon':       { keyword: 'amazon coupon' },
+  'adidas':       { keyword: 'adidas promo code' },
+  'sephora':      { keyword: 'sephora discount code' },
+  'steam':        { keyword: 'steam sale' },
+  'expedia':      { keyword: 'expedia coupon code' },
+  'nordstrom':    { keyword: 'nordstrom anniversary sale' },
+  'temu':         { keyword: 'temu coupon code' },
+  'asos':         { keyword: 'asos discount code' },
 }
 
 const META_PER_SLUG: Record<string, { zh: { title: string; desc: string }; en: { title: string; desc: string } }> = {
   'steam': {
-    zh: { title: 'Steam 平台特卖 + 季节促销', desc: 'Steam 优惠码 — 平台促销、季节特卖、捆绑包。每日验证，复制最强可用码。' },
-    en: { title: 'Steam Sale & Seasonal Promo', desc: 'Steam coupon codes — platform sales, seasonal events & bundles to save on PC games. Verified daily, copy the strongest code.' },
+    zh: { title: 'Steam 特卖：季节促销与捆绑包', desc: 'Steam 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'Steam Sale: Seasonal Promo Calendar', desc: 'Official Steam promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'temu': {
-    zh: { title: 'Temu 新客折扣码 + 免运费', desc: 'Temu 优惠码 — 电子产品和家居低至 2 折。每日验证，点击复制最强验证码。' },
-    en: { title: 'Temu New User 50% OFF + Free Shipping', desc: 'Temu coupon codes — 50% OFF + free shipping on electronics & home. Verified daily, copy the strongest working code.' },
+    zh: { title: 'Temu 优惠码：新客福利与折扣', desc: 'Temu 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'Temu Coupon Code: New User Offers', desc: 'Official Temu promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'nike': {
-    zh: { title: 'Nike 会员折扣码 + 学生专属', desc: 'Nike 优惠码 — Air Force 1、Air Max、Dunk 独家折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'Nike Member Discount + Student Code', desc: 'Nike coupon codes — exclusive discounts on Air Force 1, Air Max & Dunk. Verified daily, copy the strongest code.' },
+    zh: { title: 'Nike 优惠码：会员折扣与促销信息', desc: 'Nike 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'Nike Coupon Code: Member Discounts', desc: 'Official Nike promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'amazon': {
-    zh: { title: 'Amazon 优惠券 + Prime 专享', desc: 'Amazon 优惠码 — 电子产品、时尚、家居和游戏最强折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'Amazon Coupon Codes + Prime Exclusives', desc: 'Amazon coupon codes — electronics, fashion, home & gaming deals. Verified daily, copy the strongest working code.' },
+    zh: { title: 'Amazon 优惠码：Prime 专享与优惠券', desc: 'Amazon 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'Amazon Coupon Code: Prime Deals & Vouchers', desc: 'Official Amazon promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'adidas': {
-    zh: { title: 'Adidas 会员折扣码 + 季末特卖', desc: 'Adidas 优惠码 — Stanstan、Samba、Ultraboost 和 Outlet 最强折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'Adidas Member 30% OFF + End-of-Season', desc: 'Adidas coupon codes — Stanstan, Samba, Ultraboost & outlet deals. Verified daily, copy the strongest working code.' },
+    zh: { title: 'Adidas 优惠码：会员与 Outlet 促销', desc: 'Adidas 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'Adidas Promo Code: Member & Outlet Sale', desc: 'Official Adidas promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'shein': {
-    zh: { title: 'SHEIN 新客折扣码 + 免运费', desc: 'SHEIN 优惠码 — 全场时尚配饰低至 5 折。每日验证，点击复制最强验证码。' },
-    en: { title: 'SHEIN New User Code + Free Shipping', desc: 'SHEIN coupon codes — 50% OFF sitewide on fashion & accessories. Verified daily, copy the strongest working code.' },
+    zh: { title: 'SHEIN 优惠码：新客福利与折扣', desc: 'SHEIN 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'SHEIN Coupon Code: New User Offers', desc: 'Official SHEIN promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'expedia': {
-    zh: { title: 'Expedia 酒店机票折扣码', desc: 'Expedia 优惠码 — 酒店和度假套餐最强折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'Expedia Hotel 25% OFF + Flight Deals', desc: 'Expedia coupon codes — hotel & vacation package deals, flight deals. Verified daily, copy the strongest working code.' },
+    zh: { title: 'Expedia 优惠码：酒店与机票折扣', desc: 'Expedia 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'Expedia Coupon Code: Hotel & Flight Deals', desc: 'Official Expedia promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'bestbuy': {
-    zh: { title: 'Best Buy 折扣码 + 会员专享', desc: 'Best Buy 优惠码 — 笔记本、电视、游戏和家电最强折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'Best Buy $100 OFF $1000 + Student Deal', desc: 'Best Buy coupon codes — laptop, TV, gaming & appliance deals. Verified daily, copy the strongest working code.' },
+    zh: { title: 'Best Buy 优惠码：促销日历与折扣', desc: 'Best Buy 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'Best Buy Promo Code: Sale Calendar', desc: 'Official Best Buy promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'ulta-beauty': {
-    zh: { title: 'Ulta Beauty 21 Days of Beauty', desc: 'Ulta Beauty 优惠码 — 20% OFF + 化妆品护肤免邮。每日验证，点击复制最强验证码。' },
-    en: { title: 'Ulta Beauty 21 Days of Beauty', desc: 'Ulta Beauty coupon codes — 20% OFF + free shipping on makeup & skincare. Verified daily, copy the strongest code.' },
+    zh: { title: 'Ulta 优惠码：21 Days of Beauty', desc: 'Ulta Beauty 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'Ulta Coupon: 21 Days of Beauty & Rewards', desc: 'Official Ulta Beauty promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'booking-com': {
-    zh: { title: 'Booking.com Genius 折扣 + 酒店优惠', desc: 'Booking.com 优惠码 — 酒店和旅行最强折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'Booking.com Genius Discount + Hotel Deals', desc: 'Booking.com coupon codes — verified hotel & travel deals, last-minute specials. Verified daily, copy the strongest code.' },
+    zh: { title: 'Booking.com 优惠码：Genius 与酒店优惠', desc: 'Booking.com 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'Booking.com Promo Code: Genius Deals', desc: 'Official Booking.com promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'walmart': {
-    zh: { title: 'Walmart 折扣码 + Rollback 优惠', desc: 'Walmart 优惠码 — 电子产品、家居和杂货最强折扣。每日验证，点击复制最强验证码。' },
-    en: { title: 'Walmart Promo Code + Rollback Deals', desc: 'Walmart coupon codes — Rollback deals on electronics, home & grocery. Verified daily, copy the strongest working code.' },
+    zh: { title: 'Walmart 优惠码：Rollback 与省钱攻略', desc: 'Walmart 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'Walmart Promo Code: Rollback Deals', desc: 'Official Walmart promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'asos': {
-    zh: { title: 'ASOS 学生折扣码 + 新客礼包', desc: 'ASOS 优惠码 — 25% 学生折扣 + 裙装、大码、男装免邮。每日验证，点击复制最强验证码。' },
-    en: { title: 'ASOS Student 10% OFF + New User 25% OFF', desc: 'ASOS coupon codes — 25% student + free shipping on dresses, Curve & menswear. Verified daily, copy the strongest code.' },
+    zh: { title: 'ASOS 优惠码：学生折扣与促销信息', desc: 'ASOS 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'ASOS Discount Code: Student & Sale Info', desc: 'Official ASOS promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'target': {
-    zh: { title: 'Target Circle 折扣 + 5% OFF', desc: 'Target 优惠码 — Circle 5% OFF + 美妆和电子产品。每日验证，点击复制最强验证码。' },
-    en: { title: 'Target Circle Deal + RedCard 5% OFF', desc: 'Target coupon codes — 5% Circle Deal + free shipping on beauty, electronics & toys. Verified daily, copy the strongest code.' },
+    zh: { title: 'Target 优惠码：Circle 奖励与促销', desc: 'Target 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'Target Promo Code: Circle Rewards & Deals', desc: 'Official Target promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'nordstrom': {
-    zh: { title: 'Nordstrom Anniversary Sale + 25% OFF', desc: 'Nordstrom 优惠码 — 周年庆 25% OFF + Skims 提前购。每日验证，复制最强可用码。' },
-    en: { title: 'Nordstrom Anniversary Sale 25% OFF', desc: 'Nordstrom coupon codes — 25% OFF Anniversary Sale + Skims early access. Verified daily, copy the strongest code.' },
+    zh: { title: 'Nordstrom 周年庆与优惠码信息', desc: 'Nordstrom 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'Nordstrom Anniversary Sale & Coupon Info', desc: 'Official Nordstrom promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
   'sephora': {
-    zh: { title: 'Sephora 15% OFF + Beauty Insider', desc: 'Sephora 优惠码 — 15% OFF + 化妆品、戴森和护肤品的免费样品。每日验证，复制最强可用码。' },
-    en: { title: 'Sephora 15% OFF + Beauty Insider', desc: 'Sephora coupon codes — 15% OFF + free samples on makeup, Dyson & skincare. Verified daily, copy the strongest code.' },
+    zh: { title: 'Sephora 优惠码：Beauty Insider 折扣', desc: 'Sephora 官方促销与会员优惠信息。我们只在核实后列出优惠码，无可用的码时直接跳转官方促销页。' },
+    en: { title: 'Sephora Discount Code: Beauty Insider Deals', desc: 'Official Sephora promotions and member offers. A code is listed only after verification; otherwise we link to the official sale page.' },
   },
 }
 
@@ -292,8 +286,6 @@ export async function generateMetadata({
 
   const merchant = merchants[0]
   const gkp = GKP_DATA[slug]
-  const volLabel = gkp?.volLabel || 'Verified Coupons'
-  const volZh = gkp?.volZh || '已验证优惠码'
   const gkpKw = gkp?.keyword || `${merchant.name.toLowerCase()} coupon code`
 
   // 2026-07-19: 4 个 GSC 高优 slug × 6 语言 本地化 metadata override
@@ -303,24 +295,6 @@ export async function generateMetadata({
     return {
       title: loc.title,
       description: loc.desc,
-      alternates: {
-        canonical: `/merchant/${slug}`,
-        languages: {
-          'x-default': `/merchant/${slug}`,
-        },
-      },
-    }
-  }
-
-  // GSC 高曝光 4 slug 中不限 6-lang 本地化的其他 slug 走双语言 override
-  if (gkp?.benefitEn && gkp?.urgencyEn) {
-    return {
-      title: lang === 'zh'
-        ? `${merchant.name} 优惠码 — ${gkp.benefitZh}(${gkp.urgencyZh}) + 近期 30 个验证码`
-        : `${merchant.name} ${gkpKw}: ${gkp.benefitEn} (${gkp.urgencyEn})`,
-      description: lang === 'zh'
-        ? `${merchant.name} ${gkp.benefitZh}。${gkp.urgencyZh}、复制即用、过期码每日自动清理。点开即取最强码。`
-        : `${merchant.name} ${gkpKw} — ${gkp.benefitEn}. ${gkp.urgencyEn}. Click to copy the strongest working code; expired codes auto-removed daily.`,
       alternates: {
         canonical: `/merchant/${slug}`,
         languages: {

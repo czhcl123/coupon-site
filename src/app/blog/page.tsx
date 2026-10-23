@@ -74,7 +74,7 @@ export default async function BlogPage({
     '@context': 'https://schema.org',
     '@type': 'Blog',
     name: 'CouponSite Blog - Money-Saving Guides & Deal Tips',
-    description: 'Expert shopping guides, deal alerts, and money-saving tips for online shopping across Nike, ASOS, Sephora, Steam, Booking.com and 20+ more brands.',
+    description: 'Expert shopping guides, deal alerts, and money-saving tips for online shopping across Nike, ASOS, Sephora, Steam, Booking.com and more brands.',
     url: `${base}/blog`,
     inLanguage: ['en-US', 'zh-CN'],
     publisher: {

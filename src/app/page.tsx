@@ -98,8 +98,8 @@ export default async function HomePage() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: 'Verified Coupon Codes & Promo Codes from 23 Top Brands — Updated Daily',
-    description: 'Verified working coupon codes and promo codes from 23 top brands including Nike, Ulta, SHEIN, Target, Walmart, Adidas, Amazon, Booking.com. Updated daily, free to use, bilingual zh/en.',
+    headline: 'Coupon Codes and Official Brand Deals, Updated Daily',
+    description: 'Coupon codes and official brand sale pages for 15 major brands including Amazon, ASOS, Expedia and Nike. A code is listed only after manual verification.',
     image: `${base}/og-image.svg`,
     datePublished: '2026-06-01',
     dateModified: today,

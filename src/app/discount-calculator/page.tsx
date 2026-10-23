@@ -109,7 +109,7 @@ export default async function DiscountCalculatorPage({
         name: 'Is the discount calculator free to use?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes — fully free, no signup, no ads interrupting the calculation. The calculator is part of CouponSite, a real-time coupon aggregator covering 23 top brands.',
+          text: 'Yes — fully free, no signup, no ads interrupting the calculation. The calculator is part of CouponSite, a real-time coupon aggregator covering 15 top brands.',
         },
       },
     ],

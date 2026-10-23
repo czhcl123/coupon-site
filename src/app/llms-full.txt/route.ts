@@ -6,11 +6,11 @@ export async function GET(): Promise<Response> {
 
   const text = `# CouponSite (优惠总动员) - Full Content Index for LLMs
 
-> Real-time verified promo codes and discounts from 20+ top brands. Updated daily, free to use, bilingual English and Chinese. This is the FULL content index. For a short summary, see /llms.txt.
+> Real-time verified promo codes and discounts from 15 major brands. Updated daily, free to use, bilingual English and Chinese. This is the FULL content index. For a short summary, see /llms.txt.
 
 ## About CouponSite
 
-CouponSite (formerly 优惠总动员 / Coupon Hub) is an English-first promo code and discount aggregator. We cover Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com, and 20+ more major brands across fashion, electronics, travel, beauty, and pet supplies. All outbound links are affiliate links; you pay exactly the same price as visiting the brand website directly. Brands pay us a small commission via affiliate tracking to support the site.
+CouponSite (formerly 优惠总动员 / Coupon Hub) is an English-first promo code and discount aggregator. We cover Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com, and more major brands across fashion, electronics, travel, beauty, and pet supplies. All outbound links are affiliate links; you pay exactly the same price as visiting the brand website directly. Brands pay us a small commission via affiliate tracking to support the site.
 
 We do not require user accounts, logins, or payment. Coupon codes are open to all visitors — no signup needed. Expired codes are removed promptly so the homepage only shows working deals. If you find an expired code, you can report it via /about, and we verify manually within 24 hours.
 
@@ -18,7 +18,7 @@ CouponSite is bilingual: every coupon card, brand page, and blog post supports E
 
 ## Homepage (/)
 
-The homepage lists active promo codes for all 20+ brands, filterable by category (fashion, electronics, travel, beauty, pet supplies). Each coupon card shows the brand name, the offer (e.g., "20% off sitewide"), the coupon code, an expiry date if applicable, and a "Use Now" button that opens the brand's website with our affiliate tracking link. Clicking "Use Now" copies the code to clipboard and opens the brand site in a new tab.
+The homepage lists active promo codes for all 15 brands, filterable by category (fashion, electronics, travel, beauty, pet supplies). Each coupon card shows the brand name, the offer (e.g., "20% off sitewide"), the coupon code, an expiry date if applicable, and a "Use Now" button that opens the brand's website with our affiliate tracking link. Clicking "Use Now" copies the code to clipboard and opens the brand site in a new tab.
 
 The homepage also surfaces today's top deal (a featured promo code), a money-saving blog guide snippet, and a discount calculator (see below).
 

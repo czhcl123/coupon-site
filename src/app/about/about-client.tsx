@@ -18,7 +18,7 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       missionBody: '优惠总动员致力于为中国用户汇总各品牌的最新优惠码,覆盖国际品牌(Nike、Adidas、Sephora、Steam、Booking.com 等)和国内特色品类(宠物用品、本地生活),让大家在网购时不再错过任何省钱机会。',
       statsTitle: '本站数据',
       statBrands: '覆盖品牌',
-      statBrandsValue: '23 个',
+      statBrandsValue: '15 个',
       statCoupons: '优惠来源', statCouponsValue: '官网/联盟/投稿', statSearch: '收录品类', statSearchValue: '5 大类', statUpdate: '更新方式', statUpdateValue: '人工核查',
       methodologyTitle: '验证方法论',
       methodologyBody: '我们的核查方式很简单:\n\n1. 来源:品牌官方活动页、联盟合作伙伴、用户投稿。\n\n2. 上架:有明确优惠内容才收录,标注适用条件。\n\n3. 下架:活动结束或收到失效反馈后人工下架;拿不到码时,页面直达官网活动页。',
@@ -32,7 +32,7 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       teamBody: '优惠总动员由小编团队维护。原则很朴素:宁可少收录,也不虚标「已验证」。',
       faqTitle: '常见问题',
       faqItems: [
-        { q: '优惠总动员是什么？', a: '优惠总动员是汇总中型品牌的优惠码 / 折扣码聚合站。我们覆盖 23 个品牌的官方促销与会员折扣,提供中英双语。' },
+        { q: '优惠总动员是什么？', a: '优惠总动员是汇总中型品牌的优惠码 / 折扣码聚合站。我们覆盖 15 个品牌的官方促销与会员折扣,提供中英双语。' },
         { q: '本站收益怎么来的？', a: '我们与一些品牌有联盟推广合作。当你点击本站跳转链接进入品牌页面后完成购物，品牌会给我们一点佣金，你不会多付。' },
         { q: '优惠码为什么会失效？', a: '品牌方会定期更换促销活动,这很常见。活动结束我们会下架对应条目;拿不到码时,每个商家页都提供直达官网活动页的链接。' },
         { q: '能否提交新优惠码？', a: '可以。请发邮件到本页联系邮箱，附上优惠码详情（品牌、过期时间、限制）。我们在 24h 内人工验证，上线会回邮件。' },
@@ -53,7 +53,7 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       missionBody: 'Coupon Hub helps shoppers save money by aggregating the latest promo codes from international brands (Nike, Adidas, Sephora, Steam, Booking.com, etc.) and domestic favorites (pet supplies, local services) in one place, with bilingual Chinese/English support.',
       statsTitle: 'By the numbers',
       statBrands: 'Brands covered',
-      statBrandsValue: '23',
+      statBrandsValue: '15',
       statCoupons: 'Offer sources', statCouponsValue: 'Official / Affiliate / Users', statSearch: 'Categories', statSearchValue: '5', statUpdate: 'Update method', statUpdateValue: 'Manual review',
       methodologyTitle: 'Verification methodology',
       methodologyBody: 'Our verification is simple and manual:\n\n1. Source: official brand promotion pages, affiliate partners, and user submissions.\n\n2. Publish: offers are listed only when the discount terms are clear.\n\n3. Remove: ended promotions are taken down, on schedule or after user reports; when no code works, the page links to the official sale.',
@@ -67,7 +67,7 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       teamBody: 'Coupon Hub is run by a small editorial team. Simple principle: we would rather list fewer offers than label anything "verified" without checking.',
       faqTitle: 'Frequently asked questions',
       faqItems: [
-        { q: 'What is Coupon Hub?', a: 'Coupon Hub is a coupon and promo code aggregator for 23 mid-to-large brands across fashion, electronics, travel, and beauty. We track official promotions and member discounts across 23 brands, and support bilingual zh/en.' },
+        { q: 'What is Coupon Hub?', a: 'Coupon Hub is a coupon and promo code aggregator for 15 mid-to-large brands across fashion, electronics, travel, and beauty. We track official promotions and member discounts across 15 brands, and support bilingual zh/en.' },
         { q: 'How does Coupon Hub make money?', a: 'We have affiliate partnerships with several brands. When you click a link on our site and complete a purchase, the merchant pays us a small commission — at no extra cost to you.' },
         { q: 'Why do coupon codes expire?', a: 'Brands rotate their promotions regularly; expiry is normal. We remove ended promotions promptly; every merchant page links straight to the official sale page.' },
         { q: 'Can I submit a new coupon code?', a: 'Yes. Email the address on this page with the code, brand, expiry date, and any restrictions. We verify manually within 24 hours and reply when published.' },
@@ -170,8 +170,8 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
                   </div>
                   <div className="text-xs text-gray-500 mt-1">
                     {lang === 'zh'
-                      ? '人工核查 · 23 个品牌 · 官方促销'
-                      : 'Manually reviewed · 23 brands · Official promotions'}
+                      ? '人工核查 · 15 个品牌 · 官方促销'
+                      : 'Manually reviewed · 15 brands · Official promotions'}
                   </div>
                   <div className="text-xs text-orange-600 mt-1">
                     {lang === 'zh' ? '经验领域：优惠券聚合、品牌推广、电商联盟' : 'Expertise: coupon aggregation, brand partnerships, e-commerce affiliate'}

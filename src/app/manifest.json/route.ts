@@ -6,7 +6,7 @@ export async function GET(): Promise<Response> {
   const manifest = {
     name: 'CouponSite - Verified Promo Codes & Discounts',
     short_name: 'CouponSite',
-    description: 'Real-time promo codes and discounts from Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and 20+ more top brands. Updated daily, free to use, bilingual zh/en.',
+    description: 'Real-time promo codes and discounts from Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and more top brands. Updated daily, free to use, bilingual zh/en.',
     start_url: `${base}/`,
     scope: `${base}/`,
     display: 'standalone',

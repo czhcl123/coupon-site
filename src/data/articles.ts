@@ -827,6 +827,220 @@ Rack accepts the same generous Nordstrom returns (40 days, 45 for cardholders), 
     tags: ['Nordstrom Rack coupons', 'Nordstrom Rack sale', 'Clear the Rack', 'designer outlet deals', 'clearance shopping'],
     publishedAt: '2026-10-07',
   },
+  {
+    slug: 'nike-sale-calendar-2026',
+    title: 'Nike Sale Calendar: When Markdowns Happen',
+    description: 'Nike rarely issues public coupon codes. Here is when the real markdowns land, how to read the price tag, and when to wait.',
+    content: `
+## Why Nike Almost Never Has a Public Coupon Code
+
+If you search for a Nike promo code, most of what you find is recycled or invented. Nike's discount model is built on seasonal markdowns and membership pricing, not on codes you paste at checkout. Understanding the calendar matters far more than collecting codes.
+
+The exceptions are narrow: member-only offers sent by email, student and military verification discounts, and occasional first-order incentives on the app. Everything else is a sale, not a code.
+
+## The Four Predictable Markdown Windows
+
+### 1. End of season: January and July
+
+Nike clears seasonal inventory twice a year. Winter product drops in January, summer product in July. The first two weeks of each window carry the deepest cuts, and sizes disappear fast. If you wear a common size, the first 48 hours matter more than the discount percentage.
+
+### 2. Black Friday and Cyber Monday
+
+This is the single largest volume event of the year. Discounts apply sitewide rather than to a single category, and the app often shows slightly different pricing than the desktop site. Check both before buying.
+
+### 3. Member Days
+
+Nike runs member-exclusive windows several times a year, usually announced by email a few days ahead. Membership is free. If you buy Nike more than twice a year, the account pays for itself in access alone.
+
+### 4. Outlet and clearance cycles
+
+The clearance section rotates continuously, but the steepest reductions cluster mid-month when new markdowns load. Prices in clearance can drop again after two to three weeks if the item does not sell.
+
+## How to Read the Price on a Nike Product Page
+
+Nike shows markdowns in two ways, and they mean different things:
+
+| Display | Meaning | Action |
+|---|---|---|
+| Struck-through price + new price | Permanent markdown | Buy if your size is available |
+| "Member price" badge | Requires free login | Log in before judging the price |
+| "Extra 25% off at checkout" | Temporary promo | Check the end date in the banner |
+
+A common mistake is comparing the struck-through price against the member price and assuming you missed a discount. They are different programs and they do not stack.
+
+## What Stacks and What Does Not
+
+- Member pricing applies automatically once you log in.
+- Seasonal promo codes usually exclude newly released products.
+- Student verification discounts generally cannot be combined with clearance promotions.
+- Gift cards combine with everything, because they are payment, not a discount.
+
+If a page claims a code stacks with a sitewide sale, test it in the cart before believing it. Nike applies the best single discount, not the sum of all of them.
+
+## Outlet Stores vs the Website
+
+Outlet inventory is separate from the website. A shoe that sells out online may sit in an outlet for weeks, and the reverse is also true. Outlet pricing also drops on its own schedule, usually after a holiday weekend rather than before it.
+
+If you live near an outlet, check the website price first and use it as your ceiling.
+
+## When to Wait, and When Not To
+
+Wait if the item is a general-release running shoe in a standard colorway, because those get marked down on a predictable cycle. Do not wait if the item is a collaboration, a limited colorway, or already in the clearance section at your size, because restocks are rare.
+
+A simple rule: full-price general releases fall in January or July. Anything already discounted has usually finished falling.
+
+## The Bottom Line
+
+Treat Nike like a markdown retailer, not a coupon retailer. Watch the four windows, log in for member pricing, and check the cart for stack rules before checkout. Browse the current <a href="/merchant/nike">Nike deals page</a> to see what is discounted right now.
+    `,
+    merchant: 'Nike',
+    merchantSlug: 'nike',
+    tags: ['Nike sale', 'markdown calendar', 'when to buy'],
+    publishedAt: '2026-10-23',
+  },
+  {
+    slug: 'how-to-spot-fake-coupon-codes',
+    title: 'How to Tell If a Coupon Code Is Real: 6 Checks',
+    description: 'Most coupon codes on aggregator sites are dead or invented. Six checks that take two minutes and save you from wasting a cart.',
+    content: `
+## The Problem With Coupon Sites
+
+Coupon aggregators are paid per click, not per successful redemption. That incentive produces a predictable result: expired codes stay listed, invented codes get published, and "verified today" badges often mean nothing more than a timestamp.
+
+You cannot fix the industry, but you can avoid wasting twenty minutes on a checkout that never completes. These six checks take about two minutes.
+
+## Check 1: Does the Code Have a Pattern That Matches the Brand?
+
+Real retailer codes tend to be short, uppercase, and tied to a campaign: a season, a product line, a membership tier. Codes that look like a brand name plus a round number, such as a brand followed by 20 or 30, are frequently invented by whoever wrote the page.
+
+This is not proof either way, but it is the fastest filter. If a code looks like it was generated from a template, treat it as unverified until the cart proves otherwise.
+
+## Check 2: Does the Source Name a Specific Campaign?
+
+A legitimate listing usually explains where the code came from: a newsletter, a seasonal event, a membership program. A listing that only says "verified" with no campaign context is a red flag.
+
+The strongest sources are the retailer's own email, the retailer's promo page, and a membership program you are enrolled in. Everything else is second-hand.
+
+## Check 3: Read the Minimum Spend and Exclusions First
+
+Many "fails" are not dead codes. They are codes with conditions the listing omitted:
+
+| Condition | Typical wording | What it means |
+|---|---|---|
+| Minimum spend | "on orders over $75" | Cart total must clear the threshold before tax |
+| Category exclusion | "excludes sale items" | Full-price only |
+| New customers only | "first order" | Existing accounts are rejected |
+| Single use | "one per customer" | Fails on the second attempt |
+
+Check the cart message. Retailers usually tell you exactly which condition failed, and that message is more reliable than any listing page.
+
+## Check 4: Try It in a Cart, Not on the Homepage
+
+Codes are validated at checkout. Some retailers apply them silently, some require a click, and some only accept them in the app. If a code appears to do nothing, try:
+
+1. The app instead of the desktop site.
+2. A logged-in session instead of guest checkout.
+3. A cart that meets the minimum spend exactly.
+
+One of these three resolves a large share of apparent failures.
+
+## Check 5: Watch for Codes Reused Across Brands
+
+When the same code string appears on five different retailers, it is almost certainly lifted from a template. Real campaigns are retailer-specific, and brands do not share promotional codes.
+
+This is the single most reliable signal that a coupon page was generated rather than researched.
+
+## Check 6: Distrust Any Number That Sounds Like Marketing
+
+A 50% off sitewide code on a full-price fashion retailer is not a hidden gem, it is a fiction. Discounts of that size exist, but they are seasonal markdowns applied to a category, not codes that stack on everything.
+
+The general shape of reality: 10 to 20 percent for newsletter signups, 15 to 30 percent during seasonal events, and free shipping thresholds that vary by cart size.
+
+## What to Do When a Code Fails
+
+Report it if the site allows reporting, and stop trusting that page. Then check two things instead: whether the retailer has a current sitewide sale, and whether the same item is cheaper at a competitor.
+
+Most of the money shoppers leave on the table is not in a missing code. It is in paying full price during a markdown window without checking.
+
+If you want a starting point, the <a href="/merchant/amazon">Amazon deals page</a> and <a href="/merchant/target">Target deals page</a> list current official promotions rather than codes we cannot verify.
+    `,
+    merchant: 'Amazon',
+    merchantSlug: 'amazon',
+    tags: ['coupon safety', 'fake codes', 'checkout tips'],
+    publishedAt: '2026-10-23',
+  },
+  {
+    slug: 'asos-vs-nordstrom-price-gap',
+    title: 'ASOS vs Nordstrom: Same Item, Different Price',
+    description: 'The same jacket can differ by 30 percent between ASOS and Nordstrom. The three-minute method, including duty, returns and sale timing.',
+    content: `
+## Why the Price Gap Exists
+
+ASOS and Nordstrom both sell branded fashion, but they buy it differently. ASOS carries a large own-brand range alongside third-party labels and prices aggressively to move volume. Nordstrom carries the same labels at closer to full retail, with a service and returns model built into the price.
+
+That means the gap is not random. It follows a pattern you can predict once you know what to look for.
+
+## Step 1: Check Whether It Is the Same Product
+
+The most common comparison error is matching two different items. A brand can ship a slightly different version of the same jacket to different retailers, with a different fabric weight or a different color code.
+
+Look for the manufacturer style number, not just the product name. If the numbers differ, the comparison is meaningless and the cheaper listing is usually the lower-spec version.
+
+## Step 2: Compare the Landed Price, Not the Tag Price
+
+Four costs sit between the tag price and what you actually pay:
+
+| Cost | ASOS | Nordstrom |
+|---|---|---|
+| Shipping | Free above a threshold | Free standard for members |
+| Import duty | Often included at checkout | Included in price |
+| Returns | Free in most markets | Free, including in-store |
+| Currency conversion | Charged at checkout | Charged by your card |
+
+A 20 percent lower tag price can disappear entirely once shipping and returns are counted, especially for a single low-value item.
+
+## Step 3: Check Sale Cadence, Not Just Today's Price
+
+Both retailers discount, but on different schedules:
+
+- ASOS runs frequent, short promotions, often around mid-season and student events.
+- Nordstrom's deepest markdowns cluster around its two major sale events and end-of-season clearance.
+
+If you are not in a hurry, the question is not which is cheaper today, but which will be cheaper in three weeks. For branded items, Nordstrom's sale events tend to cut deeper on the same style number. For own-brand and trend items, ASOS is usually cheaper throughout.
+
+## Step 4: Weigh Returns Before You Commit
+
+Return policy differences matter more than most shoppers expect. If you are unsure about fit, the retailer with free returns and a physical location has an effective discount built in, because the cost of a wrong size is zero.
+
+With a paid return, one wrong size can wipe out the entire price advantage.
+
+## A Three-Minute Comparison Method
+
+1. Find the manufacturer style number on both listings.
+2. Add shipping to each cart total.
+3. Check the return cost for one item.
+4. Search both sites for the same style in the sale section.
+5. Decide based on landed price plus return risk, not tag price.
+
+This takes about three minutes and catches the two most expensive mistakes: comparing different products, and ignoring return costs.
+
+## When Each One Wins
+
+| Situation | Better choice |
+|---|---|
+| Own-brand trend pieces | ASOS |
+| Branded items during a major sale | Nordstrom |
+| Uncertain fit | Nordstrom, for free returns |
+| Single low-value item | Whichever clears free shipping |
+| Last-minute event purchase | The one with in-store stock |
+
+Start from the <a href="/merchant/asos">ASOS deals page</a> and the <a href="/merchant/nordstrom">Nordstrom sale page</a>, and compare the same style number before adding anything to a cart.
+    `,
+    merchant: 'ASOS',
+    merchantSlug: 'asos',
+    tags: ['ASOS', 'Nordstrom', 'price comparison'],
+    publishedAt: '2026-10-23',
+  },
 ]
 
 export function getArticleBySlug(slug: string): Article | undefined {
