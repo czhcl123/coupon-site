@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/site'
 import { Metadata } from 'next'
 import { Suspense } from 'react'
 import DiscountCalculator from '@/components/DiscountCalculator'
@@ -7,7 +8,6 @@ export const revalidate = 86400
 
 type Lang = 'zh' | 'en'
 
-const SITE_URL = 'https://coupon-site-production.up.railway.app'
 const PAGE_URL = '/discount-calculator'
 
 export async function generateMetadata({

@@ -1,7 +1,8 @@
+import { SITE_URL } from '@/lib/site'
 export const dynamic = 'force-dynamic'
 
 export async function GET(): Promise<Response> {
-  const base = 'https://coupon-site-production.up.railway.app'
+  const base = SITE_URL
 
   const text = `# CouponSite (优惠总动员) - Full Content Index for LLMs
 

@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/site'
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -18,7 +19,7 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: 'CouponSite - 50K+ Monthly Coupon Codes for 23 Top Brands',
   alternateName: 'Coupon Hub',
-  url: 'https://coupon-site-production.up.railway.app',
+  url: `${SITE_URL}`,
   description:
     'Verified coupon codes and promo codes from 23 top brands including Nike, Ulta, SHEIN, Amazon, Booking.com and more across fashion, electronics, travel, and beauty. Updated daily, free to use.',
   inLanguage: ['en-US', 'zh-CN'],
@@ -27,7 +28,7 @@ const websiteSchema = {
     target: {
       '@type': 'EntryPoint',
       urlTemplate:
-        'https://coupon-site-production.up.railway.app/?search={search_term_string}',
+        `${SITE_URL}/?search={search_term_string}`,
     },
     'query-input': 'required name=search_term_string',
   },
@@ -35,7 +36,7 @@ const websiteSchema = {
     '@type': 'Organization',
     name: 'CouponSite',
     alternateName: 'Coupon Hub',
-    url: 'https://coupon-site-production.up.railway.app',
+    url: `${SITE_URL}`,
   },
 };
 
@@ -44,7 +45,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'CouponSite',
   alternateName: 'Coupon Hub',
-  url: 'https://coupon-site-production.up.railway.app',
+  url: `${SITE_URL}`,
   description:
     'CouponSite is a real-time promo code and discount aggregator covering 20+ major brands across fashion, electronics, travel, beauty and pet supplies. Free to use, bilingual zh/en, updated daily.',
   foundingDate: '2026',
@@ -70,7 +71,7 @@ const organizationSchema = {
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
-    url: 'https://coupon-site-production.up.railway.app/about',
+    url: `${SITE_URL}/about`,
     availableLanguage: ['English', 'Chinese'],
   },
 };
@@ -127,7 +128,7 @@ const webAppSchema = {
   '@type': 'WebApplication',
   name: 'CouponSite',
   alternateName: 'Coupon Hub',
-  url: 'https://coupon-site-production.up.railway.app',
+  url: `${SITE_URL}`,
   description:
     'Real-time aggregator of promo codes and discounts from 20+ major brands (Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com, and more) across fashion, electronics, travel, and beauty.',
   applicationCategory: 'ShoppingApplication',
@@ -158,12 +159,12 @@ const webAppSchema = {
     '@type': 'Organization',
     name: 'CouponSite',
     alternateName: 'Coupon Hub',
-    url: 'https://coupon-site-production.up.railway.app',
+    url: `${SITE_URL}`,
   },
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://coupon-site-production.up.railway.app'),
+  metadataBase: new URL(`${SITE_URL}`),
   title: {
     default: 'Coupon Codes — 23 Top Brands, Verified Daily | CouponSite',
     template: '%s | CouponSite',
@@ -204,11 +205,11 @@ export const metadata: Metadata = {
       'Verified coupon codes and promo codes from 23 top brands. Updated daily, free to use.',
   },
   alternates: {
-    canonical: 'https://coupon-site-production.up.railway.app',
+    canonical: `${SITE_URL}`,
     languages: {
-      'en-US': 'https://coupon-site-production.up.railway.app/',
-      'zh-CN': 'https://coupon-site-production.up.railway.app/',
-      'x-default': 'https://coupon-site-production.up.railway.app/',
+      'en-US': `${SITE_URL}/`,
+      'zh-CN': `${SITE_URL}/`,
+      'x-default': `${SITE_URL}/`,
     },
   },
   robots: {

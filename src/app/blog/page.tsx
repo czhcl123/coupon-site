@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/site'
 ﻿import { Metadata } from 'next'
 import Link from 'next/link'
 import { articles } from '@/data/articles'
@@ -68,7 +69,7 @@ export default async function BlogPage({
   const lang = (sp.lang === 'zh' ? 'zh' : 'en') as Lang
   const nextLang: Lang = lang === 'zh' ? 'en' : 'zh'
 
-  const base = 'https://coupon-site-production.up.railway.app'
+  const base = SITE_URL
   const blogSchema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',

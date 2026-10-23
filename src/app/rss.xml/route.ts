@@ -1,7 +1,8 @@
+import { SITE_URL } from '@/lib/site'
 export const dynamic = 'force-dynamic'
 
 export async function GET(): Promise<Response> {
-  const base = 'https://coupon-site-production.up.railway.app'
+  const base = SITE_URL
   const now = new Date().toUTCString()
 
   // Static listing. For real-time coupon updates, see /api/coupons JSON.

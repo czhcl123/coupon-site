@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/site'
 import type { Metadata } from 'next'
 import AboutClient from './about-client'
 
@@ -25,12 +26,12 @@ export async function generateMetadata({
       title: titles[lang],
       description: descriptions[lang],
       type: 'profile',
-      url: 'https://coupon-site-production.up.railway.app/about',
+      url: `${SITE_URL}/about`,
     },
     alternates: {
-      canonical: 'https://coupon-site-production.up.railway.app/about',
+      canonical: `${SITE_URL}/about`,
       languages: {
-        'x-default': 'https://coupon-site-production.up.railway.app/about',
+        'x-default': `${SITE_URL}/about`,
       },
     },
   }
@@ -44,7 +45,7 @@ export default async function AboutPage({
   const sp = await searchParams
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
 
-  const base = 'https://coupon-site-production.up.railway.app'
+  const base = SITE_URL
   const today = new Date().toISOString().split('T')[0]
 
   // 2026-07-19: about 页采用 @graph + 添加 FAQPage + Person + Organization 同位抩到 E-E-A-T

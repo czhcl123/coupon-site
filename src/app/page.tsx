@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/site'
 import { query } from '@/lib/db'
 import { Suspense } from 'react'
 import HomePageClient, { type Coupon, type Merchant } from './home-page-client'
@@ -92,7 +93,7 @@ async function fetchInitialData() {
 export default async function HomePage() {
   const { coupons, merchants } = await fetchInitialData()
 
-  const base = 'https://coupon-site-production.up.railway.app'
+  const base = SITE_URL
   const today = new Date().toISOString().split('T')[0]
   const articleSchema = {
     '@context': 'https://schema.org',

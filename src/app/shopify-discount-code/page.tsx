@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/site'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -5,7 +6,6 @@ export const dynamic = 'force-static'
 export const revalidate = 86400
 
 type Lang = 'zh' | 'en'
-const SITE_URL = 'https://coupon-site-production.up.railway.app'
 const PAGE_URL = '/shopify-discount-code'
 const LAST_UPDATED = '2026-07-01'
 

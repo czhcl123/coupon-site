@@ -1,8 +1,9 @@
+import { SITE_URL } from '@/lib/site'
 import { MetadataRoute } from 'next'
 import { articles } from '@/data/articles'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = 'https://coupon-site-production.up.railway.app'
+  const base = SITE_URL
 
   const blogUrls: MetadataRoute.Sitemap = articles.map((a) => ({
     url: `${base}/blog/${a.slug}`,

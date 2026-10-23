@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/site'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
@@ -169,8 +170,8 @@ export default async function ArticlePage({
     '@type': 'Organization',
     name: 'CouponSite Editorial Team',
     alternateName: 'Coupon Hub Editorial',
-    url: 'https://coupon-site-production.up.railway.app/about',
-    logo: 'https://coupon-site-production.up.railway.app/og-image.svg',
+    url: `${SITE_URL}/about`,
+    logo: `${SITE_URL}/og-image.svg`,
     foundingDate: '2026',
     knowsAbout: [
       'Coupon codes',
@@ -206,10 +207,10 @@ export default async function ArticlePage({
         dateModified: new Date().toISOString(),
         author: editorialAuthor,
         publisher: editorialAuthor,
-        url: `https://coupon-site-production.up.railway.app/blog/${slug}`,
+        url: `${SITE_URL}/blog/${slug}`,
         keywords: article.tags.join(', '),
         inLanguage: ['en-US', 'zh-CN'],
-        mainEntityOfPage: { '@type': 'WebPage', '@id': `https://coupon-site-production.up.railway.app/blog/${slug}` },
+        mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/blog/${slug}` },
       },
       // 2026-07-19: FAQPage schema 提升 GEO/长尾截取（不问 google 也会帮你调出 FAQ rich result）
       {
