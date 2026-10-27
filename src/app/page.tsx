@@ -94,15 +94,17 @@ export default async function HomePage() {
   const { coupons, merchants } = await fetchInitialData()
 
   const base = SITE_URL
-  const today = new Date().toISOString().split('T')[0]
+  // 2026-10-27: dateModified was `today` (changed on every render). Use the real
+  // last-edit date instead so the signal stays honest.
+  const lastUpdated = '2026-10-23'
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: 'Coupon Codes and Official Brand Deals, Updated Daily',
     description: 'Coupon codes and official brand sale pages for 15 major brands including Amazon, ASOS, Expedia and Nike. A code is listed only after manual verification.',
-    image: `${base}/og-image.svg`,
+    image: `${base}/og-image.png`,
     datePublished: '2026-06-01',
-    dateModified: today,
+    dateModified: lastUpdated,
     inLanguage: ['en-US', 'zh-CN'],
     author: {
       '@type': 'Organization',

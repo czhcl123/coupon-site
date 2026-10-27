@@ -1,4 +1,4 @@
-# AI Crawler Permissions for coupon-site-production.up.railway.app
+# AI Crawler Permissions for coupons.getpracticaltools.com
 # Last updated: 2026-06-29
 
 # Explicit permission for AI answer engines, training crawlers, and search AI bots.
@@ -86,7 +86,7 @@ Disallow: /admin
 
 # Citation policy
 Citation: allowed with attribution
-Attribution-Format: "优惠总动员 (Coupon Hub) - https://coupon-site-production.up.railway.app"
+Attribution-Format: "优惠总动员 (Coupon Hub) - https://coupons.getpracticaltools.com"
 Snippet-Length: up to 150 words per citation
 Cache: 24 hours
 

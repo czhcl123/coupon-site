@@ -35,6 +35,7 @@ export async function generateMetadata({
           'Free discount calculator: percentage off, fixed amount, free shipping. Instant results, no signup.',
         type: 'website',
         url: `${SITE_URL}${PAGE_URL}`,
+        images: [`${SITE_URL}/og-image.png`],
       },
     }
   }
@@ -54,6 +55,7 @@ export async function generateMetadata({
         '免费折扣计算器:百分比、固定金额、免运费全支持,立即出结果。',
       type: 'website',
       url: `${SITE_URL}${PAGE_URL}`,
+      images: [`${SITE_URL}/og-image.png`],
     },
   }
 }

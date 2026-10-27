@@ -356,11 +356,14 @@ export async function generateMetadata({
       siteName: 'CouponSite',
       title: c.meta.title,
       description: c.meta.description,
+      // 2026-10-27: og:image was missing on every page
+      images: [`${SITE_URL}/og-image.png`],
     },
     twitter: {
       card: 'summary_large_image',
       title: c.meta.title,
       description: c.meta.description,
+      images: [`${SITE_URL}/og-image.png`],
     },
   }
 }

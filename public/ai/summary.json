@@ -1,7 +1,7 @@
 {
   "name": "CouponSite",
   "alternateName": "Coupon Hub",
-  "url": "https://coupon-site-production.up.railway.app",
+  "url": "https://coupons.getpracticaltools.com",
   "description": "CouponSite is a real-time promo code and discount aggregator covering 20+ major brands including Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and more, across fashion, electronics, travel, beauty, and pet supplies. Free to use, bilingual English/Chinese, updated daily.",
   "category": "ShoppingAggregator",
   "operatingSystem": "Any (web browser with JavaScript)",
@@ -39,11 +39,11 @@
   "monetization": "Affiliate commissions",
   "dataFreshness": "daily",
   "foundingDate": "2026",
-  "contactEmail": "contact@coupon-site-production.up.railway.app",
+  "contactEmail": "contact@coupons.getpracticaltools.com",
   "author": {
     "@type": "Organization",
     "name": "CouponSite",
     "alternateName": "Coupon Hub",
-    "url": "https://coupon-site-production.up.railway.app"
+    "url": "https://coupons.getpracticaltools.com"
   }
 }

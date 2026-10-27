@@ -133,6 +133,10 @@ export async function generateMetadata({
       description: lang === 'zh' ? descZh : descEn,
       type: 'article',
       publishedTime: article.publishedAt,
+      // 2026-10-27: real last-edit date (was new Date() at render time)
+      modifiedTime: article.updatedAt,
+      url: `${SITE_URL}/blog/${slug}`,
+      images: [`${SITE_URL}/og-image.png`],
     },
     alternates: {
       canonical: `/blog/${slug}`,
@@ -204,7 +208,9 @@ export default async function ArticlePage({
         headline: article.title,
         description: article.description,
         datePublished: article.publishedAt,
-        dateModified: new Date().toISOString(),
+        // 2026-10-27: was `new Date().toISOString()` — told Google "modified now"
+        // on every crawl, which is both dishonest and a crawl-budget magnet.
+        dateModified: article.updatedAt,
         author: editorialAuthor,
         publisher: editorialAuthor,
         url: `${SITE_URL}/blog/${slug}`,

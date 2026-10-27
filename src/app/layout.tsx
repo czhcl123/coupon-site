@@ -194,12 +194,23 @@ export const metadata: Metadata = {
     siteName: 'CouponSite',
     // url/title omitted: Next.js will fill from metadataBase + pathname + page title template
     // (fix Ahrefs issue #C5: 16 pages with og:url pointing to root and repeated og:title)
+    // 2026-10-27: add og:image — was missing on every page (social cards had no picture).
+    // PNG (not SVG): Facebook/Twitter/LinkedIn do not render SVG og:images.
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: 'CouponSite — verified promo codes and discounts',
+      },
+    ],
     description:
       'Coupon codes and official brand sale pages for 15 major brands. We list a code only when we can verify it.',
   },
   twitter: {
     card: 'summary_large_image',
     // title omitted: Next.js will use page title (fix C5 og:title duplication)
+    images: [`${SITE_URL}/og-image.png`],
     description:
       'Verified coupon codes and official brand deals from 15 major brands. Free to use.',
   },
@@ -225,6 +236,17 @@ export const metadata: Metadata = {
 
 // Trust the BCP-47 value injected by middleware (see src/middleware.ts).
 // Falls back to "en" when header is absent or not a recognized BCP-47 lang code.
+//
+// 2026-10-27: an experiment removed this `await headers()` call to try to make
+// the whole site statically prerendered. It was reverted, because a controlled
+// A/B (two throwaway probe routes, one with and one without
+// `generateMetadata` awaiting `searchParams`) proved the real blocker is
+// `generateMetadata` + `searchParams`, NOT this header read:
+//   - probe route WITHOUT generateMetadata  -> prerendered fine
+//   - same route WITH generateMetadata(searchParams) -> stopped prerendering
+// Removing `await headers()` alone therefore bought zero prerendering, while
+// costing the 20 dynamic pages their `<html lang="zh-CN">` on `?lang=zh`.
+// Kept as-is: this is live code (middleware writes the header, layout reads it).
 function resolveHtmlLang(raw: string | null | undefined): string {
   if (!raw) return "en";
   const allow = new Set(["en", "zh-CN", "id", "ja", "ar", "pt-BR"]);

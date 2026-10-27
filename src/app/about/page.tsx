@@ -27,6 +27,7 @@ export async function generateMetadata({
       description: descriptions[lang],
       type: 'profile',
       url: `${SITE_URL}/about`,
+      images: [`${SITE_URL}/og-image.png`],
     },
     alternates: {
       canonical: `${SITE_URL}/about`,
@@ -46,7 +47,8 @@ export default async function AboutPage({
   const lang = sp.lang === 'zh' ? 'zh' : 'en'
 
   const base = SITE_URL
-  const today = new Date().toISOString().split('T')[0]
+  // 2026-10-27: dateModified was `today` (changed on every render). Use the real
+  // last-edit date instead so the signal stays honest.
 
   // 2026-07-19: about 页采用 @graph + 添加 FAQPage + Person + Organization 同位抩到 E-E-A-T
   const aboutSchema = {
@@ -59,8 +61,8 @@ export default async function AboutPage({
           'Learn about CouponSite\'s mission, data sources, affiliate disclosure, verification methodology, and contact information. Real-time coupon aggregator covering 15 brands across fashion, electronics, travel, beauty, and pet supplies.',
         url: `${base}/about`,
         inLanguage: ['en-US', 'zh-CN'],
-        dateModified: today,
-        primaryImageOfPage: { '@type': 'ImageObject', url: `${base}/og-image.svg` },
+        dateModified: '2026-10-23',
+        primaryImageOfPage: { '@type': 'ImageObject', url: `${base}/og-image.png` },
         isPartOf: { '@type': 'WebSite', name: 'CouponSite', url: base },
         about: { '@type': 'Organization', name: 'CouponSite', url: base },
       },

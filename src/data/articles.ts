@@ -8,6 +8,10 @@ export interface Article {
   merchantSlug: string
   tags: string[]
   publishedAt: string
+  // 2026-10-27: real last content-change date (derived from git history).
+  // Previously the Article schema used `new Date().toISOString()` at render time,
+  // which told Google "modified just now" on every single crawl.
+  updatedAt: string
 }
 
 export const articles: Article[] = [
@@ -44,6 +48,7 @@ Nike 官网的 Outlet 板块和会员邮件是最稳定的折扣来源；拿不�
     merchantSlug: 'nike',
     tags: ['Nike 折扣码', 'Nike 优惠', '运动鞋'],
     publishedAt: '2025-01-15',
+updatedAt: '2026-10-16',
   },
   {
     slug: 'asos-student-discount',
@@ -70,6 +75,7 @@ ASOS 是英国知名的时尚电商，全球免运费是它最大的优势之一
     merchantSlug: 'asos',
     tags: ['ASOS 折扣码', 'ASOS 学生优惠', '时尚电商'],
     publishedAt: '2025-02-20',
+updatedAt: '2026-10-16',
   },
   {
     slug: 'amazon-prime-day-guide',
@@ -163,6 +169,7 @@ Amazon has a problem with sellers raising prices before Prime Day then "discount
     merchantSlug: 'amazon',
     tags: ['Amazon Prime Day', 'Amazon deals', 'Amazon coupon codes', 'Prime Day 2026', 'flash sale'],
     publishedAt: '2025-06-01',
+updatedAt: '2026-09-06',
   },
   {
     slug: 'adidas-outlet-secrets',
@@ -189,6 +196,7 @@ Adidas 会员每月收到专属折扣码，部分款式额外 9 折。
     merchantSlug: 'adidas',
     tags: ['Adidas 折扣', 'Adidas 奥莱', '运动品牌'],
     publishedAt: '2025-04-05',
+updatedAt: '2026-06-15',
   },
   {
     slug: 'sephora-coupon-strategy',
@@ -271,6 +279,7 @@ Both stores price-match major competitors on identical items.
     merchantSlug: 'sephora',
     tags: ['Sephora coupon codes', 'Sephora deals', 'VIB sale', 'beauty deals', 'coupon strategy'],
     publishedAt: '2025-05-18',
+updatedAt: '2026-10-07',
   },
   {
     slug: 'bestbuy-tv-buying-guide',
@@ -299,6 +308,7 @@ Best Buy 有 15 天价格保护期，降价可申请退差价。
     merchantSlug: 'bestbuy',
     tags: ['Best Buy 折扣', '电视选购', '电子产品'],
     publishedAt: '2025-06-01',
+updatedAt: '2026-06-15',
   },
   {
     slug: 'nordstrom-sale-guide',
@@ -391,6 +401,7 @@ Pro tip: Rack online has better selection than in-store. Check <a href="/merchan
     merchantSlug: 'nordstrom',
     tags: ['Nordstrom sale', 'Nordstrom Anniversary Sale', 'Nordstrom deals', 'Nordstrom coupon codes', 'fashion deals'],
     publishedAt: '2025-07-15',
+updatedAt: '2026-09-06',
   },
   {
     slug: 'steam-sale-calendar',
@@ -472,6 +483,7 @@ Strategy: Claim free games on Epic, buy the rest on Steam during sales.
     merchantSlug: 'steam',
     tags: ['Steam sale calendar', 'Steam deals', 'Steam discounts', 'PC gaming', 'Steam sale dates'],
     publishedAt: '2026-07-25',
+updatedAt: '2026-10-07',
   },
   {
     slug: 'target-circle-app',
@@ -501,6 +513,7 @@ RedCard 申请后享额外 5% 折扣：
     merchantSlug: 'target',
     tags: ['Target 折扣', 'Target Circle', '美国电商'],
     publishedAt: '2025-09-30',
+updatedAt: '2026-06-15',
   },
   {
     slug: 'uluta-beauty-skin-guide',
@@ -534,6 +547,7 @@ RedCard 申请后享额外 5% 折扣：
     merchantSlug: 'ulta-beauty',
     tags: ['Ulta Beauty 折扣', '美妆护肤', '美国电商'],
     publishedAt: '2025-10-12',
+updatedAt: '2026-10-07',
   },
   {
     // 2026-10-07: 新增 4 篇 SEO 博客（英文，干净 desc，不加 GKP 数据后缀，配合下周 meta 清理）
@@ -614,6 +628,7 @@ Verdict: buy big-ticket electronics on Black Friday, fashion and travel on Cyber
     merchantSlug: 'nike',
     tags: ['Black Friday 2026', 'Black Friday deals', 'Black Friday coupon codes', 'Cyber Monday', 'holiday shopping'],
     publishedAt: '2026-10-07',
+updatedAt: '2026-10-07',
   },
   {
     slug: 'shein-coupon-code-guide',
@@ -689,6 +704,7 @@ New shoppers get the strongest one-time offers (often 15-25% off the first order
     merchantSlug: 'shein',
     tags: ['SHEIN coupon codes', 'SHEIN sale calendar', 'SHEIN discounts', '11.11 deals', 'SHEIN coupons for existing customers'],
     publishedAt: '2026-10-07',
+updatedAt: '2026-10-07',
   },
   {
     slug: 'expedia-coupon-code',
@@ -763,6 +779,7 @@ Expedia runs One Key across Expedia, Hotels.com, and Vrbo:
     merchantSlug: 'expedia',
     tags: ['Expedia coupon codes', 'Expedia promo code', 'travel deals', 'One Key rewards', 'hotel discounts'],
     publishedAt: '2026-10-07',
+updatedAt: '2026-10-07',
   },
   {
     slug: 'nordstrom-rack-coupons',
@@ -826,6 +843,7 @@ Rack accepts the same generous Nordstrom returns (40 days, 45 for cardholders), 
     merchantSlug: 'nordstrom',
     tags: ['Nordstrom Rack coupons', 'Nordstrom Rack sale', 'Clear the Rack', 'designer outlet deals', 'clearance shopping'],
     publishedAt: '2026-10-07',
+updatedAt: '2026-10-23',
   },
   {
     slug: 'nike-sale-calendar-2026',
@@ -897,6 +915,7 @@ Treat Nike like a markdown retailer, not a coupon retailer. Watch the four windo
     merchantSlug: 'nike',
     tags: ['Nike sale', 'markdown calendar', 'when to buy'],
     publishedAt: '2026-10-23',
+updatedAt: '2026-10-23',
   },
   {
     slug: 'how-to-spot-fake-coupon-codes',
@@ -968,6 +987,7 @@ If you want a starting point, the <a href="/merchant/amazon">Amazon deals page</
     merchantSlug: 'amazon',
     tags: ['coupon safety', 'fake codes', 'checkout tips'],
     publishedAt: '2026-10-23',
+updatedAt: '2026-10-23',
   },
   {
     slug: 'asos-vs-nordstrom-price-gap',
@@ -1040,6 +1060,7 @@ Start from the <a href="/merchant/asos">ASOS deals page</a> and the <a href="/me
     merchantSlug: 'asos',
     tags: ['ASOS', 'Nordstrom', 'price comparison'],
     publishedAt: '2026-10-23',
+updatedAt: '2026-10-23',
   },
 ]
 
