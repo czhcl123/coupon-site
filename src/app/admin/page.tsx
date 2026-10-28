@@ -21,6 +21,7 @@ const t = {
     typeFixed: '固定金额（立减¥XX）',
     typeFreeShip: '免运费',
     typePercentOff: '折扣（如5折）',
+    typeOngoing: '官网持续更新（无固定折扣）',
     valueLabel: '折扣值 *',
     valuePlaceholder: '20',
     minPurchaseLabel: '最低消费（元）',
@@ -56,6 +57,7 @@ const t = {
     typeFixed: 'Fixed Amount (¥XX OFF)',
     typeFreeShip: 'Free Shipping',
     typePercentOff: 'Discount (e.g. 5折)',
+    typeOngoing: 'Always updated on official site (no fixed discount)',
     valueLabel: 'Discount Value *',
     valuePlaceholder: '20',
     minPurchaseLabel: 'Min. Spend (¥)',
@@ -270,6 +272,7 @@ function AdminContent() {
                   <option value="FIXED">{u('typeFixed', lang)}</option>
                   <option value="FREE_SHIP">{u('typeFreeShip', lang)}</option>
                   <option value="PERCENT_OFF">{u('typePercentOff', lang)}</option>
+                  <option value="ONGOING">{u('typeOngoing', lang)}</option>
                 </select>
               </div>
 

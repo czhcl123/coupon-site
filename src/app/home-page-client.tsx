@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { ongoingTitle, ongoingDesc } from '@/lib/ongoing'
 
 export interface Coupon {
   id: string
@@ -65,6 +66,8 @@ const t = {
     fixedOff: '立减 {n} 元',
     freeShipping: '免运费',
     upToOff: '低至 {n} 折',
+    ongoing: '官网持续更新',
+    ongoingHint: '实时折扣·以官网当日页面为准',
     footer1: '本站所有链接均为联盟链接，购物可能获得佣金支持本站发展',
     footer2: '© 2026 优惠总动员 · 仅供信息分享',
     lang: 'EN',
@@ -103,6 +106,8 @@ const t = {
     fixedOff: '¥{n} OFF',
     freeShipping: 'Free Shipping',
     upToOff: 'Up to {n} off',
+    ongoing: 'Always updated on the official site',
+    ongoingHint: 'Live discounts — check the brand page for today',
     footer1: 'Affiliate links — shopping may earn us a commission.',
     footer2: '© 2026 Coupon Hub · For information only',
     lang: '中文',
@@ -256,6 +261,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
       case 'FIXED': return u('fixedOff', { n: coupon.discountValue })
       case 'FREE_SHIP': return u('freeShipping')
       case 'PERCENT_OFF': return u('upToOff', { n: coupon.discountValue })
+      case 'ONGOING': return u('ongoing')
       default: return coupon.discountValue
     }
   }
@@ -381,9 +387,17 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
                     {formatDiscount(coupon)}
                   </span>
                   <div className="flex-1">
-                    <div className="font-semibold text-gray-800 leading-tight">{translateTitle(coupon.title)}</div>
-                    {coupon.description && (
-                      <div className="text-sm text-gray-400 mt-0.5">{translateTitle(coupon.description)}</div>
+                    <div className="font-semibold text-gray-800 leading-tight">
+                      {coupon.discountType === 'ONGOING'
+                        ? ongoingTitle(coupon.merchant.slug, lang, translateTitle(coupon.title))
+                        : translateTitle(coupon.title)}
+                    </div>
+                    {(coupon.description || coupon.discountType === 'ONGOING') && (
+                      <div className="text-sm text-gray-400 mt-0.5">
+                        {coupon.discountType === 'ONGOING'
+                          ? ongoingDesc(coupon.merchant.slug, lang, translateTitle(coupon.description || ''))
+                          : translateTitle(coupon.description || '')}
+                      </div>
                     )}
                   </div>
                 </div>
@@ -420,7 +434,9 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
                   </>
                 ) : (
                   <>
-                    <div className="text-xs text-gray-400 mb-2">{u('noCodeHint')}</div>
+                    <div className="text-xs text-gray-400 mb-2">
+                      {coupon.discountType === 'ONGOING' ? u('ongoingHint') : u('noCodeHint')}
+                    </div>
                     <a
                       href={coupon.merchant.affiliateUrl || `/merchant/${coupon.merchant.slug}`}
                       target="_blank"
@@ -433,7 +449,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
                 )}
 
                 <div className="flex items-center justify-between text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
-                  <span>{formatExpiry(coupon.expiresAt)}</span>
+                  <span>{coupon.discountType === 'ONGOING' ? u('ongoing') : formatExpiry(coupon.expiresAt)}</span>
                   <span>{u('peopleUsed', { n: coupon.clickCount })}</span>
                 </div>
               </div>
