@@ -80,6 +80,9 @@ const t = {
     upToOff: '低至 {n} 折',
     ongoing: '官网持续更新',
     ongoingHint: '实时折扣·以官网当日页面为准',
+    privacy: '隐私政策',
+    terms: '服务条款',
+    contact: '联系我们',
   },
   en: {
     siteTitle: '🏷️ Coupon Hub',
@@ -103,11 +106,14 @@ const t = {
     footer2: '© 2026 Coupon Hub · For information only',
     lang: '中文',
     switchLang: '中文',
-    fixedOff: '¥{n} OFF',
+    fixedOff: '￥{n} OFF',
     freeShipping: 'Free Shipping',
     upToOff: 'Up to {n} off',
     ongoing: 'Always updated on the official site',
-    ongoingHint: 'Live discounts - check the brand page for today',
+    ongoingHint: 'Live discounts — check the brand page for today',
+    privacy: 'Privacy Policy',
+    terms: 'Terms of Use',
+    contact: 'Contact',
   },
 }
 
@@ -163,23 +169,23 @@ function translateTitle(title: string, lang: Lang) {
     '全站20%OFF': '20% OFF Sitewide',
     '满50免运费': 'Free Shipping on ¥50+',
     'VIP会员25%OFF': 'VIP Members 25% OFF',
-    '满99减30': 'Spend ￥99, Get ￥30 OFF',
-    // 官网促销入口（ONGOING）—— 不编造具体折扣，只说明“持续更新”
-    'Amazon 官网 Deals 页 — 每日更新': 'Amazon Official Deals Page — Updated Daily',
-    'ASOS 官网 Clearance 页 — 持续更新': 'ASOS Official Clearance Page — Always Updated',
-    'Expedia 官网会员优惠页 — 持续更新': 'Expedia Official Member Offers — Always Updated',
-    'Nike 官网促销页 — 持续更新': 'Nike Official Sale Page — Always Updated',
-    'Adidas 官网促销页 — 持续更新': 'Adidas Official Sale Page — Always Updated',
-    'Best Buy 官网促销页 — 持续更新': 'Best Buy Official Deals Page — Always Updated',
-    'Booking.com 官网优惠页 — 持续更新': 'Booking.com Official Deals Page — Always Updated',
-    'Nordstrom 官网促销页 — 持续更新': 'Nordstrom Official Sale Page — Always Updated',
-    'SHEIN 官网促销页 — 持续更新': 'SHEIN Official Sale Page — Always Updated',
-    'Sephora 官网促销页 — 持续更新': 'Sephora Official Sale Page — Always Updated',
-    'Steam 官方特惠区 — 持续更新': 'Steam Official Specials — Always Updated',
-    'Target 官网优惠页 — 持续更新': 'Target Official Deals Page — Always Updated',
-    'Temu 官网促销页 — 持续更新': 'Temu Official Sale Page — Always Updated',
-    'Ulta Beauty 官网促销页 — 持续更新': 'Ulta Beauty Official Sale Page — Always Updated',
-    'Walmart 官网优惠页 — 持续更新': 'Walmart Official Deals Page — Always Updated',
+    '满99减30': 'Spend ¥99, Get ¥30 OFF',
+    // 官网促销入口(ONGOING)-- 不编造具体折扣,只说明"持续更新"
+    'Amazon 官网 Deals 页 - 每日更新': 'Amazon Official Deals Page - Updated Daily',
+    'ASOS 官网 Clearance 页 - 持续更新': 'ASOS Official Clearance Page - Always Updated',
+    'Expedia 官网会员优惠页 - 持续更新': 'Expedia Official Member Offers - Always Updated',
+    'Nike 官网促销页 - 持续更新': 'Nike Official Sale Page - Always Updated',
+    'Adidas 官网促销页 - 持续更新': 'Adidas Official Sale Page - Always Updated',
+    'Best Buy 官网促销页 - 持续更新': 'Best Buy Official Deals Page - Always Updated',
+    'Booking.com 官网优惠页 - 持续更新': 'Booking.com Official Deals Page - Always Updated',
+    'Nordstrom 官网促销页 - 持续更新': 'Nordstrom Official Sale Page - Always Updated',
+    'SHEIN 官网促销页 - 持续更新': 'SHEIN Official Sale Page - Always Updated',
+    'Sephora 官网促销页 - 持续更新': 'Sephora Official Sale Page - Always Updated',
+    'Steam 官方特惠区 - 持续更新': 'Steam Official Specials - Always Updated',
+    'Target 官网优惠页 - 持续更新': 'Target Official Deals Page - Always Updated',
+    'Temu 官网促销页 - 持续更新': 'Temu Official Sale Page - Always Updated',
+    'Ulta Beauty 官网促销页 - 持续更新': 'Ulta Beauty Official Sale Page - Always Updated',
+    'Walmart 官网优惠页 - 持续更新': 'Walmart Official Deals Page - Always Updated',
   }
   return map[title] || title
 }
@@ -812,6 +818,14 @@ export default async function MerchantPage({
       <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
         <p>{u('footer1', lang)}</p>
         <p className="mt-1">{u('footer2', lang)}</p>
+        {/* 2026-10-28: 联盟审核要求隐私政策 / 条款 / 联系页可达 */}
+        <p className="mt-2 text-xs text-gray-400">
+          <Link href="/privacy" className="hover:text-orange-500 transition-colors">{u('privacy', lang)}</Link>
+          <span className="text-gray-200 mx-1">·</span>
+          <Link href="/terms" className="hover:text-orange-500 transition-colors">{u('terms', lang)}</Link>
+          <span className="text-gray-200 mx-1">·</span>
+          <Link href="/contact" className="hover:text-orange-500 transition-colors">{u('contact', lang)}</Link>
+        </p>
       </footer>
     </div>
   )

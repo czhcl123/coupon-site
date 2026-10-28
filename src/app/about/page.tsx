@@ -16,7 +16,7 @@ export async function generateMetadata({
   }
   const descriptions = {
     zh: '了解优惠总动员:使命、数据来源、隐私政策、联系方式。15 个品牌实时优惠码聚合站,支持中英文双语。',
-    en: 'Learn about Coupon Hub: mission, data sources, affiliate disclosure, and contact information. Real-time coupon aggregator covering 15 brands across 5 categories, bilingual zh/en.',
+    en: 'Learn about Coupon Hub: mission, data sources, affiliate disclosure, and contact information. Promo code aggregator covering 15 brands across 4 categories, bilingual zh/en.',
   }
 
   return {
@@ -58,7 +58,7 @@ export default async function AboutPage({
         '@type': 'AboutPage',
         name: 'About CouponSite',
         description:
-          'Learn about CouponSite\'s mission, data sources, affiliate disclosure, verification methodology, and contact information. Real-time coupon aggregator covering 15 brands across fashion, electronics, travel, beauty, and pet supplies.',
+          'Learn about CouponSite\'s mission, data sources, affiliate disclosure, verification methodology, and contact information. Promo code and official sale page aggregator covering 15 brands across fashion, electronics, travel, and beauty.',
         url: `${base}/about`,
         inLanguage: ['en-US', 'zh-CN'],
         dateModified: '2026-10-23',
@@ -73,7 +73,7 @@ export default async function AboutPage({
         url: base,
         foundingDate: '2026',
         description:
-          'Real-time promo code and discount aggregator covering 15 brands across fashion, electronics, travel, beauty, and pet supplies. Bilingual English and Chinese. Verification process: 3-step (source, live, manual QA).',
+          'Promo code and official sale page aggregator covering 15 brands across fashion, electronics, travel, and beauty. Bilingual English and Chinese. Verification process: 3-step (source, live, manual QA).',
         knowsAbout: [
           'Coupon codes',
           'Promo codes',
@@ -83,12 +83,16 @@ export default async function AboutPage({
           'Online shopping deals',
         ],
         sameAs: [
+          // 同 layout.tsx：只保留实测存在的 profile
           'https://github.com/czhcl123',
-          'https://twitter.com/couponsite_hub',
-          'https://www.producthunt.com/products/couponsite',
-          'https://en.wikipedia.org/wiki/Coupon_code',
-          'https://www.wikidata.org/wiki/Q6514947',
         ],
+        contactPoint: {
+          '@type': 'ContactPoint',
+          contactType: 'customer support',
+          url: `${base}/contact`,
+          email: 'czhcl@hotmail.com',
+          availableLanguage: ['English', 'Chinese'],
+        },
       },
       {
         '@type': 'FAQPage',

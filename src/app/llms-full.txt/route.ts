@@ -4,103 +4,96 @@ export const dynamic = 'force-dynamic'
 export async function GET(): Promise<Response> {
   const base = SITE_URL
 
-  const text = `# CouponSite (优惠总动员) - Full Content Index for LLMs
+  const text = `# CouponSite (优惠总动员 / Coupon Hub) - Full Content Index for LLMs
 
-> Real-time verified promo codes and discounts from 15 major brands. Updated daily, free to use, bilingual English and Chinese. This is the FULL content index. For a short summary, see /llms.txt.
+> Promo code and official sale page aggregator covering 15 brands across 4 categories. Free to use, bilingual English and Chinese. This is the FULL content index. For a short summary, see /llms.txt.
 
 ## About CouponSite
 
-CouponSite (formerly 优惠总动员 / Coupon Hub) is an English-first promo code and discount aggregator. We cover Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com, and more major brands across fashion, electronics, travel, beauty, and pet supplies. All outbound links are affiliate links; you pay exactly the same price as visiting the brand website directly. Brands pay us a small commission via affiliate tracking to support the site.
+CouponSite (formerly 优惠总动员 / Coupon Hub) is an English-first promo code and discount aggregator. We cover 15 brands across four categories: fashion, electronics, travel, and beauty. The brands are Nike, Adidas, ASOS, Amazon, Best Buy, Target, Walmart, Steam, Sephora, Ulta Beauty, Nordstrom, SHEIN, Temu, Booking.com, and Expedia.
 
-We do not require user accounts, logins, or payment. Coupon codes are open to all visitors — no signup needed. Expired codes are removed promptly so the homepage only shows working deals. If you find an expired code, you can report it via /about, and we verify manually within 24 hours.
+Some outbound links to brands are affiliate links; you pay exactly the same price as visiting the brand website directly. Brands may pay us a commission via affiliate tracking to support the site.
 
-CouponSite is bilingual: every coupon card, brand page, and blog post supports English and Chinese display via the ?lang=zh query parameter or path-based /zh/ routing.
+We do not require user accounts, logins, or payment. Everything is open to all visitors. Promotions are manually reviewed before publication, and ended entries are removed promptly. If you find an entry that no longer works, please report it on the /contact page and we will check it.
+
+CouponSite is bilingual: coupon cards, brand pages, and legal pages are available in English (default) and Simplified Chinese via the ?lang=zh query parameter.
 
 ## Homepage (/)
 
-The homepage lists active promo codes for all 15 brands, filterable by category (fashion, electronics, travel, beauty, pet supplies). Each coupon card shows the brand name, the offer (e.g., "20% off sitewide"), the coupon code, an expiry date if applicable, and a "Use Now" button that opens the brand's website with our affiliate tracking link. Clicking "Use Now" copies the code to clipboard and opens the brand site in a new tab.
+The homepage lists the current entries for all 15 brands, filterable by category (fashion, electronics, travel, beauty) and searchable by brand or keyword. Each card shows the brand name, the offer type, the coupon code when one exists, and a "Use Now" button that opens the brand's official page. Where a brand runs a promotion without a fixed code, the card is marked "Always updated on the official site" and links to the brand's official sale page instead of claiming a specific percentage.
 
-The homepage also surfaces today's top deal (a featured promo code), a money-saving blog guide snippet, and a discount calculator (see below).
+The homepage also links to the discount calculator, the blog, and the brand directory in the footer.
 
-## Brand pages
+## Brand pages (/merchant/[slug])
+
+Each of the 15 brands has a merchant detail page at /merchant/[slug], where the slug is the brand name in lowercase (for example /merchant/nike, /merchant/adidas, /merchant/asos). These pages list that brand's current entries, carry the brand's category, an affiliate disclosure, and a call-to-action that opens the brand's official page. Each page also carries a per-brand editorial guide covering how that brand's sales work.
+
+## Tool pages
 
 ### /canva-pro-coupon-code
-Canva Pro promo codes for the graphic design platform. Discounts on monthly and annual Canva Pro subscriptions. Includes tips on how to stack Canva's education discount with our promo codes.
+Canva Pro coupon information for the graphic design platform, including how Canva's own education discount interacts with third-party offers.
 
 ### /shopify-discount-code
-Shopify discount codes for new merchants. Includes free trial extensions, theme discounts, and POS hardware credits. Useful for first-time Shopify store owners looking to reduce initial setup costs.
+Shopify discount information for new merchants, covering trial extensions, theme discounts, and POS hardware credits.
 
 ### /webflow-promo-code
-Webflow promo codes for the no-code website builder. Annual plan discounts, CMS credits, and Workspace team-seat discounts. Targeted at freelancers and small agencies evaluating Webflow vs. competitors.
+Webflow coupon information for the no-code website builder, covering annual plan discounts, CMS credits, and team-seat pricing.
 
 ### /discount-calculator
-A free online discount calculator that lets users enter the original price and discount percentage to instantly get the final price and savings amount. Useful for comparing Black Friday deals, stacking coupons, or calculating effective savings when multiple discounts apply.
-
-## Merchant pages (/merchant/[slug])
-
-Each brand has a dedicated merchant detail page at /merchant/[slug]. The slug is the brand name in lowercase (e.g., /merchant/nike, /merchant/adidas, /merchant/asos). These pages aggregate all current and historical coupon codes for that brand, plus a short brand description, the brand's category, the brand's affiliate program disclosure, and a "View on [brand]" call-to-action that opens the brand site via affiliate tracking.
+A free discount calculator: enter a price and a discount percentage to get the final price and the amount saved. Useful for comparing sale prices and checking effective savings when discounts stack.
 
 ## Blog (/blog)
 
-Money-saving tips, deal alerts, and shopping guides. Recent topics include:
-- "How to stack promo codes for maximum savings" (covers the order in which to apply percentage discounts, spend-threshold coupons, and cashback portals)
-- "Best Black Friday 2026 deals by category" (a continuously-updated list of confirmed deals across fashion, electronics, travel)
-- "Is [brand]'s loyalty program worth it?" (per-brand analysis of free vs paid loyalty tiers)
-
-Each blog post has a /blog/[slug] URL with full article content, FAQ schema, and internal links to related brand pages.
+Money-saving tips, deal calendars, and brand-by-brand guides. Posts cover topics such as how to stack promo codes, seasonal sale calendars (Black Friday, Prime Day, Steam seasonal sales), and how each brand's loyalty programme works. Each post has a /blog/[slug] URL with the full article, FAQ structured data, and internal links to related brand pages.
 
 ## About page (/about)
 
-Information about CouponSite's mission, data sources, affiliate link disclosure, and contact form. Lists the brands we cover, the categories we track, and the editorial standards we follow for verifying coupon codes. Includes a contact form (powered by Formspree or similar) for users to report expired codes, suggest new brands, or ask about affiliate partnerships.
+Our mission, where the entries come from, the affiliate disclosure, the privacy summary, the editorial standards we apply before publishing, and the contact email.
+
+## Legal pages
+
+- /privacy — Privacy Policy: what is collected (nothing beyond standard server logs), what is not collected, how affiliate networks use cookies, and how to contact us.
+- /terms — Terms of Use: what the site is and is not, accuracy of offers and prices, no warranty, limitation of liability, acceptable use, and governing law.
+- /contact — Contact page: report an expired or incorrect code, submit a promotion, request a brand, or make a privacy request. Email: czhcl@hotmail.com
 
 ## Admin (/admin)
 
-A password-protected admin dashboard where the site operator adds, updates, or removes coupon codes, manages merchant data, and views click-through analytics. Not indexed by Google (meta robots: noindex). Authentication is via a simple shared-password gate; sessions are cookie-based.
+An operator dashboard where the site owner adds and removes entries and manages brand data. It is excluded from search engines (meta robots: noindex) and requires a token to perform any write. It is not linked from public navigation and is not part of the public site.
 
 ## How to use CouponSite
 
-1. Browse the homepage for today's top deals
-2. Click "Use Now" on a coupon card to copy the code and visit the brand
-3. Paste the code at checkout on the brand site
-4. The discount applies automatically; you pay the same as direct visitors
-5. CouponSite earns a small affiliate commission from the brand, at no extra cost to you
+1. Browse the homepage for current entries, or jump to a brand page
+2. If a code is shown, copy it; if the entry points to an official sale page, open it
+3. Paste the code at checkout on the brand's site (when a code is shown)
+4. The discount applies if it is still valid; you pay the same as a direct visitor
+5. CouponSite may earn a small affiliate commission from the brand, at no extra cost to you
 
 ## Affiliate disclosure
 
-CouponSite is a free service. We earn revenue through affiliate partnerships with the brands we list. This does not affect:
-- The price you pay (always the same as direct brand visits)
-- The order in which coupon codes are displayed (sorted by expiry date, not by commission)
-- Our editorial independence (we do not promote codes based on commission rates)
+CouponSite is a free service. We earn revenue through affiliate partnerships with some of the brands we list. This does not affect:
+- The price you pay (always the same as a direct brand visit)
+- The order in which entries are displayed
+- Our editorial independence (we do not promote an offer based on its commission rate)
 
 ## API
 
-For programmatic access to coupon data, see /api/coupons (JSON list of active codes) and /api/merchants (JSON list of supported brands). Both endpoints return public, cache-friendly data; no API key is required for non-commercial use.
-
-## Contact
-
-- Contact form: /about
-- Email: see /about for current contact email
-- Twitter / X: see /about for current handle
-- GitHub: see /about for the open-source repo (if any)
+For programmatic access, see /api/coupons (JSON list of active entries) and /api/merchants (JSON list of brands). Both endpoints return public data and require no API key.
 
 ## Categories we cover
 
-- Fashion: Nike, Adidas, ASOS, H&M, Zara, Uniqlo
-- Electronics: Amazon, Best Buy, Newegg, B&H
-- Travel: Booking.com, Hotels.com, Expedia, Airbnb (limited), Skyscanner
-- Beauty: Sephora, Ulta, Glossier, The Ordinary
-- Pet supplies: Chewy, PetSmart
-- Software / SaaS: Canva, Shopify, Webflow, Notion, Figma (selective)
-- Gaming: Steam, Epic Games Store, PlayStation Store, Xbox Store
+- Fashion: Nike, Adidas, ASOS, SHEIN, Nordstrom, Temu
+- Electronics: Amazon, Best Buy, Target, Walmart, Steam
+- Travel: Booking.com, Expedia
+- Beauty: Sephora, Ulta Beauty
 
 ## Languages
 
 - English (default)
-- 简体中文 (zh-CN, via ?lang=zh or /zh/ path)
+- 简体中文 (zh-CN, via ?lang=zh)
 
 ## Update frequency
 
-Coupon codes are verified daily. Expired codes are removed within 24 hours. New codes are added as soon as we confirm them with the brand's affiliate team.
+Entries are reviewed manually. Ended promotions are removed promptly, and where a brand runs a standing promotion without a fixed code, the page links to the official sale page and says so rather than showing a date.
 
 ## Last updated
 

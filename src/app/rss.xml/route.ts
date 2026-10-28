@@ -10,7 +10,7 @@ export async function GET(): Promise<Response> {
     {
       title: '优惠总动员 - 15 个品牌实时优惠券折扣码',
       url: base,
-      description: '中文优惠码聚合站:Nike、Adidas、ASOS、Sephora、Steam、Booking.com 等。覆盖时尚服饰、电子产品、旅行酒店、美妆护肤、宠物用品 5 大类。',
+      description: '中文优惠码聚合站:Nike、Adidas、ASOS、Sephora、Steam、Booking.com 等。覆盖时尚服饰、电子产品、旅行酒店、美妆护肤 4 大类。',
       date: now,
     },
     {

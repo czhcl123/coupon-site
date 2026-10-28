@@ -187,9 +187,8 @@ export default async function ArticlePage({
       'Brand partnerships',
     ],
     sameAs: [
+      // 同 layout.tsx：只保留实测存在的 profile
       'https://github.com/czhcl123',
-      'https://twitter.com/couponsite_hub',
-      'https://www.producthunt.com/products/couponsite',
     ],
     member: {
       '@type': 'Person',

@@ -47,7 +47,7 @@ const organizationSchema = {
   alternateName: 'Coupon Hub',
   url: `${SITE_URL}`,
   description:
-    'CouponSite is a real-time promo code and discount aggregator covering 15 major brands across fashion, electronics, travel, beauty and pet supplies. Free to use, bilingual zh/en, updated daily.',
+    'CouponSite is a promo code and official sale page aggregator covering 15 major brands across fashion, electronics, travel, and beauty. Free to use, bilingual zh/en, updated daily.',
   foundingDate: '2026',
   knowsAbout: [
     'Coupon codes',
@@ -62,16 +62,15 @@ const organizationSchema = {
     'Beauty and skincare discounts',
   ],
   sameAs: [
+    // 只保留实测存在的 profile。twitter / producthunt / wikipedia / wikidata
+    // 无法证实（网络受限 + 可能从未创建），sameAs 是强声明，不写未证实的链接。
     'https://github.com/czhcl123',
-    'https://twitter.com/couponsite_hub',
-    'https://www.producthunt.com/products/couponsite',
-    'https://en.wikipedia.org/wiki/Coupon_code',
-    'https://www.wikidata.org/wiki/Q6514947',
   ],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
-    url: `${SITE_URL}/about`,
+    url: `${SITE_URL}/contact`,
+    email: 'czhcl@hotmail.com',
     availableLanguage: ['English', 'Chinese'],
   },
 };
@@ -144,8 +143,8 @@ const webAppSchema = {
   featureList: [
     'Coupon codes listed only after verification',
     'Direct links to official brand sale pages',
-    '15 brands across 5 categories',
-    '5 category filters',
+    '15 brands across 4 categories',
+    '4 category filters',
     'Bilingual English and Chinese support',
     'One-click copy coupon codes',
     'Discount calculator',

@@ -36,6 +36,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.5,
     },
+    // 2026-10-28: 联盟审核硬性要求 —— 隐私政策 / 服务条款 / 联系页
+    {
+      url: `${base}/privacy`,
+      lastModified: new Date('2026-10-28'),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${base}/terms`,
+      lastModified: new Date('2026-10-28'),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${base}/contact`,
+      lastModified: new Date('2026-10-28'),
+      changeFrequency: 'monthly',
+      priority: 0.4,
+    },
     {
       url: `${base}/blog`,
       lastModified: new Date(),

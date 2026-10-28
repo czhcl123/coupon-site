@@ -1,6 +1,6 @@
 # CouponSite (formerly 优惠总动员 / Coupon Hub)
 
-> English-first promo code aggregator: real-time verified discount codes from Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and 20+ more top brands across fashion, electronics, travel, beauty, and pet supplies. Updated daily, free to use. Bilingual English/Chinese. All outbound links are affiliate links; merchants pay us a small commission at no extra cost to you.
+> English-first promo code aggregator: official promotions, discount codes, and brand sale pages from 15 brands including Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and Walmart across fashion, electronics, travel, and beauty. Free to use. Bilingual English/Chinese. Some outbound links are affiliate links; merchants pay us a small commission at no extra cost to you.
 
 ## Important: data is real-time
 Coupon codes may expire or be removed at any time. For the latest working codes, always visit the homepage or the specific merchant page:
@@ -11,30 +11,30 @@ Coupon codes may expire or be removed at any time. For the latest working codes,
 
 ## Fashion
 
-- [Nike promo codes](https://coupons.getpracticaltools.com/merchant/nike): Exclusive 20% OFF, free shipping on ¥599+
-- [Adidas discount codes](https://coupons.getpracticaltools.com/merchant/adidas): Member 30% OFF
-- [ASOS student discount](https://coupons.getpracticaltools.com/merchant/asos): 15% OFF for students
-- [Nordstrom coupons](https://coupons.getpracticaltools.com/merchant/nordstrom): 20% OFF sitewide
-- [SHEIN promo codes](https://coupons.getpracticaltools.com/merchant/shein): New customer welcome deals
-- [Temu coupons](https://coupons.getpracticaltools.com/merchant/temu): 50% OFF for new users
-- [Ulta Beauty coupons](https://coupons.getpracticaltools.com/merchant/ulta-beauty): 25% OFF sitewide, VIP 25% OFF
+- [Nike promo codes](https://coupons.getpracticaltools.com/merchant/nike): Official sale page — discounts change with official promotions
+- [Adidas discount codes](https://coupons.getpracticaltools.com/merchant/adidas): Official sale page — discounts change with official promotions
+- [ASOS student discount](https://coupons.getpracticaltools.com/merchant/asos): Official Clearance page — markdowns change with official promotions
+- [Nordstrom coupons](https://coupons.getpracticaltools.com/merchant/nordstrom): Official sale page — discounts change with official promotions
+- [SHEIN promo codes](https://coupons.getpracticaltools.com/merchant/shein): Official sale page — discounts change with official promotions
+- [Temu coupons](https://coupons.getpracticaltools.com/merchant/temu): Official sale page — discounts change with official promotions
+- [Ulta Beauty coupons](https://coupons.getpracticaltools.com/merchant/ulta-beauty): Official sale page — discounts change with official promotions
 
 ## Electronics
 
-- [Amazon discount codes](https://coupons.getpracticaltools.com/merchant/amazon): Daily multi-category deals
-- [Best Buy coupons](https://coupons.getpracticaltools.com/merchant/bestbuy): Spend ¥1000, save ¥100
-- [Target coupons](https://coupons.getpracticaltools.com/merchant/target): 20% OFF home goods
-- [Walmart promo codes](https://coupons.getpracticaltools.com/merchant/walmart): Multi-category deals
-- [Steam game deals](https://coupons.getpracticaltools.com/merchant/steam): Platform-wide sales
+- [Amazon discount codes](https://coupons.getpracticaltools.com/merchant/amazon): Official Deals page — updated daily
+- [Best Buy coupons](https://coupons.getpracticaltools.com/merchant/bestbuy): Official deals page — discounts change with official promotions
+- [Target coupons](https://coupons.getpracticaltools.com/merchant/target): Official deals page — discounts change with official promotions
+- [Walmart promo codes](https://coupons.getpracticaltools.com/merchant/walmart): Official deals page — discounts change with official promotions
+- [Steam game deals](https://coupons.getpracticaltools.com/merchant/steam): Official specials section — markdowns change with official promotions
 
 ## Travel
 
-- [Booking.com hotel deals](https://coupons.getpracticaltools.com/merchant/booking-com): 15% OFF hotel bookings
-- [Expedia travel coupons](https://coupons.getpracticaltools.com/merchant/expedia): 25% OFF hotels, ¥50 OFF flights ¥1000+
+- [Booking.com hotel deals](https://coupons.getpracticaltools.com/merchant/booking-com): Official deals page — discounts change with official promotions
+- [Expedia travel coupons](https://coupons.getpracticaltools.com/merchant/expedia): Official member offers — discounts change with official promotions
 
 ## Beauty
 
-- [Sephora promo codes](https://coupons.getpracticaltools.com/merchant/sephora): 20% OFF sitewide, VIP 25% OFF
+- [Sephora promo codes](https://coupons.getpracticaltools.com/merchant/sephora): Official sale page — discounts change with official promotions
 
 ## Tools
 
@@ -44,6 +44,9 @@ Coupon codes may expire or be removed at any time. For the latest working codes,
 ## About this site
 
 - [About CouponSite](https://coupons.getpracticaltools.com/about): Mission, data sources, affiliate disclosure, privacy policy, contact.
+- [Privacy Policy](https://coupons.getpracticaltools.com/privacy): What data we collect, what we do not, affiliate-link cookies.
+- [Terms of Use](https://coupons.getpracticaltools.com/terms): Accuracy of offers, no warranty, acceptable use, governing law.
+- [Contact](https://coupons.getpracticaltools.com/contact): Report an expired code, submit a promotion, ask a question.
 - [AI site summary (JSON)](https://coupons.getpracticaltools.com/ai/summary.json): Machine-readable site description.
 - [AI FAQ (JSON)](https://coupons.getpracticaltools.com/ai/faq.json): Structured FAQ for AI engine citation.
 - [AI crawler policy](https://coupons.getpracticaltools.com/.well-known/ai.txt): Access policy for AI engines.
