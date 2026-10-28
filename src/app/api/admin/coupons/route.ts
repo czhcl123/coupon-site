@@ -1,8 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { query } from '@/lib/db'
 
-// POST /api/admin/coupons — 创建优惠券
+// POST /api/admin/coupons — 创建优惠券（写入生产库，必须鉴权）
 export async function POST(req: NextRequest) {
+  const expected = process.env.ADMIN_TOKEN
+  if (!expected) {
+    return NextResponse.json({ error: 'Not found' }, { status: 404 })
+  }
+  const provided = req.headers.get('x-admin-token') || ''
+  if (provided !== expected) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+
   try {
     const body = await req.json()
     const { code, title, description, discountType, discountValue, minPurchase, expiresAt, merchantId, categoryId, isExclusive } = body

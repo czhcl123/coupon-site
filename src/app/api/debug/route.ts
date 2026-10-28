@@ -1,12 +1,34 @@
 import { NextResponse } from 'next/server'
 import mysql from 'mysql2/promise'
 
-export async function GET() {
+// 仅在设置了 ADMIN_TOKEN 时才开放；未设置则直接 404（默认安全）
+export async function GET(req: Request) {
+  const expected = process.env.ADMIN_TOKEN
+  if (!expected) {
+    return NextResponse.json({ error: 'Not found' }, { status: 404 })
+  }
+  const provided = req.headers.get('x-admin-token') || ''
+  if (provided !== expected) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+
   const url = process.env.DATABASE_URL
   const tidbPw = process.env.TIDB_PASSWORD
 
+  // 只暴露掩码后的形态，绝不回显原始 DATABASE_URL / 密码
+  const maskedUrl = (() => {
+    if (!url) return null
+    try {
+      const u = new URL(url)
+      if (u.password) u.password = '***' + u.password.slice(-4)
+      return u.toString()
+    } catch {
+      return 'invalid-url'
+    }
+  })()
+
   const result: Record<string, unknown> = {
-    raw_DATABASE_URL: url,
+    masked_DATABASE_URL: maskedUrl,
     raw_TIDB_PASSWORD: tidbPw ? '***' + tidbPw.slice(-4) : null,
     parsed: null as Record<string, string> | null,
     connectionTest: null,

@@ -35,6 +35,9 @@ const t = {
     errorRequired: '请填写必填项：商家、标题、折扣值',
     errorGeneral: '❌ 失败: {msg}',
     errorNetwork: '❌ 网络错误，请重试',
+    tokenLabel: '管理口令',
+    tokenPlaceholder: '粘贴 ADMIN_TOKEN',
+    tokenMissing: '❌ 请先填写管理口令',
     lang: 'EN',
     switchLang: 'EN',
   },
@@ -67,6 +70,9 @@ const t = {
     errorRequired: 'Please fill in required fields: merchant, title, discount value',
     errorGeneral: '❌ Failed: {msg}',
     errorNetwork: '❌ Network error, please retry',
+    tokenLabel: 'Admin Token',
+    tokenPlaceholder: 'Paste ADMIN_TOKEN',
+    tokenMissing: '❌ Please enter the admin token first',
     lang: '中文',
     switchLang: '中文',
   },
@@ -108,6 +114,7 @@ function AdminContent() {
   const [merchants, setMerchants] = useState<Merchant[]>([])
   const [msg, setMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
   const [loading, setLoading] = useState(false)
+  const [token, setToken] = useState('')
   const [form, setForm] = useState<FormData>({
     code: '',
     title: '',
@@ -133,6 +140,10 @@ function AdminContent() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    if (!token.trim()) {
+      setMsg({ type: 'error', text: u('tokenMissing', lang) })
+      return
+    }
     if (!form.merchantId || !form.title || !form.discountValue) {
       setMsg({ type: 'error', text: u('errorRequired', lang) })
       return
@@ -144,7 +155,7 @@ function AdminContent() {
     try {
       const res = await fetch('/api/admin/coupons', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'x-admin-token': token.trim() },
         body: JSON.stringify({
           ...form,
           discountValue: form.discountValue,
@@ -191,6 +202,19 @@ function AdminContent() {
         <div className="bg-white rounded-xl shadow-sm p-6">
           <h2 className="font-semibold text-gray-700 mb-4">{u('sectionTitle', lang)}</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* 管理口令 */}
+            <div>
+              <label className="block text-sm font-medium text-gray-600 mb-1">{u('tokenLabel', lang)}</label>
+              <input
+                type="password"
+                value={token}
+                onChange={(e) => setToken(e.target.value)}
+                placeholder={u('tokenPlaceholder', lang)}
+                className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                required
+              />
+            </div>
+
             {/* 商家 */}
             <div>
               <label className="block text-sm font-medium text-gray-600 mb-1">{u('selectMerchant', lang)} *</label>
