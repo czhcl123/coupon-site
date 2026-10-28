@@ -455,7 +455,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <a
-              href="https://tools-site-production.up.railway.app/discount-calculator"
+              href="https://getpracticaltools.com/discount-calculator"
               className="block bg-white rounded-xl p-4 border border-orange-100 hover:border-orange-300 hover:shadow-md transition-all"
             >
               <div className="text-2xl mb-1">🧮</div>
@@ -467,7 +467,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
               </div>
             </a>
             <a
-              href="https://tools-site-production.up.railway.app/word-counter"
+              href="https://getpracticaltools.com/word-counter"
               className="block bg-white rounded-xl p-4 border border-orange-100 hover:border-orange-300 hover:shadow-md transition-all"
             >
               <div className="text-2xl mb-1">📝</div>
@@ -479,7 +479,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
               </div>
             </a>
             <a
-              href="https://tools-site-production.up.railway.app/json-formatter"
+              href="https://getpracticaltools.com/json-formatter"
               className="block bg-white rounded-xl p-4 border border-orange-100 hover:border-orange-300 hover:shadow-md transition-all"
             >
               <div className="text-2xl mb-1">🔧</div>
@@ -493,7 +493,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
           </div>
           <p className="text-xs text-gray-400 mt-4 text-center">
             {lang === 'zh' ? '工具来自 ' : 'Tools from '}
-            <a href="https://tools-site-production.up.railway.app" className="underline hover:text-orange-500">
+            <a href="https://getpracticaltools.com" className="underline hover:text-orange-500">
               Practical Tools
             </a>
           </p>

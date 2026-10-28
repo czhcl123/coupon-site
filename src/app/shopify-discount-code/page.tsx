@@ -150,8 +150,8 @@ const en = {
     h2: 'Calculators and tools for Shopify merchants',
     p: 'Our sister site has free browser tools that work alongside your store \u2014 no login required.',
     links: [
-      { label: 'Discount Calculator (price-after-promo math)', href: 'https://tools-site-production.up.railway.app/discount-calculator' },
-      { label: 'Invoice Generator (wholesale order invoices)', href: 'https://tools-site-production.up.railway.app/invoice-generator' },
+      { label: 'Discount Calculator (price-after-promo math)', href: 'https://getpracticaltools.com/discount-calculator' },
+      { label: 'Invoice Generator (wholesale order invoices)', href: 'https://getpracticaltools.com/invoice-generator' },
     ],
   },
   footer: {
@@ -306,8 +306,8 @@ const zh = {
     h2: 'Shopify 商家计算与工具',
     p: '我们的姊妹站有免登录的浏览器工具,可以与你的店铺配合使用。',
     links: [
-      { label: '折扣计算器(促销后实际价格)', href: 'https://tools-site-production.up.railway.app/discount-calculator' },
-      { label: '发票生成器(批发订单发票)', href: 'https://tools-site-production.up.railway.app/invoice-generator' },
+      { label: '折扣计算器(促销后实际价格)', href: 'https://getpracticaltools.com/discount-calculator' },
+      { label: '发票生成器(批发订单发票)', href: 'https://getpracticaltools.com/invoice-generator' },
     ],
   },
   footer: {

@@ -153,8 +153,8 @@ const en = {
     h2: 'Design tools in the same family',
     p: 'If you are evaluating design platforms, our sister site has free browser tools you can use alongside Canva \u2014 no signup required.',
     links: [
-      { label: 'JSON Formatter (validate Canva export files)', href: 'https://tools-site-production.up.railway.app/json-formatter' },
-      { label: 'Word Counter (prep caption copy)', href: 'https://tools-site-production.up.railway.app/word-counter' },
+      { label: 'JSON Formatter (validate Canva export files)', href: 'https://getpracticaltools.com/json-formatter' },
+      { label: 'Word Counter (prep caption copy)', href: 'https://getpracticaltools.com/word-counter' },
     ],
   },
   footer: {
@@ -312,8 +312,8 @@ const zh = {
     h2: '同系列设计工具推荐',
     p: '如果你在评估设计平台,我们的姊妹站有免登录的浏览器工具,可以与 Canva 配合使用。',
     links: [
-      { label: 'JSON 格式化器(校验 Canva 导出文件)', href: 'https://tools-site-production.up.railway.app/json-formatter' },
-      { label: '字数统计(准备文案配文)', href: 'https://tools-site-production.up.railway.app/word-counter' },
+      { label: 'JSON 格式化器(校验 Canva 导出文件)', href: 'https://getpracticaltools.com/json-formatter' },
+      { label: '字数统计(准备文案配文)', href: 'https://getpracticaltools.com/word-counter' },
     ],
   },
   footer: {
