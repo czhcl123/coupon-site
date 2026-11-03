@@ -232,20 +232,20 @@ export default function HomePageClient() {
       {/* 头部 */}
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
             <a href={`/?lang=${lang}`} aria-label="优惠总动员 Logo - 2026最新折扣码网站" className="text-2xl font-bold text-orange-500 hover:text-orange-600 transition-colors">{t[lang].title}</a>
-            <div className="flex items-center gap-4">
-              <a href={`/blog?lang=${lang}`} className="text-sm text-gray-400 hover:text-gray-600">{t[lang].blog}</a>
+            <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-4">
+              <a href={`/blog?lang=${lang}`} className="text-sm whitespace-nowrap text-gray-400 hover:text-gray-600">{t[lang].blog}</a>
               <button
                 onClick={handleLangSwitch}
-                className="text-sm px-3 py-1 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors"
+                className="text-sm whitespace-nowrap px-3 py-1 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors"
               >
                 {t[lang].lang}
               </button>
-              <a href={`/discount-calculator?lang=${lang}`} className="text-sm px-3 py-1 bg-orange-100 text-orange-500 rounded-full hover:bg-orange-200 transition-colors font-medium">
+              <a href={`/discount-calculator?lang=${lang}`} className="text-sm whitespace-nowrap px-3 py-1 bg-orange-100 text-orange-500 rounded-full hover:bg-orange-200 transition-colors font-medium">
                 {t[lang].discountCalculator}
               </a>
-              <a href={`/admin?lang=${lang}`} className="text-sm text-gray-400 hover:text-gray-600">
+              <a href={`/admin?lang=${lang}`} className="text-sm whitespace-nowrap text-gray-400 hover:text-gray-600">
                 {t[lang].admin}
               </a>
             </div>

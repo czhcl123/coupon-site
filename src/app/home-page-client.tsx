@@ -288,20 +288,20 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
     <div className="min-h-screen bg-gray-50">
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
             <h1 className="text-2xl font-bold text-orange-500">{u('title')}</h1>
-            <div className="flex items-center gap-4">
-              <a href="/blog" className="text-sm text-gray-400 hover:text-gray-600">{u('blog')}</a>
+            <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-4">
+              <a href="/blog" className="text-sm whitespace-nowrap text-gray-400 hover:text-gray-600">{u('blog')}</a>
               <button
                 onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
-                className="text-sm px-3 py-1 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors"
+                className="text-sm whitespace-nowrap px-3 py-1 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors"
               >
                 {u('lang')}
               </button>
-              <a href="/discount-calculator" className="text-sm px-3 py-1 bg-orange-100 text-orange-500 rounded-full hover:bg-orange-200 transition-colors font-medium">
+              <a href="/discount-calculator" className="text-sm whitespace-nowrap px-3 py-1 bg-orange-100 text-orange-500 rounded-full hover:bg-orange-200 transition-colors font-medium">
                 {u('discountCalculator')}
               </a>
-              <a href="/admin" className="text-sm text-gray-400 hover:text-gray-600">
+              <a href="/admin" className="text-sm whitespace-nowrap text-gray-400 hover:text-gray-600">
                 {u('admin')}
               </a>
             </div>

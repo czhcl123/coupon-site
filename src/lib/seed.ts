@@ -7,7 +7,7 @@ const merchants = [
   {
     name: 'Nike',
     slug: 'nike',
-    logo: 'https://logo.clearbit.com/nike.com',
+    logo: '/logos/nike.png',
     affiliateUrl: 'https://www.nike.com/?afmc=1&cid=Affiliate',
     website: 'https://www.nike.com',
     description: '全球领先的运动品牌',
@@ -36,7 +36,7 @@ const merchants = [
   {
     name: 'ASOS',
     slug: 'asos',
-    logo: 'https://logo.clearbit.com/asos.com',
+    logo: '/logos/asos.png',
     affiliateUrl: 'https://www.asos.com/?afmc=1',
     website: 'https://www.asos.com',
     description: '英国时尚电商',
@@ -63,7 +63,7 @@ const merchants = [
   {
     name: 'Best Buy',
     slug: 'bestbuy',
-    logo: 'https://logo.clearbit.com/bestbuy.com',
+    logo: '/logos/bestbuy.png',
     affiliateUrl: 'https://www.bestbuy.com/?afmc=1',
     website: 'https://www.bestbuy.com',
     description: '美国电子产品零售巨头',
@@ -84,7 +84,7 @@ const merchants = [
   {
     name: 'Booking.com',
     slug: 'booking-com',
-    logo: 'https://logo.clearbit.com/booking.com',
+    logo: '/logos/booking-com.png',
     affiliateUrl: 'https://www.booking.com/?afmc=1',
     website: 'https://www.booking.com',
     description: '全球最大在线旅行预订平台',

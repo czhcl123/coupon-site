@@ -93,10 +93,10 @@ async function setup() {
 
   // 插入商家
   const merchants = [
-    { id: 'm_nike', name: 'Nike', slug: 'nike', logo: 'https://logo.clearbit.com/nike.com', affiliateUrl: 'https://www.nike.com/?afmc=1&cid=Affiliate', website: 'https://www.nike.com', description: '全球领先的运动品牌' },
-    { id: 'm_asos', name: 'ASOS', slug: 'asos', logo: 'https://logo.clearbit.com/asos.com', affiliateUrl: 'https://www.asos.com/?afmc=1', website: 'https://www.asos.com', description: '英国时尚电商' },
-    { id: 'm_bestbuy', name: 'Best Buy', slug: 'bestbuy', logo: 'https://logo.clearbit.com/bestbuy.com', affiliateUrl: 'https://www.bestbuy.com/?afmc=1', website: 'https://www.bestbuy.com', description: '美国电子产品零售巨头' },
-    { id: 'm_booking', name: 'Booking.com', slug: 'booking-com', logo: 'https://logo.clearbit.com/booking.com', affiliateUrl: 'https://www.booking.com/?afmc=1', website: 'https://www.booking.com', description: '全球最大在线旅行预订平台' },
+    { id: 'm_nike', name: 'Nike', slug: 'nike', logo: '/logos/nike.png', affiliateUrl: 'https://www.nike.com/?afmc=1&cid=Affiliate', website: 'https://www.nike.com', description: '全球领先的运动品牌' },
+    { id: 'm_asos', name: 'ASOS', slug: 'asos', logo: '/logos/asos.png', affiliateUrl: 'https://www.asos.com/?afmc=1', website: 'https://www.asos.com', description: '英国时尚电商' },
+    { id: 'm_bestbuy', name: 'Best Buy', slug: 'bestbuy', logo: '/logos/bestbuy.png', affiliateUrl: 'https://www.bestbuy.com/?afmc=1', website: 'https://www.bestbuy.com', description: '美国电子产品零售巨头' },
+    { id: 'm_booking', name: 'Booking.com', slug: 'booking-com', logo: '/logos/booking-com.png', affiliateUrl: 'https://www.booking.com/?afmc=1', website: 'https://www.booking.com', description: '全球最大在线旅行预订平台' },
   ]
 
   for (const m of merchants) {
