@@ -1,6 +1,6 @@
 # CouponSite (formerly 优惠总动员 / Coupon Hub)
 
-> English-first promo code aggregator: official promotions, discount codes, and brand sale pages from 15 brands including Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and Walmart across fashion, electronics, travel, and beauty. Free to use. Bilingual English/Chinese. Some outbound links are affiliate links; merchants pay us a small commission at no extra cost to you.
+> English-first promo code aggregator: official promotions, discount codes, and brand sale pages from 15 brands including Nike, Adidas, ASOS, Amazon, Sephora, Steam, Booking.com and Walmart across fashion, electronics, travel, and beauty. Free to use. Bilingual English/Chinese. Outbound links point to the official website of the brand. We do not earn a commission from them and we do not add anything to the price.
 
 ## Important: data is real-time
 Coupon codes may expire or be removed at any time. For the latest working codes, always visit the homepage or the specific merchant page:
@@ -43,7 +43,7 @@ Coupon codes may expire or be removed at any time. For the latest working codes,
 
 ## About this site
 
-- [About CouponSite](https://coupons.getpracticaltools.com/about): Mission, data sources, affiliate disclosure, privacy policy, contact.
+- [About CouponSite](https://coupons.getpracticaltools.com/about): Mission, data sources, link disclosure, privacy policy, contact.
 - [Privacy Policy](https://coupons.getpracticaltools.com/privacy): What data we collect, what we do not, affiliate-link cookies.
 - [Terms of Use](https://coupons.getpracticaltools.com/terms): Accuracy of offers, no warranty, acceptable use, governing law.
 - [Contact](https://coupons.getpracticaltools.com/contact): Report an expired code, submit a promotion, ask a question.
