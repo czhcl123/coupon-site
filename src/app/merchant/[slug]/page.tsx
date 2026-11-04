@@ -79,6 +79,7 @@ const t = {
     freeShipping: '免运费',
     upToOff: '低至 {n} 折',
     ongoing: '官网持续更新',
+    ongoingBadge: '实时优惠',
     ongoingHint: '实时折扣·以官网当日页面为准',
     privacy: '隐私政策',
     terms: '服务条款',
@@ -110,6 +111,7 @@ const t = {
     freeShipping: 'Free Shipping',
     upToOff: 'Up to {n} off',
     ongoing: 'Always updated on the official site',
+    ongoingBadge: 'Live deal',
     ongoingHint: 'Live discounts — check the brand page for today',
     privacy: 'Privacy Policy',
     terms: 'Terms of Use',
@@ -133,7 +135,7 @@ function formatDiscount(discountType: string, discountValue: string, lang: Lang)
     case 'FIXED': return uVars('fixedOff', { n: discountValue }, lang)
     case 'FREE_SHIP': return u('freeShipping', lang)
     case 'PERCENT_OFF': return uVars('upToOff', { n: discountValue }, lang)
-    case 'ONGOING': return uVars('ongoing', {}, lang)
+    case 'ONGOING': return uVars('ongoingBadge', {}, lang)
     default: return discountValue
   }
 }
@@ -756,10 +758,16 @@ export default async function MerchantPage({
                   dangerouslySetInnerHTML={{ __html: JSON.stringify(couponSchema) }}
                 />
                 <div className="flex items-start gap-3 mb-3">
-                  <span className="text-3xl font-bold text-orange-700">
+                  <span
+                    className={
+                      coupon.discountType === 'ONGOING'
+                        ? 'shrink-0 whitespace-nowrap rounded-full bg-orange-100 px-2.5 py-1 text-xs font-semibold text-orange-700'
+                        : 'shrink-0 whitespace-nowrap text-3xl font-bold text-orange-700'
+                    }
+                  >
                     {formatDiscount(coupon.discountType, coupon.discountValue, lang)}
                   </span>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <div className="font-semibold text-gray-800 leading-tight">{displayTitle}</div>
                     {displayDesc && (
                       <div className="text-sm text-gray-500 mt-0.5">{displayDesc}</div>

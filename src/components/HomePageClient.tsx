@@ -64,6 +64,7 @@ const t = {
     fixedOff: '立减 {n} 元',
     freeShipping: '免运费',
     upToOff: '低至 {n} 折',
+    ongoingBadge: '实时优惠',
     footer1: '本站所有链接均为联盟链接，购物可能获得佣金支持本站发展',
     footer2: '© 2026 优惠总动员 · 仅供信息分享',
     lang: 'EN',
@@ -100,6 +101,7 @@ const t = {
     fixedOff: '¥{n} OFF',
     freeShipping: 'Free Shipping',
     upToOff: 'Up to {n} off',
+    ongoingBadge: 'Live deal',
     footer1: 'Affiliate links — shopping may earn us a commission.',
     footer2: '© 2026 Coupon Hub · For information only',
     lang: '中文',
@@ -153,6 +155,7 @@ function formatDiscount(coupon: Coupon) {
     case 'FIXED': return u('fixedOff', { n: coupon.discountValue })
     case 'FREE_SHIP': return u('freeShipping')
     case 'PERCENT_OFF': return u('upToOff', { n: coupon.discountValue })
+    case 'ONGOING': return u('ongoingBadge')
     default: return coupon.discountValue
   }
 }
@@ -397,10 +400,16 @@ export default function HomePageClient() {
 
                   {/* 折扣标签 */}
                   <div className="flex items-start gap-3 mb-3">
-                    <span className="text-3xl font-bold text-orange-700">
+                    <span
+                      className={
+                        coupon.discountType === 'ONGOING'
+                          ? 'shrink-0 whitespace-nowrap rounded-full bg-orange-100 px-2.5 py-1 text-xs font-semibold text-orange-700'
+                          : 'shrink-0 whitespace-nowrap text-3xl font-bold text-orange-700'
+                      }
+                    >
                       {formatDiscount(coupon)}
                     </span>
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <div className="font-semibold text-gray-800 leading-tight">{translateTitle(coupon.title)}</div>
                       {coupon.description && (
                         <div className="text-sm text-gray-600 mt-0.5">{translateTitle(coupon.description)}</div>
