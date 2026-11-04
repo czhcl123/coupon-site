@@ -22,7 +22,7 @@ export async function GET(): Promise<Response> {
     {
       title: '关于我们 - 优惠总动员',
       url: `${base}/about`,
-      description: '了解优惠总动员的使命、数据来源、联盟链接说明和联系方式。',
+      description: '了解优惠总动员的使命、数据来源、链接说明和联系方式。',
       date: now,
     },
   ]

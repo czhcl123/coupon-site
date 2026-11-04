@@ -19,13 +19,13 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       statsTitle: '本站数据',
       statBrands: '覆盖品牌',
       statBrandsValue: '15 个',
-      statCoupons: '优惠来源', statCouponsValue: '官网/联盟/投稿', statSearch: '收录品类', statSearchValue: '4 大类', statUpdate: '更新方式', statUpdateValue: '人工核查',
+      statCoupons: '优惠来源', statCouponsValue: '官网/投稿', statSearch: '收录品类', statSearchValue: '4 大类', statUpdate: '更新方式', statUpdateValue: '人工核查',
       methodologyTitle: '验证方法论',
       methodologyBody: '我们的核查方式很简单:\n\n1. 来源:品牌官方活动页、联盟合作伙伴、用户投稿。\n\n2. 上架:有明确优惠内容才收录,标注适用条件。\n\n3. 下架:活动结束或收到失效反馈后人工下架;拿不到码时,页面直达官网活动页。',
       howTitle: '数据来源',
       howBody: '我们通过三种方式获取优惠码:1) 商家官方活动页;2) 一手联盟合作伙伴提供的专属码;3) 用户投稿(我们会人工验证)。活动结束或确认失效后下架;拿不到码的活动直达官网活动页。',
-      affiliateTitle: '联盟链接说明',
-      affiliateBody: '本站部分跳转链接为联盟链接(Affiliate Links)。当您通过本站链接进入商家并完成购物,商家会向我们支付少量佣金以支持本站运营。您支付的价格与直接访问商家完全相同,不会因为使用本站链接而多付钱。这是一种 win-win 模式:您省钱,我们获得运营资金。',
+      affiliateTitle: '链接说明',
+      affiliateBody: '本站链接均指向品牌官网，目前不获取佣金，也不向链接加价。若未来接入联盟计划，会在本页提前说明。',
       privacyTitle: '隐私与数据',
       privacyBody: '我们不收集用户的购物记录、个人身份信息(PII),也不投放跨站追踪广告。站内搜索基于 URL 参数,匿名且不持久化。',
       teamTitle: '团队',
@@ -33,7 +33,7 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       faqTitle: '常见问题',
       faqItems: [
         { q: '优惠总动员是什么？', a: '优惠总动员是汇总中型品牌的优惠码 / 折扣码聚合站。我们覆盖 15 个品牌的官方促销与会员折扣,提供中英双语。' },
-        { q: '本站收益怎么来的？', a: '我们与一些品牌有联盟推广合作。当你点击本站跳转链接进入品牌页面后完成购物，品牌会给我们一点佣金，你不会多付。' },
+        { q: '本站收益怎么来的？', a: '目前不获取佣金。链接直接指向品牌官网，本站不加价，也不从中分成。若未来接入联盟计划，会在本页提前说明。' },
         { q: '优惠码为什么会失效？', a: '品牌方会定期更换促销活动,这很常见。活动结束我们会下架对应条目;拿不到码时,每个商家页都提供直达官网活动页的链接。' },
         { q: '能否提交新优惠码？', a: '可以。请发邮件到本页联系邮箱，附上优惠码详情（品牌、过期时间、限制）。我们在 24h 内人工验证，上线会回邮件。' },
         { q: '本站是否收集用户购物记录？', a: '不。本站不收集购物记录、身份信息，也不投放跨站追踪。所有站内搜索都是 URL 参数、匿名、不持久化。' },
@@ -59,8 +59,8 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       methodologyBody: 'Our verification is simple and manual:\n\n1. Source: official brand promotion pages, affiliate partners, and user submissions.\n\n2. Publish: offers are listed only when the discount terms are clear.\n\n3. Remove: ended promotions are taken down, on schedule or after user reports; when no code works, the page links to the official sale.',
       howTitle: 'How we source coupons',
       howBody: 'Three channels: 1) Official brand promotion pages; 2) Exclusive codes from first-party affiliate partners; 3) User submissions (verified manually). Promotions are removed once they end; when no code works, the page links to the official sale.',
-      affiliateTitle: 'Affiliate disclosure',
-      affiliateBody: 'Some outbound links are affiliate links. When you click through and complete a purchase, the merchant pays us a small commission at no extra cost to you. This is a win-win model: you save money, we earn operational funding.',
+      affiliateTitle: 'Link disclosure',
+      affiliateBody: 'Links on CouponSite point to each brand\'s official website. We do not currently earn a commission from these links, and we do not add anything to the price you see. If affiliate programmes are added in future, we will say so on this page before they go live.',
       privacyTitle: 'Privacy and data',
       privacyBody: 'We do not collect purchase histories, personally identifiable information, or run cross-site tracking ads. On-site search uses URL parameters only and is not persisted.',
       teamTitle: 'Editorial team',
@@ -68,7 +68,7 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       faqTitle: 'Frequently asked questions',
       faqItems: [
         { q: 'What is Coupon Hub?', a: 'Coupon Hub is a coupon and promo code aggregator for 15 mid-to-large brands across fashion, electronics, travel, and beauty. We track official promotions and member discounts across 15 brands, and support bilingual zh/en.' },
-        { q: 'How does Coupon Hub make money?', a: 'We have affiliate partnerships with several brands. When you click a link on our site and complete a purchase, the merchant pays us a small commission — at no extra cost to you.' },
+        { q: 'Does Coupon Hub earn money from the links?', a: 'Not at the moment. The links point to the official site of the brand and we do not earn a commission from them. The site is funded by its running costs being kept low, not by charging you more.' },
         { q: 'Why do coupon codes expire?', a: 'Brands rotate their promotions regularly; expiry is normal. We remove ended promotions promptly; every merchant page links straight to the official sale page.' },
         { q: 'Can I submit a new coupon code?', a: 'Yes. Email the address on this page with the code, brand, expiry date, and any restrictions. We verify manually within 24 hours and reply when published.' },
         { q: 'Does Coupon Hub collect my shopping data?', a: 'No. We do not collect purchase history, personally identifiable information, or run cross-site tracking. All on-site search is anonymous URL parameters and is not persisted.' },
@@ -236,7 +236,7 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       </main>
 
       <footer className="bg-white border-t border-gray-100 mt-auto py-6 text-center text-xs text-gray-500">
-        <p>本站所有链接均为联盟链接，购物可能获得佣金支持本站发展</p>
+        <p>本站链接均指向品牌官网，本站不从中获取佣金。你看到的价格与直接访问品牌官网完全一致。</p>
         <p className="mt-1">© 2026 优惠总动员 · 仅供信息分享</p>
         {/* 2026-10-28: 联盟审核要求隐私政策 / 条款 / 联系页可达 */}
         <p className="mt-2">

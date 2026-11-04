@@ -39,9 +39,9 @@ const SECTIONS = [
     ],
   },
   {
-    h: 'Affiliate links',
+    h: 'Outbound links',
     body: [
-      'Some outbound links to retailers are affiliate links. When you click one and complete a purchase, the retailer pays us a commission. The price you pay is identical to visiting the retailer directly — the affiliate link never changes what you pay.',
+      'Outbound links on CouponSite point to the official website of the retailer. At present we do not earn a commission from these links, and we do not add anything to the price you pay. You see the same price as visiting the retailer directly.',
       'Affiliate networks may set their own cookies when you click through. Those cookies are governed by the network’s privacy policy, not this one, and you can refuse them in your browser settings. Blocking them does not change any price.',
     ],
   },

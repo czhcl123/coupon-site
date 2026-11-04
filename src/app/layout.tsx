@@ -81,10 +81,10 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Do affiliate links cost me more when shopping through CouponSite?',
+      name: 'Do links to brand websites cost me more?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. All outbound links on CouponSite are affiliate links. You pay exactly the same price as visiting the brand website directly. Brands pay us a small commission via affiliate tracking to support the site.',
+        text: 'No. Links on CouponSite point to the official website of the brand. You pay exactly the same price as visiting that brand directly, and we do not add any charge.',
       },
     },
     {
@@ -289,12 +289,11 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
-        {/* Skimlinks — rewrites outbound merchant links into tracked affiliate links */}
-        <script
-          type="text/javascript"
-          src="https://s.skimresources.com/js/311551X1800063.skimlinks.js"
-          async
-        />
+        {/* 2026-11-04: the Skimlinks tag was removed.
+            Its own API returned {"consent": null, "guid": null} and it set
+            FORCE_PREVENTED_CLICKS_MONETIZATION, so it blocked monetisation
+            instead of earning anything while the site still advertised
+            commissions. */}
         {children}
       </body>
     </html>

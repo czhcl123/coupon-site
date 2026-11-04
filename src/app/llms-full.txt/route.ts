@@ -12,7 +12,7 @@ export async function GET(): Promise<Response> {
 
 CouponSite (formerly 优惠总动员 / Coupon Hub) is an English-first promo code and discount aggregator. We cover 15 brands across four categories: fashion, electronics, travel, and beauty. The brands are Nike, Adidas, ASOS, Amazon, Best Buy, Target, Walmart, Steam, Sephora, Ulta Beauty, Nordstrom, SHEIN, Temu, Booking.com, and Expedia.
 
-Some outbound links to brands are affiliate links; you pay exactly the same price as visiting the brand website directly. Brands may pay us a commission via affiliate tracking to support the site.
+Outbound links point to each brand's official website. We do not earn a commission from them and you pay exactly the same price as visiting the brand website directly.
 
 We do not require user accounts, logins, or payment. Everything is open to all visitors. Promotions are manually reviewed before publication, and ended entries are removed promptly. If you find an entry that no longer works, please report it on the /contact page and we will check it.
 
@@ -26,7 +26,7 @@ The homepage also links to the discount calculator, the blog, and the brand dire
 
 ## Brand pages (/merchant/[slug])
 
-Each of the 15 brands has a merchant detail page at /merchant/[slug], where the slug is the brand name in lowercase (for example /merchant/nike, /merchant/adidas, /merchant/asos). These pages list that brand's current entries, carry the brand's category, an affiliate disclosure, and a call-to-action that opens the brand's official page. Each page also carries a per-brand editorial guide covering how that brand's sales work.
+Each of the 15 brands has a merchant detail page at /merchant/[slug], where the slug is the brand name in lowercase (for example /merchant/nike, /merchant/adidas, /merchant/asos). These pages list that brand's current entries, carry the brand's category, an link disclosure, and a call-to-action that opens the brand's official page. Each page also carries a per-brand editorial guide covering how that brand's sales work.
 
 ## Tool pages
 
@@ -48,7 +48,7 @@ Money-saving tips, deal calendars, and brand-by-brand guides. Posts cover topics
 
 ## About page (/about)
 
-Our mission, where the entries come from, the affiliate disclosure, the privacy summary, the editorial standards we apply before publishing, and the contact email.
+Our mission, where the entries come from, the link disclosure, the privacy summary, the editorial standards we apply before publishing, and the contact email.
 
 ## Legal pages
 
@@ -66,11 +66,11 @@ An operator dashboard where the site owner adds and removes entries and manages 
 2. If a code is shown, copy it; if the entry points to an official sale page, open it
 3. Paste the code at checkout on the brand's site (when a code is shown)
 4. The discount applies if it is still valid; you pay the same as a direct visitor
-5. CouponSite may earn a small affiliate commission from the brand, at no extra cost to you
+5. CouponSite does not earn a commission from outbound links at present, and adds nothing to the price
 
-## Affiliate disclosure
+## Link disclosure
 
-CouponSite is a free service. We earn revenue through affiliate partnerships with some of the brands we list. This does not affect:
+CouponSite is a free service. At present we do not earn revenue from the brands we list. This does not affect:
 - The price you pay (always the same as a direct brand visit)
 - The order in which entries are displayed
 - Our editorial independence (we do not promote an offer based on its commission rate)

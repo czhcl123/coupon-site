@@ -16,7 +16,7 @@ export async function generateMetadata({
   }
   const descriptions = {
     zh: '了解优惠总动员:使命、数据来源、隐私政策、联系方式。15 个品牌实时优惠码聚合站,支持中英文双语。',
-    en: 'About Coupon Hub: our mission, data sources, affiliate disclosure, and contact info. Coupon code aggregator for 15 brands, bilingual zh/en.',
+    en: 'About Coupon Hub: our mission, data sources, link disclosure, and contact info. Coupon code aggregator for 15 brands, bilingual zh/en.',
   }
 
   return {
@@ -58,7 +58,7 @@ export default async function AboutPage({
         '@type': 'AboutPage',
         name: 'About CouponSite',
         description:
-          'Learn about CouponSite\'s mission, data sources, affiliate disclosure, verification methodology, and contact information. Promo code and official sale page aggregator covering 15 brands across fashion, electronics, travel, and beauty.',
+          'Learn about CouponSite\'s mission, data sources, link disclosure, verification methodology, and contact information. Promo code and official sale page aggregator covering 15 brands across fashion, electronics, travel, and beauty.',
         url: `${base}/about`,
         inLanguage: ['en-US', 'zh-CN'],
         dateModified: '2026-10-23',
@@ -109,7 +109,7 @@ export default async function AboutPage({
               ]
             : [
                 { '@type': 'Question', name: 'What is Coupon Hub?', acceptedAnswer: { '@type': 'Answer', text: 'Coupon Hub is a coupon and promo code aggregator for 15 mid-to-large brands across fashion, electronics, travel, and beauty. We track official promotions and member discounts, and support bilingual zh/en.' } },
-                { '@type': 'Question', name: 'How does Coupon Hub make money?', acceptedAnswer: { '@type': 'Answer', text: 'We have affiliate partnerships with several brands. When you click a link on our site and complete a purchase, the merchant pays us a small commission — at no extra cost to you.' } },
+                { '@type': 'Question', name: 'Does Coupon Hub earn money from the links?', acceptedAnswer: { '@type': 'Answer', text: 'Not at the moment. The links point to the official site of the brand and we do not earn a commission from them. The site is funded by its running costs being kept low, not by charging you more.' } },
                 { '@type': 'Question', name: 'Why do coupon codes expire?', acceptedAnswer: { '@type': 'Answer', text: 'Brands rotate their promotions regularly; expiry is normal. We remove ended promotions promptly, and when no code works every merchant page links straight to the official sale page.' } },
                 { '@type': 'Question', name: 'Can I submit a new coupon code?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Email the address on this page with the code, brand, expiry date, and any restrictions. We verify manually within 24 hours and reply when published.' } },
                 { '@type': 'Question', name: 'Does Coupon Hub collect my shopping data?', acceptedAnswer: { '@type': 'Answer', text: 'No. We do not collect purchase history, personally identifiable information, or run cross-site tracking. All on-site search is anonymous URL parameters and is not persisted.' } },

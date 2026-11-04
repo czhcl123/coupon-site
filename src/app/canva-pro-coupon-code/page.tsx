@@ -158,7 +158,7 @@ const en = {
     ],
   },
   footer: {
-    line1: 'CouponSite is reader-supported. When you buy through some links on this page, we may earn a commission at no extra cost to you.',
+    line1: 'CouponSite is reader-supported by keeping the site lean. Links on this page go to the provider\'s own site, and we do not add anything to the price.',
     line2: 'Canva\u00ae is a trademark of Canva Pty Ltd. CouponSite is not affiliated with Canva. Prices verified directly against canva.com/pricing on July 1, 2026.',
   },
   ui: {

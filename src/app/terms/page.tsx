@@ -66,9 +66,9 @@ const SECTIONS = [
     ],
   },
   {
-    h: 'Affiliate disclosure',
+    h: 'link disclosure',
     body: [
-      'Some outbound links to retailers are affiliate links. If you complete a purchase after clicking one, the retailer pays us a commission. The price you pay is the same either way. See our Privacy Policy for details on how affiliate networks use cookies.',
+      'Outbound links point to the official website of the retailer. At present we do not earn a commission from these links and we do not add anything to the price. The price you pay is the same either way. See our Privacy Policy for details on cookies.',
     ],
   },
   {

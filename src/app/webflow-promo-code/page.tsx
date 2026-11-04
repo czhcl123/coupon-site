@@ -147,7 +147,7 @@ const en = {
           ],
   },
   footer: {
-    line1: 'CouponSite is reader-supported. When you buy through some links on this page, we may earn a commission at no extra cost to you.',
+    line1: 'CouponSite is reader-supported by keeping the site lean. Links on this page go to the provider\'s own site, and we do not add anything to the price.',
     line2: 'Webflow\u00ae is a trademark of Webflow, Inc. CouponSite is not affiliated with Webflow. Prices verified directly against webflow.com/pricing on July 1, 2026.',
   },
   ui: {
