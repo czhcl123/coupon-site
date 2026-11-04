@@ -16,7 +16,7 @@ export async function generateMetadata({
   }
   const descriptions = {
     zh: '了解优惠总动员:使命、数据来源、隐私政策、联系方式。15 个品牌实时优惠码聚合站,支持中英文双语。',
-    en: 'Learn about Coupon Hub: mission, data sources, affiliate disclosure, and contact information. Promo code aggregator covering 15 brands across 4 categories, bilingual zh/en.',
+    en: 'About Coupon Hub: our mission, data sources, affiliate disclosure, and contact info. Coupon code aggregator for 15 brands, bilingual zh/en.',
   }
 
   return {

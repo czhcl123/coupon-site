@@ -233,19 +233,19 @@ export default function HomePageClient() {
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-            <a href={`/?lang=${lang}`} aria-label="优惠总动员 Logo - 2026最新折扣码网站" className="text-2xl font-bold text-orange-500 hover:text-orange-600 transition-colors">{t[lang].title}</a>
+            <a href={`/?lang=${lang}`} aria-label="优惠总动员 Logo - 2026最新折扣码网站" className="text-2xl font-bold text-orange-700 hover:text-orange-800 transition-colors">{t[lang].title}</a>
             <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-4">
-              <a href={`/blog?lang=${lang}`} className="text-sm whitespace-nowrap text-gray-400 hover:text-gray-600">{t[lang].blog}</a>
+              <a href={`/blog?lang=${lang}`} className="text-sm whitespace-nowrap text-gray-600 hover:text-gray-700">{t[lang].blog}</a>
               <button
                 onClick={handleLangSwitch}
                 className="text-sm whitespace-nowrap px-3 py-1 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors"
               >
                 {t[lang].lang}
               </button>
-              <a href={`/discount-calculator?lang=${lang}`} className="text-sm whitespace-nowrap px-3 py-1 bg-orange-100 text-orange-500 rounded-full hover:bg-orange-200 transition-colors font-medium">
+              <a href={`/discount-calculator?lang=${lang}`} className="text-sm whitespace-nowrap px-3 py-1 bg-orange-100 text-orange-700 rounded-full hover:bg-orange-200 transition-colors font-medium">
                 {t[lang].discountCalculator}
               </a>
-              <a href={`/admin?lang=${lang}`} className="text-sm whitespace-nowrap text-gray-400 hover:text-gray-600">
+              <a href={`/admin?lang=${lang}`} className="text-sm whitespace-nowrap text-gray-600 hover:text-gray-700">
                 {t[lang].admin}
               </a>
             </div>
@@ -253,7 +253,7 @@ export default function HomePageClient() {
 
           {/* 热门关键词区块 — 帮助爬虫理解网站核心主题 */}
           <section aria-label="热门商家">
-            <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-2">
+            <h3 className="text-xs font-medium text-gray-600 uppercase tracking-wide mb-2">
               {lang === 'zh' ? '热门商家' : 'Top Brands'}
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -261,7 +261,7 @@ export default function HomePageClient() {
                 <a
                   key={m.id}
                   href={`/brand/${m.slug}?lang=${lang}`}
-                  className="text-xs px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-gray-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-600 transition-colors"
+                  className="text-xs px-3 py-1 bg-gray-50 border border-gray-200 rounded-full text-gray-600 hover:bg-orange-50 hover:border-orange-200 hover:text-orange-800 transition-colors"
                 >
                   {m.name}
                 </a>
@@ -271,7 +271,7 @@ export default function HomePageClient() {
 
           {/* 分类关键词区块 */}
           <section aria-label="热门分类" className="mt-3">
-            <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wide mb-2">
+            <h3 className="text-xs font-medium text-gray-600 uppercase tracking-wide mb-2">
               {lang === 'zh' ? '热门分类' : 'Top Categories'}
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -299,12 +299,12 @@ export default function HomePageClient() {
               placeholder={t[lang].searchPlaceholder}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="flex-1 min-w-[200px] pl-10 px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="flex-1 min-w-[200px] pl-10 px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             />
             <select
               value={selectedMerchant}
               onChange={(e) => setSelectedMerchant(e.target.value)}
-              className="w-52 max-w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 bg-white"
+              className="w-52 max-w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 bg-white"
             >
               <option value="">{t[lang].allMerchants}</option>
               {merchants.map((m) => (
@@ -314,7 +314,7 @@ export default function HomePageClient() {
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="w-40 max-w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 bg-white"
+              className="w-40 max-w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 bg-white"
             >
               <option value="">{t[lang].allCategories}</option>
               <option value="fashion">{t[lang].fashion}</option>
@@ -344,7 +344,7 @@ export default function HomePageClient() {
             ))}
           </div>
         ) : coupons.length === 0 ? (
-          <div className="text-center py-16 text-gray-400">
+          <div className="text-center py-16 text-gray-600">
             <div className="text-4xl mb-2">🔍</div>
             <p>{t[lang].noResult}</p>
           </div>
@@ -384,33 +384,33 @@ export default function HomePageClient() {
                         onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
                       />
                     )}
-                    <Link href={`/merchant/${coupon.merchant.slug}?lang=${lang}`} className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
+                    <Link href={`/merchant/${coupon.merchant.slug}?lang=${lang}`} className="text-sm text-gray-500 hover:text-orange-700 transition-colors">
                       {coupon.merchant.name}
                     </Link>
                     {!!coupon.isVerified && (
-                      <span className="text-xs bg-green-100 text-green-600 px-1.5 py-0.5 rounded-full">{t[lang].verified}</span>
+                      <span className="text-xs bg-green-100 text-green-700 px-1.5 py-0.5 rounded-full">{t[lang].verified}</span>
                     )}
                     {!!coupon.isExclusive && (
-                      <span className="text-xs bg-orange-100 text-orange-500 px-1.5 py-0.5 rounded-full">{t[lang].exclusive}</span>
+                      <span className="text-xs bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded-full">{t[lang].exclusive}</span>
                     )}
                   </div>
 
                   {/* 折扣标签 */}
                   <div className="flex items-start gap-3 mb-3">
-                    <span className="text-3xl font-bold text-orange-500">
+                    <span className="text-3xl font-bold text-orange-700">
                       {formatDiscount(coupon)}
                     </span>
                     <div className="flex-1">
                       <div className="font-semibold text-gray-800 leading-tight">{translateTitle(coupon.title)}</div>
                       {coupon.description && (
-                        <div className="text-sm text-gray-400 mt-0.5">{translateTitle(coupon.description)}</div>
+                        <div className="text-sm text-gray-600 mt-0.5">{translateTitle(coupon.description)}</div>
                       )}
                     </div>
                   </div>
 
                   {/* 最低消费 */}
                   {coupon.minPurchase && (
-                    <div className="text-xs text-gray-400 mb-2">
+                    <div className="text-xs text-gray-600 mb-2">
                       {u('minPurchase', { n: coupon.minPurchase })}
                     </div>
                   )}
@@ -425,7 +425,7 @@ export default function HomePageClient() {
                           className={`text-xs px-3 py-1 rounded-full font-medium transition-colors ${
                             copied === coupon.id
                               ? 'bg-green-500 text-white'
-                              : 'bg-orange-500 text-white hover:bg-orange-600'
+                              : 'bg-orange-700 text-white hover:bg-orange-800'
                           }`}
                         >
                           {copied === coupon.id ? t[lang].copied : t[lang].copyCode}
@@ -435,19 +435,19 @@ export default function HomePageClient() {
                         href={coupon.merchant.affiliateUrl || `/merchant/${coupon.merchant.slug}?lang=${lang}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                        className="inline-block w-full text-center text-sm bg-orange-700 hover:bg-orange-800 text-white rounded-lg py-2 px-4 transition-colors mb-3"
                       >
                         {t[lang].useNow}
                       </a>
                     </>
                   ) : (
                     <>
-                      <div className="text-xs text-gray-400 mb-2">{t[lang].noCodeHint}</div>
+                      <div className="text-xs text-gray-600 mb-2">{t[lang].noCodeHint}</div>
                       <a
                         href={coupon.merchant.affiliateUrl || `/merchant/${coupon.merchant.slug}?lang=${lang}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                        className="inline-block w-full text-center text-sm bg-orange-700 hover:bg-orange-800 text-white rounded-lg py-2 px-4 transition-colors mb-3"
                       >
                         {t[lang].useNow}
                       </a>
@@ -456,7 +456,7 @@ export default function HomePageClient() {
                 </div>
 
                 {/* 底部信息 */}
-                <div className="flex items-center justify-between text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
+                <div className="flex items-center justify-between text-xs text-gray-600 mt-2 pt-2 border-t border-gray-100">
                   <span>{formatExpiry(coupon.expiresAt)}</span>
                   <span>{u('peopleUsed', { n: coupon.clickCount })}</span>
                 </div>
@@ -468,7 +468,7 @@ export default function HomePageClient() {
       </main>
 
       {/* 页脚 */}
-      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
+      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-600">
         <p>{t[lang].footer1}</p>
         <p className="mt-1">{t[lang].footer2}</p>
       </footer>

@@ -440,11 +440,11 @@ export default async function MerchantPage({
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-orange-500 hover:text-orange-600">
+            <Link href="/" className="text-2xl font-bold text-orange-700 hover:text-orange-800">
               {u('siteTitle', lang)}
             </Link>
             <div className="flex items-center gap-3">
-              <Link href="/" className="text-sm text-gray-500 hover:text-orange-500">
+              <Link href="/" className="text-sm text-gray-500 hover:text-orange-700">
                 {u('backHome', lang)}
               </Link>
               <Link
@@ -467,7 +467,7 @@ export default async function MerchantPage({
             )}
             <div>
               <h1 className="text-2xl font-bold text-gray-800">{merchant.name}</h1>
-              <p className="text-sm text-gray-400">{u('allCoupons', lang)} · {coupons.length} {lang === 'zh' ? '张' : 'deals'}</p>
+              <p className="text-sm text-gray-500">{u('allCoupons', lang)} · {coupons.length} {lang === 'zh' ? '张' : 'deals'}</p>
             </div>
           </div>
         </div>
@@ -499,8 +499,8 @@ export default async function MerchantPage({
               <li><strong className="text-gray-800">Sample sale</strong> - seasonal up-to-70% clearance events (members-only access via the ASOS app).</li>
               <li><strong className="text-gray-800">Birthday discount</strong> - 20% OFF during your birthday month if subscribed to ASOS emails.</li>
             </ul>
-            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
-              Codes are verified every 24 hours against ASOS.co.uk. Expired codes are removed within 24 hours of expiration - if you spot an expired code, please report it via our <a href="/about" className="text-orange-500 underline">contact form</a>.
+            <p className="text-xs text-gray-500 mb-0 mt-4 pt-3 border-t border-gray-100">
+              Codes are verified every 24 hours against ASOS.co.uk. Expired codes are removed within 24 hours of expiration - if you spot an expired code, please report it via our <a href="/about" className="text-orange-700 underline">contact form</a>.
             </p>
           </section>
         ) : (
@@ -528,8 +528,8 @@ export default async function MerchantPage({
               <li><strong className="text-gray-800">Sample Sale</strong> - 季度清仓最高 70% OFF(仅 ASOS App 会员通道)。</li>
               <li><strong className="text-gray-800">生日折扣</strong> - 订阅 ASOS 邮件后生日月可领 20% OFF。</li>
             </ul>
-            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
-              所有码每日针对 ASOS.co.uk 验证。过期码将在 24 小时内清除;如发现过期码,请通过 <a href="/about" className="text-orange-500 underline">联系我们</a> 上报。
+            <p className="text-xs text-gray-500 mb-0 mt-4 pt-3 border-t border-gray-100">
+              所有码每日针对 ASOS.co.uk 验证。过期码将在 24 小时内清除;如发现过期码,请通过 <a href="/about" className="text-orange-700 underline">联系我们</a> 上报。
             </p>
           </section>
         ))}
@@ -560,8 +560,8 @@ export default async function MerchantPage({
               <li><strong className="text-gray-800">Target Deal Days</strong> - twice-yearly sale in spring / fall competing with Amazon Prime Day.</li>
               <li><strong className="text-gray-800">Target free shipping</strong> - free 2-day shipping on $35+ orders, or with RedCard no minimum.</li>
             </ul>
-            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
-              Codes are verified every 24 hours against Target.com. Expired codes are removed within 24 hours of expiration - if you spot an expired code, please report it via our <a href="/about" className="text-orange-500 underline">contact form</a>.
+            <p className="text-xs text-gray-500 mb-0 mt-4 pt-3 border-t border-gray-100">
+              Codes are verified every 24 hours against Target.com. Expired codes are removed within 24 hours of expiration - if you spot an expired code, please report it via our <a href="/about" className="text-orange-700 underline">contact form</a>.
             </p>
           </section>
         ) : (
@@ -589,8 +589,8 @@ export default async function MerchantPage({
               <li><strong className="text-gray-800">Target Deal Days</strong> - 春 / 秋两次大型 Sale,与 Amazon Prime Day 同台竞争。</li>
               <li><strong className="text-gray-800">Target 免运费</strong> - $35+ 订单免 2 日运费(RedCard 无最低门槛)。</li>
             </ul>
-            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
-              所有码每日针对 Target.com 验证。过期码将在 24 小时内清除;如发现过期码,请通过 <a href="/about" className="text-orange-500 underline">联系我们</a> 上报。
+            <p className="text-xs text-gray-500 mb-0 mt-4 pt-3 border-t border-gray-100">
+              所有码每日针对 Target.com 验证。过期码将在 24 小时内清除;如发现过期码,请通过 <a href="/about" className="text-orange-700 underline">联系我们</a> 上报。
             </p>
           </section>
         ))}
@@ -621,8 +621,8 @@ export default async function MerchantPage({
               <li><strong className="text-gray-800">Designer brand codes</strong> - Tory Burch, Rag &amp; Bone, Vans, Free People brand-specific launches.</li>
               <li><strong className="text-gray-800">First order Nordstrom</strong> - 15% OFF for new email subscribers (often stacks with sale).</li>
             </ul>
-            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
-              Codes are verified every 24 hours against Nordstrom.com. Expired codes are removed within 24 hours of expiration - if you spot an expired code, please report it via our <a href="/about" className="text-orange-500 underline">contact form</a>.
+            <p className="text-xs text-gray-500 mb-0 mt-4 pt-3 border-t border-gray-100">
+              Codes are verified every 24 hours against Nordstrom.com. Expired codes are removed within 24 hours of expiration - if you spot an expired code, please report it via our <a href="/about" className="text-orange-700 underline">contact form</a>.
             </p>
           </section>
         ) : (
@@ -650,8 +650,8 @@ export default async function MerchantPage({
               <li><strong className="text-gray-800">设计师品牌码</strong> - Tory Burch、Rag &amp; Bone、Vans、Free People 品牌专属。</li>
               <li><strong className="text-gray-800">Nordstrom 新用户</strong> - 新邮箱订阅立享 15% OFF(可与 Sale 叠加)。</li>
             </ul>
-            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
-              所有码每日针对 Nordstrom.com 验证。过期码将在 24 小时内清除;如发现过期码,请通过 <a href="/about" className="text-orange-500 underline">联系我们</a> 上报。
+            <p className="text-xs text-gray-500 mb-0 mt-4 pt-3 border-t border-gray-100">
+              所有码每日针对 Nordstrom.com 验证。过期码将在 24 小时内清除;如发现过期码,请通过 <a href="/about" className="text-orange-700 underline">联系我们</a> 上报。
             </p>
           </section>
         ))}
@@ -682,8 +682,8 @@ export default async function MerchantPage({
               <li><strong className="text-gray-800">Sephora sale events</strong> - Beauty Sale (April / November) up to 50% OFF.</li>
               <li><strong className="text-gray-800">Brand-specific codes</strong> - Rare Beauty, Sol de Janeiro, Drunk Elephant, The Ordinary exclusive launches.</li>
             </ul>
-            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
-              Codes are verified every 24 hours against Sephora.com. Expired codes are removed within 24 hours of expiration - if you spot an expired code, please report it via our <a href="/about" className="text-orange-500 underline">contact form</a>.
+            <p className="text-xs text-gray-500 mb-0 mt-4 pt-3 border-t border-gray-100">
+              Codes are verified every 24 hours against Sephora.com. Expired codes are removed within 24 hours of expiration - if you spot an expired code, please report it via our <a href="/about" className="text-orange-700 underline">contact form</a>.
             </p>
           </section>
         ) : (
@@ -711,15 +711,15 @@ export default async function MerchantPage({
               <li><strong className="text-gray-800">Sephora Sale 季</strong> - Beauty Sale(4 月 / 11 月)最高 50% OFF。</li>
               <li><strong className="text-gray-800">品牌专属码</strong> - Rare Beauty、Sol de Janeiro、Drunk Elephant、The Ordinary 新品首发。</li>
             </ul>
-            <p className="text-xs text-gray-400 mb-0 mt-4 pt-3 border-t border-gray-100">
-              所有码每日针对 Sephora.com 验证。过期码将在 24 小时内清除;如发现过期码,请通过 <a href="/about" className="text-orange-500 underline">联系我们</a> 上报。
+            <p className="text-xs text-gray-500 mb-0 mt-4 pt-3 border-t border-gray-100">
+              所有码每日针对 Sephora.com 验证。过期码将在 24 小时内清除;如发现过期码,请通过 <a href="/about" className="text-orange-700 underline">联系我们</a> 上报。
             </p>
           </section>
         ))}
 
         {/* 优惠券列表 */}
         {coupons.length === 0 ? (
-          <div className="text-center py-16 text-gray-400">
+          <div className="text-center py-16 text-gray-500">
             <div className="text-4xl mb-2">🎫</div>
             <p>{u('noCoupons', lang)}</p>
           </div>
@@ -756,19 +756,19 @@ export default async function MerchantPage({
                   dangerouslySetInnerHTML={{ __html: JSON.stringify(couponSchema) }}
                 />
                 <div className="flex items-start gap-3 mb-3">
-                  <span className="text-3xl font-bold text-orange-500">
+                  <span className="text-3xl font-bold text-orange-700">
                     {formatDiscount(coupon.discountType, coupon.discountValue, lang)}
                   </span>
                   <div className="flex-1">
                     <div className="font-semibold text-gray-800 leading-tight">{displayTitle}</div>
                     {displayDesc && (
-                      <div className="text-sm text-gray-400 mt-0.5">{displayDesc}</div>
+                      <div className="text-sm text-gray-500 mt-0.5">{displayDesc}</div>
                     )}
                   </div>
                 </div>
 
                 {coupon.minPurchase && (
-                  <div className="text-xs text-gray-400 mb-2">
+                  <div className="text-xs text-gray-500 mb-2">
                     {uVars('minPurchase', { n: coupon.minPurchase }, lang)}
                   </div>
                 )}
@@ -777,34 +777,34 @@ export default async function MerchantPage({
                   <>
                     <div className="flex items-center gap-2 bg-gray-50 rounded-lg px-3 py-2 mb-2">
                       <code className="flex-1 font-mono text-sm font-semibold text-gray-700">{coupon.code}</code>
-                      <span className="text-xs text-gray-400">{u('copyCode', lang)}</span>
+                      <span className="text-xs text-gray-500">{u('copyCode', lang)}</span>
                     </div>
                     <a
                       href={merchant.affiliateUrl || merchant.website || '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                      className="inline-block w-full text-center text-sm bg-orange-700 hover:bg-orange-800 text-white rounded-lg py-2 px-4 transition-colors mb-3"
                     >
                       {u('goUse', lang)}
                     </a>
                   </>
                 ) : (
                   <>
-                    <div className="text-xs text-gray-400 mb-2">
+                    <div className="text-xs text-gray-500 mb-2">
                       {coupon.discountType === 'ONGOING' ? u('ongoingHint', lang) : u('noCodeHint', lang)}
                     </div>
                     <a
                       href={merchant.affiliateUrl || merchant.website || '#'}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                      className="inline-block w-full text-center text-sm bg-orange-700 hover:bg-orange-800 text-white rounded-lg py-2 px-4 transition-colors mb-3"
                     >
                       {u('goUse', lang)}
                     </a>
                   </>
                 )}
 
-                <div className="flex items-center justify-between text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
+                <div className="flex items-center justify-between text-xs text-gray-500 mt-2 pt-2 border-t border-gray-100">
                   <span>{coupon.discountType === 'ONGOING' ? u('ongoing', lang) : formatExpiry(coupon.expiresAt, lang)}</span>
                   <span>{uVars('peopleUsed', { n: String(coupon.clickCount) }, lang)}</span>
                 </div>
@@ -815,16 +815,16 @@ export default async function MerchantPage({
         )}
       </main>
 
-      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
+      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-500">
         <p>{u('footer1', lang)}</p>
         <p className="mt-1">{u('footer2', lang)}</p>
         {/* 2026-10-28: 联盟审核要求隐私政策 / 条款 / 联系页可达 */}
-        <p className="mt-2 text-xs text-gray-400">
-          <Link href="/privacy" className="hover:text-orange-500 transition-colors">{u('privacy', lang)}</Link>
+        <p className="mt-2 text-xs text-gray-500">
+          <Link href="/privacy" className="hover:text-orange-700 transition-colors">{u('privacy', lang)}</Link>
           <span className="text-gray-200 mx-1">·</span>
-          <Link href="/terms" className="hover:text-orange-500 transition-colors">{u('terms', lang)}</Link>
+          <Link href="/terms" className="hover:text-orange-700 transition-colors">{u('terms', lang)}</Link>
           <span className="text-gray-200 mx-1">·</span>
-          <Link href="/contact" className="hover:text-orange-500 transition-colors">{u('contact', lang)}</Link>
+          <Link href="/contact" className="hover:text-orange-700 transition-colors">{u('contact', lang)}</Link>
         </p>
       </footer>
     </div>

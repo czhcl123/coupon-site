@@ -89,7 +89,7 @@ export default function DiscountCalculator({ lang, nextLang }: Props) {
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-lg mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href={`/?lang=${lang}`} className="text-2xl font-bold text-orange-500 hover:text-orange-600">
+            <Link href={`/?lang=${lang}`} className="text-2xl font-bold text-orange-700 hover:text-orange-800">
               {u('siteTitle', lang)}
             </Link>
             <Link
@@ -105,7 +105,7 @@ export default function DiscountCalculator({ lang, nextLang }: Props) {
       <main className="max-w-lg mx-auto px-4 py-8">
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
           <h1 className="text-2xl font-bold text-gray-800 mb-1">{u('pageTitle', lang)}</h1>
-          <p className="text-sm text-gray-400 mb-6">{u('hint', lang)}</p>
+          <p className="text-sm text-gray-500 mb-6">{u('hint', lang)}</p>
 
           <div className="space-y-4">
             <div>
@@ -115,7 +115,7 @@ export default function DiscountCalculator({ lang, nextLang }: Props) {
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
                 placeholder={u('pricePlaceholder', lang)}
-                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-lg"
+                className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-lg"
               />
             </div>
 
@@ -128,7 +128,7 @@ export default function DiscountCalculator({ lang, nextLang }: Props) {
                 placeholder={u('discountPlaceholder', lang)}
                 min="1"
                 max="99"
-                className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-lg"
+                className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 text-lg"
               />
             </div>
 
@@ -138,7 +138,7 @@ export default function DiscountCalculator({ lang, nextLang }: Props) {
 
             {result && (
               <div className="bg-orange-50 rounded-xl p-5 text-center border border-orange-100">
-                <div className="text-sm text-orange-500 mb-1">{u('result', lang)}</div>
+                <div className="text-sm text-orange-700 mb-1">{u('result', lang)}</div>
                 <div className="text-4xl font-bold text-orange-600 mb-2">
                   ¥{result.final}
                 </div>
@@ -151,7 +151,7 @@ export default function DiscountCalculator({ lang, nextLang }: Props) {
             <div className="flex gap-3">
               <button
                 onClick={calc}
-                className="flex-1 bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition-colors"
+                className="flex-1 bg-orange-700 text-white py-2 rounded-lg font-semibold hover:bg-orange-800 transition-colors"
               >
                 {u('pageTitle', lang)}
               </button>
@@ -166,7 +166,7 @@ export default function DiscountCalculator({ lang, nextLang }: Props) {
         </div>
 
         <div className="mt-6 text-center">
-          <Link href={`/?lang=${lang}`} className="text-sm text-gray-400 hover:text-orange-500">
+          <Link href={`/?lang=${lang}`} className="text-sm text-gray-500 hover:text-orange-700">
             {u('backHome', lang)}
           </Link>
         </div>

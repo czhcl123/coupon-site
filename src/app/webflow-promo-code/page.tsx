@@ -421,11 +421,11 @@ export default async function WebflowPromoCodePage({
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-orange-500 hover:text-orange-600">
+            <Link href="/" className="text-2xl font-bold text-orange-700 hover:text-orange-800">
               {c.ui.siteTitle}
             </Link>
             <div className="flex items-center gap-3">
-              <Link href="/" className="text-sm text-gray-500 hover:text-orange-500">
+              <Link href="/" className="text-sm text-gray-500 hover:text-orange-700">
                 {c.ui.backHome}
               </Link>
               <Link
@@ -454,7 +454,7 @@ export default async function WebflowPromoCodePage({
               href={c.deals.cards[0].link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-3 px-6 font-semibold transition-colors"
+              className="inline-block bg-orange-700 hover:bg-orange-800 text-white rounded-lg py-3 px-6 font-semibold transition-colors"
             >
               {c.hero.ctaPrimary}
             </a>
@@ -462,7 +462,7 @@ export default async function WebflowPromoCodePage({
               href={lang === 'en' ? 'https://webflow.com/pricing' : 'https://webflow.com/pricing'}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white hover:bg-gray-50 text-orange-500 border-2 border-orange-500 rounded-lg py-3 px-6 font-semibold transition-colors"
+              className="inline-block bg-white hover:bg-gray-50 text-orange-700 border-2 border-orange-500 rounded-lg py-3 px-6 font-semibold transition-colors"
             >
               {c.hero.ctaSecondary}
             </a>
@@ -473,7 +473,7 @@ export default async function WebflowPromoCodePage({
         <section className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 mb-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-3">{c.intro.h2}</h2>
           <p className="text-gray-700 leading-relaxed mb-3">{c.intro.p}</p>
-          <p className="text-xs text-gray-400 italic">{c.intro.lastUpdated}</p>
+          <p className="text-xs text-gray-500 italic">{c.intro.lastUpdated}</p>
         </section>
 
         {/* DEALS (3 official Webflow programs) */}
@@ -487,14 +487,14 @@ export default async function WebflowPromoCodePage({
                 className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100"
               >
                 <div className="text-4xl mb-3">{card.emoji}</div>
-                <div className="text-3xl font-bold text-orange-500 mb-2">{card.discount}</div>
+                <div className="text-3xl font-bold text-orange-700 mb-2">{card.discount}</div>
                 <div className="font-semibold text-gray-800 mb-2">{card.title}</div>
                 <p className="text-sm text-gray-600 mb-4">{card.desc}</p>
                 <a
                   href={card.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors"
+                  className="inline-block w-full text-center text-sm bg-orange-700 hover:bg-orange-800 text-white rounded-lg py-2 px-4 transition-colors"
                 >
                   {card.cta}
                 </a>
@@ -510,7 +510,7 @@ export default async function WebflowPromoCodePage({
           <ol className="space-y-3">
             {c.steps.items.map((step, i) => (
               <li key={i} className="flex gap-3">
-                <span className="flex-shrink-0 w-7 h-7 bg-orange-500 text-white text-sm font-bold rounded-full flex items-center justify-center">
+                <span className="flex-shrink-0 w-7 h-7 bg-orange-700 text-white text-sm font-bold rounded-full flex items-center justify-center">
                   {i + 1}
                 </span>
                 <span className="text-gray-700 leading-relaxed">{step}</span>
@@ -553,7 +553,7 @@ export default async function WebflowPromoCodePage({
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-400 italic mt-3">{c.pricing.footnote}</p>
+          <p className="text-xs text-gray-500 italic mt-3">{c.pricing.footnote}</p>
         </section>
 
         {/* WHO QUALIFIES */}
@@ -599,7 +599,7 @@ export default async function WebflowPromoCodePage({
                 className="flex items-center justify-between p-4 border border-gray-100 rounded-lg hover:border-orange-300 hover:bg-orange-50 transition-colors"
               >
                 <span className="font-semibold text-gray-700">{link.label}</span>
-                <span className="text-orange-500">→</span>
+                <span className="text-orange-700">→</span>
               </Link>
             ))}
           </div>
@@ -607,11 +607,11 @@ export default async function WebflowPromoCodePage({
       </main>
 
       {/* FOOTER */}
-      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
+      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-500">
         <p className="max-w-4xl mx-auto px-4">{c.footer.line1}</p>
         <p className="max-w-4xl mx-auto px-4 mt-2">{c.footer.line2}</p>
         <p className="mt-3">
-          <Link href="/" className="hover:text-orange-500">
+          <Link href="/" className="hover:text-orange-700">
             {c.ui.siteTitle}
           </Link>
         </p>

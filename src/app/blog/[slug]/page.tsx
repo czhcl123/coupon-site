@@ -239,11 +239,11 @@ export default async function ArticlePage({
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-orange-500 hover:text-orange-600">
+            <Link href="/" className="text-2xl font-bold text-orange-700 hover:text-orange-800">
               {u('siteTitle', lang)}
             </Link>
             <div className="flex items-center gap-3">
-              <Link href="/blog" className="text-sm text-gray-500 hover:text-orange-500">
+              <Link href="/blog" className="text-sm text-gray-500 hover:text-orange-700">
                 {u('backList', lang)}
               </Link>
               <Link
@@ -266,7 +266,7 @@ export default async function ArticlePage({
             >
               {article.merchant}
             </Link>
-            <span className="text-xs text-gray-400">{article.publishedAt}</span>
+            <span className="text-xs text-gray-500">{article.publishedAt}</span>
             {/* 2026-07-19: visible byline for E-E-A-T (AI / GEO citation) */}
             <span className="text-xs text-gray-500 ml-auto" itemProp="author">
               {lang === 'zh' ? '由 CouponSite 编辑团队 撰写' : 'By CouponSite Editorial Team'}
@@ -326,7 +326,7 @@ export default async function ArticlePage({
           <div className="space-y-4">
             {blogFaqs(article, lang).map((f, i) => (
               <details key={i} className="border-b border-gray-100 pb-3 last:border-0">
-                <summary className="font-semibold text-gray-700 cursor-pointer hover:text-orange-600 transition-colors">
+                <summary className="font-semibold text-gray-700 cursor-pointer hover:text-orange-800 transition-colors">
                   {f.q}
                 </summary>
                 <p className="mt-2 text-sm text-gray-600 leading-relaxed">{f.a}</p>
@@ -346,7 +346,7 @@ export default async function ArticlePage({
                   className="bg-white rounded-lg p-4 border border-gray-100 hover:shadow-sm transition-shadow block"
                 >
                   <h4 className="font-semibold text-gray-800 text-sm leading-snug">{r.title}</h4>
-                  <p className="text-xs text-gray-400 mt-1">{r.publishedAt}</p>
+                  <p className="text-xs text-gray-500 mt-1">{r.publishedAt}</p>
                 </Link>
               ))}
             </div>
@@ -359,14 +359,14 @@ export default async function ArticlePage({
           </p>
           <Link
             href="/"
-            className="inline-block bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-orange-600 transition-colors"
+            className="inline-block bg-orange-700 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-orange-800 transition-colors"
           >
             {u('ctaBtn', lang)}
           </Link>
         </div>
       </main>
 
-      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
+      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-500">
         <p>{u('footer1', lang)}</p>
         <p className="mt-1">{u('footer2', lang)}</p>
       </footer>

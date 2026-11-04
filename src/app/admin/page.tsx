@@ -185,7 +185,7 @@ function AdminContent() {
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-2xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-orange-500 hover:text-orange-600">
+            <Link href="/" className="text-2xl font-bold text-orange-700 hover:text-orange-800">
               {t.zh.siteTitle}
             </Link>
           </div>
@@ -212,7 +212,7 @@ function AdminContent() {
                 value={token}
                 onChange={(e) => setToken(e.target.value)}
                 placeholder={u('tokenPlaceholder', lang)}
-                className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="w-full px-3 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
                 required
               />
             </div>
@@ -224,7 +224,7 @@ function AdminContent() {
                 value={form.merchantId}
                 onChange={(e) => setForm({ ...form, merchantId: e.target.value })}
                 onFocus={loadMerchants}
-                className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="w-full px-3 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
                 required
               >
                 <option value="">{u('selectMerchant', lang)}</option>
@@ -242,7 +242,7 @@ function AdminContent() {
                 value={form.title}
                 onChange={(e) => setForm({ ...form, title: e.target.value })}
                 placeholder={u('titlePlaceholder', lang)}
-                className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="w-full px-3 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
                 required
               />
             </div>
@@ -255,7 +255,7 @@ function AdminContent() {
                 value={form.code}
                 onChange={(e) => setForm({ ...form, code: e.target.value })}
                 placeholder={u('codePlaceholder', lang)}
-                className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="w-full px-3 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
             </div>
 
@@ -266,7 +266,7 @@ function AdminContent() {
                 <select
                   value={form.discountType}
                   onChange={(e) => setForm({ ...form, discountType: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-3 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
                 >
                   <option value="PERCENT">{u('typePercent', lang)}</option>
                   <option value="FIXED">{u('typeFixed', lang)}</option>
@@ -286,7 +286,7 @@ function AdminContent() {
                   value={form.discountValue}
                   onChange={(e) => setForm({ ...form, discountValue: e.target.value })}
                   placeholder={u('valuePlaceholder', lang)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-3 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
                   disabled={form.discountType === 'FREE_SHIP'}
                 />
               </div>
@@ -301,7 +301,7 @@ function AdminContent() {
                   value={form.minPurchase}
                   onChange={(e) => setForm({ ...form, minPurchase: e.target.value })}
                   placeholder={u('minPurchasePlaceholder', lang)}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-3 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
                 />
               </div>
 
@@ -312,7 +312,7 @@ function AdminContent() {
                   type="date"
                   value={form.expiresAt}
                   onChange={(e) => setForm({ ...form, expiresAt: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                  className="w-full px-3 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
                 />
               </div>
             </div>
@@ -325,7 +325,7 @@ function AdminContent() {
                 onChange={(e) => setForm({ ...form, description: e.target.value })}
                 placeholder={u('descPlaceholder', lang)}
                 rows={2}
-                className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+                className="w-full px-3 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
             </div>
 
@@ -344,14 +344,14 @@ function AdminContent() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 disabled:opacity-50 transition-colors"
+              className="w-full bg-orange-700 text-white py-2 rounded-lg font-semibold hover:bg-orange-800 disabled:opacity-50 transition-colors"
             >
               {loading ? u('submitting', lang) : u('submitBtn', lang)}
             </button>
           </form>
         </div>
 
-        <div className="mt-6 text-center text-sm text-gray-400">
+        <div className="mt-6 text-center text-sm text-gray-500">
           <Link href="/" className="hover:text-gray-600">
             {u('backHome', lang)}
           </Link>

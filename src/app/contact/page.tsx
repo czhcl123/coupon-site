@@ -3,7 +3,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Contact | CouponSite',
+  // layout 的 title.template 会再拼 '| CouponSite'，所以这里不写后缀
+  title: 'Contact',
   description:
     'Get in touch with CouponSite: report an expired or incorrect coupon code, submit a promotion, ask about a brand page, or request a data correction.',
   alternates: {
@@ -70,10 +71,10 @@ export default function ContactPage() {
       />
       <header className="bg-white border-b border-gray-100">
         <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
+          <Link href="/" className="text-sm text-gray-500 hover:text-orange-700 transition-colors">
             ← Back to Home
           </Link>
-          <Link href="/about" className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
+          <Link href="/about" className="text-sm text-gray-500 hover:text-orange-700 transition-colors">
             About
           </Link>
         </div>
@@ -81,7 +82,7 @@ export default function ContactPage() {
 
       <main className="max-w-3xl mx-auto px-4 py-10">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Contact</h1>
-        <p className="text-sm text-gray-400 mb-8">Last reviewed: 28 October 2026</p>
+        <p className="text-sm text-gray-500 mb-8">Last reviewed: 28 October 2026</p>
 
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
           <h2 className="text-lg font-semibold text-gray-900 mb-3">Email us</h2>
@@ -95,7 +96,7 @@ export default function ContactPage() {
           >
             czhcl@hotmail.com
           </a>
-          <p className="text-xs text-gray-400 mt-4">
+          <p className="text-xs text-gray-500 mt-4">
             Please include the brand name and the page URL so we can find the entry quickly.
           </p>
         </div>
@@ -121,17 +122,17 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <p className="text-xs text-gray-400 mt-8">
+        <p className="text-xs text-gray-500 mt-8">
           You can also read our{' '}
-          <Link href="/about" className="text-orange-500 underline">
+          <Link href="/about" className="text-orange-700 underline">
             About page
           </Link>{' '}
           for how we source and verify offers, our{' '}
-          <Link href="/privacy" className="text-orange-500 underline">
+          <Link href="/privacy" className="text-orange-700 underline">
             Privacy Policy
           </Link>
           , and our{' '}
-          <Link href="/terms" className="text-orange-500 underline">
+          <Link href="/terms" className="text-orange-700 underline">
             Terms of Use
           </Link>
           .

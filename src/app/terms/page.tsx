@@ -3,7 +3,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Terms of Use | CouponSite',
+  // layout 的 title.template 会再拼 '| CouponSite'，所以这里不写后缀
+  title: 'Terms of Use',
   description:
     'The terms that govern your use of CouponSite: how we publish offers, what we do not promise about prices or codes, and the limits of what we provide.',
   alternates: {
@@ -98,10 +99,10 @@ export default function TermsPage() {
       />
       <header className="bg-white border-b border-gray-100">
         <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
+          <Link href="/" className="text-sm text-gray-500 hover:text-orange-700 transition-colors">
             ← Back to Home
           </Link>
-          <Link href="/about" className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
+          <Link href="/about" className="text-sm text-gray-500 hover:text-orange-700 transition-colors">
             About
           </Link>
         </div>
@@ -109,7 +110,7 @@ export default function TermsPage() {
 
       <main className="max-w-3xl mx-auto px-4 py-10">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Terms of Use</h1>
-        <p className="text-sm text-gray-400 mb-8">Last revised: 28 October 2026</p>
+        <p className="text-sm text-gray-500 mb-8">Last revised: 28 October 2026</p>
 
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 space-y-8">
           {SECTIONS.map((s) => (
@@ -126,13 +127,13 @@ export default function TermsPage() {
           ))}
         </div>
 
-        <p className="text-xs text-gray-400 mt-8">
+        <p className="text-xs text-gray-500 mt-8">
           See also our{' '}
-          <Link href="/privacy" className="text-orange-500 underline">
+          <Link href="/privacy" className="text-orange-700 underline">
             Privacy Policy
           </Link>{' '}
           and{' '}
-          <Link href="/contact" className="text-orange-500 underline">
+          <Link href="/contact" className="text-orange-700 underline">
             contact page
           </Link>
           .

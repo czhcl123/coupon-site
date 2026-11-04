@@ -3,7 +3,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | CouponSite',
+  // layout 的 title.template 会再拼 '| CouponSite'，所以这里不写后缀
+  title: 'Privacy Policy',
   description:
     'How CouponSite handles data: no purchase tracking, no cross-site advertising, URL-parameter-only search, and how to reach us about your information.',
   alternates: {
@@ -84,10 +85,10 @@ export default function PrivacyPage() {
       />
       <header className="bg-white border-b border-gray-100">
         <div className="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
+          <Link href="/" className="text-sm text-gray-500 hover:text-orange-700 transition-colors">
             ← Back to Home
           </Link>
-          <Link href="/about" className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
+          <Link href="/about" className="text-sm text-gray-500 hover:text-orange-700 transition-colors">
             About
           </Link>
         </div>
@@ -95,7 +96,7 @@ export default function PrivacyPage() {
 
       <main className="max-w-3xl mx-auto px-4 py-10">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
-        <p className="text-sm text-gray-400 mb-8">Last reviewed: 28 October 2026</p>
+        <p className="text-sm text-gray-500 mb-8">Last reviewed: 28 October 2026</p>
 
         <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 space-y-8">
           {SECTIONS.map((s) => (
@@ -117,14 +118,14 @@ export default function PrivacyPage() {
           <p className="text-sm leading-relaxed text-gray-600">
             Questions about this policy, or about privacy generally, can be sent to the address listed
             on our{' '}
-            <Link href="/contact" className="text-orange-500 underline">
+            <Link href="/contact" className="text-orange-700 underline">
               contact page
             </Link>
             . We read every message and usually reply within two business days.
           </p>
         </div>
 
-        <p className="text-xs text-gray-400 mt-8">
+        <p className="text-xs text-gray-500 mt-8">
           This policy covers coupons.getpracticaltools.com only. Retailer sites linked from here have
           their own privacy practices.
         </p>

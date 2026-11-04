@@ -289,19 +289,19 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-            <h1 className="text-2xl font-bold text-orange-500">{u('title')}</h1>
+            <h1 className="text-2xl font-bold text-orange-700">{u('title')}</h1>
             <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-4">
-              <a href="/blog" className="text-sm whitespace-nowrap text-gray-400 hover:text-gray-600">{u('blog')}</a>
+              <a href="/blog" className="text-sm whitespace-nowrap text-gray-600 hover:text-gray-700">{u('blog')}</a>
               <button
                 onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
                 className="text-sm whitespace-nowrap px-3 py-1 border border-gray-200 rounded-full hover:bg-gray-50 transition-colors"
               >
                 {u('lang')}
               </button>
-              <a href="/discount-calculator" className="text-sm whitespace-nowrap px-3 py-1 bg-orange-100 text-orange-500 rounded-full hover:bg-orange-200 transition-colors font-medium">
+              <a href="/discount-calculator" className="text-sm whitespace-nowrap px-3 py-1 bg-orange-100 text-orange-700 rounded-full hover:bg-orange-200 transition-colors font-medium">
                 {u('discountCalculator')}
               </a>
-              <a href="/admin" className="text-sm whitespace-nowrap text-gray-400 hover:text-gray-600">
+              <a href="/admin" className="text-sm whitespace-nowrap text-gray-600 hover:text-gray-700">
                 {u('admin')}
               </a>
             </div>
@@ -313,12 +313,12 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
               placeholder={u('searchPlaceholder')}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="flex-1 min-w-[200px] px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="flex-1 min-w-[200px] px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             />
             <select
               value={selectedMerchant}
               onChange={(e) => setSelectedMerchant(e.target.value)}
-              className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             >
               <option value="">{u('allMerchants')}</option>
               {merchants.map((m) => (
@@ -328,7 +328,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
             <select
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
+              className="px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             >
               <option value="">{u('allCategories')}</option>
               <option value="fashion">{u('fashion')}</option>
@@ -357,7 +357,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
             ))}
           </div>
         ) : coupons.length === 0 ? (
-          <div className="text-center py-16 text-gray-400">
+          <div className="text-center py-16 text-gray-600">
             <div className="text-4xl mb-2">🔍</div>
             <p>{u('noResult')}</p>
           </div>
@@ -377,19 +377,19 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
                       onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
                     />
                   )}
-                  <Link href={`/merchant/${coupon.merchant.slug}`} className="text-sm text-gray-500 hover:text-orange-500 transition-colors">
+                  <Link href={`/merchant/${coupon.merchant.slug}`} className="text-sm text-gray-500 hover:text-orange-700 transition-colors">
                     {coupon.merchant.name}
                   </Link>
                   {coupon.isVerified && (
-                    <span className="text-xs bg-green-100 text-green-600 px-1.5 py-0.5 rounded-full">{u('verified')}</span>
+                    <span className="text-xs bg-green-100 text-green-700 px-1.5 py-0.5 rounded-full">{u('verified')}</span>
                   )}
                   {coupon.isExclusive && (
-                    <span className="text-xs bg-orange-100 text-orange-500 px-1.5 py-0.5 rounded-full">{u('exclusive')}</span>
+                    <span className="text-xs bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded-full">{u('exclusive')}</span>
                   )}
                 </div>
 
                 <div className="flex items-start gap-3 mb-3">
-                  <span className="text-3xl font-bold text-orange-500">
+                  <span className="text-3xl font-bold text-orange-700">
                     {formatDiscount(coupon)}
                   </span>
                   <div className="flex-1">
@@ -399,7 +399,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
                         : translateTitle(coupon.title)}
                     </div>
                     {(coupon.description || coupon.discountType === 'ONGOING') && (
-                      <div className="text-sm text-gray-400 mt-0.5">
+                      <div className="text-sm text-gray-600 mt-0.5">
                         {coupon.discountType === 'ONGOING'
                           ? ongoingDesc(coupon.merchant.slug, lang, translateTitle(coupon.description || ''))
                           : translateTitle(coupon.description || '')}
@@ -409,7 +409,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
                 </div>
 
                 {coupon.minPurchase && (
-                  <div className="text-xs text-gray-400 mb-2">
+                  <div className="text-xs text-gray-600 mb-2">
                     {u('minPurchase', { n: coupon.minPurchase })}
                   </div>
                 )}
@@ -423,7 +423,7 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
                         className={`text-xs px-3 py-1 rounded-full font-medium transition-colors ${
                           copied === coupon.id
                             ? 'bg-green-500 text-white'
-                            : 'bg-orange-500 text-white hover:bg-orange-600'
+                            : 'bg-orange-700 text-white hover:bg-orange-800'
                         }`}
                       >
                         {copied === coupon.id ? u('copied') : u('copyCode')}
@@ -433,28 +433,28 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
                       href={coupon.merchant.affiliateUrl || `/merchant/${coupon.merchant.slug}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                      className="inline-block w-full text-center text-sm bg-orange-700 hover:bg-orange-800 text-white rounded-lg py-2 px-4 transition-colors mb-3"
                     >
                       {u('useNow')}
                     </a>
                   </>
                 ) : (
                   <>
-                    <div className="text-xs text-gray-400 mb-2">
+                    <div className="text-xs text-gray-600 mb-2">
                       {coupon.discountType === 'ONGOING' ? u('ongoingHint') : u('noCodeHint')}
                     </div>
                     <a
                       href={coupon.merchant.affiliateUrl || `/merchant/${coupon.merchant.slug}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block w-full text-center text-sm bg-orange-500 hover:bg-orange-600 text-white rounded-lg py-2 px-4 transition-colors mb-3"
+                      className="inline-block w-full text-center text-sm bg-orange-700 hover:bg-orange-800 text-white rounded-lg py-2 px-4 transition-colors mb-3"
                     >
                       {u('useNow')}
                     </a>
                   </>
                 )}
 
-                <div className="flex items-center justify-between text-xs text-gray-400 mt-2 pt-2 border-t border-gray-100">
+                <div className="flex items-center justify-between text-xs text-gray-600 mt-2 pt-2 border-t border-gray-100">
                   <span>{coupon.discountType === 'ONGOING' ? u('ongoing') : formatExpiry(coupon.expiresAt)}</span>
                   <span>{u('peopleUsed', { n: coupon.clickCount })}</span>
                 </div>
@@ -513,83 +513,83 @@ export default function HomePageClient({ initialCoupons = [], initialMerchants =
               </div>
             </a>
           </div>
-          <p className="text-xs text-gray-400 mt-4 text-center">
+          <p className="text-xs text-gray-600 mt-4 text-center">
             {lang === 'zh' ? '工具来自 ' : 'Tools from '}
-            <a href="https://getpracticaltools.com" className="underline hover:text-orange-500">
+            <a href="https://getpracticaltools.com" className="underline hover:text-orange-700">
               Practical Tools
             </a>
           </p>
         </div>
       </section>
 
-      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
+      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-600">
         <nav className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 mb-3 text-xs">
-          <Link href="/" className="hover:text-orange-500 transition-colors">{u('home')}</Link>
+          <Link href="/" className="hover:text-orange-700 transition-colors">{u('home')}</Link>
           <span className="text-gray-200">·</span>
-          <Link href="/about" className="hover:text-orange-500 transition-colors">{u('about')}</Link>
+          <Link href="/about" className="hover:text-orange-700 transition-colors">{u('about')}</Link>
           <span className="text-gray-200">·</span>
-          <Link href="/blog" className="hover:text-orange-500 transition-colors">{u('blog')}</Link>
+          <Link href="/blog" className="hover:text-orange-700 transition-colors">{u('blog')}</Link>
           <span className="text-gray-200">·</span>
-          <a href="/llms.txt" className="hover:text-orange-500 transition-colors">llms.txt</a>
+          <a href="/llms.txt" className="hover:text-orange-700 transition-colors">llms.txt</a>
           <span className="text-gray-200">·</span>
-          <a href="/rss.xml" className="hover:text-orange-500 transition-colors">RSS</a>
+          <a href="/rss.xml" className="hover:text-orange-700 transition-colors">RSS</a>
         </nav>
         {/* 2026-08-08: Internal linking to fix Ahrefs "Orphaned canonical URLs" issue. */}
         <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left mb-6">
           <div>
             <h3 className="text-sm font-bold text-gray-700 mb-2">{u('footerBrands')}</h3>
             <ul className="space-y-1 text-xs">
-              <li><Link href="/merchant/nike" className="hover:text-orange-500 transition-colors">Nike</Link></li>
-              <li><Link href="/merchant/sephora" className="hover:text-orange-500 transition-colors">Sephora</Link></li>
-              <li><Link href="/merchant/nordstrom" className="hover:text-orange-500 transition-colors">Nordstrom</Link></li>
-              <li><Link href="/merchant/target" className="hover:text-orange-500 transition-colors">Target</Link></li>
-              <li><Link href="/merchant/asos" className="hover:text-orange-500 transition-colors">ASOS</Link></li>
-              <li><Link href="/merchant/adidas" className="hover:text-orange-500 transition-colors">Adidas</Link></li>
-              <li><Link href="/merchant/amazon" className="hover:text-orange-500 transition-colors">Amazon</Link></li>
-              <li><Link href="/merchant/shein" className="hover:text-orange-500 transition-colors">SHEIN</Link></li>
-              <li><Link href="/merchant/ulta-beauty" className="hover:text-orange-500 transition-colors">Ulta Beauty</Link></li>
-              <li><Link href="/merchant/walmart" className="hover:text-orange-500 transition-colors">Walmart</Link></li>
-              <li><Link href="/merchant/bestbuy" className="hover:text-orange-500 transition-colors">Best Buy</Link></li>
-              <li><Link href="/merchant/booking-com" className="hover:text-orange-500 transition-colors">Booking.com</Link></li>
-              <li><Link href="/merchant/steam" className="hover:text-orange-500 transition-colors">Steam</Link></li>
-              <li><Link href="/merchant/temu" className="hover:text-orange-500 transition-colors">Temu</Link></li>
-              <li><Link href="/merchant/expedia" className="hover:text-orange-500 transition-colors">Expedia</Link></li>
+              <li><Link href="/merchant/nike" className="hover:text-orange-700 transition-colors">Nike</Link></li>
+              <li><Link href="/merchant/sephora" className="hover:text-orange-700 transition-colors">Sephora</Link></li>
+              <li><Link href="/merchant/nordstrom" className="hover:text-orange-700 transition-colors">Nordstrom</Link></li>
+              <li><Link href="/merchant/target" className="hover:text-orange-700 transition-colors">Target</Link></li>
+              <li><Link href="/merchant/asos" className="hover:text-orange-700 transition-colors">ASOS</Link></li>
+              <li><Link href="/merchant/adidas" className="hover:text-orange-700 transition-colors">Adidas</Link></li>
+              <li><Link href="/merchant/amazon" className="hover:text-orange-700 transition-colors">Amazon</Link></li>
+              <li><Link href="/merchant/shein" className="hover:text-orange-700 transition-colors">SHEIN</Link></li>
+              <li><Link href="/merchant/ulta-beauty" className="hover:text-orange-700 transition-colors">Ulta Beauty</Link></li>
+              <li><Link href="/merchant/walmart" className="hover:text-orange-700 transition-colors">Walmart</Link></li>
+              <li><Link href="/merchant/bestbuy" className="hover:text-orange-700 transition-colors">Best Buy</Link></li>
+              <li><Link href="/merchant/booking-com" className="hover:text-orange-700 transition-colors">Booking.com</Link></li>
+              <li><Link href="/merchant/steam" className="hover:text-orange-700 transition-colors">Steam</Link></li>
+              <li><Link href="/merchant/temu" className="hover:text-orange-700 transition-colors">Temu</Link></li>
+              <li><Link href="/merchant/expedia" className="hover:text-orange-700 transition-colors">Expedia</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-sm font-bold text-gray-700 mb-2">{u('footerTools')}</h3>
             <ul className="space-y-1 text-xs">
-              <li><Link href="/discount-calculator" className="hover:text-orange-500 transition-colors">{u('discountCalculator')}</Link></li>
-              <li><Link href="/canva-pro-coupon-code" className="hover:text-orange-500 transition-colors">Canva Pro Coupon Code</Link></li>
-              <li><Link href="/shopify-discount-code" className="hover:text-orange-500 transition-colors">Shopify Discount Code</Link></li>
-              <li><Link href="/webflow-promo-code" className="hover:text-orange-500 transition-colors">Webflow Promo Code</Link></li>
+              <li><Link href="/discount-calculator" className="hover:text-orange-700 transition-colors">{u('discountCalculator')}</Link></li>
+              <li><Link href="/canva-pro-coupon-code" className="hover:text-orange-700 transition-colors">Canva Pro Coupon Code</Link></li>
+              <li><Link href="/shopify-discount-code" className="hover:text-orange-700 transition-colors">Shopify Discount Code</Link></li>
+              <li><Link href="/webflow-promo-code" className="hover:text-orange-700 transition-colors">Webflow Promo Code</Link></li>
             </ul>
           </div>
           <div>
             <h3 className="text-sm font-bold text-gray-700 mb-2">{u('footerGuides')}</h3>
             <ul className="space-y-1 text-xs">
-              <li><Link href="/blog/nike-discount-code-guide" className="hover:text-orange-500 transition-colors">Nike Discount Code Guide</Link></li>
-              <li><Link href="/blog/nordstrom-sale-guide" className="hover:text-orange-500 transition-colors">Nordstrom Anniversary Sale Guide</Link></li>
-              <li><Link href="/blog/sephora-coupon-strategy" className="hover:text-orange-500 transition-colors">Sephora Coupon Strategy</Link></li>
-              <li><Link href="/blog/amazon-prime-day-guide" className="hover:text-orange-500 transition-colors">Amazon Prime Day Guide</Link></li>
-              <li><Link href="/blog/steam-sale-calendar" className="hover:text-orange-500 transition-colors">Steam Sale Calendar</Link></li>
-              <li><Link href="/blog/asos-student-discount" className="hover:text-orange-500 transition-colors">ASOS Student Discount</Link></li>
-              <li><Link href="/blog/adidas-outlet-secrets" className="hover:text-orange-500 transition-colors">Adidas Outlet Secrets</Link></li>
-              <li><Link href="/blog/bestbuy-tv-buying-guide" className="hover:text-orange-500 transition-colors">Best Buy TV Guide</Link></li>
-              <li><Link href="/blog/target-circle-app" className="hover:text-orange-500 transition-colors">Target Circle App Guide</Link></li>
-              <li><Link href="/blog/uluta-beauty-skin-guide" className="hover:text-orange-500 transition-colors">Ulta Beauty Skin Guide</Link></li>
+              <li><Link href="/blog/nike-discount-code-guide" className="hover:text-orange-700 transition-colors">Nike Discount Code Guide</Link></li>
+              <li><Link href="/blog/nordstrom-sale-guide" className="hover:text-orange-700 transition-colors">Nordstrom Anniversary Sale Guide</Link></li>
+              <li><Link href="/blog/sephora-coupon-strategy" className="hover:text-orange-700 transition-colors">Sephora Coupon Strategy</Link></li>
+              <li><Link href="/blog/amazon-prime-day-guide" className="hover:text-orange-700 transition-colors">Amazon Prime Day Guide</Link></li>
+              <li><Link href="/blog/steam-sale-calendar" className="hover:text-orange-700 transition-colors">Steam Sale Calendar</Link></li>
+              <li><Link href="/blog/asos-student-discount" className="hover:text-orange-700 transition-colors">ASOS Student Discount</Link></li>
+              <li><Link href="/blog/adidas-outlet-secrets" className="hover:text-orange-700 transition-colors">Adidas Outlet Secrets</Link></li>
+              <li><Link href="/blog/bestbuy-tv-buying-guide" className="hover:text-orange-700 transition-colors">Best Buy TV Guide</Link></li>
+              <li><Link href="/blog/target-circle-app" className="hover:text-orange-700 transition-colors">Target Circle App Guide</Link></li>
+              <li><Link href="/blog/uluta-beauty-skin-guide" className="hover:text-orange-700 transition-colors">Ulta Beauty Skin Guide</Link></li>
             </ul>
           </div>
         </div>
         <p>{u('footer1')}</p>
         <p className="mt-1">{u('footer2')}</p>
         {/* 2026-10-28: 联盟审核（Skimlinks / Awin）要求隐私政策 / 条款 / 联系页可达 */}
-        <p className="mt-2 text-xs text-gray-400">
-          <Link href="/privacy" className="hover:text-orange-500 transition-colors">{u('privacy')}</Link>
+        <p className="mt-2 text-xs text-gray-600">
+          <Link href="/privacy" className="hover:text-orange-700 transition-colors">{u('privacy')}</Link>
           <span className="text-gray-200 mx-1">·</span>
-          <Link href="/terms" className="hover:text-orange-500 transition-colors">{u('terms')}</Link>
+          <Link href="/terms" className="hover:text-orange-700 transition-colors">{u('terms')}</Link>
           <span className="text-gray-200 mx-1">·</span>
-          <Link href="/contact" className="hover:text-orange-500 transition-colors">{u('contact')}</Link>
+          <Link href="/contact" className="hover:text-orange-700 transition-colors">{u('contact')}</Link>
         </p>
       </footer>
     {/* SEO/GEO content sections — rendered as static HTML, ships in SSR response for AI indexing */}

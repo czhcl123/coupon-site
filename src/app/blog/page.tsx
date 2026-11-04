@@ -125,13 +125,13 @@ export default async function BlogPage({
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <Link href="/" className="text-2xl font-bold text-orange-500 hover:text-orange-600">
+              <Link href="/" className="text-2xl font-bold text-orange-700 hover:text-orange-800">
                 {u('siteTitle', lang)}
               </Link>
-              <p className="text-sm text-gray-400 mt-1">{u('siteSubtitle', lang)}</p>
+              <p className="text-sm text-gray-500 mt-1">{u('siteSubtitle', lang)}</p>
             </div>
             <div className="flex items-center gap-3">
-              <Link href="/" className="text-sm text-gray-500 hover:text-orange-500">
+              <Link href="/" className="text-sm text-gray-500 hover:text-orange-700">
                 {u('backHome', lang)}
               </Link>
               <Link
@@ -162,7 +162,7 @@ export default async function BlogPage({
                 <span className="text-xs bg-orange-100 text-orange-600 px-2 py-1 rounded-full">
                   {article.merchant}
                 </span>
-                <span className="text-xs text-gray-400">{article.publishedAt}</span>
+                <span className="text-xs text-gray-500">{article.publishedAt}</span>
               </div>
               <h2 className="text-lg font-semibold text-gray-800 mb-2 leading-snug">
                 {article.title}
@@ -180,7 +180,7 @@ export default async function BlogPage({
         </div>
       </main>
 
-      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-400">
+      <footer className="bg-white border-t border-gray-100 mt-12 py-8 text-center text-sm text-gray-500">
         <p>{u('footer1', lang)}</p>
         <p className="mt-1">{u('footer2', lang)}</p>
       </footer>
