@@ -54,11 +54,11 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
       statsTitle: 'By the numbers',
       statBrands: 'Brands covered',
       statBrandsValue: '15',
-      statCoupons: 'Offer sources', statCouponsValue: 'Official / Affiliate / Users', statSearch: 'Categories', statSearchValue: '5', statUpdate: 'Update method', statUpdateValue: 'Manual review',
+      statCoupons: 'Offer sources', statCouponsValue: 'Official / User-submitted', statSearch: 'Categories', statSearchValue: '5', statUpdate: 'Update method', statUpdateValue: 'Manual review',
       methodologyTitle: 'Verification methodology',
-      methodologyBody: 'Our verification is simple and manual:\n\n1. Source: official brand promotion pages, affiliate partners, and user submissions.\n\n2. Publish: offers are listed only when the discount terms are clear.\n\n3. Remove: ended promotions are taken down, on schedule or after user reports; when no code works, the page links to the official sale.',
+      methodologyBody: 'Our verification is simple and manual:\n\n1. Source: official brand promotion pages and user submissions.\n\n2. Publish: offers are listed only when the discount terms are clear.\n\n3. Remove: ended promotions are taken down, on schedule or after user reports; when no code works, the page links to the official sale.',
       howTitle: 'How we source coupons',
-      howBody: 'Three channels: 1) Official brand promotion pages; 2) Exclusive codes from first-party affiliate partners; 3) User submissions (verified manually). Promotions are removed once they end; when no code works, the page links to the official sale.',
+      howBody: 'Two channels: 1) Official brand promotion pages; 2) User submissions (verified manually). Promotions are removed once they end; when no code works, the page links to the official sale.',
       affiliateTitle: 'Link disclosure',
       affiliateBody: 'Links on CouponSite point to each brand\'s official website. We do not currently earn a commission from these links, and we do not add anything to the price you see. If affiliate programmes are added in future, we will say so on this page before they go live.',
       privacyTitle: 'Privacy and data',
@@ -174,7 +174,7 @@ function AboutContent({ initialLang }: { initialLang?: 'zh' | 'en' }) {
                       : 'Manually reviewed · 15 brands · Official promotions'}
                   </div>
                   <div className="text-xs text-orange-600 mt-1">
-                    {lang === 'zh' ? '经验领域：优惠券聚合、品牌推广、电商联盟' : 'Expertise: coupon aggregation, brand partnerships, e-commerce affiliate'}
+                    {lang === 'zh' ? '经验领域：优惠券聚合、品牌推广、电商折扣' : 'Expertise: coupon aggregation, brand promotions, e-commerce discounts'}
                   </div>
                 </div>
               </div>

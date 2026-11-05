@@ -25,7 +25,7 @@ function blogFaqs(article: { title: string; description: string; tags: string[];
     { q: `What are ${merchantCap} coupons and how do they work?`, a: `${article.description} This guide shows you 30+ verified ${merchant} codes, stacking tricks, and purchase strategy so you never pay full price at checkout.` },
     { q: `What's the latest ${merchant} coupon code today?`, a: `The latest working ${merchant} codes are listed at /merchant/${merchant} and verified daily. Look for \"exclusive\" and \"popular\" badges for the strongest discounts (top reported savings).` },
     { q: `How do I use a ${merchant} coupon code?`, a: `Pick a code with a positive \"verified count,\" copy it, and paste into the promo code box at checkout. If it errors, the code may be expired, region-locked, or restricted to certain items / categories.` },
-    { q: `Are these ${merchant} coupon codes safe and legitimate?`, a: `Yes. All codes are public, official or affiliate-tracked. They're not grey-market, gift-card fraud, or account breaches. They won't void warranties or trigger returns.` },
+    { q: `Are these ${merchant} coupon codes safe and legitimate?`, a: `Yes. Every code comes from the official brand's own promotion pages. They're not grey-market, gift-card fraud, or account breaches. They won't void warranties or trigger returns.` },
     { q: `Where else can I find ${merchant} discounts?`, a: `Beyond /merchant/${merchant}, official student / rewards programs + first-purchase email signup (typically 15-30% off) are two more reliable channels. Verified students usually unlock a separate 20% off loyalty tier.` },
   ]
 }

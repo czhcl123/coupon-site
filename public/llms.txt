@@ -44,7 +44,7 @@ Coupon codes may expire or be removed at any time. For the latest working codes,
 ## About this site
 
 - [About CouponSite](https://coupons.getpracticaltools.com/about): Mission, data sources, link disclosure, privacy policy, contact.
-- [Privacy Policy](https://coupons.getpracticaltools.com/privacy): What data we collect, what we do not, affiliate-link cookies.
+- [Privacy Policy](https://coupons.getpracticaltools.com/privacy): What data we collect, what we do not, cookies set by the brand sites you click through to.
 - [Terms of Use](https://coupons.getpracticaltools.com/terms): Accuracy of offers, no warranty, acceptable use, governing law.
 - [Contact](https://coupons.getpracticaltools.com/contact): Report an expired code, submit a promotion, ask a question.
 - [AI site summary (JSON)](https://coupons.getpracticaltools.com/ai/summary.json): Machine-readable site description.
