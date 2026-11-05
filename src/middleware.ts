@@ -20,7 +20,35 @@ const LANG_MAP: Record<string, string> = {
   pt: 'pt-BR',
 }
 
+// 2026-11-05: the old Railway hostname was deleted with the old project on
+// 2026-10-24, so its 39 indexed URLs returned 404 with no redirect at all.
+// Railway restored the hostname today (the service domain was renamed back
+// from coupon-site-production-3b67 to coupon-site-production). It now serves
+// 200, but the canonical domain is coupons.getpracticaltools.com — so the old
+// hostname must 301 across, keeping path and query, or we ship a duplicate
+// site on a second hostname.
+//
+// nextUrl.hostname is unreliable behind Railway's reverse proxy, so read the
+// Host header instead (same reason as the host-based checks elsewhere).
+const CANONICAL_ORIGIN = 'https://coupons.getpracticaltools.com'
+const LEGACY_HOSTS = ['coupon-site-production.up.railway.app']
+
 export function middleware(request: NextRequest) {
+  const host = (request.headers.get('host') ?? '').split(':')[0].toLowerCase()
+  if (LEGACY_HOSTS.includes(host)) {
+    const target = new URL(
+      request.nextUrl.pathname + request.nextUrl.search,
+      CANONICAL_ORIGIN,
+    )
+    // English is the default language, so ?lang=en is dropped on the way
+    // across — otherwise every legacy link would cost two hops (host, then
+    // the lang cleanup below on the canonical host).
+    if (target.searchParams.get('lang') === 'en') {
+      target.searchParams.delete('lang')
+    }
+    return NextResponse.redirect(target, 301)
+  }
+
   const lang = request.nextUrl.searchParams.get('lang') ?? ''
   const bcp47 = LANG_MAP[lang]
   if (!bcp47) return NextResponse.next()

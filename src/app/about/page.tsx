@@ -78,7 +78,6 @@ export default async function AboutPage({
           'Coupon codes',
           'Promo codes',
           'Discount codes',
-          'Affiliate marketing',
           'Verification methodology',
           'Online shopping deals',
         ],

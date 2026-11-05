@@ -53,7 +53,6 @@ const organizationSchema = {
     'Coupon codes',
     'Promo codes',
     'Discount codes',
-    'Affiliate marketing',
     'Online shopping deals',
     'Brand promotions',
     'Fashion discounts',

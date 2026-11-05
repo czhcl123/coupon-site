@@ -181,7 +181,6 @@ export default async function ArticlePage({
       'Coupon codes',
       'Promo codes',
       'Discount codes',
-      'Affiliate marketing',
       'Verification methodology',
       'Online shopping deals',
       'Brand partnerships',
@@ -194,7 +193,7 @@ export default async function ArticlePage({
       '@type': 'Person',
       name: 'Lead Editor',
       jobTitle: 'Lead Editor, Coupon Hub',
-      knowsAbout: ['Coupon aggregation', 'Brand partnerships', 'E-commerce affiliate programs'],
+      knowsAbout: ['Coupon aggregation', 'Brand partnerships', 'E-commerce deals'],
       worksFor: { '@type': 'Organization', name: 'CouponSite' },
     },
   }

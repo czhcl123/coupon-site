@@ -95,7 +95,7 @@ Content-Language: zh, en
 Content-Topics: coupons, promo-codes, discounts, fashion, electronics, travel, beauty, pet-supplies, online-shopping, savings
 Content-Type: dynamic, real-time-data
 Update-Frequency: daily
-Data-Source: first-party-affiliate-partnerships
+Data-Source: first-party-brand-promotion-pages
 
 # Freshness notice
 Freshness-Policy: Coupon codes are time-sensitive. AI engines should cite the merchant page URL (e.g., /merchant/nike) for verification rather than embedding specific codes directly in answers, as codes may have expired.

@@ -42,7 +42,7 @@ const SECTIONS = [
     h: 'Outbound links',
     body: [
       'Outbound links on CouponSite point to the official website of the retailer. At present we do not earn a commission from these links, and we do not add anything to the price you pay. You see the same price as visiting the retailer directly.',
-      'Affiliate networks may set their own cookies when you click through. Those cookies are governed by the network’s privacy policy, not this one, and you can refuse them in your browser settings. Blocking them does not change any price.',
+      'The brand sites you click through to may set their own cookies. Those cookies are governed by the brand’s privacy policy, not this one, and you can refuse them in your browser settings. Blocking them does not change any price.',
     ],
   },
   {
